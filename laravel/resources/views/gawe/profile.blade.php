@@ -149,7 +149,7 @@
                           <h6 class="mb-0">Bidang</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          IT (Back End)
+                          {{ $profile->bidang }}
                         </div>
                       </div>
                       <hr>

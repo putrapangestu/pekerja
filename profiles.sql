@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2022 at 07:48 AM
+-- Generation Time: Mar 22, 2022 at 08:25 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -33,10 +33,10 @@ CREATE TABLE `profiles` (
   `email` varchar(255) NOT NULL,
   `pekerja` varchar(100) NOT NULL,
   `ultah` date DEFAULT NULL,
-  `telepon` int(15) NOT NULL,
+  `telepon` int(100) NOT NULL,
   `alamat` varchar(500) NOT NULL,
-  `kota` varchar(255) NOT NULL,
-  `keterangan` enum('memiliki pekerjan','belum memiliki pekerjaan') NOT NULL,
+  `bidang` varchar(255) NOT NULL,
+  `keterangan` enum('Memiliki Pekerjaan','Belum Memiliki Pekerjaan') NOT NULL,
   `twitter` varchar(255) NOT NULL,
   `facebook` varchar(255) NOT NULL,
   `google` varchar(255) NOT NULL,
@@ -59,9 +59,10 @@ CREATE TABLE `profiles` (
 -- Dumping data for table `profiles`
 --
 
-INSERT INTO `profiles` (`foto`, `nama`, `email`, `pekerja`, `ultah`, `telepon`, `alamat`, `kota`, `keterangan`, `twitter`, `facebook`, `google`, `link`, `instagram`, `lulusansd`, `sd`, `lulusansmp`, `smp`, `lulusansma`, `sma`, `bio`, `prestasi`, `pengalaman`, `kemampuan`, `hasil`) VALUES
-('1647492478img-1.png', 'Nelle Maxwell', 'nmaxwell@mail.com', 'freelance', '2022-03-21', 0, '', '', 'memiliki pekerjan', '', '', '', '', '', NULL, '', NULL, '', NULL, '', '', '', '', '', ''),
-('1647850501img-3.png', 'Nelle Maxwell', 'nmaxwell@mail.com', 'parttime', '2022-03-03', 89898389, 'St kalahan 929', 'St kalahan 929', 'belum memiliki pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', 'sADSADASD', 'parttime', 'https://www.instagram.com/user', NULL, 'SD', NULL, 'SMP', NULL, 'SMA/SMK', 'randmul 18 februari 2022 kepanjen malang', 'juara 1 lomba coding tingkat rt', 'pernah membuat web desa', 'mengoding tanpa melihat', '1647850501img-1.png');
+INSERT INTO `profiles` (`foto`, `nama`, `email`, `pekerja`, `ultah`, `telepon`, `alamat`, `bidang`, `keterangan`, `twitter`, `facebook`, `google`, `link`, `instagram`, `lulusansd`, `sd`, `lulusansmp`, `smp`, `lulusansma`, `sma`, `bio`, `prestasi`, `pengalaman`, `kemampuan`, `hasil`) VALUES
+('1647492478img-1.png', 'Nelle Maxwell', 'nmaxwell@mail.com', 'freelance', '2022-03-21', 0, '', '', '', '', '', '', '', '', NULL, '', NULL, '', NULL, '', '', '', '', '', ''),
+('1647850501img-3.png', 'Nelle Maxwell', 'nmaxwell@mail.com', 'parttime', '2022-03-03', 89898389, 'St kalahan 929', 'St kalahan 929', 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', 'sADSADASD', 'parttime', 'https://www.instagram.com/user', NULL, 'SD', NULL, 'SMP', NULL, 'SMA/SMK', 'randmul 18 februari 2022 kepanjen malang', 'juara 1 lomba coding tingkat rt', 'pernah membuat web desa', 'mengoding tanpa melihat', '1647850501img-1.png'),
+('1647933724img-1.png', 'afaita', 'apaiya@gmail.com', 'parttime', '2022-03-04', 2392309, 'JL Malng', 'IT', 'Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', 'wwww', 'parttime', 'https://www.instagram.com/user', NULL, 'SD', NULL, 'SMP', NULL, 'SMA/SMK', 'randmul 18 februari 2022 kepanjen malang', 'juara 1 lomba coding tingkat rt', 'pernah membuat web desa', 'mengoding tanpa melihat', '1647933724img-2.png');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

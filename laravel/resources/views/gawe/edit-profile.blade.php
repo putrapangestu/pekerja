@@ -188,8 +188,8 @@
                                     <input type="text" class="form-control" name="alamat" value="St kalahan 929">
                                   </div>
                                   <div class="form-group">
-                                    <label class="form-label">Kota Asal</label>
-                                    <input type="text" class="form-control" name="kota" value="St kalahan 929">
+                                    <label class="form-label">Bidang Pekerjaan</label>
+                                    <input type="text" class="form-control" name="bidang" value="IT">
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">Keterangan</label>

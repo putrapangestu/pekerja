@@ -35,7 +35,7 @@ class ProfileController extends Controller
         $model->ultah = $request->ultah;
         $model->telepon = $request->telepon;
         $model->alamat = $request->alamat;
-        $model->kota = $request->kota;
+        $model->bidang = $request->bidang;
         $model->keterangan = $request->keterangan;
         $model->twitter = $request->twitter;
         $model->facebook = $request->facebook;
