@@ -164,7 +164,7 @@
                       <hr>
                       <div class="row">
                         <div class="col-sm-12">
-                          <a class="btn btn-info " href="{{ url('gawe/'.$profile->email.'/edit-profile') }}">Edit</a>
+                          <a class="btn btn-info " href="{{ url('gawe/edit-profile') }}">Edit</a>
                         </div>
                       </div>
               </div><!-- /.card-body -->

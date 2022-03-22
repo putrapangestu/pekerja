@@ -13,7 +13,7 @@ class ProfileController extends Controller
 {
     public function index(){
         $errors = Profile::all();
-        $errors = User::all();
+        $datas = User::all();
 
         return view('gawe.profile', compact(
             'datas', 'errors'
