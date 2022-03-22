@@ -20,25 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
 
     <!-- Css-->
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
 
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="css/vegas.min.css">
-    <link rel="stylesheet" href="css/nouislider.min.css">
-    <link rel="stylesheet" href="css/nouislider.pips.css">
-    <link rel="stylesheet" href="css/ziston-icon.css">
-    <link rel="stylesheet" href="css/ziston-new-icons.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vegas.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.pips.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-new-icons.css') }}">
     <!-- Template styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 
 </head>
 
@@ -148,11 +148,11 @@
 
         <!--Banner Three Start-->
         <section class="banner_three">
-            <img src="images/main-slider/slide_v3_bg-1.png" alt="" class="banner-three-vector-img">
-            <img src="images/shapes/slider-3-cloud.png" alt="" class="banner-three-cloud-img animate-left-right">
-            <img src="images/shapes/slider-3-line.png" alt="" class="banner-three-line-img">
-            <img src="images/shapes/slider-3-shape-1.png" alt="" class="banner_three_shape_1">
-            <img src="images/shapes/slider-3-shape-2.png" alt="" class="banner_three_shape_2">
+            <img src="{{ asset('images/main-slider/slide_v3_bg-1.png') }}" alt="" class="banner-three-vector-img">
+            <img src="{{ asset('images/shapes/slider-3-cloud.png') }}" alt="" class="banner-three-cloud-img animate-left-right">
+            <img src="{{ asset('images/shapes/slider-3-line.png') }}" alt="" class="banner-three-line-img">
+            <img src="{{ asset('images/shapes/slider-3-shape-1.png') }}" alt="" class="banner_three_shape_1">
+            <img src="{{ asset('images/shapes/slider-3-shape-2.png') }}" alt="" class="banner_three_shape_2">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
@@ -1203,30 +1203,30 @@
 
 
 
-    <script src="js/jsweb/jquery.min.js"></script>
-    <script src="js/jsweb/bootstrap.bundle.min.js"></script>
-    <script src="js/jsweb/owl.carousel.min.js"></script>
-    <script src="js/jsweb/waypoints.min.js"></script>
-    <script src="js/jsweb/jquery.counterup.min.js"></script>
-    <script src="js/jsweb/TweenMax.min.js"></script>
-    <script src="js/jsweb/wow.js"></script>
-    <script src="js/jsweb/jquery.magnific-popup.min.js"></script>
-    <script src="js/jsweb/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jsweb/swiper.min.js"></script>
-    <script src="js/jsweb/typed-2.0.11.js"></script>
-    <script src="js/jsweb/vegas.min.js"></script>
-    <script src="js/jsweb/jquery.validate.min.js"></script>
-    <script src="js/jsweb/bootstrap-select.min.js"></script>
-    <script src="js/jsweb/countdown.min.js"></script>
-    <script src="js/jsweb/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/jsweb/bootstrap-datepicker.min.js"></script>
-    <script src="js/jsweb/nouislider.min.js"></script>
-    <script src="js/jsweb/isotope.js"></script>
-    <script src="js/jsweb/appear.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('js/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('js/wow.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('js/swiper.min.js') }}"></script>
+    <script src="{{ asset('js/typed-2.0.11.js') }}"></script>
+    <script src="{{ asset('js/vegas.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('js/countdown.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('js/isotope.js') }}"></script>
+    <script src="{{ asset('js/appear.js') }}"></script>
 
 
     <!-- template scripts -->
-    <script src="js/jsweb/theme.js"></script>
+    <script src="{{ asset('js/theme.js') }}"></script>
 
 
 </body>

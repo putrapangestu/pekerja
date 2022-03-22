@@ -90,6 +90,8 @@ Route::put('/gawe/edit-profile/{email}', [ProfileController::class, 'password'])
 Route::get('/gawe/contact', [ContactController::class, 'index']);
 Route::post('/gawe/contact', [ContactController::class, 'contact']);
 
+Route::get('/gawe/mail', [MailController::class, 'index']);
+
 Route::get('/gawe/listings3', [GaweController::class, 'listingsumum']);
 // ->middleware('auth')
 // ->middleware('guest')

@@ -13,17 +13,17 @@
         <link rel="shortcut icon" href="images/black.png">
     
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="css/cssweb/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{{ asset ('css/bootstrap.min.css') }}" />
     
         <!--Material Icon -->
-        <link rel="stylesheet" type="text/css" href="css/cssweb/materialdesignicons.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ asset ('css/materialdesignicons.min.css') }}" />
     
-        <link rel="stylesheet" type="text/css" href="css/cssweb/selectize.css" />
+        <link rel="stylesheet" type="text/css" href="{{ asset ('css/selectize.css') }}" />
     
-        <link rel="stylesheet" type="text/css" href="css/cssweb/nice-select.css" />
+        <link rel="stylesheet" type="text/css" href="{{ asset ('css/nice-select.css') }}" />
     
         <!-- Custom  Css -->
-        <link rel="stylesheet" type="text/css" href="css/cssweb/style.css" />
+        <link rel="stylesheet" type="text/css" href="{{ asset ('css/style.css') }}" />
 
     </head>
 
@@ -115,14 +115,7 @@
                                             <div class="col-md-12">
                                                 <button type="submit" class="btn btn-primary w-100">Registrasi</button>
                                             </div>
-                                            <div class="col-lg-12 mt-4 text-center">
-                                                <h6>Atau Masuk Dengan</h6>
-                                                <ul class="list-unstyled social-icon mb-0 mt-3">
-                                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-facebook" title="Facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-google-plus" title="Google"></i></a></li>
-                                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i class="mdi mdi-github-circle" title="Github"></i></a></li>
-                                                </ul><!--end icon-->
-                                            </div>
+                                            
                                             <div class="mx-auto">
                                                 <p class="mb-0 mt-3"><small class="text-dark mr-2">Sudah memiliki akun ?</small> <a href="{{ url('gawe/login') }}" class="text-dark font-weight-bold">Sign in</a></p>
                                             </div>
@@ -138,16 +131,16 @@
         <!-- Hero End -->
 
         <!-- javascript -->
-        <script src="js/jsweb/jquery.min.js"></script>
-        <script src="js/jsweb/bootstrap.bundle.min.js"></script>
-        <script src="js/jsweb/jquery.easing.min.js"></script>
-        <script src="js/jsweb/plugins.js"></script>
+        <script src="{{ asset ('js/jquery.min.js') }}"></script>
+        <script src="{{ asset ('js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset ('js/jquery.easing.min.js') }}"></script>
+        <script src="{{ asset ('js/plugins.js') }}"></script>
 
         <!-- selectize js -->
-        <script src="js/jsweb/selectize.min.js"></script>
+        <script src="{{ asset ('js/selectize.min.js') }}"></script>
 
-        <script src="js/jsweb/jquery.nice-select.min.js"></script>
+        <script src="{{ asset ('js/jquery.nice-select.min.js') }}"></script>
 
-        <script src="js/jsweb/app.js"></script>
+        <script src="{{ asset ('js/app.js') }}"></script>
     </body>
 </html>
