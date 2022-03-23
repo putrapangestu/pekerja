@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GaweController;
+use App\Http\Controllers\IniController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -90,7 +91,8 @@ Route::put('/gawe/edit-profile/{email}', [ProfileController::class, 'password'])
 Route::get('/gawe/contact', [ContactController::class, 'index']);
 Route::post('/gawe/contact', [ContactController::class, 'contact']);
 
-Route::get('/gawe/mail', [MailController::class, 'index']);
+Route::get('/gawe/mail', [IniController::class, 'index']);
+Route::get('/gawe/mail/detail', [IniController::class, 'detail_index']);
 
 Route::get('/gawe/listings3', [GaweController::class, 'listingsumum']);
 // ->middleware('auth')

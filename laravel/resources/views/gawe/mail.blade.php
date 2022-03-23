@@ -11,14 +11,14 @@
 	<meta name="author" content="hencework"/>
 	
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+	<link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
 	
 	<!-- Bootstrap Wysihtml5 css -->
-	<link rel="stylesheet" href="../../vendors/bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css" />
+	<link rel="stylesheet" href="{{ asset('vendors/bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css') }}" />
 		
 	<!-- Custom CSS -->
-	<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+	<link href="{{ asset('zapily/style.css') }}" rel="stylesheet" type="text/css">
 	
 </head>
 
@@ -220,12 +220,15 @@
 																				</div>
 																				<i class="zmdi zmdi-star inline-block font-16"></i>
 																			</td>
-																			<td class="view-message  dont-show">Clay Masse</td>
-																			<td class="view-message ">PT Sabun jaya tertarik dengan anda silahkan lihat detailnya</td>
-																			<td class="view-message  text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">9:27 AM</span>
-																			</td>
+																			
+																				<td class="view-message  dont-show"><a href="{{ url('gawe/mail/detail') }}">Clay Masse</a></td>
+																				<td class="view-message ">PT Sabun jaya tertarik dengan anda silahkan lihat detailnya</td>
+																			
+																				<td class="view-message  text-right">
+																					<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
+																					<span  class="time-chat-history inline-block">9:27 AM</span>
+																				</td>
+																			
 																		</tr>
 																		<tr class="unread">
 																			<td class="inbox-small-cells">
@@ -369,33 +372,33 @@
 	<!-- JavaScript -->
 	
     <!-- jQuery -->
-    <script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 	
 	<!-- wysuhtml5 Plugin JavaScript -->
-	<script src="../../vendors/bower_components/wysihtml5x/dist/wysihtml5x.min.js"></script>
+	<script src="{{ asset('vendors/bower_components/wysihtml5x/dist/wysihtml5x.min.js') }}"></script>
 	
-	<script src="../../vendors/bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.js"></script>
+	<script src="{{ asset('vendors/bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.js') }}"></script>
 	
 	<!-- Fancy Dropdown JS -->
-	<script src="dist/js/dropdown-bootstrap-extended.js"></script>
+	<script src="{{ asset('zapily/js/dropdown-bootstrap-extended.js') }}"></script>
 	
 	<!-- Bootstrap Wysuhtml5 Init JavaScript -->
-	<script src="dist/js/bootstrap-wysuhtml5-data.js"></script>
+	<script src="{{ asset('zapily/js/bootstrap-wysuhtml5-data.js') }}"></script>
 	
 	<!-- Slimscroll JavaScript -->
-	<script src="dist/js/jquery.slimscroll.js"></script>
+	<script src="{{ asset('zapily/js/jquery.slimscroll.js') }}"></script>
 	
 	<!-- Owl JavaScript -->
-	<script src="../../vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+	<script src="{{ asset('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>
 	
 	<!-- Switchery JavaScript -->
-	<script src="../../vendors/bower_components/switchery/dist/switchery.min.js"></script>
+	<script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
 	
 	<!-- Init JavaScript -->
-	<script src="dist/js/init.js"></script>
+	<script src="{{ asset('zapily/js/init.js') }}"></script>
 	
 </body>
 
