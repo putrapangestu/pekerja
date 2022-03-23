@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pekerja</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/black.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/black.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicons/black.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicons/black.png') }}">
     <link rel="manifest" href="images/favicons/site.html">
 
     <!-- Fonts-->
@@ -20,33 +20,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
 
     <!-- Css-->
-    <link rel="stylesheet" href="css/cssweb/animate.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/cssweb/magnific-popup.css">
-    <link rel="stylesheet" href="css/cssweb/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/cssweb/swiper.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
 
-    <link rel="stylesheet" href="css/cssweb/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="css/cssweb/vegas.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.pips.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-icon.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-new-icons.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vegas.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.pips.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-new-icons.css') }}">
     <!-- Template styles -->
-    <link rel="stylesheet" href="css/cssweb/style.css">
-    <link rel="stylesheet" href="css/cssweb/responsive.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 
 </head>
 
 <body>
 
-    <div class="preloader">
-        <img src="images/loader.png" class="preloader__image" alt="">
-    </div><!-- /.preloader -->
+    <!-- /.preloader -->
 
     <div class="page-wrapper">
 
@@ -72,7 +70,7 @@
                             <div class="header_topmenu_1">
                                 <ul class="list-unstyled">
                                     <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
-                                    <li><a href="zapily/ltr/mail.html"><i class="fas fa-mail"></i>Inbox</a></li>
+                                    <li><a href="{{ url('gawe/mail') }}"><i class="fas fa-mail"></i>Inbox</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -88,7 +86,7 @@
                         <div class="main-nav__left main-nav__left_one float-left">
                             <div class="logo_one">
                                 <a href="index.html" class="main-nav__logo">
-                                    <img src="images/resources/logo-black.png" alt="Awesome image" class="logo-light" height="75">
+                                    <img src="{{ asset('images/resources/logo-black.png') }}" alt="Awesome image" class="logo-light" height="75">
                                 </a>
                             </div>
                             <a href="#" class="side-menu__toggler">
@@ -126,7 +124,7 @@
                                 <ul class="navbar-nav ">
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
+                                      <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                       <a class="dropdown-item" href="{{ url('gawe/profile') }}">Profile</a>
@@ -228,7 +226,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-1.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-1.jpg') }}" alt="">
                                 <div class="open">
                                     <p> Buka</p>
                                 </div>
@@ -236,7 +234,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-1.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-1.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class=""></span>
@@ -256,7 +254,7 @@
                                       <a href="#" class="btn btn-sm bg-teal">
                                         <i class="fas fa-comments"></i>
                                       </a>
-                                      <a href="listings-details1.html" class="btn btn-sm btn-primary">
+                                      <a href="{{ url('gawe/listing-details') }}" class="btn btn-sm btn-primary">
                                         <i class="fas fa-user"></i> View Profile
                                       </a>
                                 </div>
@@ -268,7 +266,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-2.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-2.jpg') }}" alt="">
                                 <div class="open">
                                     <p>Open</p>
                                 </div>
@@ -276,7 +274,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-2.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-2.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class=""></span>
@@ -309,7 +307,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-3.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-3.jpg') }}" alt="">
                                 <div class="open">
                                     <p>Open</p>
                                 </div>
@@ -317,7 +315,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-3.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-3.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class="t"></span>
@@ -349,7 +347,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-4.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-4.jpg') }}" alt="">
                                 <div class="open">
                                     <p>Open</p>
                                 </div>
@@ -357,7 +355,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-4.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-4.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class=""></span>
@@ -389,7 +387,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-5.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-5.jpg') }}" alt="">
                                 <div class="open">
                                     <p>Open</p>
                                 </div>
@@ -397,7 +395,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-5.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-5.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class=""></span>
@@ -429,7 +427,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-6.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-6.jpg') }}" alt="">
                                 <div class="open">
                                     <p>Open</p>
                                 </div>
@@ -437,7 +435,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-6.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-6.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class=""></span>
@@ -468,7 +466,7 @@
                             <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                                 data-wow-duration="1200ms">
                                 <div class="listings_three-page_image">
-                                    <img src="images/resources/listings-3-page-img-1.jpg" alt="">
+                                    <img src="{{ asset('images/resources/listings-3-page-img-1.jpg') }}" alt="">
                                     <div class="open">
                                         <p> Buka</p>
                                     </div>
@@ -476,7 +474,7 @@
                                         <i class="icon-heart"></i>
                                     </div>
                                     <div class="author_img">
-                                        <img src="images/resources/latest_listings-3_au-img-1.png" alt="">
+                                        <img src="{{ asset('images/resources/latest_listings-3_au-img-1.png') }}" alt="">
                                     </div>
                                     <div class="shopping_circle">
                                         <span class=""></span>
@@ -508,7 +506,7 @@
                             <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                                 data-wow-duration="1200ms">
                                 <div class="listings_three-page_image">
-                                    <img src="images/resources/listings-3-page-img-2.jpg" alt="">
+                                    <img src="{{ asset('images/resources/listings-3-page-img-2.jpg') }}" alt="">
                                     <div class="open">
                                         <p>Open</p>
                                     </div>
@@ -516,7 +514,7 @@
                                         <i class="icon-heart"></i>
                                     </div>
                                     <div class="author_img">
-                                        <img src="images/resources/latest_listings-3_au-img-2.png" alt="">
+                                        <img src="{{ asset('images/resources/latest_listings-3_au-img-2.png') }}" alt="">
                                     </div>
                                     <div class="shopping_circle">
                                         <span class=""></span>
@@ -549,7 +547,7 @@
                             <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                                 data-wow-duration="1200ms">
                                 <div class="listings_three-page_image">
-                                    <img src="images/resources/listings-3-page-img-3.jpg" alt="">
+                                    <img src="{{ asset('images/resources/listings-3-page-img-3.jpg') }}" alt="">
                                     <div class="open">
                                         <p>Open</p>
                                     </div>
@@ -557,7 +555,7 @@
                                         <i class="icon-heart"></i>
                                     </div>
                                     <div class="author_img">
-                                        <img src="images/resources/latest_listings-3_au-img-3.png" alt="">
+                                        <img src="{{ asset('images/resources/latest_listings-3_au-img-3.png') }}" alt="">
                                     </div>
                                     <div class="shopping_circle">
                                         <span class="t"></span>
@@ -589,7 +587,7 @@
                             <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                                 data-wow-duration="1200ms">
                                 <div class="listings_three-page_image">
-                                    <img src="images/resources/listings-3-page-img-4.jpg" alt="">
+                                    <img src="{{ asset('images/resources/listings-3-page-img-4.jpg') }}" alt="">
                                     <div class="open">
                                         <p>Open</p>
                                     </div>
@@ -597,7 +595,7 @@
                                         <i class="icon-heart"></i>
                                     </div>
                                     <div class="author_img">
-                                        <img src="images/resources/latest_listings-3_au-img-4.png" alt="">
+                                        <img src="{{ asset('images/resources/latest_listings-3_au-img-4.png') }}" alt="">
                                     </div>
                                     <div class="shopping_circle">
                                         <span class=""></span>
@@ -629,7 +627,7 @@
                             <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                                 data-wow-duration="1200ms">
                                 <div class="listings_three-page_image">
-                                    <img src="images/resources/listings-3-page-img-5.jpg" alt="">
+                                    <img src="{{ asset('images/resources/listings-3-page-img-5.jpg') }}" alt="">
                                     <div class="open">
                                         <p>Open</p>
                                     </div>
@@ -637,7 +635,7 @@
                                         <i class="icon-heart"></i>
                                     </div>
                                     <div class="author_img">
-                                        <img src="images/resources/latest_listings-3_au-img-5.png" alt="">
+                                        <img src="{{ asset('images/resources/latest_listings-3_au-img-5.png') }}" alt="">
                                     </div>
                                     <div class="shopping_circle">
                                         <span class=""></span>
@@ -669,7 +667,7 @@
                             <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                                 data-wow-duration="1200ms">
                                 <div class="listings_three-page_image">
-                                    <img src="images/resources/listings-3-page-img-6.jpg" alt="">
+                                    <img src="{{ asset('images/resources/listings-3-page-img-6.jpg') }}" alt="">
                                     <div class="open">
                                         <p>Open</p>
                                     </div>
@@ -677,7 +675,7 @@
                                         <i class="icon-heart"></i>
                                     </div>
                                     <div class="author_img">
-                                        <img src="images/resources/latest_listings-3_au-img-6.png" alt="">
+                                        <img src="{{ asset('images/resources/latest_listings-3_au-img-6.png') }}" alt="">
                                     </div>
                                     <div class="shopping_circle">
                                         <span class=""></span>
@@ -708,7 +706,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-1.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-1.jpg') }}" alt="">
                                 <div class="open">
                                     <p> Buka</p>
                                 </div>
@@ -716,7 +714,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-1.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-1.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class=""></span>
@@ -748,7 +746,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-2.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-2.jpg') }}" alt="">
                                 <div class="open">
                                     <p>Open</p>
                                 </div>
@@ -756,7 +754,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-2.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-2.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class=""></span>
@@ -789,7 +787,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-3.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-3.jpg') }}" alt="">
                                 <div class="open">
                                     <p>Open</p>
                                 </div>
@@ -797,7 +795,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-3.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-3.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class="t"></span>
@@ -829,7 +827,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-4.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-4.jpg') }}" alt="">
                                 <div class="open">
                                     <p>Open</p>
                                 </div>
@@ -837,7 +835,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-4.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-4.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class=""></span>
@@ -869,7 +867,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-5.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-5.jpg') }}" alt="">
                                 <div class="open">
                                     <p>Open</p>
                                 </div>
@@ -877,7 +875,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-5.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-5.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class=""></span>
@@ -909,7 +907,7 @@
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="1200ms">
                             <div class="listings_three-page_image">
-                                <img src="images/resources/listings-3-page-img-6.jpg" alt="">
+                                <img src="{{ asset('images/resources/listings-3-page-img-6.jpg') }}" alt="">
                                 <div class="open">
                                     <p>Open</p>
                                 </div>
@@ -917,7 +915,7 @@
                                     <i class="icon-heart"></i>
                                 </div>
                                 <div class="author_img">
-                                    <img src="images/resources/latest_listings-3_au-img-6.png" alt="">
+                                    <img src="{{ asset('images/resources/latest_listings-3_au-img-6.png') }}" alt="">
                                 </div>
                                 <div class="shopping_circle">
                                     <span class=""></span>
@@ -964,7 +962,7 @@
         <div class="side-menu__block-inner ">
             <div class="side-menu__top justify-content-end">
                 <a href="#" class="side-menu__toggler side-menu__close-btn"><img
-                        src="images/shapes/close-1-1.png" alt=""></a>
+                        src="{{ asset('images/shapes/close-1-1.png') }}" alt=""></a>
             </div><!-- /.side-menu__top -->
 
             <nav class="mobile-nav__container">
