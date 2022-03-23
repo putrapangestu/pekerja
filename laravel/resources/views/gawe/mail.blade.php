@@ -130,7 +130,7 @@
 											</aside>
 											
 											<aside class="col-lg-9 col-md-8 pl-0">
-												<div class="panel panel-refresh pa-0">
+												<div class="panel-refresh pa-0">
 													<div class="refresh-container">
 														<div class="la-anim-1"></div>
 													</div>
@@ -222,7 +222,7 @@
 																			</td>
 																			
 																				<td class="view-message  dont-show"><a href="{{ url('gawe/mail/detail') }}">Clay Masse</a></td>
-																				<td class="view-message ">PT Sabun jaya tertarik dengan anda silahkan lihat detailnya</td>
+																				<td class="view-message "><a href="{{ url('gawe/mail/detail') }}">PT Sabun jaya tertarik dengan anda silahkan lihat detailnya</a></td>
 																			
 																				<td class="view-message  text-right">
 																					<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
