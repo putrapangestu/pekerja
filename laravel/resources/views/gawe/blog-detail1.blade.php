@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog Detail || Ziston || Ziston Form HTML Template</title>
+    <title>Blog Detail | Gawe.Id</title>
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
@@ -20,25 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
 
     <!-- Css-->
-    <link rel="stylesheet" href="css/cssweb/animate.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/cssweb/magnific-popup.css">
-    <link rel="stylesheet" href="css/cssweb/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/cssweb/swiper.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{{ ('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/bootstrap-select.min.css') }}">
 
-    <link rel="stylesheet" href="css/cssweb/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="css/cssweb/vegas.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.pips.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-icon.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-new-icons.css">
+    <link rel="stylesheet" href="{{ ('assets/css/jquery.mCustomScrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/vegas.min.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/nouislider.pips.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/ziston-icon.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/ziston-new-icons.css') }}">
     <!-- Template styles -->
-    <link rel="stylesheet" href="css/cssweb/style.css">
-    <link rel="stylesheet" href="css/cssweb/responsive.css">
+    <link rel="stylesheet" href="{{ ('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ ('assets/css/responsive.css') }}">
 
 </head>
 
@@ -478,30 +478,30 @@
 
 
 
-    <script src="js/jsweb/jquery.min.js"></script>
-    <script src="js/jsweb/bootstrap.bundle.min.js"></script>
-    <script src="js/jsweb/owl.carousel.min.js"></script>
-    <script src="js/jsweb/waypoints.min.js"></script>
-    <script src="js/jsweb/jquery.counterup.min.js"></script>
-    <script src="js/jsweb/TweenMax.min.js"></script>
-    <script src="js/jsweb/wow.js"></script>
-    <script src="js/jsweb/jquery.magnific-popup.min.js"></script>
-    <script src="js/jsweb/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jsweb/swiper.min.js"></script>
-    <script src="js/jsweb/typed-2.0.11.js"></script>
-    <script src="js/jsweb/vegas.min.js"></script>
-    <script src="js/jsweb/jquery.validate.min.js"></script>
-    <script src="js/jsweb/bootstrap-select.min.js"></script>
-    <script src="js/jsweb/countdown.min.js"></script>
-    <script src="js/jsweb/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/jsweb/bootstrap-datepicker.min.js"></script>
-    <script src="js/jsweb/nouislider.min.js"></script>
-    <script src="js/jsweb/isotope.js"></script>
-    <script src="js/jsweb/appear.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/typed-2.0.11.js') }}"></script>
+    <script src="{{ asset('assets/js/vegas.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/countdown.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.js') }}"></script>
+    <script src="{{ asset('assets/js/appear.js') }}"></script>
 
 
     <!-- template scripts -->
-    <script src="js/jsweb/theme.js"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
 
 
 </body>

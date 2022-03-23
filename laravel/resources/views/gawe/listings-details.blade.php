@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pekerja</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/black.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/black.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicons/black.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicons/black.png') }}">
     <link rel="manifest" href="images/favicons/site.html">
 
     <!-- Fonts-->
@@ -20,25 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
 
     <!-- Css-->
-    <link rel="stylesheet" href="css/cssweb/animate.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/cssweb/magnific-popup.css">
-    <link rel="stylesheet" href="css/cssweb/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/cssweb/swiper.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
 
-    <link rel="stylesheet" href="css/cssweb/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="css/cssweb/vegas.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.pips.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-icon.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-new-icons.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vegas.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.pips.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-new-icons.css') }}">
     <!-- Template styles -->
-    <link rel="stylesheet" href="css/cssweb/style.css">
-    <link rel="stylesheet" href="css/cssweb/responsive.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <style>
         td{
             padding: 8px;
@@ -51,7 +51,7 @@
 <body>
 
     <div class="preloader">
-        <img src="images/resources/black gawe.jpg" class="preloader__image" height="150" alt="">
+        <img src="{{ asset('images/resources/black gawe.jpg') }}" class="preloader__image" height="150" alt="">
     </div><!-- /.preloader -->
 
     <div class="page-wrapper">
@@ -92,7 +92,7 @@
                         <div class="main-nav__left main-nav__left_one float-left">
                             <div class="logo_one">
                                 <a href="index.html" class="main-nav__logo">
-                                    <img src="images/resources/black logo gawe.png" class="main-logo" height="50" alt="Awesome Image">
+                                    <img src="{{ asset('images/resources/black logo gawe.png') }}" class="main-logo" height="50" alt="Awesome Image">
                                 </a>
                             </div>
                             <a href="#" class="side-menu__toggler">
@@ -103,10 +103,10 @@
                         <div class="main-nav__main-navigation three float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li>
-                                    <a href="{{ url('gawe/index3') }}">Home</a>
+                                    <a href="{{ url('/gawe') }}">Home</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/listings3') }}">Pekerja</a>
+                                    <a href="{{ url('gawe/listings') }}">Pekerja</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('gawe/blog') }}">Blog</a>
@@ -125,7 +125,7 @@
                                 <ul class="navbar-nav ">
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
+                                      <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                       <a class="dropdown-item" href="{{ url('gawe/login') }}">LOGIN</a>
@@ -157,7 +157,7 @@
                         <!--Listings Details Main Image Box Single-->
                         <div class="listings_details_main_image_box_single">
                             <div class="listings_details_main_image_box__img">
-                                <img src="images/resources/foto.jpg" alt="">
+                                <img src="{{ asset('images/resources/foto.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                         <!--Listings Details Main Image Box Single-->
                         <div class="listings_details_main_image_box_single">
                             <div class="listings_details_main_image_box__img">
-                                <img src="images/resources/2.jpg" alt="">
+                                <img src="{{ asset('images/resources/2.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@
                         <!--Listings Details Main Image Box Single-->
                         <div class="listings_details_main_image_box_single">
                             <div class="listings_details_main_image_box__img">
-                                <img src="images/resources/y.jpg" alt="">
+                                <img src="{{ asset('images/resources/y.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -182,6 +182,7 @@
         </section>
 
         <!--Main Bottom Start-->
+        @foreach ($errors as $profile)
         <section class="main_bottom">
             <div class="container">
                 <div class="row">
@@ -189,27 +190,23 @@
                         <div class="main_bottom_left">
                             <div class="main_bottom_content">
                                 <div class="author_image">
-                                    <img src="images/resources/listings-2-page-au-img-5.png" height="70" alt="">
+                                    <img src="{{ asset('images/resources/listings-2-page-au-img-5.png') }}" height="70" alt="">
                                 </div>
                                 <div class="icon">
                                     <span class=""></span>
                                 </div>
                             </div>
                             <div class="main_bottom_left_title">
-                                <h3>Ahmad Kasim<i class="fa fa-check"></i></h3>
+                                <h3>{{ $profile->nama }}<i class="fa fa-check"></i></h3>
                             </div>
-                            <div class="main_bottom_rating_time">
-                                <div class="main_bottom_time">
-                                    <p><span class="far fa-clock"></span>Posted 8 hours ago</p>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="main_bottom_right">
                             <ul class="list-unstyled">
                                 <li><a href="#">Add to Wishlist<i class="far fa-heart"></i></a></li>
-                                <li><a href="zapily/ltr/form-wizard.html"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a></li>
+                                <li><a href="{{ url('gawe/rekrut') }}"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a></li>
                             </ul>
                         </div>
                     </div>
@@ -228,92 +225,110 @@
                                     <div class="listings_details_left">
                                         <div class="col-12 mt-3">
                                             <div class="custom-form p-4 border rounded">
-                                                <center><h3>Curriculum vitae</h3></center><br><br>
+                                                <center><h3>BIODATA DIRI</h3></center><br><br>
                                             
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                              <h4> <B> DATA PRIBADI</B></h4>
-                                            </div><br>
+                                            
                                             <table border="1">
-                                                <tr>
+                                             <tr>
                                                 <td>Nama Lengkap</td><br>
-                                                <td>: Ahmad Kasim</td>
+                                                <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->nama }}
+                                                  </div></td>
                                             </tr>
                                             <tr>
-                                                <td>Tempat & Tanggal lahir</td>
-                                                <td>: Malang, 15 Juni 2022</td>
+                                                <td>E-Mail</td>
+                                                <td>div class="col-sm-9 text-secondary">
+                                                    {{ $profile->email }}
+                                                </div></td><
                                             </tr>
                                             <tr>
-                                                <td>Alamat</td>
-                                                <td>: Ds. Cokrowati. Kec. Tambakboyo. Kab. Tuban</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jenis Kelamin</td>
-                                                <td>: Laki-Laki</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Status Perkawinan</td>
-                                                <td>: Kawin</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Agama</td>
-                                                <td>: Islam</td>
-                                            </tr>
-                                            <tr>
-                                                <td>No. telpon</td>
-                                                <td>: 08222222222221</td>
+                                                <td>Pekerja</td>
+                                                <td><div class="col-sm-9 text-secondary">
+                                                {{ $profile->pekerja }}    
+                                                </div></td>
                                             </tr>
                                             </table>
-                                            <br><div class="col-lg-12"><br>
-                                                <h4> <B> Pendidikan Formal :</B></h4><br>
-                                              </div>
-                                              <table border="1">
-                                                  <tr>
-                                                      <td>1999-2002</td>
-                                                      <td>: SDN Banjarbaru 3</td>
-                                                  </tr>
-                                                  <tr>
-                                                      <td>2002-2005</td>
-                                                      <td>: SMPN Banjarbaru 1</td>
-                                                  </tr>
-                                                  <tr>
-                                                      <td>2005-2008</td>
-                                                      <td>: SMAN Banjarbaru 2</td>
-                                                  </tr>
-                                                  <tr>
-                                                      <td>2008-2013</td>
-                                                      <td>: UIN Banjarmasin</td>
-                                                  </tr>
-                                              </table>
-                                            </div>
-                                            <div class="col-lg-12"><br>
-                                                <h4><b> Pendidikan Informal :</b></h4>
-                                            </div><br>
                                             <table border="1">
                                                 <tr>
-                                                    <td>2015</td>
-                                                    <td>: Kursus Membatik</td>
+                                                    <td>Tanggal Lahir</td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->ultah }}    
+                                                    </div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>2016</td>
-                                                    <td>: Kursus Menulis <br> : Kursus Kebahasaan</td>
-                                                    
+                                                    <td>No. Telepon</td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->telepon }}    
+                                                    </div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Alamat</td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->alamat }}    
+                                                    </div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bidang</td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->bidang }}    
+                                                    </div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Keterangan</td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->keterangan }}    
+                                                    </div></td>
                                                 </tr>
                                             </table>
-                                            <div class="co-lg-12"><br>
-                                                <h4><b> Pengalaman Kerja :</b></h4>
-                                            </div><br>
-                                            <p> <b> - 2015-2016 : Bekerja Di Web Designer di PT Suka Maju</b></p><br>
-                                            <p>Demikian curriculum vitae ini saya buat dengan cukup singkat dan apa adanya sesuai dengan daftar riwayat hidup saya. Adapun tujuan dari penulisan CV ini adalah sebagai data tambahan untuk mempertimbangkan lamaran kerja yang saya ajukan. Atas perhatian dan kerja sama Bapak, kami sampaikan terima kasih.</p><br>
-                                            <p>Pontianak, 25 Juni 2017</p><br>
-                                            <p>Rohman Fajrul</p>
-                                        </div>
-                                        </div><br><br>
-                                        
-                                        
-                                        
-                                       
-                                     </div>
+                                            <table border="1">
+                                                <tr>
+                                                    <td>Riwayat Pendidikan</td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->lulusansd }}
+                                                    {{ $profile->sd }}    
+                                                    </div></td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                        {{ $profile->lulusansmp }}
+                                                        {{ $profile->smp }}
+                                                    </div>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->lulusansma }}
+                                                    {{ $profile->sma }}    
+                                                    </div></td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bio</td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->bio }}    
+                                                    </div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Prestasi</td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->prestasi }}    
+                                                    </div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pengalaman</td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->pengalaman }}    
+                                                    </div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kemampuan</td>
+                                                    <td><div class="col-sm-9 text-secondary">
+                                                    {{ $profile->kemampuan }}    
+                                                    </div></td>
+                                                </tr>
+                                            </table>
+                                            <hr>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <a class="btn btn-info " href="{{ url('gawe/edit-profile') }}">Edit</a>
+                        </div>
+                      </div>
+                     </div>
                                 </p>
                                 
                             </div>
@@ -387,6 +402,7 @@
                                     <a href="#">Designer</a>
                                 </div>
                             </div>
+                            
                   
                             <!--Review Two Box-->
                             <div class="review_two_box">
@@ -394,7 +410,7 @@
                                 <!--Review Two Box Single-->
                                 <div class="review_two_box__single">
                                     <div class="review_two_box__image">
-                                        <img src="images/resources/review-2-img-1.png" alt="">
+                                        <img src="{{ asset('images/resources/review-2-img-1.png') }}" alt="">
                                     </div>
                                     <div class="review_two_box__content">
                                         <h3>Kevin Martin</h3>
@@ -406,7 +422,7 @@
                                 <!--Review Two Box Single-->
                                 <div class="review_two_box__single">
                                     <div class="review_two_box__image">
-                                        <img src="images/resources/review-2-img-2.png" alt="">
+                                        <img src="{{ asset('images/resources/review-2-img-2.png') }}" alt="">
                                     </div>
                                     <div class="review_two_box__content">
                                         <h3>Sarah Albert</h3>
@@ -418,7 +434,7 @@
                                 <!--Review Two Box Single-->
                                 <div class="review_two_box__single">
                                     <div class="review_two_box__image">
-                                        <img src="images/resources/review-2-img-3.png" alt="">
+                                        <img src="{{ asset('images/resources/review-2-img-3.png') }}" alt="">
                                     </div>
                                     <div class="review_two_box__content">
                                         <h3>Mike Hardson</h3>
@@ -500,6 +516,7 @@
                 </div>
             </div>
         </section>
+        @endforeach
 
 
         <!--Site Footer Start-->
@@ -512,7 +529,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="footer-widget__column footer-widget__about wow fadeInUp" data-wow-delay="100ms">
                             <div class="footer-widget__logo">
-                                <a href="#"><img src="images/resources/footer-logo.png" alt=""></a>
+                                <a href="#"><img src="{{ asset('images/resources/footer-logo.png') }}" alt=""></a>
                             </div>
                             <div class="footer-widget_about_text">
                                 <p>Lorem ipsum dolor sit amet, consect etur adi pisicing elit sed do eiusmod tempor
@@ -650,31 +667,31 @@
 
 
 
-    <script src="js/jsweb/jquery.min.js"></script>
-    <script src="js/jsweb/bootstrap.bundle.min.js"></script>
-    <script src="js/jsweb/owl.carousel.min.js"></script>
-    <script src="js/jsweb/waypoints.min.js"></script>
-    <script src="js/jsweb/jquery.counterup.min.js"></script>
-    <script src="js/jsweb/TweenMax.min.js"></script>
-    <script src="js/jsweb/wow.js"></script>
-    <script src="js/jsweb/jquery.magnific-popup.min.js"></script>
-    <script src="js/jsweb/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jsweb/swiper.min.js"></script>
-    <script src="js/jsweb/typed-2.0.11.js"></script>
-    <script src="js/jsweb/vegas.min.js"></script>
-    <script src="js/jsweb/jquery.validate.min.js"></script>
-    <script src="js/jsweb/bootstrap-select.min.js"></script>
-    <script src="js/jsweb/countdown.min.js"></script>
-    <script src="js/jsweb/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/jsweb/bootstrap-datepicker.min.js"></script>
-    <script src="js/jsweb/nouislider.min.js"></script>
-    <script src="js/jsweb/isotope.js"></script>
-    <script src="js/jsweb/appear.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/typed-2.0.11.js') }}"></script>
+    <script src="{{ asset('assets/js/vegas.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/countdown.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.js') }}"></script>
+    <script src="{{ asset('assets/js/appear.js') }}"></script>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
 
 
     <!-- template scripts -->
-    <script src="js/jsweb/theme.js"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
 
 
 </body>

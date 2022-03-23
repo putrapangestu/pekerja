@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog || Ziston || Ziston Form HTML Template</title>
+    <title>Blog | Gawe.Id</title>
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/black.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/black.png">
@@ -20,25 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
 
     <!-- Css-->
-    <link rel="stylesheet" href="css/cssweb/animate.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/cssweb/magnific-popup.css">
-    <link rel="stylesheet" href="css/cssweb/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/cssweb/swiper.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
 
-    <link rel="stylesheet" href="css/cssweb/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="css/cssweb/vegas.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.pips.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-icon.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-new-icons.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vegas.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.pips.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-new-icons.css') }}">
     <!-- Template styles -->
-    <link rel="stylesheet" href="css/cssweb/style.css">
-    <link rel="stylesheet" href="css/cssweb/responsive.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 
 </head>
 
@@ -72,7 +72,7 @@
                             <div class="header_topmenu_1">
                                 <ul class="list-unstyled">
                                     <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
-                                    <li><a href="zapily/ltr/mail.html"><i class="fas fa-mail"></i>Inbox</a></li>
+                                    <li><a href="{{ url('gawe/mail') }}"><i class="fas fa-mail"></i>Inbox</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -87,8 +87,8 @@
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="main-nav__left main-nav__left_one float-left">
                             <div class="logo_one">
-                                <a href="index.html" class="main-nav__logo">
-                                    <img src="images/resources/logo.png" class="main-logo" alt="Awesome Image">
+                                <a href="{{ url('/gawe') }}" class="main-nav__logo">
+                                    <img src="{{ asset('images/resources/logo.png') }}" class="main-logo" alt="Awesome Image">
                                 </a>
                             </div>
                             <a href="#" class="side-menu__toggler">
@@ -99,10 +99,10 @@
                         <div class="main-nav__main-navigation one float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li >
-                                    <a href="{{ url('gawe/index3') }}">Home</a>
+                                    <a href="{{ url('gawe') }}">Home</a>
                                 </li>
                                 <li >
-                                    <a href="{{ url('gawe/listings3') }}">Pekerja</a>
+                                    <a href="{{ url('gawe/listings') }}">Pekerja</a>
                                 </li>
                                 <li class="current">
                                     <a href="{{ url('gawe/blog') }}">Blog</a>
@@ -122,7 +122,7 @@
                                 <ul class="navbar-nav ">
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
+                                      <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                       <a class="dropdown-item" href="{{ url('gawe/login') }}">LOGIN</a>
@@ -138,7 +138,7 @@
         </div>
 
         <!--Page Header Start-->
-        <section class="page-header" style="background-image: url(images/backgrounds/page-header-contact.jpg);">
+        <section class="page-header" style="background-image: url({{ asset('images/backgrounds/page-header-contact.jpg') }});">
             <div class="container">
                 <h2>Berbagai macam tips ada disini</h2>
             </div>
@@ -179,7 +179,7 @@
                         <!--Blog One single-->
                         <div class="blog_one_single wow fadeInUp" data-wow-delay="100ms">
                             <div class="blog_image">
-                                <img src="images/blog/blog1.jpg" alt="Blog One Image">
+                                <img src="{{ asset('images/blog/blog1.jpg') }}" alt="Blog One Image">
                             </div>
                             <div class="blog-one__content">
                                 <ul class="list-unstyled blog-one__meta">
@@ -188,7 +188,7 @@
                                     </li>
                                 </ul>
                                 <div class="blog_one_title">
-                                    <h3><a href="blog-detail1.html">Ini Dia Tips Sukses Pengembangan Karier di Industri Bisnis Retail!</a></h3>
+                                    <h3><a href="{{ asset('gawe/blog-detail') }}">Ini Dia Tips Sukses Pengembangan Karier di Industri Bisnis Retail!</a></h3>
                                 </div>
                                 <div class="blog_one_text">
                                     <p>Bisnis retail di Indonesia merupakan salah satu sektor industri dengan laju pertumbuhan yang paling menjanjikan se-Asia. Hal ini karena industri retail merupakan sektor utama yang mendukung keberlangsungan berbagai sektor industri lainnya. Mulai dari industri pangan, elektronik, otomotif, pakaian, kosmetik, dan kebutuhan..</p>
@@ -203,7 +203,7 @@
                         <!--Blog One single-->
                         <div class="blog_one_single wow fadeInDown" data-wow-delay="200ms">
                             <div class="blog_image">
-                                <img src="images/blog/blog2.jpg" alt="Blog One Image">
+                                <img src="{{ asset('images/blog/blog2.jpg') }}" alt="Blog One Image">
                             </div>
                             <div class="blog-one__content">
                                 <ul class="list-unstyled blog-one__meta">
@@ -212,7 +212,7 @@
                                     </li>
                                 </ul>
                                 <div class="blog_one_title">
-                                    <h3><a href="blog-detail1.html">Pindah Kerja Tanpa Naik Jabatan Tak Selalu Buruk, Ini Alasannya!</a>
+                                    <h3><a href="{{ asset('gawe/blog-detail') }}">Pindah Kerja Tanpa Naik Jabatan Tak Selalu Buruk, Ini Alasannya!</a>
                                     </h3>
                                 </div>
                                 <div class="blog_one_text">
@@ -228,7 +228,7 @@
                         <!--Blog One single-->
                         <div class="blog_one_single wow fadeInUp" data-wow-delay="300ms">
                             <div class="blog_image">
-                                <img src="images/blog/blog3.jpg" alt="Blog One Image">
+                                <img src="{{ asset('images/blog/blog3.jpg') }}" alt="Blog One Image">
                             </div>
                             <div class="blog-one__content">
                                 <ul class="list-unstyled blog-one__meta">
@@ -237,7 +237,7 @@
                                     </li>
                                 </ul>
                                 <div class="blog_one_title">
-                                    <h3><a href="blog-detail1.html">Jalur Karier yang Bisa Dipertimbangkan Ketika Menjadi Satpam</a>
+                                    <h3><a href="{{ asset('gawe/blog-detail') }}">Jalur Karier yang Bisa Dipertimbangkan Ketika Menjadi Satpam</a>
                                     </h3>
                                 </div>
                                 <div class="blog_one_text">
@@ -253,7 +253,7 @@
                         <!--Blog One single-->
                         <div class="blog_one_single wow fadeInDown" data-wow-delay="400ms">
                             <div class="blog_image">
-                                <img src="images/blog/blog4.jpg" alt="Blog One Image">
+                                <img src="{{ asset('images/blog/blog4.jpg') }}" alt="Blog One Image">
                             </div>
                             <div class="blog-one__content">
                                 <ul class="list-unstyled blog-one__meta">
@@ -262,7 +262,7 @@
                                     </li>
                                 </ul>
                                 <div class="blog_one_title">
-                                    <h3><a href="blog-detail1.html">Tips Menghindari Ageisme Saat Melamar Kerja</a></h3>
+                                    <h3><a href="{{ asset('gawe/blog-detail') }}">Tips Menghindari Ageisme Saat Melamar Kerja</a></h3>
                                 </div>
                                 <div class="blog_one_text">
                                     <p>Perlakuan diskriminasi ketika melamar pekerjaan bentuknya bermacam-macam, salah satunya adalah diskriminasi usia atau ageisme (ageism). Ageisme sendiri biasa ditemukan di lingkungan kerja yang dekat dengan teknologi dan/atau di lingkungan yang memang menggunakan usia sebagai salah satu syarat.</p>
@@ -277,7 +277,7 @@
                         <!--Blog One single-->
                         <div class="blog_one_single wow fadeInUp" data-wow-delay="500ms">
                             <div class="blog_image">
-                                <img src="images/blog/blog5.jpg" alt="Blog One Image">
+                                <img src="{{ asset('images/blog/blog5.jpg') }}" alt="Blog One Image">
                             </div>
                             <div class="blog-one__content">
                                 <ul class="list-unstyled blog-one__meta">
@@ -286,7 +286,7 @@
                                     </li>
                                 </ul>
                                 <div class="blog_one_title">
-                                    <h3><a href="blog-detail1.html">Inilah Cara Perkenalan Diri Terbaik Saat Interview Sales!</a></h3>
+                                    <h3><a href="{{ asset('gawe/blog-detail') }}">Inilah Cara Perkenalan Diri Terbaik Saat Interview Sales!</a></h3>
                                 </div>
                                 <div class="blog_one_text">
                                     <p>>Memiliki karir dalam bidang retail mengharuskanmu menghadapi berbagai tugas yang berhubungan dengan pelanggan. Mulai dari memecahkan masalah, mempromosikan produk dan layanan, hingga menentukan teraihnya target penjualan. Dalam industri ini, tugas seorang sales sangat berperan penting dalam.</p>
@@ -301,7 +301,7 @@
                         <!--Blog One single-->
                         <div class="blog_one_single wow fadeInDown" data-wow-delay="600ms">
                             <div class="blog_image">
-                                <img src="images/blog/blog6.jpg" alt="Blog One Image">
+                                <img src="{{ asset('images/blog/blog6.jpg') }}" alt="Blog One Image">
                             </div>
                             <div class="blog-one__content">
                                 <ul class="list-unstyled blog-one__meta">
@@ -310,7 +310,7 @@
                                     </li>
                                 </ul>
                                 <div class="blog_one_title">
-                                    <h3><a href="blog-detail1.html">Lolos Interview Kerja Dengan 10 Tips Ini!</a></h3>
+                                    <h3><a href="{{ asset('gawe/blog-detail') }}">Lolos Interview Kerja Dengan 10 Tips Ini!</a></h3>
                                 </div>
                                 <div class="blog_one_text">
                                     <p>Dalam proses mendapatkan sebuah pekerjaan, ada beberapa tahapan yang harus dijalani oleh kandidat. Mulai dari mencari lowongan pekerjaan, memasukkan berkas lamaran, menghadapi perekrut dalam interview kerja, hingga finalisasi perekrutan, dan tanda..</p>
@@ -473,30 +473,30 @@
 
 
 
-    <script src="js/jsweb/jquery.min.js"></script>
-    <script src="js/jsweb/bootstrap.bundle.min.js"></script>
-    <script src="js/jsweb/owl.carousel.min.js"></script>
-    <script src="js/jsweb/waypoints.min.js"></script>
-    <script src="js/jsweb/jquery.counterup.min.js"></script>
-    <script src="js/jsweb/TweenMax.min.js"></script>
-    <script src="js/jsweb/wow.js"></script>
-    <script src="js/jsweb/jquery.magnific-popup.min.js"></script>
-    <script src="js/jsweb/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jsweb/swiper.min.js"></script>
-    <script src="js/jsweb/typed-2.0.11.js"></script>
-    <script src="js/jsweb/vegas.min.js"></script>
-    <script src="js/jsweb/jquery.validate.min.js"></script>
-    <script src="js/jsweb/bootstrap-select.min.js"></script>
-    <script src="js/jsweb/countdown.min.js"></script>
-    <script src="js/jsweb/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/jsweb/bootstrap-datepicker.min.js"></script>
-    <script src="js/jsweb/nouislider.min.js"></script>
-    <script src="js/jsweb/isotope.js"></script>
-    <script src="js/jsweb/appear.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/typed-2.0.11.js') }}"></script>
+    <script src="{{ asset('assets/js/vegas.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/countdown.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.js') }}"></script>
+    <script src="{{ asset('assets/js/appear.js') }}"></script>
 
 
     <!-- template scripts -->
-    <script src="js/jsweb/theme.js"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
 
 
 </body>
