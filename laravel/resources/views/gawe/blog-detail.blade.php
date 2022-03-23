@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog Detail || Ziston || Ziston Form HTML Template</title>
+    <title>Blog Detail | Gawe.Id</title>
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
@@ -20,25 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
 
     <!-- Css-->
-    <link rel="stylesheet" href="cssweb/animate.min.css">
-    <link rel="stylesheet" href="cssweb/bootstrap.min.css">
-    <link rel="stylesheet" href="cssweb/owl.carousel.min.css">
-    <link rel="stylesheet" href="cssweb/owl.theme.default.min.css">
-    <link rel="stylesheet" href="cssweb/magnific-popup.css">
-    <link rel="stylesheet" href="cssweb/fontawesome-all.min.css">
-    <link rel="stylesheet" href="cssweb/swiper.min.css">
-    <link rel="stylesheet" href="cssweb/bootstrap-select.min.css">
+<link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
 
-    <link rel="stylesheet" href="cssweb/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="cssweb/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="cssweb/vegas.min.css">
-    <link rel="stylesheet" href="cssweb/nouislider.min.css">
-    <link rel="stylesheet" href="cssweb/nouislider.pips.css">
-    <link rel="stylesheet" href="cssweb/ziston-icon.css">
-    <link rel="stylesheet" href="cssweb/ziston-new-icons.css">
+<link rel="stylesheet" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/vegas.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/nouislider.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/nouislider.pips.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/ziston-icon.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/ziston-new-icons.css') }}">
     <!-- Template styles -->
-    <link rel="stylesheet" href="cssweb/style.css">
-    <link rel="stylesheet" href="cssweb/responsive.css">
+<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 
 </head>
 
@@ -72,7 +72,7 @@
                             <div class="header_topmenu_1">
                                 <ul class="list-unstyled">
                                     <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
-                                    <li><a href="zapily/ltr/mail.html"><i class="fas fa-mail"></i>inbox</a></li>
+                                    <li><a href="{{ url('gawe/mail') }}"><i class="fas fa-mail"></i>inbox</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         <div class="main-nav__left main-nav__left_one float-left">
                             <div class="logo_one">
                                 <a href="index.html" class="main-nav__logo">
-                                    <img src="images/resources/logo.png" class="main-logo" alt="Awesome Image">
+                                    <img src="{{ asset('images/resources/logo.png') }}" class="main-logo" alt="Awesome Image">
                                 </a>
                             </div>
                             <a href="#" class="side-menu__toggler">
@@ -99,10 +99,10 @@
                         <div class="main-nav__main-navigation one float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li >
-                                    <a href="{{ url('gawe/index3') }}">Home</a>
+                                    <a href="{{ url('/gawe') }}">Home</a>
                                 </li>
                                 <li >
-                                    <a href="{{ url('gawe/listings3') }}">Pekerja</a>
+                                    <a href="{{ url('gawe/listings') }}">Pekerja</a>
                                 </li>
                                 <li class="Current">
                                     <a href="{{ url('gawe/blog') }}">Blog</a>
@@ -122,7 +122,7 @@
                                 <ul class="navbar-nav ">
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
+                                      <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                       <a class="dropdown-item" href="{{ url('gawe/login') }}">LOGIN</a>
@@ -139,7 +139,7 @@
         </div>
 
         <!--Page Header Start-->
-        <section class="page-header" style="background-image: url(images/backgrounds/page-header-contact.jpg);">
+        <section class="page-header" style="background-image: url({{ asset('images/backgrounds/page-header-contact.jpg') }});">
             <div class="container">
                 <h2>Blog Detail</h2>
                 <ul class="thm-breadcrumb list-unstyled">
@@ -156,7 +156,7 @@
                     <div class="col-xl-8 col-lg-7">
                         <div class="blog_detail_left">
                             <div class="blog-detail_image_box">
-                                <img src="images/blog/blog1.jpg" alt="">
+                                <img src="{{ asset('images/blog/blog1.jpg') }}" alt="">
                             </div>
                             <div class="blog-detail__content">
                                 <ul class="list-unstyled blog-detail__meta">
@@ -189,76 +189,6 @@
                                     <a href="#"><i class="fab fa-dribbble"></i></a>
                                 </div>
                             </div>
-                            <div class="author-one">
-                                <div class="author-one__image">
-                                    <img src="images/blog/author-1-1.jpg" alt="">
-                                </div>
-                                <div class="author-one__content">
-                                    <h3>Christine Eve</h3>
-                                    <p>terima kasih tips yang sangat baik,dengan saya menerapkan tips ini saya bisa masuk kerja dengan mudah </p>
-                                </div>
-                            </div>
-                            <div class="comment-one">
-                                <h3 class="comment-one__title">2 Comments</h3>
-                                <div class="comment-one__single">
-                                    <div class="comment-one__image">
-                                        <img src="images/blog/comment-1-1.png" alt="">
-                                    </div>
-                                    <div class="comment-one__content">
-                                        <h3>Kevin Martin</h3>
-                                        <p>terima kasih tips yang sangat baik,dengan saya menerapkan tips ini saya bisa masuk kerja dengan mudah</p>
-                                        <a href="#" class="thm-btn comment-one__btn">Reply</a>
-                                    </div>
-                                </div>
-                                <div class="comment-one__single">
-                                    <div class="comment-one__image">
-                                        <img src="images/blog/comment-1-2.png" alt="">
-                                    </div>
-                                    <div class="comment-one__content">
-                                        <h3>Sarah Albert</h3>
-                                        <p>terima kasih tips yang sangat baik,dengan saya menerapkan tips ini saya bisa masuk kerja dengan mudah.</p>
-                                        <a href="#" class="thm-btn comment-one__btn">Reply</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment-form">
-                                <h3 class="comment-form__title">Leave a Comment</h3>
-                                <form action="http://layerdrops.com/ziston/inc/sendemail.php" class="comment-one__form">
-                                    <div class="row">
-                                        <div class="col-xl-6">
-                                            <div class="comment_input_box">
-                                                <input type="text" placeholder="Your name" name="name">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6">
-                                            <div class="comment_input_box">
-                                                <input type="email" placeholder="Email address" name="email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xl-6">
-                                            <div class="comment_input_box">
-                                                <input type="text" placeholder="Phone number" name="phone">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6">
-                                            <div class="comment_input_box">
-                                                <input type="email" placeholder="Subject" name="Subject">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <div class="comment_input_box">
-                                                <textarea name="message" placeholder="Write message"></textarea>
-                                            </div>
-                                            <button type="submit" class="thm-btn comment-form__btn">Submit
-                                                Comment</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-5">
@@ -275,7 +205,7 @@
                                 <ul class="sidebar__post-list list-unstyled">
                                     <li>
                                         <div class="sidebar__post-image">
-                                            <img src="images/blog/lp-1-1.jpg" alt="">
+                                            <img src="{{ asset('images/blog/lp-1-1.jpg') }}" alt="">
                                         </div>
                                         <div class="sidebar__post-content">
                                             <h3>
@@ -288,7 +218,7 @@
                                     </li>
                                     <li>
                                         <div class="sidebar__post-image">
-                                            <img src="images/blog/lp-1-2.jpg" alt="">
+                                            <img src="{{ asset('images/blog/lp-1-2.jpg') }}" alt="">
                                         </div>
                                         <div class="sidebar__post-content">
                                             <h3>
@@ -300,7 +230,7 @@
                                     </li>
                                     <li>
                                         <div class="sidebar__post-image">
-                                            <img src="images/blog/lp-1-3.jpg" alt="">
+                                            <img src="{{ asset('images/blog/lp-1-3.jpg') }}" alt="">
                                         </div>
                                         <div class="sidebar__post-content">
                                             <h3>
@@ -313,13 +243,11 @@
                                 </ul>
                             </div>
                             <div class="sidebar__single sidebar__category">
-                                <h3 class="sidebar__title">Categories</h3>
+                                <h3 class="sidebar__title">Kategori</h3>
                                 <ul class="sidebar__category-list list-unstyled">
-                                    <li><a href="#">Restaurant</a></li>
-                                    <li><a href="#">Nightlife</a></li>
-                                    <li><a href="#">Real Estate</a></li>
-                                    <li><a href="#">Traveling</a></li>
-                                    <li><a href="#">Hotels</a></li>
+                                    <li><a href="#">Restoran</a></li>
+                                    <li><a href="#">Pemagang</a></li>
+                                    <li><a href="#">Kantor</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -476,30 +404,30 @@
 
 
 
-    <script src="jsweb/jquery.min.js"></script>
-    <script src="jsweb/bootstrap.bundle.min.js"></script>
-    <script src="jsweb/owl.carousel.min.js"></script>
-    <script src="jsweb/waypoints.min.js"></script>
-    <script src="jsweb/jquery.counterup.min.js"></script>
-    <script src="jsweb/TweenMax.min.js"></script>
-    <script src="jsweb/wow.js"></script>
-    <script src="jsweb/jquery.magnific-popup.min.js"></script>
-    <script src="jsweb/jquery.ajaxchimp.min.js"></script>
-    <script src="jsweb/swiper.min.js"></script>
-    <script src="jsweb/typed-2.0.11.js"></script>
-    <script src="jsweb/vegas.min.js"></script>
-    <script src="jsweb/jquery.validate.min.js"></script>
-    <script src="jsweb/bootstrap-select.min.js"></script>
-    <script src="jsweb/countdown.min.js"></script>
-    <script src="jsweb/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="jsweb/bootstrap-datepicker.min.js"></script>
-    <script src="jsweb/nouislider.min.js"></script>
-    <script src="jsweb/isotope.js"></script>
-    <script src="jsweb/appear.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/typed-2.0.11.js') }}"></script>
+    <script src="{{ asset('assets/js/vegas.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/countdown.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.js') }}"></script>
+    <script src="{{ asset('assets/js/appear.js') }}"></script>
 
 
     <!-- template scripts -->
-    <script src="jsweb/theme.js"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
 
 
 </body>
