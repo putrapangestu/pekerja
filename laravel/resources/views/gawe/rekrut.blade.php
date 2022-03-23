@@ -13,21 +13,21 @@
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<!-- vector map CSS -->
-		<link href="../../vendors/bower_components/jquery-wizard.js/css/wizard.css" rel="stylesheet" type="text/css"/>
+		<link href="{{ asset('vendors/bower_components/jquery-wizard.js/css/wizard.css') }}" rel="stylesheet" type="text/css"/>
 		
 		<!-- jquery-steps css -->
-		<link rel="stylesheet" href="../../vendors/bower_components/jquery.steps/demo/css/jquery.steps.css">
+		<link rel="stylesheet" href="{{ asset('vendors/bower_components/jquery.steps/demo/css/jquery.steps.css') }}">
 		
 		
 		
 		<!-- Data table CSS -->
-		<link href="../../vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+		<link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
 		
 		<!-- bootstrap-touchspin CSS -->
-		<link href="../../vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css"/>
+		<link href="{{ asset('vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css"/>
 		
 		<!-- Custom CSS -->
-		<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+		<link href="{{ asset('zapily/style.css') }}" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<!--Preloader-->
@@ -169,7 +169,7 @@
 												<p>Selamat perekrutan telah terkirim. Di mohon untuk menunggu persetujuan dari pihak pekerja.</p>
 												<p>Terimakasih telah menggunakan layanan kami.</p>
 											</section>
-											<button type="submit" value="submit">next</button>
+											{{-- <button type="submit" value="submit">next</button> --}}
 										</div>
 									</div>
 								</div>
@@ -199,42 +199,42 @@
 		<!-- JavaScript -->
 		
 		<!-- jQuery -->
-		<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
 		
 		<!-- Bootstrap Core JavaScript -->
-		<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="../../vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>		
+		<script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js') }}"></script>		
 		
 		<!-- Form Wizard JavaScript -->
-		<script src="../../vendors/bower_components/jquery.steps/build/jquery.steps.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/jquery.steps/build/jquery.steps.min.js') }}"></script>
 		<script src="../../../../ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
 		
 		<!-- Form Wizard Data JavaScript -->
-		<script src="dist/js/form-wizard-data.js"></script>
+		<script src="{{ asset('zapily/js/form-wizard-data.js') }}"></script>
 		
 		<!-- Data table JavaScript -->
-		<script src="../../vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
 		
 		<!-- Bootstrap Touchspin JavaScript -->
-		<script src="../../vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js') }}"></script>
 		
 		<!-- Starrr JavaScript -->
-		<script src="dist/js/starrr.js"></script>
+		<script src="{{ asset('zapily/js/starrr.js') }}"></script>
 		
 		<!-- Slimscroll JavaScript -->
-		<script src="dist/js/jquery.slimscroll.js"></script>
+		<script src="{{ asset('zapily/js/jquery.slimscroll.js') }}"></script>
 	
 		<!-- Fancy Dropdown JS -->
-		<script src="dist/js/dropdown-bootstrap-extended.js"></script>
+		<script src="{{ asset('zapily/js/dropdown-bootstrap-extended.js') }}"></script>
 		
 		<!-- Owl JavaScript -->
-		<script src="../../vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>
 	
 		<!-- Switchery JavaScript -->
-		<script src="../../vendors/bower_components/switchery/dist/switchery.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
 	
 		<!-- Init JavaScript -->
-		<script src="dist/js/init.js"></script>
+		<script src="{{ asset('zapily/js/init.js') }}"></script>
 			
 	</body>
 
