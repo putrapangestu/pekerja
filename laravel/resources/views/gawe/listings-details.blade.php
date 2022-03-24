@@ -182,7 +182,7 @@
         </section>
 
         <!--Main Bottom Start-->
-        @foreach ($errors as $profile)
+        @foreach ($profiles as $profile)
         <section class="main_bottom">
             <div class="container">
                 <div class="row">
@@ -218,7 +218,7 @@
         <section class="listings_details">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-8">
+                    <div class="col-8">
                         <div class="listings_details_left">
                             <div class="listings_details_text">
                                 <p class="first_text">
@@ -230,93 +230,94 @@
                                             
                                             <table border="1">
                                              <tr>
-                                                <td>Nama Lengkap</td><br>
+                                                <td> <b> Nama Lengkap :</b></td><br>
                                                 <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->nama }}
                                                   </div></td>
                                             </tr>
                                             <tr>
-                                                <td>E-Mail</td>
-                                                <td>div class="col-sm-9 text-secondary">
+                                                <td> <b> E-Mail :</b></td>
+                                                <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->email }}
-                                                </div></td><
+                                                </div></td>
                                             </tr>
                                             <tr>
-                                                <td>Pekerja</td>
+                                                <td> <b> Pekerja :</b></td>
                                                 <td><div class="col-sm-9 text-secondary">
                                                 {{ $profile->pekerja }}    
                                                 </div></td>
                                             </tr>
-                                            </table>
+                                            </table><br><br>
                                             <table border="1">
                                                 <tr>
-                                                    <td>Tanggal Lahir</td>
+                                                    <td> <b> Tanggal Lahir :</b></td>
                                                     <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->ultah }}    
                                                     </div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>No. Telepon</td>
+                                                    <td> <b> No. Telepon :</b></td>
                                                     <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->telepon }}    
                                                     </div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Alamat</td>
+                                                    <td> <b> Alamat :</b></td>
                                                     <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->alamat }}    
                                                     </div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Bidang</td>
+                                                    <td> <b> Bidang :</b></td>
                                                     <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->bidang }}    
                                                     </div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Keterangan</td>
+                                                    <td> <b> Keterangan :</b></td>
                                                     <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->keterangan }}    
                                                     </div></td>
                                                 </tr>
-                                            </table>
+                                            </table><br><br>
                                             <table border="1">
                                                 <tr>
-                                                    <td>Riwayat Pendidikan</td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->lulusansd }}
-                                                    {{ $profile->sd }}    
-                                                    </div></td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                        {{ $profile->lulusansmp }}
-                                                        {{ $profile->smp }}
-                                                    </div>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->lulusansma }}
-                                                    {{ $profile->sma }}    
-                                                    </div></td>
+                                                    <td> <b> Riwayat Pendidikan :</b></td>
+                                                    <td>
+                                                        <div class="col-sm-9 text-secondary">
+                                                            {{ $profile->lulusansd }}
+                                                            {{ $profile->sd }}    
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                                {{ $profile->lulusansmp }}
+                                                                {{ $profile->smp }}
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                                {{ $profile->lulusansma }}
+                                                                {{ $profile->sma }}    
+                                                                </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Bio</td>
+                                                    <td> <b> Bio :</b></td>
                                                     <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->bio }}    
                                                     </div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Prestasi</td>
+                                                    <td> <b> Prestasi :</b></td>
                                                     <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->prestasi }}    
                                                     </div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Pengalaman</td>
+                                                    <td> <b> Pengalaman :</b></td>
                                                     <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->pengalaman }}    
                                                     </div></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Kemampuan</td>
+                                                    <td> <b> Kemampuan :</b></td>
                                                     <td><div class="col-sm-9 text-secondary">
                                                     {{ $profile->kemampuan }}    
                                                     </div></td>
@@ -324,7 +325,7 @@
                                             </table>
                                             <hr>
                       <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-4">
                           <a class="btn btn-info " href="{{ url('gawe/edit-profile') }}">Edit</a>
                         </div>
                       </div>
