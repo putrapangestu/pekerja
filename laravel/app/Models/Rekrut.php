@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Rekrut extends Model
 {
     use HasFactory;
-    protected $table ="sessions";
+    protected $table ="rekrut";
     public $timetamps =false;
 }

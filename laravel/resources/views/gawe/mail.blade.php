@@ -210,6 +210,7 @@
 																</ul>
 															</div>
 															<div class="table-responsive mb-0">
+																@foreach($mail as $mails)
 																<table class="table table-inbox table-hover mb-0">
 																	<tbody>
 																		<tr class="unread">
@@ -221,8 +222,8 @@
 																				<i class="zmdi zmdi-star inline-block font-16"></i>
 																			</td>
 																			
-																				<td class="view-message  dont-show"><a href="{{ url('gawe/mail/detail') }}">Clay Masse</a></td>
-																				<td class="view-message "><a href="{{ url('gawe/mail/detail') }}">PT Sabun jaya tertarik dengan anda silahkan lihat detailnya</a></td>
+																				<td class="view-message  dont-show">{{ $mails->nama}}</td>
+																				<td class="view-message ">{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</td>
 																			
 																				<td class="view-message  text-right">
 																					<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
@@ -230,114 +231,9 @@
 																				</td>
 																			
 																		</tr>
-																		<tr class="unread">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox013"/>
-																					<label for="checkbox013"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Evie Ono</td>
-																			<td class="view-message">PT Rajutan tertarik dengan anda silahkan lihat detailnya
-																			<td class="view-message text-right">
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox014"/>
-																					<label for="checkbox014"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Madalyn Rascon</td>
-																			<td class="view-message">Bengkel Suka Makmur tertarik dengan anda silahkan lihat detailnya.</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 15</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox015"/>
-																					<label for="checkbox015"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Mitsuko Heid</td>
-																			<td class="view-message">Bakn BCA telah tertarik dengan anda silahkan lihat detailnya.</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox016"/>
-																					<label for="checkbox016"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Ezequiel Merideth</td>
-																			<td class="view-message">Laundry Persari telah tertarik dengan anda silahkan lihat detailnya. </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox0116"/>
-																					<label for="checkbox0116"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16"></i>
-																			</td>
-																			<td class="view-message dont-show">Jonnie Madalyn </td>
-																			<td class="view-message">PT Gudang Garam tertarik dengan anda silahkan lihat detailnya</td>
-																			<td class="view-message text-right">
-																				<span  class="time-chat-history inline-block">March 14</span>
-																			</td>
-																		</tr>
-																		<tr class="unread">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox018"/>
-																					<label for="checkbox018"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Angelic Lauver</td>
-																			<td class="view-message">Star Movie telah tertarik dengan anda silahkan lihat detailnya</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">Feb 19</span>
-																			</td>
-																		</tr>
-																		<tr class="unread">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox019"/>
-																					<label for="checkbox019"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Priscila Shy</td>
-																			<td class="view-message view-message">Bigetron tertarik dengan anda silahkan lihat detailnya.</td>
-																			<td class="view-message text-right">
-																				<span  class="time-chat-history inline-block">March 04</span>
-																			</td>
-																		</tr>
 																	</tbody>
 																</table>
+																@endforeach
 															</div>
 														</div>
 													</div>

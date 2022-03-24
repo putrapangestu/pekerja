@@ -11,23 +11,18 @@
 	<meta name="author" content="hencework"/>
 	
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+	<link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
 	
 	<!-- Bootstrap Wysihtml5 css -->
-	<link rel="stylesheet" href="assets/bootstrap3-wysihtml5.css" />
+	<link rel="stylesheet" href="{{ asset('vendors/bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css') }}" />
 		
 	<!-- Custom CSS -->
-	<link href="assets/style.css" rel="stylesheet" type="text/css">
+	<link href="{{ asset('zapily/style.css') }}" rel="stylesheet" type="text/css">
 	
 </head>
 
 <body>
-	<!--Preloader-->
-	<div class="preloader-it">
-		<div class="la-anim-1"></div>
-	</div>
-	<!--/Preloader-->
     <div class="wrapper theme-1-active pimary-color-gold">
 
         <!-- Main Content -->
@@ -41,7 +36,7 @@
 					<!-- Breadcrumb -->
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 					  <ol class="breadcrumb">
-						<li><a href="../ziston/index2.html">Dashboard</a></li>
+						<li><a href="index2.html">Beranda</a></li>
 						<li><a href="#"><span>apps</span></a></li>
 						<li class="active"><span>inbox</span></li>
 					  </ol>
@@ -68,7 +63,7 @@
 														<div class="modal-dialog">
 															<div class="modal-content">
 																<div class="modal-header">
-																	<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+																	<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
 																	<h4 class="modal-title">Compose</h4>
 																</div>
 																<div class="modal-body">
@@ -135,7 +130,7 @@
 											</aside>
 											
 											<aside class="col-lg-9 col-md-8 pl-0">
-												<div class="panel panel-refresh pa-0">
+												<div class="panel-refresh pa-0">
 													<div class="refresh-container">
 														<div class="la-anim-1"></div>
 													</div>
@@ -215,6 +210,7 @@
 																</ul>
 															</div>
 															<div class="table-responsive mb-0">
+																@foreach($mail as $mails)
 																<table class="table table-inbox table-hover mb-0">
 																	<tbody>
 																		<tr class="unread">
@@ -225,400 +221,19 @@
 																				</div>
 																				<i class="zmdi zmdi-star inline-block font-16"></i>
 																			</td>
-																			<td class="view-message  dont-show">Clay Masse<span class="label label-warning pull-right">new</span></td>
-																			<td class="view-message ">Added a new class: Login Class Fast Site</td>
-																			<td class="view-message  text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">9:27 AM</span>
-																			</td>
-																		</tr>
-																		<tr class="unread">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox013"/>
-																					<label for="checkbox013"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16"></i>
-																			</td>
 																			
-																			<td class="view-message dont-show">Evie Ono</td>
-																			<td class="view-message">Improve the search presence of WebSite
-																			<td class="view-message text-right">
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox014"/>
-																					<label for="checkbox014"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16"></i>
-																			</td>
+																				<td class="view-message  dont-show">{{ $mails->nama}}</td>
+																				<td class="view-message ">{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</td>
 																			
-																			<td class="view-message dont-show">Madalyn Rascon</td>
-																			<td class="view-message">Last Chance: Upgrade to Pro for </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 15</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox015"/>
-																					<label for="checkbox015"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
+																				<td class="view-message  text-right">
+																					<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
+																					<span  class="time-chat-history inline-block">9:27 AM</span>
+																				</td>
 																			
-																			<td class="view-message dont-show">Mitsuko Heid</td>
-																			<td class="view-message">Boost Your Website Traffic</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox016"/>
-																					<label for="checkbox016"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Ezequiel Merideth<span class="label label-primary pull-right">social</span></td>
-																			<td class="view-message">Stop wasting your visitors </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox0116"/>
-																					<label for="checkbox0116"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16"></i>
-																			</td>
-																			<td class="view-message dont-show">Jonnie Madalyn </td>
-																			<td class="view-message">New WOW Slider v7.8 - 67% off</td>
-																			<td class="view-message text-right">
-																				<span  class="time-chat-history inline-block">March 14</span>
-																			</td>
-																		</tr>
-																		<tr class="unread">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox018"/>
-																					<label for="checkbox018"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Angelic Lauver<span class="label label-primary pull-right">social</span></td>
-																			<td class="view-message">The One Sign Your Co-Worker Will Stab</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">Feb 19</span>
-																			</td>
-																		</tr>
-																		<tr class="unread">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox019"/>
-																					<label for="checkbox019"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Priscila Shy</td>
-																			<td class="view-message view-message">Welcome to the Drupal Community</td>
-																			<td class="view-message text-right">
-																				<span  class="time-chat-history inline-block">March 04</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox022"/>
-																					<label for="checkbox022"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Linda Stack</td>
-																			<td class="view-message view-message">Somebody requested a new password </td>
-																			<td class="view-message text-right">
-																				<span  class="time-chat-history inline-block">June 13</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox032"/>
-																					<label for="checkbox032"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">John Doe</td>
-																			<td class="view-message view-message">Password successfully changed</td>
-																			<td class="view-message text-right">
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox0015"/>
-																					<label for="checkbox0015"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Mitsuko Heid<span class="label label-success pull-right">promotional</span></td>
-																			<td class="view-message">Boost Your Website Traffic</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox0016"/>
-																					<label for="checkbox0016"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Ezequiel Merideth</td>
-																			<td class="view-message">Stop wasting your visitors </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox10015"/>
-																					<label for="checkbox10015"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Mitsuko Heid</td>
-																			<td class="view-message">Boost Your Website Traffic</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox01126"/>
-																					<label for="checkbox01126"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Ezequiel Merideth</td>
-																			<td class="view-message">Stop wasting your visitors </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox0145"/>
-																					<label for="checkbox0145"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Mitsuko Heid</td>
-																			<td class="view-message">Boost Your Website Traffic</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox0156"/>
-																					<label for="checkbox0156"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Ezequiel Merideth<span class="label label-primary pull-right">social</span></td>
-																			<td class="view-message">Stop wasting your visitors </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox0175"/>
-																					<label for="checkbox0175"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Mitsuko Heid</td>
-																			<td class="view-message">Boost Your Website Traffic</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox01216"/>
-																					<label for="checkbox01216"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Ezequiel Merideth</td>
-																			<td class="view-message">Stop wasting your visitors </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox2015"/>
-																					<label for="checkbox2015"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Mitsuko Heid</td>
-																			<td class="view-message">Boost Your Website Traffic</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox4016"/>
-																					<label for="checkbox4016"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Ezequiel Merideth<span class="label label-primary pull-right">social</span></td>
-																			<td class="view-message">Stop wasting your visitors </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox6015"/>
-																					<label for="checkbox6015"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Mitsuko Heid</td>
-																			<td class="view-message">Boost Your Website Traffic</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox32016"/>
-																					<label for="checkbox32016"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Ezequiel Merideth</td>
-																			<td class="view-message">Stop wasting your visitors </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox32015"/>
-																					<label for="checkbox32015"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Mitsuko Heid</td>
-																			<td class="view-message">Boost Your Website Traffic</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox06616"/>
-																					<label for="checkbox06616"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Ezequiel Merideth</td>
-																			<td class="view-message">Stop wasting your visitors </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 01</span>
-																			</td>
-																		</tr>
-																		
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox66015"/>
-																					<label for="checkbox66015"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			
-																			<td class="view-message dont-show">Mitsuko Heid</td>
-																			<td class="view-message">Boost Your Website Traffic</td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">April 01</span>
-																			</td>
-																		</tr>
-																		<tr class="">
-																			<td class="inbox-small-cells">
-																				<div class="checkbox checkbox-default inline-block">
-																					<input type="checkbox" id="checkbox99016"/>
-																					<label for="checkbox99016"></label>
-																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16 inbox-started"></i>
-																			</td>
-																			<td class="view-message dont-show">Ezequiel Merideth</td>
-																			<td class="view-message">Stop wasting your visitors </td>
-																			<td class="view-message text-right">
-																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">March 01</span>
-																			</td>
 																		</tr>
 																	</tbody>
 																</table>
+																@endforeach
 															</div>
 														</div>
 													</div>
@@ -653,33 +268,33 @@
 	<!-- JavaScript -->
 	
     <!-- jQuery -->
-    <script src="assets/jquery.min.js"></script>
+    <script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="assets/bootstrap.min.js"></script>
+    <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 	
 	<!-- wysuhtml5 Plugin JavaScript -->
-	<script src="assets/wysihtml5x.min.js"></script>
+	<script src="{{ asset('vendors/bower_components/wysihtml5x/dist/wysihtml5x.min.js') }}"></script>
 	
-	<script src="assets/bootstrap3-wysihtml5.all.js"></script>
+	<script src="{{ asset('vendors/bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.js') }}"></script>
 	
 	<!-- Fancy Dropdown JS -->
-	<script src="assets/dropdown-bootstrap-extended.js"></script>
+	<script src="{{ asset('zapily/js/dropdown-bootstrap-extended.js') }}"></script>
 	
 	<!-- Bootstrap Wysuhtml5 Init JavaScript -->
-	<script src="assets/bootstrap-wysuhtml5-data.js"></script>
+	<script src="{{ asset('zapily/js/bootstrap-wysuhtml5-data.js') }}"></script>
 	
 	<!-- Slimscroll JavaScript -->
-	<script src="assets/jquery.slimscroll.js"></script>
+	<script src="{{ asset('zapily/js/jquery.slimscroll.js') }}"></script>
 	
 	<!-- Owl JavaScript -->
-	<script src="assets/owl.carousel.min.js"></script>
+	<script src="{{ asset('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>
 	
 	<!-- Switchery JavaScript -->
-	<script src="assets/switchery.min.js"></script>
+	<script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
 	
 	<!-- Init JavaScript -->
-	<script src="assets/init.js"></script>
+	<script src="{{ asset('zapily/js/init.js') }}"></script>
 	
 </body>
 

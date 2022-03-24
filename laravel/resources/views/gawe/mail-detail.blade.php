@@ -182,8 +182,9 @@
 																	</div>
 																</div>
 																<hr class="light-grey-hr mt-10 mb-15"/>
+																@foreach($rekrut as $details)
 																<div class="container-fluid mb-20">	
-																	<h4 class="weight-500"> PT Pelangi Indah telah merekrut anda.</h4>
+																	<h4 class="weight-500"> {{ $details->nama }} Indah telah merekrut anda.</h4>
 																</div>	
 															</div>
 															<div class="sender-info">
@@ -192,7 +193,7 @@
 																		<img class="sender-img" alt="user" src="../img/user1.png">
 																	</div>
 																	<div class="sender-details   pull-left">
-																		<span class="capitalize-font pr-5 txt-dark block font-15 weight-500 head-font">PT Rinso Indar</span>
+																		<span class="capitalize-font pr-5 txt-dark block font-15 weight-500 head-font">{{ $details->nama }}</span>
 																		<span class="block">
 																			to
 																			<span>me</span>
@@ -216,15 +217,15 @@
 																</div>
 															</div>
 															<div class="container-fluid view-mail mt-20">
-																<p>Halo kami dari PT Pelangi Indah tertarik untuk merekrut anda, untuk detailnya sebagai berikut.	
+																<p>Halo kami dari {{ $details->nama }} tertarik untuk merekrut anda, untuk detailnya sebagai berikut.	
 																	<table>
 																		<tr>
 																		<td>Posisi Kerja</td><br>
-																		<td>: Periklanan</td>
+																		<td>: {{ $details->posisi }}</td>
 																	</tr>
 																	<tr>
 																		<td>Gaji/bulan</td>
-																		<td>: Rp.4.000.000</td>
+																		<td>: Rp.{{ $details->gaji }}</td>
 																	</tr>
 																	<tr>
 																		<td>Hari Kerja</td>
@@ -232,7 +233,7 @@
 																	</tr>
 																	<tr>
 																		<td>Jam Kerja</td>
-																		<td>: 08.00-16.00</td>
+																		<td>: {{ $details->jam }}</td>
 																	</tr>
 																	</table>
 																	Untuk syarat dan ketentuan yang ada diperusahaan akan kami catumkan dibawah.
@@ -273,6 +274,7 @@
 																</ul>
 															</div>
 														</div>
+														@endforeach
 														<div class="container-fluid float-right">  
 															<a href="mail.html"><button class="btn  btn-success btn-inline btn-rounded">Terima</button></a>
 															<a href="mail.html"><button class="btn  btn-danger btn-inline btn-rounded">Tolak</button></a>
