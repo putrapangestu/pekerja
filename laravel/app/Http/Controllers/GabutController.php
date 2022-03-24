@@ -11,7 +11,9 @@ class GabutController extends Controller
     public function listings(Request $request){
         $errors = Profile::all();
 
-        return view('gawe.listings');
+        return view('gawe.listings', compact(
+            'errors'
+        ));
     }
 
     public function listingsdetails(Request $request){

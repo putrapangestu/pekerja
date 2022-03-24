@@ -180,8 +180,8 @@
                                     <input type="date" class="form-control" name="ultah" value="May 3, 1995">
                                   </div>
                                   <div class="form-group">
-                                    <label class="form-label">Phone</label>
-                                    <input type="text" class="form-control" name="telepon" value="+62 (123) 456 7891">
+                                    <label class="form-label">Telepon</label>
+                                    <input type="text" class="form-control" name="telepon" value="0897289277">
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">Alamat</label>
