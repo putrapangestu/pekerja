@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
+use Illuminate\Support\Facades\DB;
 
 class GabutController extends Controller
 {
@@ -16,11 +17,18 @@ class GabutController extends Controller
         ));
     }
 
-    public function listingsdetails(Request $request){
-        $errors = Profile::all();
+    public function listingsdetails($telepon){
 
-        return view('gawe.listings-details', compact(
-            'errors'
-        ));
+        $errors = DB::table('profiles')->where('telepon',$telepon)->get();
+        return view('gawe.listings-details',['profiles' => $errors]);
+
+
+
+
+        // $errors = Profile::all();
+
+        // return view('gawe.listings-details', compact(
+        //     'errors'
+        // ));
     }
 }

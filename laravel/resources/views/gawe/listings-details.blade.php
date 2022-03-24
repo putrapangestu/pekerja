@@ -182,7 +182,7 @@
         </section>
 
         <!--Main Bottom Start-->
-        @foreach ($errors as $profile)
+        @foreach ($profiles as $profile)
         <section class="main_bottom">
             <div class="container">
                 <div class="row">
@@ -218,7 +218,7 @@
         <section class="listings_details">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-8">
+                    <div class="col-8">
                         <div class="listings_details_left">
                             <div class="listings_details_text">
                                 <p class="first_text">
@@ -325,7 +325,7 @@
                                             </table>
                                             <hr>
                       <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-4">
                           <a class="btn btn-info " href="{{ url('gawe/edit-profile') }}">Edit</a>
                         </div>
                       </div>

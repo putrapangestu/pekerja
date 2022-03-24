@@ -222,7 +222,7 @@
             <div class="container">
                 <div class="row">
                     @foreach ($errors as $profile)
-                    <div class="col-xl-3">
+                    <div class="col-3">
                         <!--Latest Listings Single-->
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
                             data-wow-duration="120ms">
@@ -243,7 +243,7 @@
                             </div>
                             <div class="listings_three-page_content">
                                 <div class="title">
-                                    <h3><a href="listings-details1.html">{{ $profile->nama }}<span
+                                    <h3><a href="listings-details/{{ $profile->telepon }}">{{ $profile->nama }}<span
                                                 class="fa fa-check"></span></a></h3>
                                 </div>
                                 <ul class="list-unstyled listings_three-page_contact_info">
@@ -251,7 +251,6 @@
                                     <li><i class="fas fa-user"></i>{{ $profile->bidang }}</li>
                                     <li><a href="tel:+13456789"><i class="fa fa-phone"></i>{{ $profile->telepon }}</a></li>
                                 </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
