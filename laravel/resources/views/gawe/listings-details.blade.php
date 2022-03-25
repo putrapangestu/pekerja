@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pekerja</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicons/black.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicons/black.png') }}">
-    <link rel="manifest" href="images/favicons/site.html">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/black.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicons/black.png') }}">
+    <link rel="manifest" href="assets/images/favicons/site.html">
 
     <!-- Fonts-->
     <link
@@ -51,7 +51,7 @@
 <body>
 
     <div class="preloader">
-        <img src="{{ asset('images/resources/black gawe.jpg') }}" class="preloader__image" height="150" alt="">
+        <img src="{{ asset('assets/images/resources/black gawe.jpg') }}" class="preloader__image" height="150" alt="">
     </div><!-- /.preloader -->
 
     <div class="page-wrapper">
@@ -92,7 +92,7 @@
                         <div class="main-nav__left main-nav__left_one float-left">
                             <div class="logo_one">
                                 <a href="index.html" class="main-nav__logo">
-                                    <img src="{{ asset('images/resources/black logo gawe.png') }}" class="main-logo" height="50" alt="Awesome Image">
+                                    <img src="{{ asset('assets/images/resources/black logo gawe.png') }}" class="main-logo" height="50" alt="Awesome Image">
                                 </a>
                             </div>
                             <a href="#" class="side-menu__toggler">
@@ -103,35 +103,31 @@
                         <div class="main-nav__main-navigation three float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li>
-                                    <a href="{{ url('/gawe') }}">Home</a>
+                                    <a href="index3.html">Home</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/listings') }}">Pekerja</a>
+                                    <a href="listings3.html">Pekerja</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/blog') }}">Blog</a>
+                                    <a href="blog.html">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/contact') }}">Contact</a>
+                                    <a href="contact.html">Contact</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/about') }}">About</a>
+                                    <a href="about.html">About</a>
                                 </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
 
                         <div class="main-nav__right main-nav__right_one three float-right">
-                            <div class="main-nav__right main-nav__right_one three float-right">
-                                <ul class="navbar-nav ">
-                                    <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                      <a class="dropdown-item" href="{{ url('gawe/login') }}">LOGIN</a>
-                                    </div>
-                                  </li>   
-                                </ul>
+                            <div class="icon-search-box">
+                                <a href="#" class="main-nav__search search-popup__toggler">
+                                    <i class="icon-magnifying-glass"></i>
+                                </a>
+                            </div>
+
+
                         </div>
 
                     </div>
@@ -157,7 +153,7 @@
                         <!--Listings Details Main Image Box Single-->
                         <div class="listings_details_main_image_box_single">
                             <div class="listings_details_main_image_box__img">
-                                <img src="{{ asset('images/resources/foto.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/resources/foto.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -165,7 +161,7 @@
                         <!--Listings Details Main Image Box Single-->
                         <div class="listings_details_main_image_box_single">
                             <div class="listings_details_main_image_box__img">
-                                <img src="{{ asset('images/resources/2.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/resources/2.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -173,7 +169,7 @@
                         <!--Listings Details Main Image Box Single-->
                         <div class="listings_details_main_image_box_single">
                             <div class="listings_details_main_image_box__img">
-                                <img src="{{ asset('images/resources/y.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/resources/y.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -182,7 +178,6 @@
         </section>
 
         <!--Main Bottom Start-->
-        @foreach ($profiles as $profile)
         <section class="main_bottom">
             <div class="container">
                 <div class="row">
@@ -190,23 +185,30 @@
                         <div class="main_bottom_left">
                             <div class="main_bottom_content">
                                 <div class="author_image">
-                                    <img src="{{ asset('images/resources/listings-2-page-au-img-5.png') }}" height="70" alt="">
+                                    <img src="{{ asset('assets/images/resources/listings-2-page-au-img-5.png') }}" height="70" alt="">
                                 </div>
                                 <div class="icon">
                                     <span class=""></span>
                                 </div>
                             </div>
                             <div class="main_bottom_left_title">
+                                @foreach ($profiles as $profile)
                                 <h3>{{ $profile->nama }}<i class="fa fa-check"></i></h3>
+                                @endforeach
                             </div>
-                            
+                            <div class="main_bottom_rating_time">
+                                <div class="main_bottom_time">
+                                    <p><span class="far fa-clock"></span>Posted 8 hours ago</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="main_bottom_right">
                             <ul class="list-unstyled">
                                 <li><a href="#">Add to Wishlist<i class="far fa-heart"></i></a></li>
-                                <li><a href="{{ url('gawe/rekrut') }}"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a></li>
+                                <a href="login.html"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a>
+                                
                             </ul>
                         </div>
                     </div>
@@ -218,118 +220,79 @@
         <section class="listings_details">
             <div class="container">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-xl-8">
                         <div class="listings_details_left">
                             <div class="listings_details_text">
                                 <p class="first_text">
                                     <div class="listings_details_left">
                                         <div class="col-12 mt-3">
                                             <div class="custom-form p-4 border rounded">
-                                                <center><h3>BIODATA DIRI</h3></center><br><br>
+                                                <center><h3>Curriculum vitae</h3></center><br><br>
                                             
-                                            
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                              <h4> <B> DATA PRIBADI</B></h4>
+                                            </div><br>
                                             <table border="1">
-                                             <tr>
-                                                <td> <b> Nama Lengkap :</b></td><br>
-                                                <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->nama }}
-                                                  </div></td>
+                                                <tr>
+                                                <td>Nama Lengkap</td><br>
+                                                <td>{{ $profile->nama }}</td>
                                             </tr>
                                             <tr>
-                                                <td> <b> E-Mail :</b></td>
-                                                <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->email }}
-                                                </div></td>
+                                                <td>Pekerja</td>
+                                                <td>{{ $profile->pekerja }}</td>
                                             </tr>
                                             <tr>
-                                                <td> <b> Pekerja :</b></td>
-                                                <td><div class="col-sm-9 text-secondary">
-                                                {{ $profile->pekerja }}    
-                                                </div></td>
+                                                <td>Keterangan</td>
+                                                <td>{{ $profile->keterangan }}</td>
                                             </tr>
-                                            </table><br><br>
+                                            </table>
+                                            <br>
+                                            <div class="col-lg-12"><br>
+                                                <h4> <B> Pendidikan Formal :</B></h4><br>
+                                              </div>
+                                              <table border="1">
+                                                  <tr>
+                                                      <td>{{ $profile->lulusansd }}</td>
+                                                      <td>{{ $profile->sd }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>{{ $profile->lulusansmp }}</td>
+                                                      <td>{{ $profile->smp }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>{{ $profile->lulusansma }}</td>
+                                                      <td>{{ $profile->sma }}</td>
+                                                  </tr>
+                                              </table>
+                                            </div>
+                                            <div class="col-lg-12"><br>
+                                                <h4><b> Lainnya</b></h4>
+                                            </div><br>
                                             <table border="1">
                                                 <tr>
-                                                    <td> <b> Tanggal Lahir :</b></td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->ultah }}    
-                                                    </div></td>
+                                                    <td>Prestasi</td>
+                                                    <td>{{ $profile->prestasi }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td> <b> No. Telepon :</b></td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->telepon }}    
-                                                    </div></td>
+                                                    <td>Pengalaman</td>
+                                                    <td>{{ $profile->pengalaman }}</td>
+                                                    
                                                 </tr>
                                                 <tr>
-                                                    <td> <b> Alamat :</b></td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->alamat }}    
-                                                    </div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td> <b> Bidang :</b></td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->bidang }}    
-                                                    </div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td> <b> Keterangan :</b></td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->keterangan }}    
-                                                    </div></td>
-                                                </tr>
-                                            </table><br><br>
-                                            <table border="1">
-                                                <tr>
-                                                    <td> <b> Riwayat Pendidikan :</b></td>
-                                                    <td>
-                                                        <div class="col-sm-9 text-secondary">
-                                                            {{ $profile->lulusansd }}
-                                                            {{ $profile->sd }}    
-                                                            </div>
-                                                            <div class="col-sm-9 text-secondary">
-                                                                {{ $profile->lulusansmp }}
-                                                                {{ $profile->smp }}
-                                                            </div>
-                                                            <div class="col-sm-9 text-secondary">
-                                                                {{ $profile->lulusansma }}
-                                                                {{ $profile->sma }}    
-                                                                </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td> <b> Bio :</b></td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->bio }}    
-                                                    </div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td> <b> Prestasi :</b></td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->prestasi }}    
-                                                    </div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td> <b> Pengalaman :</b></td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->pengalaman }}    
-                                                    </div></td>
-                                                </tr>
-                                                <tr>
-                                                    <td> <b> Kemampuan :</b></td>
-                                                    <td><div class="col-sm-9 text-secondary">
-                                                    {{ $profile->kemampuan }}    
-                                                    </div></td>
+                                                    <td>Kemampuan</td>
+                                                    <td>{{ $profile->kemampuan }}</td>
+                                                    
                                                 </tr>
                                             </table>
-                                            <hr>
-                      <div class="row">
-                        <div class="col-4">
-                          <a class="btn btn-info " href="{{ url('gawe/edit-profile') }}">Edit</a>
-                        </div>
-                      </div>
-                     </div>
+                                            
+                                        </div>
+                                        </div><br><br>
+                                        
+                                        
+                                        
+                                       
+                                     </div>
                                 </p>
                                 
                             </div>
@@ -403,103 +366,28 @@
                                     <a href="#">Designer</a>
                                 </div>
                             </div>
-                            
                   
                             <!--Review Two Box-->
-                            <div class="review_two_box">
-                                <h3 class="review_two_box__title">3 Komentar</h3>
-                                <!--Review Two Box Single-->
-                                <div class="review_two_box__single">
-                                    <div class="review_two_box__image">
-                                        <img src="{{ asset('images/resources/review-2-img-1.png') }}" alt="">
-                                    </div>
-                                    <div class="review_two_box__content">
-                                        <h3>Kevin Martin</h3>
-                                        <p>Itu tidak hanya bertahan selama lima abad, tetapi juga lompatan ke elektronik
-                                            pengaturan huruf tidak berubah. Itu dipopulerkan dalam lembaran yang berisi lorem
-                                            ipsum hanyalah teks gratis yang tersedia di pasar untuk digunakan sekarang.</p>
-                                    </div>
-                                </div>
-                                <!--Review Two Box Single-->
-                                <div class="review_two_box__single">
-                                    <div class="review_two_box__image">
-                                        <img src="{{ asset('images/resources/review-2-img-2.png') }}" alt="">
-                                    </div>
-                                    <div class="review_two_box__content">
-                                        <h3>Sarah Albert</h3>
-                                        <p>Itu tidak hanya bertahan selama lima abad, tetapi juga lompatan ke elektronik
-                                            pengaturan huruf tidak berubah. Itu dipopulerkan dalam lembaran yang berisi lorem
-                                            ipsum hanyalah teks gratis yang tersedia di pasar untuk digunakan sekarang.</p>
-                                    </div>
-                                </div>
-                                <!--Review Two Box Single-->
-                                <div class="review_two_box__single">
-                                    <div class="review_two_box__image">
-                                        <img src="{{ asset('images/resources/review-2-img-3.png') }}" alt="">
-                                    </div>
-                                    <div class="review_two_box__content">
-                                        <h3>Mike Hardson</h3>
-                                        <p>Itu tidak hanya bertahan selama lima abad, tetapi juga lompatan ke elektronik
-                                            pengaturan huruf tidak berubah. Itu dipopulerkan dalam lembaran yang berisi lorem
-                                            ipsum hanyalah teks gratis yang tersedia di pasar untuk digunakan sekarang.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review_two_box_form">
-                                <h3 class="review_two_box_form__title">Tulis Komentar</h3>
-                                <form action="http://layerdrops.com/ziston/inc/sendemail.php" class="review_two__form">
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <div class="review_two_input_box">
-                                                <input type="text" placeholder="Your review title" name="Review Title">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <div class="review_two_input_box">
-                                                <textarea name="message" placeholder="Tulis Komentar"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xl-6">
-                                            <div class="review_two_input_box">
-                                                <input type="text" placeholder="Full name" name="name">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6">
-                                            <div class="review_two_input_box">
-                                                <input type="email" placeholder="Email address" name="email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <button type="submit" class="thm-btn review_from__btn">Kirim</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                          
                         </div>
                     </div>
                    
                     <div class="col-xl-4">
+                        @foreach ($profiles as $profile)
                         <div class="listings_details_sidebar">
                             <div class="listings_details_sidebar__single sidebar__map_contact_info">
                                 <div class="contact_info">
                                    <center><h3>Personal</h3></center><br>
                                     <ul class="list-unstyled contact_info_list">
-                                        <li><i class="fas fa-map-marker-alt"></i>80 Broklyn Golden Street USA</li>
-                                        <li><a href="tel:+13456789"><i class="fa fa-phone"></i>92 666 888 0000</a></li>
-                                        <li><a href="mailto:needhelp@ziston.com"><i class="fas fa-envelope"></i>needhelp@ziston.com</a></li>
-                                        <li><i class="fa fa-calendar"></i>18-01-1998</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>{{ $profile->alamat }}</li>
+                                        <li><a href="tel:+13456789"><i class="fa fa-phone"></i>{{ $profile->telepon }}</a></li>
+                                        <li><a href="mailto:needhelp@ziston.com"><i class="fas fa-envelope"></i>{{ $profile->email }}</a></li>
+                                        <li><i class="fa fa-calendar"></i>{{ $profile->ultah }}</li>
                                     </ul>
                                     <div class="contact_info__social">
-                                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                                        <a href="{{ $profile->facebook }}"><i class="fab fa-facebook-square"></i></a>
+                                        <a href="{{ $profile->twitter }}"><i class="fab fa-twitter"></i></a>
+                                        <a href="{{ $profile->instagram }}"><i class="fab fa-instagram"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -513,24 +401,24 @@
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </section>
-        @endforeach
 
 
         <!--Site Footer Start-->
         <footer class="site-footer">
-            <div class="site_footer_shape-1" style="background-image: url(images/resources/footer-shape-1.png)">
+            <div class="site_footer_shape-1" style="background-image: url(assets/images/resources/footer-shape-1.png)">
             </div>
-            <div class="site_footer_map" style="background-image: url(images/resources/footer-map.png)"></div>
+            <div class="site_footer_map" style="background-image: url(assets/images/resources/footer-map.png)"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="footer-widget__column footer-widget__about wow fadeInUp" data-wow-delay="100ms">
                             <div class="footer-widget__logo">
-                                <a href="#"><img src="{{ asset('images/resources/footer-logo.png') }}" alt=""></a>
+                                <a href="#"><img src="assets/images/resources/footer-logo.png" alt=""></a>
                             </div>
                             <div class="footer-widget_about_text">
                                 <p>Lorem ipsum dolor sit amet, consect etur adi pisicing elit sed do eiusmod tempor
@@ -607,7 +495,7 @@
                     <p>© Copyright 2020 by <a href="#">Layerdrops.com</a></p>
                 </div>
                 <div class="site-footer__social">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-facebook-square"></i></a>
                     <a href="#"><i class="fab fa-dribbble"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -631,7 +519,7 @@
         <div class="side-menu__block-inner ">
             <div class="side-menu__top justify-content-end">
                 <a href="#" class="side-menu__toggler side-menu__close-btn"><img
-                        src="images/shapes/close-1-1.png" alt=""></a>
+                        src="assets/images/shapes/close-1-1.png" alt=""></a>
             </div><!-- /.side-menu__top -->
 
             <nav class="mobile-nav__container">

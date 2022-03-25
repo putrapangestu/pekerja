@@ -19,8 +19,8 @@ class GabutController extends Controller
 
     public function listingsdetails($telepon){
 
-        $errors = DB::table('profiles')->where('telepon',$telepon)->get();
-        return view('gawe.listings-details',['profiles' => $errors]);
+        $data = DB::table('profiles')->where('telepon',$telepon)->get();
+        return view('gawe.listings-details',['profiles' => $data]);
 
 
 

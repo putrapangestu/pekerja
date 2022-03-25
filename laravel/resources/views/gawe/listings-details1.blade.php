@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pekerja</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/black.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/black.png">
-    <link rel="manifest" href="images/favicons/site.html">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/black.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicons/black.png') }}">
+    <link rel="manifest" href="assets/images/favicons/site.html">
 
     <!-- Fonts-->
     <link
@@ -20,25 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
 
     <!-- Css-->
-    <link rel="stylesheet" href="css/cssweb/animate.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/cssweb/magnific-popup.css">
-    <link rel="stylesheet" href="css/cssweb/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/cssweb/swiper.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
 
-    <link rel="stylesheet" href="css/cssweb/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="css/cssweb/vegas.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.pips.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-icon.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-new-icons.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vegas.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.pips.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-new-icons.css') }}">
     <!-- Template styles -->
-    <link rel="stylesheet" href="css/cssweb/style.css">
-    <link rel="stylesheet" href="css/cssweb/responsive.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <style>
         td{
             padding: 8px;
@@ -51,7 +51,7 @@
 <body>
 
     <div class="preloader">
-        <img src="images/resources/black gawe.jpg" class="preloader__image" height="150" alt="">
+        <img src="{{ asset('assets/images/resources/black gawe.jpg') }}" class="preloader__image" height="150" alt="">
     </div><!-- /.preloader -->
 
     <div class="page-wrapper">
@@ -92,7 +92,7 @@
                         <div class="main-nav__left main-nav__left_one float-left">
                             <div class="logo_one">
                                 <a href="index.html" class="main-nav__logo">
-                                    <img src="images/resources/black logo gawe.png" class="main-logo" height="50" alt="Awesome Image">
+                                    <img src="assets/images/resources/black logo gawe.png" class="main-logo" height="50" alt="Awesome Image">
                                 </a>
                             </div>
                             <a href="#" class="side-menu__toggler">
@@ -103,37 +103,31 @@
                         <div class="main-nav__main-navigation three float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li>
-                                    <a href="{{ url('gawe/index2') }}">Home</a>
+                                    <a href="index3.html">Home</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/listings2') }}">Pekerja</a>
+                                    <a href="listings3.html">Pekerja</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/blog1') }}">Blog</a>
+                                    <a href="blog.html">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/contact1') }}">Contact</a>
+                                    <a href="contact.html">Contact</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/about1') }}">About</a>
+                                    <a href="about.html">About</a>
                                 </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
 
                         <div class="main-nav__right main-nav__right_one three float-right">
-                            <div class="main-nav__right main-nav__right_one three float-right">
-                                <ul class="navbar-nav ">
-                                    <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                      <a class="dropdown-item" href="{{ url('gawe/profile') }}">Profile</a>
-                                      <a class="dropdown-item" href="{{ url('gawe/mail') }}">Pesan</a>
-                                      <a class="dropdown-item" href="{{ url('gawe/index3') }}">Log Out</a>
-                                    </div>
-                                  </li>   
-                                </ul>
+                            <div class="icon-search-box">
+                                <a href="#" class="main-nav__search search-popup__toggler">
+                                    <i class="icon-magnifying-glass"></i>
+                                </a>
+                            </div>
+
+
                         </div>
 
                     </div>
@@ -159,7 +153,7 @@
                         <!--Listings Details Main Image Box Single-->
                         <div class="listings_details_main_image_box_single">
                             <div class="listings_details_main_image_box__img">
-                                <img src="images/resources/foto.jpg" alt="">
+                                <img src="{{ asset('assets/images/resources/foto.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -167,7 +161,7 @@
                         <!--Listings Details Main Image Box Single-->
                         <div class="listings_details_main_image_box_single">
                             <div class="listings_details_main_image_box__img">
-                                <img src="images/resources/2.jpg" alt="">
+                                <img src="{{ asset('assets/images/resources/2.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -175,7 +169,7 @@
                         <!--Listings Details Main Image Box Single-->
                         <div class="listings_details_main_image_box_single">
                             <div class="listings_details_main_image_box__img">
-                                <img src="images/resources/y.jpg" alt="">
+                                <img src="{{ asset('assets/images/resources/y.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -191,7 +185,7 @@
                         <div class="main_bottom_left">
                             <div class="main_bottom_content">
                                 <div class="author_image">
-                                    <img src="images/resources/listings-2-page-au-img-5.png" height="70" alt="">
+                                    <img src="assets/images/resources/listings-2-page-au-img-5.png" height="70" alt="">
                                 </div>
                                 <div class="icon">
                                     <span class=""></span>
@@ -210,8 +204,8 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="main_bottom_right">
                             <ul class="list-unstyled">
-                                <li><a href="#">Add to Wishlist<i class="far fa-heart"></i></a></li>
-                                <li><a href="zapily/ltr/form-wizard.html"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a></li>
+                                <li><a href="#">Add to Wi<li><a href="login.html"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a></li>shlist<i class="far fa-heart"></i></a></li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -396,7 +390,7 @@
                                 <!--Review Two Box Single-->
                                 <div class="review_two_box__single">
                                     <div class="review_two_box__image">
-                                        <img src="images/resources/review-2-img-1.png" alt="">
+                                        <img src="assets/images/resources/review-2-img-1.png" alt="">
                                     </div>
                                     <div class="review_two_box__content">
                                         <h3>Kevin Martin</h3>
@@ -408,7 +402,7 @@
                                 <!--Review Two Box Single-->
                                 <div class="review_two_box__single">
                                     <div class="review_two_box__image">
-                                        <img src="images/resources/review-2-img-2.png" alt="">
+                                        <img src="assets/images/resources/review-2-img-2.png" alt="">
                                     </div>
                                     <div class="review_two_box__content">
                                         <h3>Sarah Albert</h3>
@@ -420,7 +414,7 @@
                                 <!--Review Two Box Single-->
                                 <div class="review_two_box__single">
                                     <div class="review_two_box__image">
-                                        <img src="images/resources/review-2-img-3.png" alt="">
+                                        <img src="assets/images/resources/review-2-img-3.png" alt="">
                                     </div>
                                     <div class="review_two_box__content">
                                         <h3>Mike Hardson</h3>
@@ -506,15 +500,15 @@
 
         <!--Site Footer Start-->
         <footer class="site-footer">
-            <div class="site_footer_shape-1" style="background-image: url(images/resources/footer-shape-1.png)">
+            <div class="site_footer_shape-1" style="background-image: url(assets/images/resources/footer-shape-1.png)">
             </div>
-            <div class="site_footer_map" style="background-image: url(images/resources/footer-map.png)"></div>
+            <div class="site_footer_map" style="background-image: url(assets/images/resources/footer-map.png)"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="footer-widget__column footer-widget__about wow fadeInUp" data-wow-delay="100ms">
                             <div class="footer-widget__logo">
-                                <a href="#"><img src="images/resources/footer-logo.png" alt=""></a>
+                                <a href="#"><img src="assets/images/resources/footer-logo.png" alt=""></a>
                             </div>
                             <div class="footer-widget_about_text">
                                 <p>Lorem ipsum dolor sit amet, consect etur adi pisicing elit sed do eiusmod tempor
@@ -615,7 +609,7 @@
         <div class="side-menu__block-inner ">
             <div class="side-menu__top justify-content-end">
                 <a href="#" class="side-menu__toggler side-menu__close-btn"><img
-                        src="images/shapes/close-1-1.png" alt=""></a>
+                        src="assets/images/shapes/close-1-1.png" alt=""></a>
             </div><!-- /.side-menu__top -->
 
             <nav class="mobile-nav__container">
@@ -652,31 +646,31 @@
 
 
 
-    <script src="js/jsweb/jquery.min.js"></script>
-    <script src="js/jsweb/bootstrap.bundle.min.js"></script>
-    <script src="js/jsweb/owl.carousel.min.js"></script>
-    <script src="js/jsweb/waypoints.min.js"></script>
-    <script src="js/jsweb/jquery.counterup.min.js"></script>
-    <script src="js/jsweb/TweenMax.min.js"></script>
-    <script src="js/jsweb/wow.js"></script>
-    <script src="js/jsweb/jquery.magnific-popup.min.js"></script>
-    <script src="js/jsweb/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jsweb/swiper.min.js"></script>
-    <script src="js/jsweb/typed-2.0.11.js"></script>
-    <script src="js/jsweb/vegas.min.js"></script>
-    <script src="js/jsweb/jquery.validate.min.js"></script>
-    <script src="js/jsweb/bootstrap-select.min.js"></script>
-    <script src="js/jsweb/countdown.min.js"></script>
-    <script src="js/jsweb/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/jsweb/bootstrap-datepicker.min.js"></script>
-    <script src="js/jsweb/nouislider.min.js"></script>
-    <script src="js/jsweb/isotope.js"></script>
-    <script src="js/jsweb/appear.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/typed-2.0.11.js') }}"></script>
+    <script src="{{ asset('assets/js/vegas.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/countdown.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.js') }}"></script>
+    <script src="{{ asset('assets/js/appear.js') }}"></script>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
 
 
     <!-- template scripts -->
-    <script src="js/jsweb/theme.js"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
 
 
 </body>

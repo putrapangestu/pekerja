@@ -225,7 +225,7 @@
                     <div class="col-3">
                         <!--Latest Listings Single-->
                         <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
-                            data-wow-duration="120ms">
+                            data-wow-duration="10ms">
                             <div class="listings_three-page_image">
                                 <img src="{{ asset('images/resources/listings-3-page-img-1.jpg') }}" alt="">
                                 <div class="open">
