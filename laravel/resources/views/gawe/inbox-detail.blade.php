@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>Zapily I Fast build Admin dashboard for any platform</title>
+	<title>Inbox | Gawe.Id</title>
 	<meta name="description" content="Zapily is a Dashboard & Admin Site Responsive Template by hencework." />
 	<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Zapily Admin, Zapilyadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 	<meta name="author" content="hencework"/>
@@ -189,9 +189,11 @@
 															</div>
 															<div class="sender-info">
 																<div class="container-fluid">
+																	@foreach ($profiles as $pp)
 																	<div class="sender-img-wrap pull-left mr-20">
-																		<img class="sender-img" alt="user" src="../img/user1.png">
+																		<img class="sender-img" alt="user" src="{{ asset('gambar/'.$pp->foto) }}">
 																	</div>
+																	@endforeach
 																	<div class="sender-details   pull-left">
 																		<span class="capitalize-font pr-5 txt-dark block font-15 weight-500 head-font">{{ $details->nama }}</span>
 																		<span class="block">

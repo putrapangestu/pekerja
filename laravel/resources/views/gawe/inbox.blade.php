@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>Zapily I Fast build Admin dashboard for any platform</title>
+	<title>Inbox | Gawe.Id</title>
 	<meta name="description" content="Zapily is a Dashboard & Admin Site Responsive Template by hencework." />
 	<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Zapily Admin, Zapilyadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 	<meta name="author" content="hencework"/>
@@ -213,6 +213,7 @@
 																@foreach($mail as $mails)
 																<table class="table table-inbox table-hover mb-0">
 																	<tbody>
+																		
 																		<tr class="unread">
 																			<td class="inbox-small-cells">
 																				<div class="checkbox checkbox-default inline-block">
@@ -222,8 +223,10 @@
 																				<i class="zmdi zmdi-star inline-block font-16"></i>
 																			</td>
 																			
-																				<td class="view-message  dont-show">{{ $mails->nama}}</td>
-																				<td class="view-message ">{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</td>
+																			
+																				<td class="view-message  dont-show"><a href="inbox/{{ $mails->email }}">{{ $mails->nama}}</a></td>
+																			
+																				<td class="view-message " ><a href="inbox/{{ $mails->email }}">{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</a></td>
 																			
 																				<td class="view-message  text-right">
 																					<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
