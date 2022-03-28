@@ -110,11 +110,11 @@
 																
 																<div class="form-group">
 																	<label class="control-label mb-10" for="no">No Perusahaan:</label>
-																	<input id="no" type="text" name="no"  data-mask="" class="form-control required" value="" />
+																	<input id="no" type="text" name="no"  class="form-control required" value="" />
 																</div>
 																<div class="form-group">
 																	<label class="control-label mb-10" for="telpon">Nomor telepon:</label>
-																	<input type="text" id="telpon"  data-mask="" name="telpon" class="form-control required" value="" />
+																	<input type="text" id="telpon"  name="telpon" class="form-control required" value="" />
 																</div>
 																<div class="form-group">
 																	<label class="control-label mb-10" for="email">Email Perusahaan:</label>
@@ -137,15 +137,15 @@
 															</div>
 															<div class="form-group">
 																<label class="control-label mb-10" for="posisi">Posisi Kerja:</label>
-																<input type="text" id="posisi" data-mask="" class="form-control required" name="posisi" value="" />
+																<input type="text" id="posisi" class="form-control required" name="posisi" value="" />
 															</div>
 															<div class="form-group">
 																<label class="control-label mb-10" for="jam">Jam kerja/hari:</label>
-																<input type="text" id="jam" data-mask="" class="form-control required" name="jam" value="" />
+																<input type="text" id="jam" class="form-control required" name="jam" value="" />
 															</div>
 															<div class="form-group">
 																<label class="control-label mb-10" for="gaji">Gaji/bulan:</label>
-																<input type="text" id="gaji" class="form-control  required" data-mask="" name="gaji" value="" />
+																<input type="text" id="gaji" class="form-control  required" name="gaji" value="" />
 															</div>
 															<div class="form-group">
 																<label class="control-label mb-10" for="informasi">Informasi Tambahan:</label>
@@ -169,7 +169,7 @@
 												<p>Selamat perekrutan telah terkirim. Di mohon untuk menunggu persetujuan dari pihak pekerja.</p>
 												<p>Terimakasih telah menggunakan layanan kami.</p>
 											</section>
-											{{-- <button type="submit" value="submit">next</button> --}}
+											{{--<button type="submit" value="submit">next</button> --}}
 										</div>
 									</div>
 								</div>
@@ -207,7 +207,7 @@
 		
 		<!-- Form Wizard JavaScript -->
 		<script src="{{ asset('vendors/bower_components/jquery.steps/build/jquery.steps.min.js') }}"></script>
-		<script src="../../../../ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+		<script src="{{ asset('ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js') }}"></script>
 		
 		<!-- Form Wizard Data JavaScript -->
 		<script src="{{ asset('zapily/js/form-wizard-data.js') }}"></script>

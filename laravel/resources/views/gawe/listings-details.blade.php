@@ -49,6 +49,7 @@
 </head>
 
 <body>
+@foreach ($profiles as $profile)
 
     <div class="preloader">
         <img src="{{ asset('assets/images/resources/black gawe.jpg') }}" class="preloader__image" height="150" alt="">
@@ -192,9 +193,9 @@
                                 </div>
                             </div>
                             <div class="main_bottom_left_title">
-                                @foreach ($profiles as $profile)
+                                
                                 <h3>{{ $profile->nama }}<i class="fa fa-check"></i></h3>
-                                @endforeach
+                                
                             </div>
                             <div class="main_bottom_rating_time">
                                 <div class="main_bottom_time">
@@ -207,7 +208,7 @@
                         <div class="main_bottom_right">
                             <ul class="list-unstyled">
                                 <li><a href="#">Add to Wishlist<i class="far fa-heart"></i></a></li>
-                                <a href="login.html"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a>
+                                <a href="/gawe/rekrut/{{ $profile->telepon }}"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a>
                                 
                             </ul>
                         </div>
@@ -582,7 +583,7 @@
     <!-- template scripts -->
     <script src="{{ asset('assets/js/theme.js') }}"></script>
 
-
+@endforeach
 </body>
 
 
