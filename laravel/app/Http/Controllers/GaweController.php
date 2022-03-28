@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class GaweController extends Controller
@@ -11,6 +12,7 @@ class GaweController extends Controller
     // index
     public function index(Request $request){
         $errors = Profile::all();
+        // $users = User::all();
         // $errors = Blog::all();
         $user = Auth::user();
 

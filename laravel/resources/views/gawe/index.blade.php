@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gawe.Id</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/black.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/black.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/black.png">
-    <link rel="manifest" href="images/favicons/black.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/black.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicons/black.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicons/black.png') }}">
+    <link rel="manifest" href="{{ asset('images/favicons/black.png') }}">
 
     <!-- Fonts-->
     <link
@@ -67,7 +67,9 @@
                             <div class="header_topmenu_1">
                                 <ul class="list-unstyled">
                                     <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
-                                    <li><a href="{{ url('gawe/mail') }}"><i class="fa fa-inbox"></i>inbox</a></li>
+                                    
+                                    <li><a href="{{ url('gawe/inbox/{email}') }}"><i class="fa fa-inbox"></i>inbox</a></li>
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -83,7 +85,7 @@
                         <div class="main-nav__left main-nav__left_one float-left">
                             <div class="logo_one">
                                 <a href="{{ url('gawe/index2') }}" class="main-nav__logo">
-                                    <img src="images/resources/logo-black.png" alt="Awesome image" class="logo-light" height="75">
+                                    <img src="{{ asset('images/resources/logo-black.png') }}" alt="Awesome image" class="logo-light" height="75">
                                 </a>
                             </div>
                             <a href="#" class="side-menu__toggler">
@@ -121,7 +123,7 @@
                                     <ul class="navbar-nav ">
                                         <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
+                                          <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                           <a class="dropdown-item" href="{{ url('gawe/profile') }}">Profile</a>                                              

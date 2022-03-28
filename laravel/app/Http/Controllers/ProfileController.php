@@ -82,4 +82,8 @@ class ProfileController extends Controller
         ]);
     }
 
+    public function perusahaan(){
+        return view('gawe/profile1');
+    }
+
 }
