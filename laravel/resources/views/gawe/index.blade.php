@@ -20,25 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
 
     <!-- Css-->
-    <link rel="stylesheet" href="css/cssweb/animate.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/cssweb/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/cssweb/magnific-popup.css">
-    <link rel="stylesheet" href="css/cssweb/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/cssweb/swiper.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
 
-    <link rel="stylesheet" href="css/cssweb/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="css/cssweb/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="css/cssweb/vegas.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.min.css">
-    <link rel="stylesheet" href="css/cssweb/nouislider.pips.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-icon.css">
-    <link rel="stylesheet" href="css/cssweb/ziston-new-icons.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vegas.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nouislider.pips.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-icon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ziston-new-icons.css') }}">
     <!-- Template styles -->
-    <link rel="stylesheet" href="css/cssweb/style.css">
-    <link rel="stylesheet" href="css/cssweb/responsive.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 
 </head>
 
@@ -94,22 +94,22 @@
                         <div class="main-nav__main-navigation three float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li class="current">
-                                    <a href="{{ url('gawe/index2') }}">Home</a>
+                                    <a href="{{ url('/gawe') }}">Home</a>
                                    <!-- /.sub-menu -->
                                 </li>
                                
                                 <li>
-                                    <a href="{{ url('gawe/listings2') }}">Pekerja</a>
+                                    <a href="{{ url('gawe/listings') }}">Pekerja</a>
                                     <!-- /.sub-menu -->
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/blog1') }}">Blog</a>
+                                    <a href="{{ url('gawe/blog') }}">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/contact1') }}">Contact</a>
+                                    <a href="{{ url('gawe/contact') }}">Contact</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/about1') }}">About</a>
+                                    <a href="{{ url('gawe/about') }}">About</a>
                                 </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
@@ -117,19 +117,30 @@
                         <div class="main-nav__right main-nav__right_one three float-right">
                             
                                 <div class="main-nav__right main-nav__right_one three float-right">
-                                  <ul class="navbar-nav ">
-                                      <li class="nav-item dropdown">
-                                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
-                                      </a>
-                                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="{{ url('gawe/profile') }}">Profile</a>
-                                        <a class="dropdown-item" href="{{ url('gawe/mail') }}">Pesan</a>
-                                        <a class="dropdown-item" href="{{ url('gawe/index3') }}">Log Out</a>
-                                      </div>
-                                    </li>   
-                                  </ul>
-                                                
+                                 @auth
+                                    <ul class="navbar-nav ">
+                                        <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                          <a class="dropdown-item" href="{{ url('gawe/profile') }}">Profile</a>                                              
+                                          <a class="dropdown-item" href="{{ url('gawe/mail') }}">Pesan</a>
+                                          <hr class="dropdown-divider">
+                                          <form action="{{ url('gawe/logout') }}" method="POST">
+                                              @csrf
+                                            <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Logout</button>
+                                          </form>
+                                        </div>
+                                      </li>   
+                                    </ul>
+                                @else 
+                                    <div class="header_btn_1">
+                                        <a href="{{ url('gawe/login') }}"><span class="icon-add"></span>Login</a>
+                                    </div>
+                                @endauth
+                                   
+                                
                         </div>
                     </div>
                 </nav>
@@ -138,11 +149,11 @@
 
         <!--Banner Three Start-->
         <section class="banner_three">
-            <img src="images/main-slider/slide_v3_bg-1.png" alt="" class="banner-three-vector-img">
-            <img src="images/shapes/slider-3-cloud.png" alt="" class="banner-three-cloud-img animate-left-right">
-            <img src="images/shapes/slider-3-line.png" alt="" class="banner-three-line-img">
-            <img src="images/shapes/slider-3-shape-1.png" alt="" class="banner_three_shape_1">
-            <img src="images/shapes/slider-3-shape-2.png" alt="" class="banner_three_shape_2">
+            <img src="{{ asset('images/main-slider/slide_v3_bg-1.png') }}" alt="" class="banner-three-vector-img">
+            <img src="{{ asset('images/shapes/slider-3-cloud.png') }}" alt="" class="banner-three-cloud-img animate-left-right">
+            <img src="{{ asset('images/shapes/slider-3-line.png') }}" alt="" class="banner-three-line-img">
+            <img src="{{ asset('images/shapes/slider-3-shape-1.png') }}" alt="" class="banner_three_shape_1">
+            <img src="{{ asset('images/shapes/slider-3-shape-2.png') }}" alt="" class="banner_three_shape_2">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
@@ -190,6 +201,103 @@
                         <div class="banner_three_form_btn">
                             <button class="thm-btn" type="submit"><span
                                     class="icon-magnifying-glass"></span>Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories_one">
+            <div class="categories_one_shape wow slideInLeft animated" data-wow-delay="600ms"
+                style="background-image: url(images/shapes/map-1.png)"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="categories_one_carousel owl-theme owl-carousel">
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-cutlery"></span>
+                                </div>
+                                <h4>KOKI</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-cocktail"></span>
+                                </div>
+                                <h4>BARISTA</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-health"></span>
+                                </div>
+                                <h4>PERAWAT</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-skincare"></span>
+                                </div>
+                                <h4>TATA RIAS</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-shop"></span>
+                                </div>
+                                <h4>KASIR</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-car"></span>
+                                </div>
+                                <h4>SOPIR</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-cutlery"></span>
+                                </div>
+                                <h4>PRAMUSAJI</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-cocktail"></span>
+                                </div>
+                                <h4>BARISTA</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-health"></span>
+                                </div>
+                                <h4>APOTEKER</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-skincare"></span>
+                                </div>
+                                <h4>MODEL</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-shop"></span>
+                                </div>
+                                <h4>PELAYAN</h4>
+                            </div>
+                            <!--Categories One Single-->
+                            <div class="categories_one_single">
+                                <div class="categories_one_icon">
+                                    <span class="icon-car"></span>
+                                </div>
+                                <h4>MONTIR</h4>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1096,30 +1204,30 @@
 
 
 
-    <script src="js/jsweb/jquery.min.js"></script>
-    <script src="js/jsweb/bootstrap.bundle.min.js"></script>
-    <script src="js/jsweb/owl.carousel.min.js"></script>
-    <script src="js/jsweb/waypoints.min.js"></script>
-    <script src="js/jsweb/jquery.counterup.min.js"></script>
-    <script src="js/jsweb/TweenMax.min.js"></script>
-    <script src="js/jsweb/wow.js"></script>
-    <script src="js/jsweb/jquery.magnific-popup.min.js"></script>
-    <script src="js/jsweb/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jsweb/swiper.min.js"></script>
-    <script src="js/jsweb/typed-2.0.11.js"></script>
-    <script src="js/jsweb/vegas.min.js"></script>
-    <script src="js/jsweb/jquery.validate.min.js"></script>
-    <script src="js/jsweb/bootstrap-select.min.js"></script>
-    <script src="js/jsweb/countdown.min.js"></script>
-    <script src="js/jsweb/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/jsweb/bootstrap-datepicker.min.js"></script>
-    <script src="js/jsweb/nouislider.min.js"></script>
-    <script src="js/jsweb/isotope.js"></script>
-    <script src="js/jsweb/appear.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('js/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('js/wow.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('js/swiper.min.js') }}"></script>
+    <script src="{{ asset('js/typed-2.0.11.js') }}"></script>
+    <script src="{{ asset('js/vegas.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('js/countdown.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('js/isotope.js') }}"></script>
+    <script src="{{ asset('js/appear.js') }}"></script>
 
 
     <!-- template scripts -->
-    <script src="js/jsweb/theme.js"></script>
+    <script src="{{ asset('js/theme.js') }}"></script>
 
 
 </body>

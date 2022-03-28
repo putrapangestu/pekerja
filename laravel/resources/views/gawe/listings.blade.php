@@ -138,11 +138,11 @@
                                     </div>
                                   </li>   
                                 </ul>
-                            @else 
-                            <div class="header_btn_1">
-                                <a href="{{ url('gawe/login') }}"><span class="icon-add"></span>Login</a>
-                            </div>
-                            @endauth
+                                @else 
+                                    <div class="header_btn_1">
+                                    <a href="{{ url('gawe/login') }}"><span class="icon-add"></span>Login</a>
+                                    </div>
+                                @endauth
 
                         </div>
 

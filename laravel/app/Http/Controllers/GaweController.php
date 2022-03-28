@@ -14,7 +14,7 @@ class GaweController extends Controller
         // $errors = Blog::all();
         $user = Auth::user();
 
-        return view('gawe.index3', compact(
+        return view('gawe.index', compact(
             'errors', 'user'
         ));
     }
