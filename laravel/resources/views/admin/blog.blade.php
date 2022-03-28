@@ -11,11 +11,11 @@
 	<meta name="author" content="hencework"/>
 	
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ asset('images/favicons/black.png') }}">
+	<link rel="icon" href="{{ asset('images/favicons/black.png') }}" type="image/x-icon">
 
 	<!-- Custom CSS -->
-	<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+	<link href="{{ asset('zapily/style.css') }}" rel="stylesheet" type="text/css">
 	
 </head>
 
@@ -802,29 +802,29 @@
 	<!-- JavaScript -->
 	
     <!-- jQuery -->
-    <script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 	
 	<!-- Piety JavaScript -->
-	<script src="../../vendors/bower_components/peity/jquery.peity.min.js"></script>
-	<script src="dist/js/peity-data.js"></script>
+	<script src="{{ asset('vendors/bower_components/peity/jquery.peity.min.js') }}"></script>
+	<script src="{{ asset('zapily/js/peity-data.js') }}"></script>
 	
 	<!-- Slimscroll JavaScript -->
-	<script src="dist/js/jquery.slimscroll.js"></script>
+	<script src="{{ asset('zapily/js/jquery.slimscroll.js') }}"></script>
 	
 	<!-- Owl JavaScript -->
-	<script src="../../vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+	<script src="{{ asset('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>
 	
 	<!-- Switchery JavaScript -->
-	<script src="../../vendors/bower_components/switchery/dist/switchery.min.js"></script>
+	<script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
 	
 	<!-- Fancy Dropdown JS -->
-	<script src="dist/js/dropdown-bootstrap-extended.js"></script>
+	<script src="{{ asset('zapily/js/dropdown-bootstrap-extended.js') }}"></script>
 	
 	<!-- Init JavaScript -->
-	<script src="dist/js/init.js"></script>
+	<script src="{{ asset('zapily/js/init.js') }}"></script>
 	
 </body>
 

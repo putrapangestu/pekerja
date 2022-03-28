@@ -10,16 +10,16 @@
 		<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Zapily Admin, Zapilyadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 		<meta name="author" content="hencework"/>
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{{ asset('images/favicons/black.png') }}">
+		<link rel="icon" href="{{ asset('images/favicons/black.png') }}" type="image/x-icon">
 		<!-- vector map CSS -->
-		<link href="../../vendors/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" type="text/css"/>
+		<link href="vendors/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" type="text/css"/>
 		
 		<!-- Footable CSS -->
-		<link href="../../vendors/bower_components/jsgrid/dist/jsgrid.min.css" rel="stylesheet" type="text/css"/>
-		<link href="../../vendors/bower_components/jsgrid/dist/jsgrid-theme.min.css" rel="stylesheet" type="text/css"/>
+		<link href="{{ asset('vendors/bower_components/jsgrid/dist/jsgrid.min.css') }}" rel="stylesheet" type="text/css"/>
+		<link href="{{ asset('vendors/bower_components/jsgrid/dist/jsgrid-theme.min.css') }}" rel="stylesheet" type="text/css"/>
 		<!-- Custom CSS -->
-		<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+		<link href="{{ asset('zapily/style.css') }}" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<!--Preloader-->
@@ -758,30 +758,30 @@
 		<!-- JavaScript -->
 		
 		<!-- jQuery -->
-		<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
 		
 		<!-- Bootstrap Core JavaScript -->
-		<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 		
 		<!-- JSgrid table JavaScript -->
-		<script src="dist/js/db.js"></script>
-		<script src="../../vendors/bower_components/jsgrid/dist/jsgrid.min.js"></script>
-		<script src="dist/js/jsgrid-data.js"></script>
+		<script src="{{ asset('zapily/js/db.js') }}"></script>
+		<script src="{{ asset('vendors/bower_components/jsgrid/dist/jsgrid.min.js') }}"></script>
+		<script src="{{ asset('zapily/js/jsgrid-data.js') }}"></script>
 		
 		<!-- Slimscroll JavaScript -->
-		<script src="dist/js/jquery.slimscroll.js"></script>
+		<script src="{{ asset('zapily/js/jquery.slimscroll.js') }}"></script>
 	
 		<!-- Fancy Dropdown JS -->
-		<script src="dist/js/dropdown-bootstrap-extended.js"></script>
+		<script src="{{ asset('zapily/js/dropdown-bootstrap-extended.js') }}"></script>
 		
 		<!-- Owl JavaScript -->
-		<script src="../../vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>
 	
 		<!-- Switchery JavaScript -->
-		<script src="../../vendors/bower_components/switchery/dist/switchery.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
 	
 		<!-- Init JavaScript -->
-		<script src="dist/js/init.js"></script>
+		<script src="{{ asset('zapily/js/init.js') }}"></script>
 	</body>
 
 <!-- Mirrored from hencework.com/theme/zapily/ltr/jsgrid-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 04:23:15 GMT -->

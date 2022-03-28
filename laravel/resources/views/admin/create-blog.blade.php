@@ -10,15 +10,15 @@
 		<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Zapily Admin, Zapilyadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 		<meta name="author" content="hencework"/>
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{{ asset('images/favicons/black.png') }}">
+		<link rel="icon" href="{{ asset('images/favicons/black.png') }}" type="image/x-icon">
 		
 		<!-- Summernote css -->
-		<link rel="stylesheet" href="../../vendors/bower_components/summernote/dist/summernote.css" />
+		<link rel="stylesheet" href="{{ asset('vendors/bower_components/summernote/dist/summernote.css') }}" />
 		
 		
 		<!-- Custom CSS -->
-		<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+		<link href="{{ asset('zapily/style.css') }}" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<!--Preloader-->
@@ -759,31 +759,31 @@
 		<!-- JavaScript -->
 		
 		<!-- jQuery -->
-		<script src="../../vendors/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
 		
 		<!-- Bootstrap Core JavaScript -->
-		<script src="../../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 				
 		<!-- Summernote Plugin JavaScript -->
-		<script src="../../vendors/bower_components/summernote/dist/summernote.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/summernote/dist/summernote.min.js') }}"></script>
 			
 		<!-- Summernote Wysuhtml5 Init JavaScript -->
-		<script src="dist/js/summernote-data.js"></script>
+		<script src="{{ asset('js/summernote-data.js') }}"></script>
 		
 		<!-- Slimscroll JavaScript -->
-		<script src="dist/js/jquery.slimscroll.js"></script>
+		<script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
 	
 		<!-- Fancy Dropdown JS -->
-		<script src="dist/js/dropdown-bootstrap-extended.js"></script>
+		<script src="{{ asset('js/dropdown-bootstrap-extended.js') }}"></script>
 		
 		<!-- Owl JavaScript -->
-		<script src="../../vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>
 	
 		<!-- Switchery JavaScript -->
-		<script src="../../vendors/bower_components/switchery/dist/switchery.min.js"></script>
+		<script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
 		
 		<!-- Init JavaScript -->
-		<script src="dist/js/init.js"></script>
+		<script src="{{ asset('js/init.js') }}"></script>
 	</body>
 
 <!-- Mirrored from hencework.com/theme/zapily/ltr/summernote-wysihtml5.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 04:22:48 GMT -->
