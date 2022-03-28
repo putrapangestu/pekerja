@@ -97,12 +97,12 @@
                         <div class="main-nav__main-navigation three float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li>
-                                    <a href="{{ url('gawe/index2') }}">Home</a>
+                                    <a href="{{ url('/gawe') }}">Home</a>
                                    <!-- /.sub-menu -->
                                 </li>
                                
                                 <li class="current">
-                                    <a href="{{ url('gawe/listings2') }}">Pekerja</a>
+                                    <a href="{{ url('gawe/listings') }}">Pekerja</a>
                                     <!-- /.sub-menu -->
                                 </li>
                                 <li>
@@ -121,18 +121,28 @@
 
                             
                             <div class="main-nav__right main-nav__right_one three float-right">
+                                @auth
                                 <ul class="navbar-nav ">
                                     <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                      <a class="dropdown-item" href="{{ url('gawe/profile') }}">Profile</a>
+                                      <a class="dropdown-item" href="{{ url('gawe/profile') }}">Profile</a>                                              
                                       <a class="dropdown-item" href="{{ url('gawe/mail') }}">Pesan</a>
-                                      <a class="dropdown-item" href="{{ url('gawe') }}">Log Out</a>
+                                      <hr class="dropdown-divider">
+                                      <form action="{{ url('gawe/logout') }}" method="POST">
+                                          @csrf
+                                        <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Logout</button>
+                                      </form>
                                     </div>
                                   </li>   
                                 </ul>
+                            @else 
+                            <div class="header_btn_1">
+                                <a href="{{ url('gawe/login') }}"><span class="icon-add"></span>Login</a>
+                            </div>
+                            @endauth
 
                         </div>
 
