@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
+    use AuthenticatesUsers;
+    
     public function index(){
         return view('gawe.login',[
             'title'=>'Login'
@@ -20,6 +23,7 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($credentials)){
+            $user = Auth::user();
             $request->session()->regenerate();
             $request->session()->flash('success', 'Registrasi berhasil silahkan login ke akun anda');
             return redirect()->intended('/gawe');

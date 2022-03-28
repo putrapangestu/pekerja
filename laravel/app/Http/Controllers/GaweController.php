@@ -12,8 +12,11 @@ class GaweController extends Controller
     public function index(Request $request){
         $errors = Profile::all();
         // $errors = Blog::all();
+        $user = Auth::user();
 
-        return view('gawe.index3');
+        return view('gawe.index3', compact(
+            'errors', 'user'
+        ));
     }
 
     // list

@@ -104,19 +104,19 @@
                         <div class="main-nav__main-navigation three float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li>
-                                    <a href="index3.html">Home</a>
+                                    <a href="{{ url('gawe') }}">Home</a>
                                 </li>
                                 <li>
-                                    <a href="listings3.html">Pekerja</a>
+                                    <a href="{{ url('gawe/listings') }}">Pekerja</a>
                                 </li>
                                 <li>
-                                    <a href="blog.html">Blog</a>
+                                    <a href="{{ url('gawe/blog') }}">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="{{ url('gawe/contact') }}">Contact</a>
                                 </li>
                                 <li>
-                                    <a href="about.html">About</a>
+                                    <a href="{{ url('gawe/about') }}">About</a>
                                 </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
