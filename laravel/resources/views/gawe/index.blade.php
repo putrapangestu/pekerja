@@ -67,7 +67,7 @@
                             <div class="header_topmenu_1">
                                 <ul class="list-unstyled">
                                     <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
-                                    <li><a href="{{ url('gawe/mail') }}"><i class="fa fa-inbox"></i>inbox</a></li>
+                                    <li><a href="{{ url('gawe/inbox') }}"><i class="fa fa-inbox"></i>inbox</a></li>
                                 </ul>
                             </div>
                         </div>
