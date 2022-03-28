@@ -11,10 +11,12 @@ use App\Models\Rekrut;
 
 class RekrutController extends Controller
 {
-    public function index(){
-        return view('gawe.rekrut',[
-            'title'=> 'rekrut'
-        ]);
+    public function index($email){
+
+        $pp = DB::table('profiles')->where('email', $email)->get();
+
+        
+        return view('gawe.rekrut1',['profiles' => $pp], ['title'=> 'rekrut']);
     }
 
     public function store(Request $request)
@@ -60,8 +62,11 @@ class RekrutController extends Controller
             'informasi'=>$request->informasi,
 
         ]);
+        $validData = $request->validate([
+            'nama' => 'required'
+        ]);
         
-        return redirect('gawe/rekrut');
+        return redirect('/gawe/listings/');
     }
     
 }
