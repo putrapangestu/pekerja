@@ -155,17 +155,17 @@
                 <div class="row">
                     <div class="col-xl-5 col-lg-5">
                         <div class="story_left_image">
-                            <img src="images/resources/about1.jpg" alt="">
+                            <img src="{{ asset('assets/images/resources/about1.jpg') }}" alt="">
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3">
                         <div class="story_middle_image">
-                            <img src="images/resources/about2.jpg" alt="">
+                            <img src="{{ asset('assets/images/resources/about2.jpg') }}" alt="">
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
                         <div class="story_right_image">
-                            <img src="images/resources/about3.jpg" alt="">
+                            <img src="{{ asset('assets/images/resources/about3.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -209,7 +209,7 @@
                 <div class="row">
                     <div class="col-xl-7">
                         <div class="about_one_image">
-                            <img src="images/about/black logo gawe.png" alt="">
+                            <img src="{{ asset('assets/images/about/black logo gawe.png') }}" alt="">
                         </div>
                     </div>
                     <div class="col-xl-5">
@@ -262,7 +262,7 @@
                         <!--Team One Single-->
                         <div class="team_one_single">
                             <div class="team_one_image">
-                                <img src="images/team/team-1-img-1.jpg" alt="">
+                                <img src="{{ asset('assets/images/team/team-1-img-1.jpg') }}" alt="">
                             </div>
                             <div class="team_one_content">
                                 <div class="team_member_info">
@@ -281,7 +281,7 @@
                         <!--Team One Single-->
                         <div class="team_one_single">
                             <div class="team_one_image">
-                                <img src="images/team/team-1-img-2.jpg" alt="">
+                                <img src="{{ asset('assets/images/team/team-1-img-2.jpg') }}" alt="">
                             </div>
                             <div class="team_one_content">
                                 <div class="team_member_info">
@@ -300,7 +300,7 @@
                         <!--Team One Single-->
                         <div class="team_one_single">
                             <div class="team_one_image">
-                                <img src="images/team/team-1-img-3.jpg" alt="">
+                                <img src="{{ asset('assets/images/team/team-1-img-3.jpg') }}" alt="">
                             </div>
                             <div class="team_one_content">
                                 <div class="team_member_info">
@@ -319,7 +319,7 @@
                         <!--Team One Single-->
                         <div class="team_one_single">
                             <div class="team_one_image">
-                                <img src="images/team/team-1-img-4.jpg" alt="">
+                                <img src="{{ asset('assets/images/team/team-1-img-4.jpg') }}" alt="">
                             </div>
                             <div class="team_one_content">
                                 <div class="team_member_info">
@@ -350,7 +350,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="footer-widget__column footer-widget__about wow fadeInUp" data-wow-delay="100ms">
                             <div class="footer-widget__logo">
-                                <a href="#"><img src="images/resources/footer-logo.png" alt=""></a>
+                                <a href="#"><img src="{{ asset('assets/images/resources/footer-logo.png') }}" alt=""></a>
                             </div>
                             <div class="footer-widget_about_text">
                                 <p>Lorem ipsum dolor sit amet, consect etur adi pisicing elit sed do eiusmod tempor
@@ -451,7 +451,7 @@
         <div class="side-menu__block-inner ">
             <div class="side-menu__top justify-content-end">
                 <a href="#" class="side-menu__toggler side-menu__close-btn"><img
-                        src="images/shapes/close-1-1.png" alt=""></a>
+                        src="{{ asset('assets/images/shapes/close-1-1.png') }}" alt=""></a>
             </div><!-- /.side-menu__top -->
 
             <nav class="mobile-nav__container">
