@@ -74,19 +74,19 @@
                         <div class="main-nav__main-navigation one float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li >
-                                    <a href="{{ url('gawe/index3') }}">Home</a>
+                                    <a href="{{ url('index3') }}">Home</a>
                                 </li>
                                 <li >
-                                    <a href="{{ url('gawe/listings3') }}">Pekerja</a>
+                                    <a href="{{ url('listings3') }}">Pekerja</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/blog') }}">Blog</a>
+                                    <a href="{{ url('blog') }}">Blog</a>
                                 </li>
                                 <li class="current">
-                                    <a href="{{ url('gawe/contact') }}">Contact</a>
+                                    <a href="{{ url('contact') }}">Contact</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/about') }}">About</a>
+                                    <a href="{{ url('about') }}">About</a>
                                 </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
@@ -100,7 +100,7 @@
                                       <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                      <a class="dropdown-item" href="{{ url('gawe/login') }}">LOGIN</a>
+                                      <a class="dropdown-item" href="{{ url('login') }}">LOGIN</a>
                                     </div>
                                   </li>   
                                 </ul>
@@ -200,7 +200,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action="{{ url('gawe/contact') }}" method="POST">
+                    <form action="{{ url('contact') }}" method="POST">
                         @csrf
                     <div class="col-xl-8">
                         <div class="contact-one__form__wrap">

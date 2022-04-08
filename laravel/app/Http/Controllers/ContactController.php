@@ -22,6 +22,6 @@ class ContactController extends Controller
             'email'=> $request->email,
             'pesan'=>$request->pesan,
         ]);
-    return redirect('gawe/contact');
+    return redirect('gawe.contact');
     }
 }
