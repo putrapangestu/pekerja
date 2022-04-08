@@ -12,15 +12,12 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-    public function index($email){
+    public function index(){
         $errors = Profile::all();
         $data = User::all();
 
-        $data = DB::table('users')->where('email',$email)->get();
-        return view('gawe.profile',['users' => $data]);
-
         return view('gawe.profile', compact(
-            'datas', 'errors'
+            'data', 'errors'
         ));
     }
 

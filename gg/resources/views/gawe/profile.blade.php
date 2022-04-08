@@ -110,11 +110,9 @@
                         <div class="col-sm-3">
                           <h6 class="mb-0">Email</h6>
                         </div>
-                        @foreach ($data as $user)
                         <div class="col-sm-9 text-secondary">
-                          {{ $user->email }}
+                          {{ $profile->email }}
                         </div>
-                        @endforeach
                       </div>
                       <hr>
                       <div class="row">
@@ -122,9 +120,7 @@
                           <h6 class="mb-0">Telepon</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          {{ $profile->telepon
-                          
-                           }}
+                          {{ $profile->telepon }}
                         </div>
                       </div>
                       <hr>
