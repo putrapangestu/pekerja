@@ -11,7 +11,7 @@ class CobaController extends Controller
 {
     Public function index(Request $request){
         $mail = Rekrut::all();
-        
+   
 
         return view('gawe.inbox', compact(
             'mail'
@@ -28,5 +28,4 @@ class CobaController extends Controller
         return view('gawe.inbox-detail', ['rekrut' => $detail],['profiles' => $pp]);
     }
 
-  
 }
