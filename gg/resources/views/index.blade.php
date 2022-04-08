@@ -129,8 +129,8 @@
                                         
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             @foreach ($data as $user )
-                                          <a class="dropdown-item" href="{{ url('/profile/{{ $user->email }}') }}">Profile</a>                                              
-                                          <a class="dropdown-item" href="{{ url('/mail/{{ $user->email }}') }}">Pesan</a>
+                                          <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
+                                          <a class="dropdown-item" href="{{ url('/inbox') }}">Pesan</a>
                                             @endforeach
                                           <hr class="dropdown-divider">
                                           <form action="{{ url('/logout') }}" method="POST">
