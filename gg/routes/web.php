@@ -25,7 +25,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [GaweController::class, 'index'])->name('/');
 Route::get('/listings', [GabutController::class, 'listings'])->name('listings');
-Route::get('/detail/{telepon}', [GabutController::class, 'listingsdetails'])->name('detail');
+Route::get('/detail-pekerja/{telepon}', [GabutController::class, 'listingsdetails'])->name('detail-pekerja');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

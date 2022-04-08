@@ -104,29 +104,46 @@
                         <div class="main-nav__main-navigation three float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li>
-                                    <a href="{{ url('gawe') }}">Home</a>
+                                    <a href="{{ url('/') }}">Home</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/listings') }}">Pekerja</a>
+                                    <a href="{{ url('/listings') }}">Pekerja</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/blog') }}">Blog</a>
+                                    <a href="{{ url('/blog') }}">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/contact') }}">Contact</a>
+                                    <a href="{{ url('/contact') }}">Contact</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/about') }}">About</a>
+                                    <a href="{{ url('/about') }}">About</a>
                                 </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
 
                         <div class="main-nav__right main-nav__right_one three float-right">
-                            <div class="icon-search-box">
-                                <a href="#" class="main-nav__search search-popup__toggler">
-                                    <i class="icon-magnifying-glass"></i>
-                                </a>
-                            </div>
+                            @auth
+                                <ul class="navbar-nav ">
+                                    <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                      <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
+                                      <a class="dropdown-item" href="{{ url('/mail') }}">Pesan</a>
+                                      <hr class="dropdown-divider">
+                                      <form action="{{ url('/logout') }}" method="POST">
+                                          @csrf
+                                        <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Logout</button>
+                                      </form>
+                                    </div>
+                                  </li>   
+                                </ul>
+                                @else 
+                                    <div class="header_btn_1">
+                                    <a href="{{ url('/login') }}"><span class="icon-add"></span>Login</a>
+                                    </div>
+                                @endauth
 
 
                         </div>

@@ -101,17 +101,17 @@
                                 </li>
                                
                                 <li>
-                                    <a href="{{ url('gawe/listings') }}">Pekerja</a>
+                                    <a href="{{ url('/listings') }}">Pekerja</a>
                                     <!-- /.sub-menu -->
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/blog') }}">Blog</a>
+                                    <a href="{{ url('/blog') }}">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/contact') }}">Contact</a>
+                                    <a href="{{ url('/contact') }}">Contact</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/about') }}">About</a>
+                                    <a href="{{ url('/about') }}">About</a>
                                 </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
@@ -128,10 +128,10 @@
                                         </a>
                                         
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                          <a class="dropdown-item" href="{{ url('gawe/profile') }}">Profile</a>                                              
-                                          <a class="dropdown-item" href="{{ url('gawe/mail') }}">Pesan</a>
+                                          <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
+                                          <a class="dropdown-item" href="{{ url('/mail') }}">Pesan</a>
                                           <hr class="dropdown-divider">
-                                          <form action="{{ url('gawe/logout') }}" method="POST">
+                                          <form action="{{ url('/logout') }}" method="POST">
                                               @csrf
                                             <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Logout</button>
                                           </form>
