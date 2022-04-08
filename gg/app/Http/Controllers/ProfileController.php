@@ -74,14 +74,6 @@ class ProfileController extends Controller
         return redirect('gawe/profile');
     }
 
-    public function password(UpdatePasswordRequest $request, $email){
-        $pw = Register::find($email);
-
-        $request->user()->update([
-            'password' => Hash::make($request->get('password'))
-        ]);
-    }
-
     public function perusahaan(){
         return view('gawe/profile1');
     }
