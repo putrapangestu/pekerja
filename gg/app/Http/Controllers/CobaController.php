@@ -11,7 +11,7 @@ class CobaController extends Controller
 {
     Public function index(Request $request){
         $mail = Rekrut::all();
-        $pilihan = Pilihan::all();
+   
 
         return view('gawe.inbox', compact(
             'mail'
@@ -28,13 +28,4 @@ class CobaController extends Controller
         return view('gawe.inbox-detail', ['rekrut' => $detail],['profiles' => $pp]);
     }
 
-    public function pilihan(Request $request){
-        
-            if(pilihan==terima){
-            'pilihan'->'Saya menerima';
-            }elseif(pilihan==tolak){
-            'pilihan'->'Saya menolak';
-            }
-    
-    }
 }
