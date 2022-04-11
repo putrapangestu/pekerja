@@ -11,17 +11,17 @@ class ContactController extends Controller
         return view('gawe.contact');
     }
     public function contact(Request $request){
-        // $model = new Contact;
-        // $model->nama = $request->nama;
-        // $model->email = $request->alamat;
-        // $model->pesan = $request->pesan;
+       // $model = new Contact;
+        //$model->nama = $request->nama;
+        //$model->email = $request->alamat;
+       // $model->pesan = $request->pesan;
    
-        //  $model-> submit();
-        DB::table('contact')->insert([
-            'name'=> $request->name,
-            'email'=> $request->email,
-            'pesan'=>$request->pesan,
-        ]);
-    return redirect('gawe.contact');
+         // $model-> submit();
+       DB::table('contact')->insert([
+           'name'=> $request->name,
+           'email'=> $request->email,
+           'pesan'=>$request->pesan,
+       ]);
+    return redirect('contact');
     }
 }

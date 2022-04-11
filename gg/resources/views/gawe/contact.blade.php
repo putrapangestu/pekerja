@@ -20,25 +20,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet" \>
 
     <!-- Css-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.theme.default.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/fontawesome-all.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/swiper.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-select.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owl.theme.default.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/magnific-popup.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fontawesome-all.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/swiper.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-select.min.css') }}" />
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/vegas.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/nouislider.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/nouislider.pips.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/ziston-icon.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/ziston-new-icons.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vegas.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/nouislider.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/nouislider.pips.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/ziston-icon.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/ziston-new-icons.css') }}" />
     <!-- Template styles -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}" />
 
 </head>
 
@@ -205,22 +205,22 @@
                     <div class="col-xl-8">
                         <div class="contact-one__form__wrap">
                                 <div class="row">        
-                                    <div class="col-md-6">
+                                    <div class="col-md-12 my-2">
                                         <div class="input-group">
                                             <input type="text" name="name" placeholder="nama">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12 my-2">
                                         <div class="input-group">
                                             <input type="email" name="email" placeholder="alamat email">
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 my-2">
                                         <div class="input-group">
-                                            <textarea name="pesan" placeholder="penulis pesan" cols="30" rows="10"></textarea>
+                                            <textarea name="pesan" placeholder="penulis pesan" cols="50" rows="10"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 my-2">
                                         <div class="input-group contact__btn">
                                             <button type="submit" class="thm-btn contact-one__btn">Comment</button>
                                         </div>
@@ -381,30 +381,30 @@
 
 
 
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('js/TweenMax.min.js') }}"></script>
-    <script src="{{ asset('js/wow.js') }}"></script>
-    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
-    <script src="{{ asset('js/swiper.min.js') }}"></script>
-    <script src="{{ asset('js/typed-2.0.11.js') }}"></script>
-    <script src="{{ asset('js/vegas.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap-select.min.js') }}"></script>
-    <script src="{{ asset('js/countdown.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ asset('js/nouislider.min.js') }}"></script>
-    <script src="{{ asset('js/isotope.js') }}"></script>
-    <script src="{{ asset('js/appear.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/typed-2.0.11.js') }}"></script>
+    <script src="{{ asset('assets/js/vegas.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/countdown.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.js') }}"></script>
+    <script src="{{ asset('assets/js/appear.js') }}"></script>
 
 
     <!-- template scripts -->
-    <script src="{{ asset('js/theme.js') }}"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
 
 
 </body>
