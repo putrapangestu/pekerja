@@ -56,59 +56,79 @@
         </div>
         @endif
 
-            <header class="main-nav__header-one">
-                <nav class="header-navigation one stricky">
-                    <div class="container-box clearfix">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="main-nav__left main-nav__left_one float-left">
-                            <div class="logo_one">
-                                <a href="index.html" class="main-nav__logo">
-                                    <img src="images/resources/logo.png" class="main-logo" alt="Awesome Image">
-                                </a>
-                            </div>
-                            <a href="#" class="side-menu__toggler">
-                                <i class="fa fa-bars"></i>
+        <header class="main-nav__header-one">
+            <nav class="header-navigation three stricky">
+                <div class="container-box clearfix">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="main-nav__left main-nav__left_one float-left">
+                        <div class="logo_one">
+                            <a href="{{ url('gawe/index2') }}" class="main-nav__logo">
+                                <img src="{{ asset('images/resources/logo-black.png') }}" alt="Awesome image" class="logo-light" height="75">
                             </a>
                         </div>
+                        <a href="#" class="side-menu__toggler">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
 
-                        <div class="main-nav__main-navigation one float-left">
-                            <ul class=" main-nav__navigation-box">
-                                <li >
-                                    <a href="{{ url('index3') }}">Home</a>
-                                </li>
-                                <li >
-                                    <a href="{{ url('listings3') }}">Pekerja</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('blog') }}">Blog</a>
-                                </li>
-                                <li class="current">
-                                    <a href="{{ url('contact') }}">Contact</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('about') }}">About</a>
-                                </li>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
+                    <div class="main-nav__main-navigation three float-left">
+                        <ul class=" main-nav__navigation-box">
+                            <li class="current">
+                                <a href="{{ url('/gawe') }}">Home</a>
+                               <!-- /.sub-menu -->
+                            </li>
+                           
+                            <li>
+                                <a href="{{ url('/listings') }}">Pekerja</a>
+                                <!-- /.sub-menu -->
+                            </li>
+                            <li>
+                                <a href="{{ url('/blog') }}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/contact') }}">Contact</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/about') }}">About</a>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
 
-                        <div class="main-nav__right main-nav__right_one float-right">
-
+                    <div class="main-nav__right main-nav__right_one three float-right">
+                        
                             <div class="main-nav__right main-nav__right_one three float-right">
+                             @if(Auth::user())
+                             
                                 <ul class="navbar-nav ">
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
+                                      <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
                                     </a>
+                                    
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                      <a class="dropdown-item" href="{{ url('login') }}">LOGIN</a>
+                                        
+                                      <a class="dropdown-item" href="{{ url('/profile/'.Auth::user()->email) }}">Profile</a>                                              
+                                      <a class="dropdown-item" href="{{ url('/inbox/'.Auth::user()->email) }}">Pesan</a>
+                                        
+                                      <hr class="dropdown-divider">
+                                      <form action="{{ url('/logout') }}" method="POST">
+                                          @csrf
+                                        <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Logout</button>
+                                      </form>
                                     </div>
                                   </li>   
                                 </ul>
-                        </div>
-
+                            @else 
+                                <div class="header_btn_1">
+                                    <a href="{{ url('/login') }}"><span class="icon-add"></span>Login</a>
+                                </div>
+                            @endif
+                               
+                            
                     </div>
-                </nav>
-            </header>
+                </div>
+            </nav>
+        </header>
         </div>
 
         <!--Page Header Start-->
