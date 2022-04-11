@@ -167,11 +167,11 @@
                             <h1>Layanan Terbaik <span>Gawe.Id</span></h1>
                             <p>Cari Pekerja Sesuai Kebutuhan Anda </p>
                         </div>
-                        <form class="banner_three_form">
+                        <form class="banner_three_form" action="{{ url('/') }}" method="POST">
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
                                     <div class="banner_three_input_box">
-                                        <input type="text" name="listing_name" placeholder="Cari yang anda ingin cari?">
+                                        <input type="text" name="keyword" placeholder="Cari yang anda ingin cari?">
                                     </div>
                                 </div>
                             </div>
@@ -203,11 +203,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                     
                         <div class="banner_three_form_btn">
                             <button class="thm-btn" type="submit"><span
                                     class="icon-magnifying-glass"></span>Search</button>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
