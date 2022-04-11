@@ -217,9 +217,9 @@
 																			</td>
 																			
 																			
-																				<td class="view-message  dont-show"><a href="mail/{{ $mails->email }}">{{ $mails->nama}}</a></td>
+																				<td class="view-message  dont-show"><a href="inbox/{{ $mails->email }}">{{ $mails->nama}}</a></td>
 																			
-																				<td class="view-message " ><a href="mail/{{ $mails->email }}">{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</a></td>
+																				<td class="view-message " ><a href="inbox/{{ $mails->email }}">{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</a></td>
 																			
 																				<td class="view-message  text-right">
 																					<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
