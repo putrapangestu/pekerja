@@ -14,4 +14,8 @@ class GaweController extends Controller
         
         return view('index', compact('user', 'data'));
     }
+
+    public function about(){
+        return view('gawe.about');
+    }
 }
