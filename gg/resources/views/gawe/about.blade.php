@@ -99,19 +99,19 @@
                         <div class="main-nav__main-navigation one float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li >
-                                    <a href="{{ url('gawe/index3') }}">Home</a>
+                                    <a href="{{ url('/') }}">Home</a>
                                 </li>
                                 <li >
-                                    <a href="{{ url('gawe/listings3') }}">Pekerja</a>
+                                    <a href="{{ url('/listings') }}">Pekerja</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/blog') }}">Blog</a>
+                                    <a href="{{ url('/blog') }}">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('gawe/contact') }}">Contact</a>
+                                    <a href="{{ url('/kontak') }}">Contact</a>
                                 </li>
                                 <li class="current">
-                                    <a href="{{ url('gawe/about') }}">About</a>
+                                    <a href="{{ url('/tentang-kami') }}">About</a>
                                 </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->

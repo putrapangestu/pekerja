@@ -86,10 +86,10 @@
                                 <a href="{{ url('/blog') }}">Blog</a>
                             </li>
                             <li>
-                                <a href="{{ url('/contact') }}">Contact</a>
+                                <a href="{{ url('/kontak') }}">Contact</a>
                             </li>
                             <li>
-                                <a href="{{ url('/about') }}">About</a>
+                                <a href="{{ url('/tentang-kami') }}">About</a>
                             </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -220,7 +220,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action="{{ url('contact') }}" method="POST">
+                    <form action="{{ url('chat-kontak') }}" method="POST">
                         @csrf
                     <div class="col-xl-8">
                         <div class="contact-one__form__wrap">

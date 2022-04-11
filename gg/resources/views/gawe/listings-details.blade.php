@@ -113,10 +113,10 @@
                                     <a href="{{ url('/blog') }}">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/contact') }}">Contact</a>
+                                    <a href="{{ url('/kontak') }}">kontak</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/about') }}">About</a>
+                                    <a href="{{ url('/tentang-kami') }}">tentang-kami</a>
                                 </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
