@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProsesRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\support\facades\Auth;
 use App\Models\Rekrut;
 
 
@@ -19,7 +20,7 @@ class RekrutController extends Controller
         return view('gawe.rekrut1',['profiles' => $pp], ['title'=> 'rekrut']);
     }
 
-    public function store(Request $request)
+    public function store(Request $request,$email)
     {
         // $model = new Rekrut();
         // $model->nama = $request->nama;
@@ -32,28 +33,33 @@ class RekrutController extends Controller
         // $model->kata = $request->kata;
         // $model->save();
 
-        // $validateData = $request->validate([
-        //     'nama'=>['required'],
-        //     'alamat'=>['required'],
-        //     'provinsi'=>['required'],
-        //     'kota'=>['required'],
-        //     'no'=>['required'],
-        //     'telpon'=>['required'],
-        //     'email'=>['required']
-        //     'kata'=>['required']
-        //     'posisi'=>['required']
-        //     'jam'=>['required']
-        //     'gaji'=>['required']
-        //     'informasi'=>['required']
-        // ]);
+        $validateData= $request->validate([
+            'dari'=>'nullable',
+            'untuk'=>'nullable',
+            'nama'=>'nullable',
+            'alamat'=>'nullable',
+            'provinsi'=>'nullable',
+            'kota'=>'nullable',
+            'no'=>'nullable',
+            'telepon'=>'nullable',
+            'email'=>'nullable',
+            'kata'=>'nullable',
+            'posisi'=>'nullable',
+            'jam'=>'nullable',
+            'gaji'=>'nullable',
+            'informasi'=>'nullable',
 
-        DB::table('rekrut')->insert([
+        ]);;
+
+        DB::table('rekrut0')->insert([
+            'dari'=>Auth::user()->email,
+            'untuk'=>$email,
             'nama'=>$request->nama,
             'alamat'=>$request->alamat,
             'provinsi'=>$request->provinsi,
             'kota'=>$request->kota,
             'no'=>$request->no,
-            'telpon'=>$request->telpon,
+            'telepon'=>$request->telepon,
             'email'=>$request->email,
             'kata'=>$request->kata,
             'posisi'=>$request->posisi,
@@ -62,11 +68,11 @@ class RekrutController extends Controller
             'informasi'=>$request->informasi,
 
         ]);
-        $validData = $request->validate([
-            'nama' => 'required'
-        ]);
+
         
-        return redirect('/gawe/listings/');
+       
+        
+        return redirect('listings');
     }
     
 }

@@ -31,14 +31,15 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ url('gawe') }}">Beranda</a></li>
-              <li class="breadcrumb-item active"><a href="{{ url('gawe/profile') }}">Profile</a></li>
+              <li class="breadcrumb-item"><a href="{{ url('/') }}">Beranda</a></li>
+              <li class="breadcrumb-item active"><a href="{{ url('profile') }}">Profile</a></li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
+    @foreach($profiles as $profile)
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -51,7 +52,7 @@
               <div class="card-box text-center">
                 <img src="images/resources/review-2-img-1.png">
     
-                <h4 class="mb-0">randmul</h4>
+                <h4 class="mb-0">{{ $profile->nama }}</h4>
                 <p class="text-muted">@webdesigner</p>
     
                 <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Follow</button>
@@ -96,7 +97,7 @@
               
               <div class="card-body">
                     <div class="container light-style flex-grow-1 container-p-y">
-                      <form action="{{ url('gawe/edit-profile') }}" method="POST" enctype="multipart/form-data">
+                      <form action="{{ url('edit-profile/{email}') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                       <h4 class="font-weight-bold py-3 mb-4">
                         Account settings
@@ -118,7 +119,7 @@
                               <div class="tab-pane fade active show" id="account-general">
                                
                                 <div class="card-body media align-items-center">
-                                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="d-block ui-w-80">
+                                  <img src="{{ $profile->foto }}" alt="" class="d-block ui-w-80">
                                   <div class="media-body ml-4">
                                     <label class="btn btn-outline-primary">
                                       Upload new photo
@@ -134,11 +135,11 @@
                                 <div class="card-body">
                                   <div class="form-group">
                                     <label class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="nama" value="Nelle Maxwell">
+                                    <input type="text" class="form-control" name="nama" value="{{ $profile->nama }}">
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">E-mail</label>
-                                    <input type="text" class="form-control mb-1" name="email" value="nmaxwell@mail.com">
+                                    <input type="text" class="form-control mb-1" name="email" value="{{ Auth::user()->email }}">
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">Pekerja</label>
@@ -177,19 +178,19 @@
                                 <div class="card-body pb-2">
                                   <div class="form-group">
                                     <label class="form-label">Birthday</label>
-                                    <input type="date" class="form-control" name="ultah" value="May 3, 1995">
+                                    <input type="date" class="form-control" name="ultah" value="{{ $profile->ultah }}">
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">Telepon</label>
-                                    <input type="text" class="form-control" name="telepon" value="0897289277">
+                                    <input type="text" class="form-control" name="telepon" value="{{ $profile->telepon }}">
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">Alamat</label>
-                                    <input type="text" class="form-control" name="alamat" value="St kalahan 929">
+                                    <input type="text" class="form-control" name="alamat" value="{{ $profile->alamat }}">
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">Bidang Pekerjaan</label>
-                                    <input type="text" class="form-control" name="bidang" value="IT">
+                                    <input type="text" class="form-control" name="bidang" value="{{ $profile->bidang }}">
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">Keterangan</label>
@@ -235,44 +236,44 @@
                                   <div class="form-group">
                                     <label class="form-label">Riwayat pendidikan</label>
                                     <div class="col-md-6"> 
-                                      <input type="date" class="form-control" name="lulussd" value="Tahun">
+                                      <input type="date" class="form-control" name="lulussd" value="{{ $profile->lulusansd }}">
                                     </div>
                                     <div class="col-md-6">
-                                      <input type="text" class="form-control" name="sd" value="SD">
+                                      <input type="text" class="form-control" name="sd" value="{{ $profile->sd }}">
                                     </div>  <br>
                                     <div class="col-md-6">
-                                      <input type="date" class="form-control" name="lulussmp" value="Tahun">
+                                      <input type="date" class="form-control" name="lulussmp" value="{{ $profile->lulusansmp }}">
                                     </div>
                                     <div class="col-md-6">
-                                      <input type="text" class="form-control" name="smp" value="SMP">
+                                      <input type="text" class="form-control" name="smp" value="{{ $profile->smp }}">
                                     </div> <br>
                                     <div class="col-md-6">
-                                      <input type="date" class="form-control" name="lulussma" value="Tahun">
+                                      <input type="date" class="form-control" name="lulussma" value="{{ $profile->lulusansma }}">
                                     </div>
                                     <div class="col-md-6">
-                                      <input type="text" class="form-control" name="sma" value="SMA/SMK">
+                                      <input type="text" class="form-control" name="sma" value="{{ $profile->sma }}">
                                     </div> <br>
                                   </div>
                   
                                   <div class="form-group">
                                     <label class="form-label">Bio</label>
-                                    <textarea class="form-control" name="bio" rows="5">randmul 18 februari 2022 kepanjen malang</textarea>
+                                    <textarea class="form-control" name="bio" rows="5">{{ $profile->bio }}</textarea>
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">prestasi</label>
-                                    <textarea class="form-control" name="prestasi" rows="5">juara 1 lomba coding tingkat rt</textarea>
+                                    <textarea class="form-control" name="prestasi" rows="5">{{ $profile->prestasi }}</textarea>
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">pengalaman</label>
-                                    <textarea class="form-control" name="pengalaman" rows="5">pernah membuat web desa</textarea>
+                                    <textarea class="form-control" name="pengalaman" rows="5">{{ $profile->pengalaman }}</textarea>
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">kemampuan</label>
-                                    <textarea class="form-control" name="kemampuan" rows="5">mengoding tanpa melihat</textarea>
+                                    <textarea class="form-control" name="kemampuan" rows="5">{{ $profile->kemampuan }}</textarea>
                                   </div>
                                 </div>
                                 <div class="card-body media align-items-center">
-                                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="d-block ui-w-80">
+                                  <img src="{{ $profile->hasil }}" alt="" class="d-block ui-w-80">
                                   <div class="media-body ml-4">
                                     <label class="btn btn-outline-primary">
                                       Upload file atau photo
@@ -307,6 +308,7 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
+    @endforeach
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

@@ -23,12 +23,14 @@ class ProfileController extends Controller
         return view('gawe.profile', ['data'=>$profile]);
     }
 
-    public function edit(){
+    public function edit($email){
+        
+        $profiles = DB::table('profiles')->where('email',$email)->get();
 
-        return view('gawe.edit-profile');
+        return view('gawe.edit-profile', ['profiles'=>$profiles]);
     }
 
-    public function general(Request $request){
+    public function update(Request $request, $email){
 
         $model = new Profile;
         
@@ -43,7 +45,7 @@ class ProfileController extends Controller
         $model->twitter = $request->twitter;
         $model->facebook = $request->facebook;
         $model->google = $request->google;
-        $model->link = $request->pekerja;
+        $model->link = $request->link;
         $model->instagram = $request->instagram;
         $model->lulusansd = $request->lulusansd;
         $model->sd = $request->sd;
@@ -74,7 +76,7 @@ class ProfileController extends Controller
         }
         $model->save();
 
-        return redirect('gawe/profile');
+        return redirect('/profile/'.Auth::user()->email);
     }
 
     public function perusahaan(){

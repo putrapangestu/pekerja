@@ -225,7 +225,7 @@
                         <div class="main_bottom_right">
                             <ul class="list-unstyled">
                                 <li><a href="#">Add to Wishlist<i class="far fa-heart"></i></a></li>
-                                <a href="/gawe/rekrut1/{{ $profile->telepon }}"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a>
+                                <a href="/rekrut/{{ $profile->email }}"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a>
                                 
                             </ul>
                         </div>

@@ -36,7 +36,7 @@
 					<!-- Breadcrumb -->
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 					  <ol class="breadcrumb">
-						<li><a href="{{ url('index') }}">Beranda</a></li>
+						<li><a href="{{ url('/') }}">Beranda</a></li>
 						<li class="active"><span>inbox</span></li>
 					  </ol>
 					</div>

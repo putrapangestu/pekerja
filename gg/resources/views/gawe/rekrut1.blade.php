@@ -55,7 +55,7 @@
                                 </div>
                                 @endif
 
-								<form class="login-form" method="POST" action="/gawe/rekrut1/{telepon}">
+								<form class="login-form" method="POST" action="{{ url('merekrut/email') }}}">
 									@csrf
 									<div class="pull-left">
 										<h6 class="panel-title txt-dark"><h2>Form Perekrutan</h2></h6>
