@@ -6,19 +6,21 @@ use Illuminate\Http\Request;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Support\Facades\File;
-use App\Http\Requests\UpdatePasswordRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
 class ProfileController extends Controller
 {
-    public function index(){
+    public function index($email){
+        $user = Auth::user()->email;
         $errors = Profile::all();
         $data = User::all();
 
-        return view('gawe.profile', compact(
-            'data', 'errors'
-        ));
+        $profile = DB::table('profiles')->where('email',$email)->get();
+        
+
+        return view('gawe.profile', ['data'=>$profile]);
     }
 
     public function edit(){

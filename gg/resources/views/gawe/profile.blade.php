@@ -38,7 +38,7 @@
       </div><!-- /.container-fluid -->
     </section>
  
-    @foreach ($errors as $profile)
+    @foreach ($data as $profile)
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -162,7 +162,7 @@
                       <hr>
                       <div class="row">
                         <div class="col-sm-12">
-                          <a class="btn btn-info " href="{{ url('gawe/edit-profile') }}">Edit</a>
+                          <a class="btn btn-info " href="{{ url('/edit-profile/'.Auth::user()->email) }}">Edit</a>
                         </div>
                       </div>
               </div><!-- /.card-body -->

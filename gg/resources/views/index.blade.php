@@ -129,8 +129,8 @@
                                         
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             
-                                          <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
-                                          <a class="dropdown-item" href="{{ url('/inbox') }}">Pesan</a>
+                                          <a class="dropdown-item" href="{{ url('/profile/'.Auth::user()->email) }}">Profile</a>                                              
+                                          <a class="dropdown-item" href="{{ url('/inbox/'.Auth::user()->email) }}">Pesan</a>
                                             
                                           <hr class="dropdown-divider">
                                           <form action="{{ url('/logout') }}" method="POST">
