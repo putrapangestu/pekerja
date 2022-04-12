@@ -187,7 +187,7 @@
 <!-- AdminLTE App --> 
 <script src="js/jsweb/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="js/jsweb/demo.js "></script>
+<script src="js/jsweb/demo.js"></script>
 
 <style type="text/css">
   body{
