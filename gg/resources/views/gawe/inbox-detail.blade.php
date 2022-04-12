@@ -37,6 +37,8 @@
 </head>
 
 <body>
+	@foreach($rekrut as $details)
+	@foreach ($profiles as $pp)
 	<!--Preloader-->
 	<div class="preloader-it">
 		<div class="la-anim-1"></div>
@@ -178,7 +180,7 @@
 																<div class="container-fluid">
 																	<div class="pull-left">
 																		<div class="compose-btn">
-																			<a class="btn btn-sm mr-10" href="#" data-toggle="modal" title="Compose"><i class="zmdi zmdi-chevron-left"></i></a>
+																			<a class="btn btn-sm mr-10" href="{{ url('inbox') }}" data-toggle="modal" title="Compose"><i class="zmdi zmdi-chevron-left"></i></a>
 																		</div>
 																	</div>
 																	<div class="pull-right text-right">
@@ -196,18 +198,18 @@
 																	</div>
 																</div>
 																<hr class="light-grey-hr mt-10 mb-15"/>
-																@foreach($rekrut as $details)
+																
 																<div class="container-fluid mb-20">	
 																	<h4 class="weight-500"> {{ $details->nama }} telah merekrut anda.</h4>
 																</div>	
 															</div>
 															<div class="sender-info">
 																<div class="container-fluid">
-																	@foreach ($profiles as $pp)
+																	
 																	<div class="sender-img-wrap pull-left mr-20">
 																		<img class="sender-img" alt="user" src="{{ asset('gambar/'.$pp->foto) }}">
 																	</div>
-																	@endforeach
+																	
 																	<div class="sender-details   pull-left">
 																		<span class="capitalize-font pr-5 txt-dark block font-15 weight-500 head-font">{{ $details->nama }}</span>
 																		<span class="block">
@@ -290,20 +292,36 @@
 																</ul>
 															</div>
 														</div class="btn  btn-success btn-inline btn-rounded">
-														@endforeach
-														<form action="{{ url('gawe/inbox') }}" method="POST">
-															@csrf
-															<div class="container-fluid float-right">
-																<span>
-																<input type="radio" class="pilihan" value="terima">  
-																<button type="submit" name="pilihan" class="btn  btn-success btn-inline btn-rounded" value="Saya menerima undangan anda">Terima</button>
-																</span>
-																<span>
-																<input type="radio" class="pilihan" value="tolak">
-																<button type="submit" name="pilihan" class="btn  btn-danger btn-inline btn-rounded" value="Saya menolak undangan anda">Tolak</button>
-																</span>
-															</div>
-														</form>
+														@if(Auth::user()->user=='Pekerja')
+															@if ($details->balasan=='tolak')
+																<div class="text-danger text-center py-2" style="background-color: bisque">
+																	Anda telah menolak tawaran ini
+																</div>
+															@elseif ($details->balasan=='terima')
+																<div class="text-success text-center py-2" style="background-color: bisque">
+																	Anda telah menerima tawaran ini
+																</div>
+															@else
+																<div class="container-fluid float-right">
+																	<form action="{{ url('inbox/'.$details->id) }}" method="POST" class="d-inline">
+																		@csrf
+																		
+																			<input type="hidden" name="balasan" value="terima">  
+																			<button type="submit" class="btn  btn-success btn-inline btn-rounded">Terima</button>
+																		
+																			
+																	</form>
+																	<form action="{{ url('inbox/'.$details->id) }}" method="POST" class="d-inline">
+																		@csrf
+																		
+																			<input type="hidden" name="balasan" value="tolak">
+																			<button type="submit" class="btn  btn-danger btn-inline btn-rounded">Tolak</button>
+																		
+																	</form>
+																</div>
+															@endif
+																	
+														@endif
 													</div>
 												</div>
 											</aside>
@@ -331,6 +349,8 @@
         <!-- /Main Content -->
 
     </div>
+	@endforeach
+	@endforeach
     <!-- /#wrapper -->
 	
 	<!-- JavaScript -->

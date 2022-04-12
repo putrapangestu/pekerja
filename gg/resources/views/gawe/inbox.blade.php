@@ -217,14 +217,14 @@
 																			</td>
 																			
 																			
-																				<td class="view-message  dont-show"><a href="inbox-detail/{{ $mails->email }}">{{ $mails->nama}}</a></td>
+																			<td class="view-message  dont-show"><a href="inbox/{{ $mails->id }}">{{ $mails->nama}}</a></td>
 																			
-																				<td class="view-message " ><a href="inbox-detail/{{ $mails->email }}">{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</a></td>
-																			
-																				<td class="view-message  text-right">
-																					<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																					<span  class="time-chat-history inline-block">9:27 AM</span>
-																				</td>
+																			<td class="view-message " ><a href="inbox/{{ $mails->id }}">{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</a></td>
+																		
+																			<td class="view-message  text-right">
+																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
+																				<span  class="time-chat-history inline-block">9:27 AM</span>
+																			</td>
 																			
 																		</tr>
 																	</tbody>

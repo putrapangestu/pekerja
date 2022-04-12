@@ -20,15 +20,26 @@ class CobaController extends Controller
         return view('gawe.inbox', ['email' => $email]);
     }
 
-    public function detail_index($email){
+    public function detail_index($id){
         $user = Auth::user()->email;
 
-        $detail = DB::table('rekrut0')->where('email', $email)->where('untuk',$user)->get();
-        $pp = DB::table('profiles')->where('email', $email)->get();
+        $detail = DB::table('rekrut0')->where('id', $id)->where('untuk',$user)->get();
+        
+        foreach($detail as $d){
+            $pp = DB::table('profiles')->where('email',$d->untuk)->get();
+        }
 
         
 
         return view('gawe.inbox-detail', ['rekrut' => $detail],['profiles' => $pp]);
+    }
+    public function balasan(Request $request, $id){
+        
+        DB::table('rekrut0')->where('id', $id)->update([
+            'balasan'=> $request->balasan,
+        ]);
+        return redirect('inbox/'.$id);
+
     }
 
 }
