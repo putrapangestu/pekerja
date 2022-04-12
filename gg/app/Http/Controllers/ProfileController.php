@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-    public function index($email){
+    public function index(){
         $user = Auth::user()->email;
         $errors = Profile::all();
         $data = User::all();
 
-        $profile = DB::table('profiles')->where('email',$email)->get();
+        $profile = DB::table('profiles')->where('email',$user)->get();
         
 
         return view('gawe.profile', ['data'=>$profile]);
@@ -32,7 +32,7 @@ class ProfileController extends Controller
 
     public function update(Request $request, $email){
 
-        $model = new Profile;
+        $model =  Profile::find($email);
         
         $model->nama = $request->nama;
         $model->email = $request->email;
@@ -76,7 +76,7 @@ class ProfileController extends Controller
         }
         $model->save();
 
-        return redirect('/profile/'.Auth::user()->email);
+        return redirect('/profile');
     }
 
     public function perusahaan(){

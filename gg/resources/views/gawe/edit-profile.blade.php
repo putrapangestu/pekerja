@@ -97,7 +97,7 @@
               
               <div class="card-body">
                     <div class="container light-style flex-grow-1 container-p-y">
-                      <form action="{{ url('edit-profile/{email}') }}" method="POST" enctype="multipart/form-data">
+                      <form action="{{ url('edit-profile/'.$profile->email) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                       <h4 class="font-weight-bold py-3 mb-4">
                         Account settings

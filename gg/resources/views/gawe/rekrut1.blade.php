@@ -33,9 +33,8 @@
 		<link href="{{ asset('zapily/style.css') }}" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<!--Preloader-->
-		<
-		<!--/Preloader-->
+		@foreach($profiles as $pp)
+
 		<div class="wrapper theme-1-active pimary-color-gold">
 			
 			<!-- Main Content -->
@@ -55,7 +54,7 @@
                                 </div>
                                 @endif
 
-								<form class="login-form" method="POST" action="{{ url('merekrut/email') }}}">
+								<form class="login-form" method="POST" action="{{ url('merekrut/'.$pp->email) }}">
 									@csrf
 									<div class="pull-left">
 										<h6 class="panel-title txt-dark"><h2>Form Perekrutan</h2></h6>
@@ -171,6 +170,7 @@
 			</div>
 			<!-- /Main Content -->
 		</div>
+		@endforeach
 		<!-- /#wrapper -->
 		
 		<!-- JavaScript -->

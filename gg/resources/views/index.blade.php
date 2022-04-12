@@ -68,7 +68,7 @@
                                 <ul class="list-unstyled">
                                     <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
                                     
-                                    <li><a href="{{ url('gawe/inbox') }}"><i class="fa fa-inbox"></i>inbox</a></li>
+                                    <li><a href="{{ url('/inbox') }}"><i class="fa fa-inbox"></i>inbox</a></li>
                                   
                                 </ul>
                             </div>
@@ -129,7 +129,7 @@
                                         
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             
-                                          <a class="dropdown-item" href="{{ url('/profile/'.Auth::user()->email) }}">Profile</a>                                              
+                                          <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
                                           <a class="dropdown-item" href="{{ url('/inbox') }}"> Pesan</a>
                                             
                                           <hr class="dropdown-divider">

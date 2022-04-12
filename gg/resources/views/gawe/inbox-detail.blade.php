@@ -90,36 +90,30 @@
 																<div class="modal-body">
 																	<form role="form" class="form-horizontal">
 																		<div class="form-group">
-																			<label class="col-lg-2 control-label">To</label>
+																			<label class="col-lg-2 control-label">Untuk</label>
 																			<div class="col-lg-10">
 																				<input type="text" placeholder="" id="inputEmail1" class="form-control">
 																			</div>
 																		</div>
 																		<div class="form-group">
-																			<label class="col-lg-2 control-label">Cc / Bcc</label>
-																			<div class="col-lg-10">
-																				<input type="text" placeholder="" id="cc" class="form-control">
-																			</div>
-																		</div>
-																		<div class="form-group">
-																			<label class="col-lg-2 control-label">Subject</label>
+																			<label class="col-lg-2 control-label">Subjek</label>
 																			<div class="col-lg-10">
 																				<input type="text" placeholder="" id="inputPassword1" class="form-control">
 																			</div>
 																		</div>
 																		<div class="form-group">
-																			<label class="col-lg-2 control-label">Message</label>
+																			<label class="col-lg-2 control-label">Pesan</label>
 																			<div class="col-lg-10">
 																				<textarea class="textarea_editor form-control" rows="15" placeholder="Enter text ..."></textarea>
 																			</div>
 																		</div>
 																		<div class="form-group">
 																			<div class="col-lg-offset-2 col-lg-10">
-																				<div class="fileupload btn btn-info btn-anim mr-10"><i class="zmdi zmdi-attachment"></i><span class="btn-text">attachments</span>
+																				<div class="fileupload btn btn-info btn-anim mr-10"><i class="fa fa-paperclip"></i><span class="btn-text">Lampiran</span>
 																					<input type="file" class="upload">
 																				</div>
 																				
-																				<button class="btn btn-success" type="submit">Send</button>
+																				<button class="btn btn-success" type="submit">Kirim</button>
 																			</div>
 																		</div>
 																	</form>
@@ -136,16 +130,16 @@
 														<a href="#"><i class="zmdi zmdi-inbox"></i> Inbox <span class="label label-danger ml-10">2</span></a>
 													</li>
 													<li>
-														<a href="#"><i class="zmdi zmdi-email-open"></i> Sent Mail</a>
+														<a href="#"><i class="zmdi zmdi-email-open"></i> Mengirimm surat</a>
 													</li>
 													<li>
-														<a href="#"><i class="zmdi zmdi-bookmark-outline"></i> Important</a>
+														<a href="#"><i class="zmdi zmdi-bookmark-outline"></i> Penting</a>
 													</li>
 													<li>
-														<a href="#"><i class="zmdi zmdi-folder-outline"></i> Drafts <span class="label label-info ml-10">30</span></a>
+														<a href="#"><i class="zmdi zmdi-folder-outline"></i> Draf <span class="label label-info ml-10">30</span></a>
 													</li>
 													<li>
-														<a href="#"><i class="zmdi zmdi-delete"></i> Trash</a>
+														<a href="#"><i class="zmdi zmdi-delete"></i> Sampah</a>
 													</li>
 												</ul>
 											</aside>

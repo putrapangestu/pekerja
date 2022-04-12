@@ -27,11 +27,13 @@ class CobaController extends Controller
         
         foreach($detail as $d){
             $pp = DB::table('profiles')->where('email',$d->untuk)->get();
+
+            return view('gawe.inbox-detail', ['rekrut' => $detail],['profiles' => $pp]);
         }
 
         
 
-        return view('gawe.inbox-detail', ['rekrut' => $detail],['profiles' => $pp]);
+       
     }
     public function balasan(Request $request, $id){
         

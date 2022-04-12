@@ -119,15 +119,32 @@
                         <div class="main-nav__right main-nav__right_one float-right">
 
                             <div class="main-nav__right main-nav__right_one three float-right">
+                                @if(Auth::user())
+                                 
                                 <ul class="navbar-nav ">
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
+                                      <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
                                     </a>
+                                    
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                      <a class="dropdown-item" href="{{ url('gawe/login') }}">LOGIN</a>
+                                        
+                                      <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
+                                      <a class="dropdown-item" href="{{ url('/inbox') }}"> Pesan</a>
+                                        
+                                      <hr class="dropdown-divider">
+                                      <form action="{{ url('/logout') }}" method="POST">
+                                          @csrf
+                                        <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Logout</button>
+                                      </form>
                                     </div>
                                   </li>   
+                                </ul>
+                            @else 
+                                <div class="header_btn_1">
+                                    <a href="{{ url('/login') }}"><span class="icon-add"></span>Login</a>
+                                </div>
+                            @endif   
                                 </ul>
 
                         </div>

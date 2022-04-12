@@ -70,7 +70,7 @@
                             <div class="header_topmenu_1">
                                 <ul class="list-unstyled">
                                     <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
-                                    <li><a href="{{ url('gawe/inbox') }}"><i class="fas fa-mail"></i>Inbox</a></li>
+                                    <li><a href="{{ url('/inbox') }}"><i class="fas fa-mail"></i>Inbox</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -160,7 +160,7 @@
                             <div class="row">
                                 <div class="col-xl-4 col-lg-6">
                                     <div class="input_box">
-                                        <input type="text" name="listing_name" placeholder="What are you looking for?">
+                                        <input type="text" name="keyword" placeholder="What are you looking for?">
                                     </div>
                                 </div>
                                 <div class="col-xl-4 col-lg-6">
