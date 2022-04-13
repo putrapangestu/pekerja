@@ -129,6 +129,8 @@
                                         
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             
+                                          <p class="dropdown-item">{{Auth::user()->name}}</p>
+                                          <hr class="dropdown-divider">
                                           <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
                                           <a class="dropdown-item" href="{{ url('/inbox') }}"> Pesan</a>
                                             

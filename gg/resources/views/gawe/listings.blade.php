@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
 
     <!-- Css-->
+    
     <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
@@ -118,32 +119,36 @@
                         </div><!-- /.navbar-collapse -->
 
                         <div class="main-nav__right main-nav__right_one three float-right">
-
                             
-                            <div class="main-nav__right main-nav__right_one three float-right">
-                                @auth
-                                <ul class="navbar-nav ">
-                                    <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="images/resources/latest_listings_au-img-2.png" width="55" height="55" class="rounded-circle">
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                      <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
-                                      <a class="dropdown-item" href="{{ url('/mail') }}">Pesan</a>
-                                      <hr class="dropdown-divider">
-                                      <form action="{{ url('/logout') }}" method="POST">
-                                          @csrf
-                                        <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Logout</button>
-                                      </form>
-                                    </div>
-                                  </li>   
-                                </ul>
+                                <div class="main-nav__right main-nav__right_one three float-right">
+                                 @if(Auth::user())
+                                 
+                                    <ul class="navbar-nav ">
+                                        <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
+                                        </a>
+                                        
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            
+                                          <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
+                                          <a class="dropdown-item" href="{{ url('/inbox') }}"> Pesan</a>
+                                            
+                                          <hr class="dropdown-divider">
+                                          <form action="{{ url('/logout') }}" method="POST">
+                                              @csrf
+                                            <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Logout</button>
+                                          </form>
+                                        </div>
+                                      </li>   
+                                    </ul>
                                 @else 
                                     <div class="header_btn_1">
-                                    <a href="{{ url('/login') }}"><span class="icon-add"></span>Login</a>
+                                        <a href="{{ url('/login') }}"><span class="icon-add"></span>Login</a>
                                     </div>
-                                @endauth
-
+                                @endif
+                                   
+                                
                         </div>
 
                     </div>
@@ -212,9 +217,17 @@
                                 <div class="author_img">
                                     <img src="{{ asset('images/resources/latest_listings-3_au-img-1.png') }}" alt="">
                                 </div>
+                                @if( $profile->keterangan == 'Belum Memiliki Pekerjaan' )
                                 <div class="shopping_circle">
                                     <span class=""></span>
                                 </div>
+                                @elseif($profile->keterangan == 'Memiliki Pekerjaan')
+                                    <div class="shopping_circle">
+                                    <div class="rounded-circle" style="width:38px;height:38px;background-color:rgba(145, 198, 255, 0.931)">
+                                </div>
+                                </div>
+
+                                @endif
                             </div>
                             <div class="listings_three-page_content">
                                 <div class="title">
@@ -222,7 +235,7 @@
                                                 class="fa fa-check"></span></a></h3>
                                 </div>
                                 <ul class="list-unstyled listings_three-page_contact_info">
-                                    <li><i class="fas fa-map-marker-alt"></i>Malang</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>{{ $profile->alamat }}</li>
                                     <li><i class="fas fa-user"></i>{{ $profile->bidang }}</li>
                                     <li><a href="tel:+13456789"><i class="fa fa-phone"></i>{{ $profile->telepon }}</a></li>
                                 </ul>
