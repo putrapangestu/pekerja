@@ -154,49 +154,14 @@
 
         <section class="listings_three_content">
             <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <form class="listings_one_content_left_form">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-6">
-                                    <div class="input_box">
-                                        <input type="text" name="keyword" placeholder="What are you looking for?">
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6">
-                                    <div class="input_box">
-                                        <select class="selectpicker" data-width="100%">
-                                            <option selected="selected">Kategories</option>
-                                            <option>Desain Grafis</option>
-                                            <option>Content Writer</option>
-                                            <option>Fotografer</option>
-                                            <option>Editor</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-6">
-                                    <div class="input_box">
-                                        <select class="selectpicker" data-width="100%">
-                                            <option selected="selected">Location</option>
-                                            <option>Malang</option>
-                                            <option>Surabaya</option>
-                                            <option>Gresik</option>
-                                            <option>Trenggalek</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                <div class="col-md-6">
+                <form action="/listings" method="GET">
+                    <div class="input-group mb-4">
+                        <input type="text" class="form-control" placeholder="Search.." name="keyword">
+                        <button class="btn btn-danger" type="submit" >Search</button>
+                      </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="listings_btn">
-                            <a href="#" class="thm-btn"><span class="icon-magnifying-glass"></span>Search</a>
-                        </div>
-                    </div>
-                </div>
+                </form>
             </div>
         </section>
 
