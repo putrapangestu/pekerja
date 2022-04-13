@@ -37,8 +37,7 @@
 </head>
 
 <body>
-	@foreach($rekrut as $details)
-	@foreach ($profiles as $pp)
+	
 	<!--Preloader-->
 	<div class="preloader-it">
 		<div class="la-anim-1"></div>
@@ -168,6 +167,8 @@
 														</div>
 														<div class="clearfix"></div>
 													</div>
+													@foreach($rekrut as $details)
+													@foreach ($profiles as $pp)
 													<div class="panel-wrapper collapse in">
 														<div class="panel-body inbox-body pa-0">
 															<div class="heading-inbox">
@@ -314,9 +315,25 @@
 																	</form>
 																</div>
 															@endif
-																	
+
+														@elseif(Auth::user()->user=='Perusahaan')
+															@if ($details->balasan=='tolak')
+																<div class="alert alert-danger text-center" style="background-color: bisque">
+																	Pekerja telah menolak tawaran anda
+																</div>
+															@elseif ($details->balasan=='terima')
+																<div class="text-success text-center py-2" style="background-color: bisque">
+																	Pekerja telah menerima tawaran anda
+																</div>
+															@else
+																<div class="alert alert-danger text-center" style="background-color: bisque">
+																	Pekerja belum menanggapi tawaran anda
+																</div>
+															@endif
 														@endif
 													</div>
+													@endforeach
+													@endforeach
 												</div>
 											</aside>
 										</div>
@@ -343,8 +360,7 @@
         <!-- /Main Content -->
 
     </div>
-	@endforeach
-	@endforeach
+	
     <!-- /#wrapper -->
 	
 	<!-- JavaScript -->

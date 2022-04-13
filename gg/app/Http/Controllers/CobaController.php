@@ -23,7 +23,7 @@ class CobaController extends Controller
     public function detail_index($id){
         $user = Auth::user()->email;
 
-        $detail = DB::table('rekrut0')->where('id', $id)->where('untuk',$user)->get();
+        $detail = DB::table('rekrut0')->where('id', $id)->get();
         
         foreach($detail as $d){
             $pp = DB::table('profiles')->where('email',$d->untuk)->get();
