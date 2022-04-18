@@ -84,7 +84,7 @@
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="main-nav__left main-nav__left_one float-left">
                             <div class="logo_one">
-                                <a href="{{ url('gawe/index2') }}" class="main-nav__logo">
+                                <a href="{{ url('/') }}" class="main-nav__logo">
                                     <img src="{{ asset('images/resources/logo-black.png') }}" alt="Awesome image" class="logo-light" height="75">
                                 </a>
                             </div>
@@ -129,7 +129,7 @@
                                         
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             
-                                          <p class="dropdown-item">{{Auth::user()->name}}</p>
+                                          <p class="dropdown-item">{{Auth::user()->name}}<span class="text-success ml-3">{{ auth::user()->user }}</span></p>
                                           <hr class="dropdown-divider">
                                           <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
                                           <a class="dropdown-item" href="{{ url('/inbox') }}"> Pesan</a>

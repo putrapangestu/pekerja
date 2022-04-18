@@ -12,31 +12,146 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="css/adminlte.min.css">
 
+  <!-- Css-->
+  <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css') }}">
+
+  <link rel="stylesheet" href="{{ asset('assets/css/jquery.mCustomScrollbar.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/vegas.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/nouislider.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/nouislider.pips.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/ziston-icon.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/ziston-new-icons.css') }}">
+  <!-- Template styles -->
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="my-0">
 <div class="wrapper">
   <!-- Navbar -->
   
 
   <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
+    <div class="site-header__header-one header_three_wrap clearfix">
+
+      <div class="header_top_one">
+          <div class="header_top_one_container">
+              <div class="header_top_one_inner clearfix">
+
+                  <div class="header_top_one_inner_left float-left">
+                      <div class="header_social_1">
+                          <ul class="list-unstyled">
+                              <li><a href="#"><i class="fab fa-twitter"></i>Twitter</a></li>
+                              <li><a href="#"><i class="fab fa-facebook-square"></i>Facebook</a></li>
+                              <li><a href="#"><i class="fab fa-pinterest"></i>Pinterest</a></li>
+                              <li><a href="#"><i class="fab fa-youtube"></i>Youtube</a></li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="header_top_one_inner_right float-right">
+                      <div class="header_topmenu_1">
+                          <ul class="list-unstyled">
+                              <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
+                              
+                              <li><a href="{{ url('/inbox') }}"><i class="fa fa-inbox"></i>inbox</a></li>
+                            
+                          </ul>
+                      </div>
+                  </div>
+
+              </div>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ url('/') }}">Beranda</a></li>
-              <li class="breadcrumb-item active"><a href="{{ url('gawe/profile') }}">Profile</a></li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+      </div>
+
+      <header class="main-nav__header-one">
+          <nav class="header-navigation three stricky">
+              <div class="container-box clearfix">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="main-nav__left main-nav__left_one float-left">
+                      <div class="logo_one">
+                          <a href="{{ url('/') }}" class="main-nav__logo">
+                              <img src="{{ asset('images/resources/logo-black.png') }}" alt="Awesome image" class="logo-light" height="75">
+                          </a>
+                      </div>
+                      <a href="#" class="side-menu__toggler">
+                          <i class="fa fa-bars"></i>
+                      </a>
+                  </div>
+
+                  <div class="main-nav__main-navigation three float-left">
+                      <ul class=" main-nav__navigation-box">
+                          <li class="current">
+                              <a href="{{ url('/') }}">Home</a>
+                             <!-- /.sub-menu -->
+                          </li>
+                         
+                          <li>
+                              <a href="{{ url('/listings') }}">Pekerja</a>
+                              <!-- /.sub-menu -->
+                          </li>
+                          <li>
+                              <a href="{{ url('/blog') }}">Blog</a>
+                          </li>
+                          <li>
+                              <a href="{{ url('/kontak') }}">Contact</a>
+                          </li>
+                          <li>
+                              <a href="{{ url('/tentang-kami') }}">About</a>
+                          </li>
+                      </ul>
+                  </div><!-- /.navbar-collapse -->
+
+                  <div class="main-nav__right main-nav__right_one three float-right">
+                      
+                          <div class="main-nav__right main-nav__right_one three float-right">
+                           @if(Auth::user())
+                           
+                              <ul class="navbar-nav ">
+                                  <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
+                                  </a>
+                                  
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                      
+                                    <p class="dropdown-item">{{Auth::user()->name}} <span class="text-success ml-3">{{ auth::user()->user }}</span></p>
+                                    <hr class="dropdown-divider">
+                                    <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
+                                    <a class="dropdown-item" href="{{ url('/inbox') }}"> Pesan</a>
+                                      
+                                    <hr class="dropdown-divider">
+                                    <form action="{{ url('/logout') }}" method="POST">
+                                        @csrf
+                                      <button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Logout</button>
+                                    </form>
+                                  </div>
+                                </li>   
+                              </ul>
+                          @else 
+                              <div class="header_btn_1">
+                                  <a href="{{ url('/login') }}"><span class="icon-add"></span>Login</a>
+                              </div>
+                          @endif
+                             
+                          
+                  </div>
+              </div>
+          </nav>
+      </header>
+  </div>
  
     @foreach ($data as $profile)
     
