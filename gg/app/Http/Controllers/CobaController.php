@@ -43,5 +43,6 @@ class CobaController extends Controller
         return redirect('inbox/'.$id);
 
     }
+    
 
 }

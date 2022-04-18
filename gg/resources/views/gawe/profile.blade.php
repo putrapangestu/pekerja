@@ -39,6 +39,7 @@
     </section>
  
     @foreach ($data as $profile)
+    
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -174,8 +175,9 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
-
     @endforeach
+
+    
     <!-- /.content -->
 </div>
 <!-- ./wrapper -->

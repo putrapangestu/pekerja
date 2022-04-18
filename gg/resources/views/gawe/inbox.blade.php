@@ -16,7 +16,7 @@
 	
 	<!-- Bootstrap Wysihtml5 css -->
 	<link rel="stylesheet" href="{{ asset('vendors/bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css') }}" />
-		
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">	
 	<!-- Custom CSS -->
 	<link href="{{ asset('zapily/style.css') }}" rel="stylesheet" type="text/css">
 	
@@ -54,7 +54,7 @@
 										<div class="row">
 											<aside class="col-lg-3 col-md-4 pr-0">
 												<div class="mt-20 mb-20 ml-15 mr-15">
-													<a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-success btn-block">
+													<a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-danger btn-block">
 													Menyusun
 													</a>
 													<!-- Modal -->

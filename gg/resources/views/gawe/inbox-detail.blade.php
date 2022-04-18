@@ -15,25 +15,13 @@
 	<link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
 	
 	<!-- Bootstrap Wysihtml5 css -->
-	<link rel="stylesheet" href="{{ asset('vendors/bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css') }}" />
-		
+	<link rel="stylesheet" href="{{ asset('vendors\bower_components\bootstrap3-wysihtml5-bower\dist\bootstrap3-wysihtml5.css') }}" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	
 	<!-- Custom CSS -->
 	<link href="{{ asset('zapily/style.css') }}" rel="stylesheet" type="text/css">
 	
-	<style>
-		[class=pilihan]{
-			position: absolute;
-			opacity: 0;
-			width: 0;
-			height: 0;
-		}
-		[class=pilihan]+button{
-			cursor: pointer;
-		}
-		[class=pilihan]:checked + button {
-			outline: 2px solid #0f0;
-		}
-	</style>
+	
 </head>
 
 <body>
@@ -75,7 +63,7 @@
 										<div class="row">
 											<aside class="col-lg-3 col-md-4 pr-0">
 												<div class="mt-20 mb-20 ml-15 mr-15">
-													<a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-success btn-block">
+													<a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-danger btn-block">
 													Compose
 													</a>
 													<!-- Modal -->
@@ -286,51 +274,92 @@
 																	</li>
 																</ul>
 															</div>
-														</div class="btn  btn-success btn-inline btn-rounded">
-														@if(Auth::user()->user=='Pekerja')
-															@if ($details->balasan=='tolak')
-																<div class="text-danger text-center py-2" style="background-color: bisque">
-																	Anda telah menolak tawaran ini
-																</div>
-															@elseif ($details->balasan=='terima')
-																<div class="text-success text-center py-2" style="background-color: bisque">
-																	Anda telah menerima tawaran ini
-																</div>
-															@else
-																<div class="container-fluid float-right">
-																	<form action="{{ url('inbox/'.$details->id) }}" method="POST" class="d-inline">
-																		@csrf
-																		
-																			<input type="hidden" name="balasan" value="terima">  
-																			<button type="submit" class="btn  btn-success btn-inline btn-rounded">Terima</button>
-																		
-																			
-																	</form>
-																	<form action="{{ url('inbox/'.$details->id) }}" method="POST" class="d-inline">
-																		@csrf
-																		
-																			<input type="hidden" name="balasan" value="tolak">
-																			<button type="submit" class="btn  btn-danger btn-inline btn-rounded">Tolak</button>
-																		
-																	</form>
-																</div>
-															@endif
+														</div>
 
-														@elseif(Auth::user()->user=='Perusahaan')
-															@if ($details->balasan=='tolak')
-																<div class="alert alert-danger text-center" style="background-color: bisque">
-																	Pekerja telah menolak tawaran anda
-																</div>
-															@elseif ($details->balasan=='terima')
-																<div class="text-success text-center py-2" style="background-color: bisque">
-																	Pekerja telah menerima tawaran anda
-																</div>
-															@else
-																<div class="alert alert-danger text-center" style="background-color: bisque">
-																	Pekerja belum menanggapi tawaran anda
-																</div>
+														<hr class="light-grey-hr mt-20 mb-20"/>
+														<div class="container">
+															@if(Auth::user()->user=='Pekerja')
+																@if ($details->balasan=='tolak')
+																	<div class="alert-danger text-center py-3" role="alert">
+																		Anda telah menolak tawaran ini
+																	</div>
+																@elseif ($details->balasan=='terima')
+																	<div class="alert-success text-center py-3" role="alert">
+																		Anda telah menerima tawaran ini
+																	</div>
+																@else
+
+
+																	<a href="#ModalAcc" data-toggle="modal" title="Compose" class="btn btn-success btn-inline rounded">Terima</a>
+																	<a href="#ModalRef" data-toggle="modal" title="Compose" class="btn btn-danger btn-inline rounded">Tolak</a>
+																	<!-- Modal -->
+																	<div aria-hidden="true" role="dialog" tabindex="-1" id="ModalAcc" class="modal fade" style="display: none;">
+																		<div class="modal-dialog">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h5 class="modal-title">Terima Tawaran</h5>
+																				</div>
+																				<div class="modal-body">
+																					Apakah anda yakin ingin menerima tawaran ini?
+																				</div>
+																				<div class="modal-footer">
+																					<form action="{{ url('inbox/'.$details->id) }}" method="post">
+																						@csrf
+																						<input type="hidden" name="balasan" value="terima">  
+																						<button type="submit" class="btn btn-success btn-inline rounded">Yakin</button>
+																						<button aria-hidden="true" data-dismiss="modal" class="btn btn-danger btn-inline rounded" type="button">tidak</button>
+																					</form>
+																				</div>
+																			</div>
+																			<!-- /.modal-content -->
+																		</div>
+																		<!-- /.modal-dialog -->
+																	</div>
+																	<!-- /.modal -->
+
+																	<!-- Modal -->
+																	<div aria-hidden="true" role="dialog" tabindex="-1" id="ModalRef" class="modal fade" style="display: none;">
+																		<div class="modal-dialog">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h5 class="modal-title">Tolak Tawaran</h5>
+																				</div>
+																				<div class="modal-body">
+																					Apakah anda yakin ingin menolak tawaran ini?
+																				</div>
+																				<div class="modal-footer">
+																					<form action="{{ url('inbox/'.$details->id) }}" method="post">
+																						@csrf
+																						<input type="hidden" name="balasan" value="tolak">  
+																						<button type="submit" class="btn btn-success btn-inline rounded">Yakin</button>
+																						<button aria-hidden="true" data-dismiss="modal" class="btn btn-danger btn-inline rounded" type="button">tidak</button>
+																					</form>
+																				</div>
+																			</div>
+																			<!-- /.modal-content -->
+																		</div>
+																		<!-- /.modal-dialog -->
+																	</div>
+																	<!-- /.modal -->
+
+																@endif
+
+															@elseif(Auth::user()->user=='Perusahaan')
+																@if ($details->balasan=='tolak')
+																	<div class="alert-danger text-center py-3" role="alert" >
+																		Pekerja telah menolak tawaran anda
+																	</div>
+																@elseif ($details->balasan=='terima')
+																	<div class="alert-success text-center py-3" role="alert" >
+																		Pekerja telah menerima tawaran anda
+																	</div>
+																@else
+																	<div class="alert-dark text-center py-3" role="alert" >
+																		Pekerja belum menanggapi tawaran anda
+																	</div>
+																@endif
 															@endif
-														@endif
+														</div>
 													</div>
 													@endforeach
 													@endforeach
@@ -370,6 +399,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	
 	<!-- wysuhtml5 Plugin JavaScript -->
 	<script src="{{ asset('vendors/bower_components/wysihtml5x/dist/wysihtml5x.min.js') }}"></script>
@@ -393,6 +423,7 @@
 	
 	<!-- Init JavaScript -->
 	<script src="{{ asset('zapily/js/init.js') }}"></script>
+	
 	
 </body>
 

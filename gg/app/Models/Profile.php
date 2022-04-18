@@ -11,4 +11,32 @@ class Profile extends Model
     protected $table ="profiles";
     public $timestamps = false;
     protected $primaryKey = 'email';
+
+    protected $fillable = [
+        'nama',
+        'email',
+    ];
+    protected $nullable = [
+        'pekerja',
+        'ultah',
+        'telepon',
+        'alamat',
+        'bidang',
+        'keterangan',
+        'twitter',
+        'facebook',
+        'google',
+        'link',
+        'instagram',
+        'lulusansd',
+        'sd',
+        'lulusansmp',
+        'smp',
+        'lulusansma',
+        'sma',
+        'bio',
+        'prestasi',
+        'pengalaman',
+        'kemampuan',
+    ];
 }

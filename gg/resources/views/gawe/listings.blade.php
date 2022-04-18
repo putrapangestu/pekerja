@@ -217,13 +217,13 @@
                                 <div class="author_img">
                                     <img src="{{ asset('images/resources/latest_listings-3_au-img-1.png') }}" alt="">
                                 </div>
-                                @if( $profile->keterangan == 'Belum Memiliki Pekerjaan' )
+                                @if( $profile->keterangan == 'Memiliki Pekerjaan' )
                                 <div class="shopping_circle">
                                     <span class=""></span>
                                 </div>
-                                @elseif($profile->keterangan == 'Memiliki Pekerjaan')
+                                @elseif($profile->keterangan == 'Belum Memiliki Pekerjaan')
                                     <div class="shopping_circle">
-                                    <div class="rounded-circle" style="width:38px;height:38px;background-color:rgba(145, 198, 255, 0.931)">
+                                    <div class="rounded-circle" style="width:38px;height:38px;background-color:lime">
                                 </div>
                                 </div>
 
