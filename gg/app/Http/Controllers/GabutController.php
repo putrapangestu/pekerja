@@ -17,7 +17,7 @@ class GabutController extends Controller
         $keyword = $request->keyword;
 
         // $datas = Proses::all();
-        $errors = Profile::where('nama', 'LIKE', '%'.$keyword.'%')
+        $errors = Profile::where('name', 'LIKE', '%'.$keyword.'%')
             ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')
             ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
             ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%')

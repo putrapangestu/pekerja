@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\TagKategori;
 use App\Models\Profile;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -67,8 +68,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        TagKategori::create([
+            'email' => $data['email']
+        ]);
         Profile::create([
-            'nama' => $data['name'],
+            'name' => $data['name'],
             'email' => $data['email']
         ]);
         return User::create([

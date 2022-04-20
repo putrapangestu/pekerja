@@ -168,7 +168,7 @@
               <div class="card-box text-center">
                 <img src="{{ asset('/gambar'.$profile->foto) }}">
     
-                <h4 class="mb-0">{{ $profile->nama }}</h4>
+                <h4 class="mb-0">{{ $profile->name }}</h4>
                 <p class="text-muted">@webdesigner</p>
     
                 <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Follow</button>
@@ -218,7 +218,7 @@
                           <h6 class="mb-0">Nama Lengkap</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          {{ $profile->nama }}
+                          {{ $profile->name }}
                         </div>
                       </div>
                       <hr>

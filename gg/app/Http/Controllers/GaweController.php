@@ -15,7 +15,7 @@ class GaweController extends Controller
         
         $keyword = $request->keyword;
 
-        $datas = Profile::where('nama', 'LIKE', '%'.$keyword.'%')
+        $datas = Profile::where('name', 'LIKE', '%'.$keyword.'%')
         ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%')
         ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
         ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')

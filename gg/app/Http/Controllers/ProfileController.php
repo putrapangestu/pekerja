@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 use App\Models\register;
 use Illuminate\Http\Request;
 use App\Models\Profile;
+use App\Models\TagKategori;
 use App\Models\User;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 
 class ProfileController extends Controller
@@ -32,9 +34,13 @@ class ProfileController extends Controller
 
     public function update(Request $request, $email){
 
-        $model =  Profile::find($email);
-        
-        $model->nama = $request->nama;
+        $tag = new TagKategori;
+        $tag->tag = $request->tag;
+        $tag->kategori = $request->kategori;
+        $tag->save();
+       
+        $model =  Profile::where('email',$email)->first();
+        $model->name = $request->name;
         $model->email = $request->email;
         $model->pekerja = $request->pekerja;
         $model->ultah = $request->ultah;
@@ -76,11 +82,34 @@ class ProfileController extends Controller
         }
         $model->save();
 
-        return redirect('/profile');
+        $user = User::where('email',$email)->first();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if (!(Hash::check($request->get('current-password'), $user->password))) {
+            // The passwords matches
+            return redirect()->back()->with("error","Your current password does not matches with the password.");
+        }
+
+        if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
+            // Current password and new password same
+            return redirect()->back()->with("error","New Password cannot be same as your current password.");
+        }
+
+        $validatedData = $request->validate([
+            'current-password' => 'required',
+            'new-password' => 'required|string|min:8|confirmed',
+        ]);
+
+        //Change Password
+        $user->password = bcrypt($request->get('new-password'));
+        $user->save();
+
+
+        return redirect('profile');
     }
 
     public function perusahaan(){
-        return view('gawe/profile1');
+        return view('profile1');
     }
 
 }

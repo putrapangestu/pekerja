@@ -13,7 +13,7 @@ class Profile extends Model
     protected $primaryKey = 'email';
 
     protected $fillable = [
-        'nama',
+        'name',
         'email',
     ];
     protected $nullable = [

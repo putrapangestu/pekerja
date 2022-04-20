@@ -52,7 +52,7 @@
               <div class="card-box text-center">
                 <img src="images/resources/review-2-img-1.png">
     
-                <h4 class="mb-0">{{ $profile->nama }}</h4>
+                <h4 class="mb-0">{{ $profile->name }}</h4>
                 <p class="text-muted">@webdesigner</p>
     
                 <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Follow</button>
@@ -135,11 +135,11 @@
                                 <div class="card-body">
                                   <div class="form-group">
                                     <label class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="nama" value="{{ $profile->nama }}">
+                                    <input type="text" class="form-control" name="name" value="{{ $profile->name }}">
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">E-mail</label>
-                                    <input type="text" class="form-control mb-1" name="email" value="{{ Auth::user()->email }}">
+                                    <input type="text" class="form-control mb-1" name="email" value="{{ $profile->email }}">
                                   </div>
                                   <div class="form-group">
                                     <label class="form-label">Pekerja</label>
@@ -158,17 +158,17 @@
                                 <div class="card-body pb-2">
                                   <div class="form-group">
                                     <label class="form-label">Current password</label>
-                                    <input type="password" nama="password_lama" class="form-control">
+                                    <input type="password" nama="current-password" class="form-control">
                                   </div>
                   
                                   <div class="form-group">
                                     <label class="form-label">New password</label>
-                                    <input type="password" name="password_baru" class="form-control">
+                                    <input type="password" name="new-password" class="form-control">
                                   </div>
                   
                                   <div class="form-group">
                                     <label class="form-label">Repeat new password</label>
-                                    <input type="password" name="password_confirm" class="form-control">
+                                    <input type="password" name="new-password_confirmation" class="form-control">
                                   </div>
                                 </div>
                               
@@ -283,6 +283,14 @@
                   
                                     <div class="text-light small mt-1">Allowed JPG, PDF, DOCX, PNG. Max size of 800K</div>
                                   </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="form-label">Tag</label>
+                                  <textarea class="form-control" name="tag" rows="5"></textarea>
+                                </div>
+                                <div class="form-group">
+                                  <label class="form-label">Kategori</label>
+                                  <textarea class="form-control" name="kategori" rows="5"></textarea>
                                 </div>
                                 <hr class="border-light m-0">
                               
