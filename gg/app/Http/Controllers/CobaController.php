@@ -14,10 +14,33 @@ class CobaController extends Controller
         $user = Auth::user()->email;
         $mail = Rekrut::all();
 
+        $keyword = $request->keyword;
+
+        
+        $email = Rekrut::where('untuk',$user)
+            ->orwhere('dari',$user)
+            // ->where('nama', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('dari', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('untuk', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('provinsi', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('kota', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('no', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('telepon', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('email', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('kata', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('posisi', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('jam', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('gaji', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('informasi', 'LIKE', '%'.$keyword.'%')
+            // ->orwhere('balasan', 'LIKE', '%'.$keyword.'%')
+            ->get();
+
         $email = DB::table('rekrut0')->where('untuk',$user)->orwhere ('dari',$user)->get();
    
 
-        return view('gawe.inbox', ['email' => $email]);
+        return view('gawe.inbox', ['tes' => $email], compact(
+            'email'));
     }
 
     public function detail_index($id){
@@ -37,10 +60,17 @@ class CobaController extends Controller
     }
     public function balasan(Request $request, $id){
         
-        DB::table('rekrut0')->where('id', $id)->update([
-            'balasan'=> $request->balasan,
-        ]);
-        return redirect('inbox/'.$id);
+        if($request->hapus == 'hapus'){
+            DB::table('rekrut0')->where('id', $id)->delete();
+            return redirect('inbox');
+
+        }else{
+            DB::table('rekrut0')->where('id', $id)->update([
+                'balasan'=> $request->balasan,
+            ]);
+            return redirect('inbox/'.$id);
+        }
+        
 
     }
     

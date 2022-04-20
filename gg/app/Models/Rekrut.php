@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Rekrut extends Model
 {
     use HasFactory;
-    protected $table ="rekrut";
+    protected $table ="rekrut0";
+    protected $primaryKey = "id";
     public $timetamps =false;
+
+    
 }

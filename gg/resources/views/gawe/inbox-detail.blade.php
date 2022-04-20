@@ -168,7 +168,12 @@
 																	</div>
 																	<div class="pull-right text-right">
 																		<button class="btn btn-sm mr-10" title="" type="button" ><i class="zmdi zmdi-print"></i> </button>
-																		<button class="btn btn-sm mr-10" title=""><i class="zmdi zmdi-delete"></i></button>
+																		
+																		<a href="#ModalDel" data-toggle="modal" title="Compose" class="btn btn-inline rounded"><i class="zmdi zmdi-delete"></i></a>
+
+
+																		
+
 																		<div class="inline-block dropdown">
 																			<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more"></i></a>
 																			<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
@@ -359,6 +364,30 @@
 																	</div>
 																@endif
 															@endif
+															<!-- Modal -->
+															<div aria-hidden="true" role="dialog" tabindex="-1" id="ModalDel" class="modal fade" style="display: none;">
+																<div class="modal-dialog">
+																	<div class="modal-content">
+																		<div class="modal-header">
+																			<h5 class="modal-title">Hapus Pesan</h5>
+																		</div>
+																		<div class="modal-body">
+																			Apakah anda yakin ingin menghapus pesan ini?
+																		</div>
+																		<div class="modal-footer">
+																			<form action="{{ url('inbox/'.$details->id) }}" method="post">
+																				@csrf
+																				<input type="hidden" name="hapus" value="hapus">  
+																				<button type="submit" class="btn btn-success btn-inline rounded">Yakin</button>
+																				<button aria-hidden="true" data-dismiss="modal" class="btn btn-danger btn-inline rounded" type="button">tidak</button>
+																			</form>
+																		</div>
+																	</div>
+																	<!-- /.modal-content -->
+																</div>
+																<!-- /.modal-dialog -->
+															</div>
+															<!-- /.modal -->
 														</div>
 													</div>
 													@endforeach

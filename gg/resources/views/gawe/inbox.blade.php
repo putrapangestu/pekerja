@@ -132,13 +132,15 @@
 															<h6 class="panel-title txt-dark">inbox</h6>
 														</div>
 														<div class="pull-right">
-															<form role="search" class="inbox-search inline-block pull-left mr-15">
-																<div class="input-group">
-																	<input name="example-input1-group2" class="form-control" placeholder="Search" type="text">
+															<form action="{{ url('/inbox') }}" method="GET" role="search" class="inbox-search inline-block pull-left mr-15">
+																<div class="input-group mb-4">
+																	<input type="text" class="form-control" placeholder="Search.." name="keyword">
 																	<span class="input-group-btn">
-																	<button type="button" class="btn  btn-default" data-target="#search_form" data-toggle="collapse" aria-label="Close" aria-expanded="true"><i class="zmdi zmdi-search"></i></button>
+																	  <button class="btn btn-default" type="submit" ><i class="zmdi zmdi-search"></i></button>
 																	</span>
-																</div>
+																  </div>
+															
+															
 															</form>
 															<a href="#" class="pull-left inline-block refresh">
 																<i class="zmdi zmdi-replay"></i>
