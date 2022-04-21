@@ -160,12 +160,46 @@
         <section class="listings_three_content">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <form action="/listings" method="GET">
-                            <div class="input-group mb-4">
-                                <input type="text" class="form-control" placeholder="Search.." name="keyword">
-                                <button class="btn btn-danger" type="submit" >Search</button>
-                              </div>
+                    <div class="col-xl-12">
+                        <form class="listings_one_content_left_form" action="/listings">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6">
+                                    <div class="input_box">
+                                        <input type="text" name="keyword" placeholder="What are you looking for?">
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <div class="input_box">
+                                        <select class="selectpicker" data-width="100%">
+                                            <option selected="selected">Kategories</option>
+                                            <option>Desain Grafis</option>
+                                            <option>Content Writer</option>
+                                            <option>Fotografer</option>
+                                            <option>Editor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <div class="input_box">
+                                        <select class="selectpicker" data-width="100%">
+                                            <option selected="selected">Location</option>
+                                            <option>Malang</option>
+                                            <option>Surabaya</option>
+                                            <option>Gresik</option>
+                                            <option>Trenggalek</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="col-xl-4 col-lg-5 ">
+                                        <div class="listings_btn">
+                                            <button type="submit" class="thm-btn"><span class="icon-magnifying-glass"></span>Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -231,7 +265,7 @@
                             </div>
                             <div class="listings_three-page_content">
                                 <div class="title">
-                                    <h3><a href="detail-pekerja/{{ $profile->telepon }}">{{ $profile->nama }}<span
+                                    <h3><a href="detail-pekerja/{{ $profile->telepon }}">{{ $profile->name }}<span
                                                 class="fa fa-check"></span></a></h3>
                                 </div>
                                 <ul class="list-unstyled listings_three-page_contact_info">
@@ -300,30 +334,30 @@
 
 
 
-    <script src="js/jsweb/jquery.min.js"></script>
-    <script src="js/jsweb/bootstrap.bundle.min.js"></script>
-    <script src="js/jsweb/owl.carousel.min.js"></script>
-    <script src="js/jsweb/waypoints.min.js"></script>
-    <script src="js/jsweb/jquery.counterup.min.js"></script>
-    <script src="js/jsweb/TweenMax.min.js"></script>
-    <script src="js/jsweb/wow.js"></script>
-    <script src="js/jsweb/jquery.magnific-popup.min.js"></script>
-    <script src="js/jsweb/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jsweb/swiper.min.js"></script>
-    <script src="js/jsweb/typed-2.0.11.js"></script>
-    <script src="js/jsweb/vegas.min.js"></script>
-    <script src="js/jsweb/jquery.validate.min.js"></script>
-    <script src="js/jsweb/bootstrap-select.min.js"></script>
-    <script src="js/jsweb/countdown.min.js"></script>
-    <script src="js/jsweb/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/jsweb/bootstrap-datepicker.min.js"></script>
-    <script src="js/jsweb/nouislider.min.js"></script>
-    <script src="js/jsweb/isotope.js"></script>
-    <script src="js/jsweb/appear.js"></script>
+    <script src="{{ url('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url('assets/js/TweenMax.min.js') }}"></script>
+    <script src="{{ url('assets/js/wow.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ url('assets/js/swiper.min.js') }}"></script>
+    <script src="{{ url('assets/js/typed-2.0.11.js') }}"></script>
+    <script src="{{ url('assets/js/vegas.min.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ url('assets/js/countdown.min.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ url('assets/js/nouislider.min.js') }}"></script>
+    <script src="{{ url('assets/js/isotope.js') }}"></script>
+    <script src="{{ url('assets/js/appear.js') }}"></script>
 
 
     <!-- template scripts -->
-    <script src="js/jsweb/theme.js"></script>
+    <script src="{{ url('assets/js/theme.js') }}"></script>
 
 
 </body>

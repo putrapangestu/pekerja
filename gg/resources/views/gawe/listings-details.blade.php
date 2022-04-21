@@ -211,7 +211,7 @@
                             </div>
                             <div class="main_bottom_left_title">
                                 
-                                <h3>{{ $profile->nama }}<i class="fa fa-check"></i></h3>
+                                <h3>{{ $profile->name }}<i class="fa fa-check"></i></h3>
                                 
                             </div>
                             <div class="main_bottom_rating_time">
@@ -254,7 +254,7 @@
                                             <table border="1">
                                                 <tr>
                                                 <td>Nama Lengkap</td><br>
-                                                <td>{{ $profile->nama }}</td>
+                                                <td>{{ $profile->name }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Pekerja</td>
