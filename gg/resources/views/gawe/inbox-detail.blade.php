@@ -235,14 +235,14 @@
 																	</tr>
 																	<tr>
 																		<td>Hari Kerja</td>
-																		<td>: Senin-Sabtu</td>
+																		<td>: {{ $details->hari }}</td>
 																	</tr>
 																	<tr>
 																		<td>Jam Kerja</td>
 																		<td>: {{ $details->jam }}</td>
 																	</tr>
 																	</table>
-																	Untuk syarat dan ketentuan yang ada diperusahaan akan kami catumkan dibawah.
+																	{{ $details->informasi }}
 																</p><br>
 																<p>Terimakasih atas waktu luangnya dan saya berharap semoga kita menjadi satu rekan bisnis.</p>
 															</div>

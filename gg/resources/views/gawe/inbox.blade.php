@@ -158,13 +158,13 @@
 																	</div>
 																	<div class="btn-group">
 																		<a data-toggle="dropdown" href="#" class="btn  all" aria-expanded="false">
-																		Semua
+																		Urutkan
 																		<i class="fa fa-angle-down "></i>
 																		</a>
 																		<ul class="dropdown-menu">
-																			<li><a href="#"> Tidak ada</a></li>
-																			<li><a href="#"> Membaca</a></li>
-																			<li><a href="#"> Belum dibaca</a></li>
+																			<li><a href="/inbox?urutan=terbaru"> Terbaru</a></li>
+																			<li><a href="/inbox?urutan=telama"> Terlama</a></li>
+																			
 																		</ul>
 																	</div>
 																	<div class="btn-group">

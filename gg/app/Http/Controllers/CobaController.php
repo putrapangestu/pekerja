@@ -15,10 +15,16 @@ class CobaController extends Controller
         $mail = Rekrut::all();
 
         $keyword = $request->keyword;
-
+        $urutan = $request->urutan;
+        if($urutan == 'terlama'){
+            $urut = 'asc';
+        }else{
+            $urut = 'desc';
+        }
         
         $email = Rekrut::where('untuk',$user)
             ->orwhere('dari',$user)
+            ->orderBy('created_at',$urut)
             // ->where('nama', 'LIKE', '%'.$keyword.'%')
             // ->orwhere('dari', 'LIKE', '%'.$keyword.'%')
             // ->orwhere('untuk', 'LIKE', '%'.$keyword.'%')
