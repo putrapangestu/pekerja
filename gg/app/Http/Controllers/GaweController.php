@@ -22,6 +22,7 @@ class GaweController extends Controller
         ->orwhere('keterangan', 'LIKE', '%'.$keyword.'%')
         ->get();
         return view('index', compact('user', 'data', 'keyword', 'datas'));
+       
     }
 
     public function about(){

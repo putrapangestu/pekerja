@@ -122,7 +122,9 @@
                               <ul class="navbar-nav ">
                                   <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
+                                    @foreach($data as $profile)
+                                    <img src="{{ asset('/gambar/'.$profile->foto) }}" width="55" height="55" class="rounded-circle">
+                                    @endforeach
                                   </a>
                                   
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -166,7 +168,7 @@
             
                 
               <div class="card-box text-center">
-                <img src="{{ asset('/gambar'.$profile->foto) }}">
+                <img src="{{ asset('/gambar/'.$profile->foto) }}" width="50%" class="mt-4">
     
                 <h4 class="mb-0">{{ $profile->name }}</h4>
                 <p class="text-muted">@webdesigner</p>
@@ -227,7 +229,7 @@
                           <h6 class="mb-0">Email</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          {{ $profile->email }}
+                          {{ Auth::user()->email }}
                         </div>
                       </div>
                       <hr>

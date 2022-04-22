@@ -12,9 +12,15 @@ class Profile extends Model
     public $timestamps = false;
     protected $primaryKey = 'email';
 
+    public function Profile(){
+        return $this->belongsTo(Profile::class, 'email');
+    }
+
     protected $fillable = [
         'name',
         'email',
+        'foto',
+        'hasil',
     ];
     protected $nullable = [
         'pekerja',

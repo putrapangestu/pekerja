@@ -22,14 +22,15 @@ class ProfileController extends Controller
         $profile = DB::table('profiles')->where('email',$user)->get();
         
 
-        return view('gawe.profile', ['data'=>$profile]);
+        return view('gawe.profile', compact('errors'), ['data'=>$profile]);
     }
 
     public function edit($email){
+        $errors = Profile::all();
         
         $profiles = DB::table('profiles')->where('email',$email)->get();
 
-        return view('gawe.edit-profile', ['profiles'=>$profiles]);
+        return view('gawe.edit-profile', compact('errors'), ['profiles'=>$profiles]);
     }
 
     public function update(Request $request, $email){
@@ -85,23 +86,23 @@ class ProfileController extends Controller
         $user = User::where('email',$email)->first();
         $user->name = $request->name;
         $user->email = $request->email;
-        if (!(Hash::check($request->get('current-password'), $user->password))) {
-            // The passwords matches
-            return redirect()->back()->with("error","Your current password does not matches with the password.");
-        }
+        // if (!(Hash::check($request->get('current-password'), $user->password))) {
+        //     // The passwords matches
+        //     return redirect()->back()->with("error","Your current password does not matches with the password.");
+        // }
 
-        if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
-            // Current password and new password same
-            return redirect()->back()->with("error","New Password cannot be same as your current password.");
-        }
+        // if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
+        //     // Current password and new password same
+        //     return redirect()->back()->with("error","New Password cannot be same as your current password.");
+        // }
 
-        $validatedData = $request->validate([
-            'current-password' => 'required',
-            'new-password' => 'required|string|min:8|confirmed',
-        ]);
+        // $validatedData = $request->validate([
+        //     'current-password' => 'required',
+        //     'new-password' => 'required|string|min:8|confirmed',
+        // ]);
 
-        //Change Password
-        $user->password = bcrypt($request->get('new-password'));
+        // //Change Password
+        // $user->password = bcrypt($request->get('new-password'));
         $user->save();
 
 

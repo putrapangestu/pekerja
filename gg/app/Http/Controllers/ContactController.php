@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 use app\Models\Contact;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
     public function index(Request $request){
-        return view('gawe.contact');
+        $data = Profile::all();
+        return view('gawe.contact', compact('data'));
     }
     public function contact(Request $request){
        // $model = new Contact;

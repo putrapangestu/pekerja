@@ -50,7 +50,7 @@
             <div class="card card-primary card-outline">
              
               <div class="card-box text-center">
-                <img src="images/resources/review-2-img-1.png">
+                <img src="{{ asset('/gambar/'.$profile->foto) }}" width="50%" class="mt-4">
     
                 <h4 class="mb-0">{{ $profile->name }}</h4>
                 <p class="text-muted">@webdesigner</p>

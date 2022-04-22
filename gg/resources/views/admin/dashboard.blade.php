@@ -159,12 +159,12 @@
 							<li>
 								<a href=""><i class="zmdi zmdi-account"></i><span>admin</span></a>
 							</li>
-							<li>
-								<a href="inbox.html"><i class="zmdi zmdi-email"></i><span>Inbox</span></a>
-							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="#"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
+								<form action="{{ url('/logout') }}" method="POST">
+									@csrf
+									<button type="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i>Logout</button>
+								</form>
 							</li>
 						</ul>
 					</li>
