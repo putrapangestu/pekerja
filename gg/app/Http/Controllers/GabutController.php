@@ -15,12 +15,18 @@ class GabutController extends Controller
     public function listings(Request $request){
         // $errors = Profile::all();
         $keyword = $request->keyword;
-
+        $urutan = $request->urutan;
+        if($urutan == 'terlama'){
+            $urut = 'desc';
+        }else{
+            $urut = 'asc';
+        }
         // $datas = Proses::all();
         $errors = Profile::where('name', 'LIKE', '%'.$keyword.'%')
             ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')
             ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
             ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%')
+            ->orderBy('created_at',$urut)
             ->get();
 
         return view('gawe.listings', compact(

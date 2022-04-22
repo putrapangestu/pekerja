@@ -216,16 +216,34 @@
                                     <h4>Ditemukan 6 pekerja dengan bidang ini</h4>
                                 </div>
                             </div>
-                            <div class="right">
-                                <div class="shorting">
-                                    <select class="selectpicker" data-width="100%">
-                                        <option selected="selected">Default Sorting</option>
-                                        <option>Terbaru</option>
-                                        <option>Terpopuler</option>
-                                        <option>Sering Dicari</option>
-                                    </select>
+
+
+
+
+                            <ul class="navbar-nav right">
+                                <li class="nav-item dropdown shorting">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="input selectpicker">Daftar Pencarian</div>
+                                </a>
+                                
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <form action="/listings">
+                                  <input type="hidden" name="urutan" value="terbaru">
+                                  <button type="submit" class="dropdown-item" >Terbaru</button>
+                                </form>
+                                <form action="/listings">
+                                    <input type="hidden" name="urutan" value="terlama">
+                                  <button type="submit" class="dropdown-item" > Terlama</button>
+                                </form>
                                 </div>
-                            </div>
+                              </li>   
+                            </ul>
+
+
+
+
+
+                           
                         </div>
                     </div>
                 </div>

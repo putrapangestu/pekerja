@@ -73,7 +73,8 @@ class RegisterController extends Controller
         ]);
         Profile::create([
             'name' => $data['name'],
-            'email' => $data['email']
+            'email' => $data['email'],
+            'created_at' => date("Y-m-d H:i:s", strtotime('now'))
         ]);
         return User::create([
             'name' => $data['name'],
