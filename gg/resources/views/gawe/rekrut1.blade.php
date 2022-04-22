@@ -28,6 +28,7 @@
 		
 		{{-- Bootstrap CSS --}}
 		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 		<!-- Custom CSS -->
 		<link href="{{ asset('zapily/style.css') }}" rel="stylesheet" type="text/css">
@@ -144,8 +145,32 @@
 													</fieldset>
 												</section>
 											</section>
-												{{-- <button type="submit" value="submit">next</button> --}}
-												<button type="submit"  class="btn btn-success" >finish</button>
+												
+
+
+												<a href="#ModalSend" data-toggle="modal" title="Compose" class="btn btn-success rounded">Selesai</a>
+												<!-- Modal -->
+												<div aria-hidden="true" role="dialog" tabindex="-1" id="ModalSend" class="modal fade" style="display: none;">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title">Rekrut Pekerja</h5>
+															</div>
+															<div class="modal-body">
+																Apakah anda yakin ingin merekrut pekerja ini?
+															</div>
+															<div class="modal-footer">
+																	<button type="submit" class="btn btn-success btn-inline rounded">Yakin</button>
+																	<button aria-hidden="true" data-dismiss="modal" class="btn btn-danger btn-inline rounded" type="button">tidak</button>
+															</div>
+														</div>
+														<!-- /.modal-content -->
+													</div>
+													<!-- /.modal-dialog -->
+												</div>
+												<!-- /.modal -->
+
+
 											</div>
 										</div>
 									</div>
@@ -213,6 +238,38 @@
 		<!-- Init JavaScript -->
 		<script src="{{ asset('zapily/js/init.js') }}"></script>
 			 --}}
+
+
+
+			 <!-- jQuery -->
+			 <script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
+
+			 <!-- Bootstrap Core JavaScript -->
+			 <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+			 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+			 
+			 <!-- wysuhtml5 Plugin JavaScript -->
+			 <script src="{{ asset('vendors/bower_components/wysihtml5x/dist/wysihtml5x.min.js') }}"></script>
+			 
+			 <script src="{{ asset('vendors/bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.js') }}"></script>
+			 
+			 <!-- Fancy Dropdown JS -->
+			 <script src="{{ asset('zapily/js/dropdown-bootstrap-extended.js') }}"></script>
+			 
+			 <!-- Bootstrap Wysuhtml5 Init JavaScript -->
+			 <script src="{{ asset('zapily/js/bootstrap-wysuhtml5-data.js') }}"></script>
+			 
+			 <!-- Slimscroll JavaScript -->
+			 <script src="{{ asset('zapily/js/jquery.slimscroll.js') }}"></script>
+			 
+			 <!-- Owl JavaScript -->
+			 <script src="{{ asset('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>
+			 
+			 <!-- Switchery JavaScript -->
+			 <script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
+			 
+			 <!-- Init JavaScript -->
+			 <script src="{{ asset('zapily/js/init.js') }}"></script>
 	</body>
 
 <!-- Mirrored from hencework.com/theme/zapily/ltr/form-wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 04:22:40 GMT -->
