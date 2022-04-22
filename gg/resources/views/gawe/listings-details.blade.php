@@ -271,16 +271,19 @@
                                               </div>
                                               <table border="1">
                                                   <tr>
-                                                      <td>{{ $profile->lulusansd }}</td>
+                                                      
                                                       <td>{{ $profile->sd }}</td>
+                                                      <td>{{ $profile->lulusansd }}</td>
                                                   </tr>
                                                   <tr>
-                                                      <td>{{ $profile->lulusansmp }}</td>
+                                                      
                                                       <td>{{ $profile->smp }}</td>
+                                                      <td>{{ $profile->lulusansmp }}</td>
                                                   </tr>
                                                   <tr>
-                                                      <td>{{ $profile->lulusansma }}</td>
+                                                    
                                                       <td>{{ $profile->sma }}</td>
+                                                      <td>{{ $profile->lulusansma }}</td>
                                                   </tr>
                                               </table>
                                             </div>

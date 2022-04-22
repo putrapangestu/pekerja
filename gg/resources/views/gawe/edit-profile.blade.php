@@ -145,9 +145,9 @@
                                     <label class="form-label">Pekerja</label>
                                     <select class="custom-select" name="pekerja">
                                       <option value="...">......</option>
-                                      <option value="parttime">Part Time</option>
-                                      <option value="freelance">Freelance</option>
-                                      <option value="fulltime">Full Time</option>
+                                      <option @if ($profile->pekerja == 'parttime') selected @endif>Part Time</option>
+                                      <option @if ($profile->pekerja == 'freelance') selected @endif>Freelance</option>
+                                      <option @if ($profile->pekerja == 'fulltime') selected @endif>Full Time</option>
                                     </select>
                                   </div>
                                 </div>
@@ -236,19 +236,19 @@
                                   <div class="form-group">
                                     <label class="form-label">Riwayat pendidikan</label>
                                     <div class="col-md-6"> 
-                                      <input type="date" class="form-control" name="lulussd" value="{{ $profile->lulusansd }}">
+                                      <input type="date" class="form-control" name="lulusansd" value="{{ $profile->lulusansd }}">
                                     </div>
                                     <div class="col-md-6">
                                       <input type="text" class="form-control" name="sd" value="{{ $profile->sd }}">
                                     </div>  <br>
                                     <div class="col-md-6">
-                                      <input type="date" class="form-control" name="lulussmp" value="{{ $profile->lulusansmp }}">
+                                      <input type="date" class="form-control" name="lulusansmp" value="{{ $profile->lulusansmp }}">
                                     </div>
                                     <div class="col-md-6">
                                       <input type="text" class="form-control" name="smp" value="{{ $profile->smp }}">
                                     </div> <br>
                                     <div class="col-md-6">
-                                      <input type="date" class="form-control" name="lulussma" value="{{ $profile->lulusansma }}">
+                                      <input type="date" class="form-control" name="lulusansma" value="{{ $profile->lulusansma }}">
                                     </div>
                                     <div class="col-md-6">
                                       <input type="text" class="form-control" name="sma" value="{{ $profile->sma }}">

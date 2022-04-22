@@ -21,6 +21,9 @@ class Profile extends Model
         'email',
         'foto',
         'hasil',
+        'lulusansd',
+        'lulusansmp',
+        'lulusansma',
     ];
     protected $nullable = [
         'pekerja',
