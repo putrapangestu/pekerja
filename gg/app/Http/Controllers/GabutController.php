@@ -22,16 +22,22 @@ class GabutController extends Controller
             $urut = 'desc';
         }
         // $datas = Proses::all();
-        $errors = Profile::where('name', 'LIKE', '%'.$keyword.'%')
-            ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')
-            ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
-            ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%')
-            ->orderBy('created_at',$urut)
-            ->get();
+        $error = DB::table('users')->where('user','Pekerja')->get();
+        
+        
+        foreach($error as $r){
+            
+            $errors = Profile::where('email',$r->email)
+                ->where('name', 'LIKE', '%'.$keyword.'%')
+                ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')
+                ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
+                ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%')
+                ->orderBy('created_at',$urut)
+                ->get();
+            
+            return view('gawe.listings', compact('errors'));
+        }
 
-        return view('gawe.listings', compact(
-            'errors'
-        ));
     }
 
     public function listingsdetails($telepon){
