@@ -111,12 +111,12 @@
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group">
-																	<label class="control-label mb-10" for="kata">Awal Kata:</label>
-																	<textarea name="kata" id="kata" cols="" rows="" class="form-control " required></textarea>
-																</div>
-																<div class="form-group">
 																	<label class="control-label mb-10" for="posisi">Posisi Kerja:</label>
 																	<input type="text" id="posisi" data-mask="" class="form-control required" name="posisi" value="" required />
+																</div>
+																<div class="form-group">
+																	<label class="control-label mb-10" for="hari">Hari Kerja:</label>
+																	<input type="text" name="hari" id="hari" class="form-control " required>
 																</div>
 																<div class="form-group">
 																	<label class="control-label mb-10" for="jam">Jam kerja/hari:</label>

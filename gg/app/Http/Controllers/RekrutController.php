@@ -22,6 +22,7 @@ class RekrutController extends Controller
 
     public function store(Request $request,$email)
     {
+        
         // $model = new Rekrut();
         // $model->nama = $request->nama;
         // $model->alamat = $request->alamat;
@@ -66,6 +67,8 @@ class RekrutController extends Controller
             'jam'=>$request->jam,
             'gaji'=>$request->gaji,
             'informasi'=>$request->informasi,
+            'hari'=>$request->hari,
+            'created_at'=>date("Y-m-d H:i:s", strtotime('now'))
 
         ]);
 
