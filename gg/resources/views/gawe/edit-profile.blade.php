@@ -145,9 +145,9 @@
                                     <label class="form-label">Pekerja</label>
                                     <select class="custom-select" name="pekerja">
                                       <option value="...">......</option>
-                                      <option @if ($profile->pekerja == 'parttime') selected @endif>Part Time</option>
-                                      <option @if ($profile->pekerja == 'freelance') selected @endif>Freelance</option>
-                                      <option @if ($profile->pekerja == 'fulltime') selected @endif>Full Time</option>
+                                      <option value="parttime" @if ($profile->pekerja == 'parttime') selected @endif>Part Time</option>
+                                      <option value="freelance" @if ($profile->pekerja == 'freelance') selected @endif>Freelance</option>
+                                      <option value="fulltime" @if ($profile->pekerja == 'fulltime') selected @endif>Full Time</option>
                                     </select>
                                   </div>
                                 </div>
@@ -195,8 +195,8 @@
                                   <div class="form-group">
                                     <label class="form-label">Keterangan</label>
                                     <select class="custom-select" name="keterangan">
-                                      <option value="Belum Memiliki Pekerjaan">Belum Memiliki Pekerjaan</option>
-                                      <option value="Memiliki Pekerjaan">Memiliki Pekerjaan</option>
+                                      <option value="Belum Memiliki Pekerjaan" @if ($profile->keterangan == 'Belum Memiliki Pekerjaan') selected @endif>Belum Memiliki Pekerjaan</option>
+                                      <option value="Memiliki Pekerjaan"  @if ($profile->keterangan == 'Memiliki Pekerjaan') selected @endif>Memiliki Pekerjaan</option>
                                     </select>
                                   </div>
                                 </div>

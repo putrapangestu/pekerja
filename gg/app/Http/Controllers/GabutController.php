@@ -17,9 +17,9 @@ class GabutController extends Controller
         $keyword = $request->keyword;
         $urutan = $request->urutan;
         if($urutan == 'terlama'){
-            $urut = 'desc';
-        }else{
             $urut = 'asc';
+        }else{
+            $urut = 'desc';
         }
         // $datas = Proses::all();
         $errors = Profile::where('name', 'LIKE', '%'.$keyword.'%')

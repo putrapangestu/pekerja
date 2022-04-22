@@ -9,7 +9,7 @@ class Profile extends Model
 {
     use HasFactory;
     protected $table ="profiles";
-    public $timestamps = false;
+    public $timestamps = true;
     protected $primaryKey = 'email';
 
     public function Profile(){
