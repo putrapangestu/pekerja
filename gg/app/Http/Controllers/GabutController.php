@@ -27,22 +27,23 @@ class GabutController extends Controller
         
         foreach($error as $r){
             
-            $errors = Profile::where('email',$r->email)
+            $errors = DB::table('profiles')->where('email',$r->email)
                 ->where('name', 'LIKE', '%'.$keyword.'%')
                 ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')
                 ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
                 ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%')
                 ->orderBy('created_at',$urut)
                 ->get();
+                
             
             return view('gawe.listings', compact('errors'));
         }
 
     }
 
-    public function listingsdetails($telepon){
+    public function listingsdetails($email){
 
-        $data = DB::table('profiles')->where('telepon',$telepon)->get();
+        $data = DB::table('profiles')->where('email',$email)->get();
         return view('gawe.listings-details',['profiles' => $data]);
 
 

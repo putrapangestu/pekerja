@@ -166,9 +166,7 @@
 																			<a class="btn btn-sm mr-10" href="{{ url('inbox') }}" data-toggle="modal" title="Compose"><i class="zmdi zmdi-chevron-left"></i></a>
 																		</div>
 																	</div>
-																	<div class="pull-right text-right">
-																		<button class="btn btn-sm mr-10" title="" type="button" ><i class="zmdi zmdi-print"></i> </button>
-																		
+																	<div class="pull-right text-right">																		
 																		<a href="#ModalDel" data-toggle="modal" title="Compose" class="btn btn-inline rounded"><i class="zmdi zmdi-delete"></i></a>
 
 
@@ -207,8 +205,7 @@
 																	</div>	
 																	<div class="pull-right">
 																		<div class="inline-block mr-5">
-																			<span class="inbox-detail-time-1 font-12">10:06 AM</span>
-																			<span class="inbox-detail-time-2 font-12 inline-block">(2 hours ago)</span>
+																			<span class="inbox-detail-time-1 font-12">{{ $details->created_at }}</span>
 																		</div>
 																		<div class="inline-block dropdown">
 																			<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi   zmdi-more-vert"></i></a>
@@ -246,39 +243,7 @@
 																</p><br>
 																<p>Terimakasih atas waktu luangnya dan saya berharap semoga kita menjadi satu rekan bisnis.</p>
 															</div>
-															<hr class="light-grey-hr mt-20 mb-20"/>
-															<div class="container-fluid attachment-mail mt-40 mb-40">
-																<div class="download-blocks mb-20">
-																	<span class="pr-15"><i class="zmdi zmdi-attachment-alt pr-10"></i>3 attachments</span>
-																	<a href="#"><i class="zmdi zmdi-download pr-10"></i>Download</a>
-																</div>
-																<ul>
-																	<li>
-																		<a href="#" class="atch-thumb">
-																			<div class="attached-img-container" style="background-image:url({{ asset('images/resources/pdf.png') }})"></div>
-																			<div class="file-name">
-																				Profile-perusahaan.pdf
-																			</div>
-																		</a>
-																	</li>
-																	<li>
-																		<a href="#" class="atch-thumb">
-																			<div class="attached-img-container" style="background-image:url({{ asset('images/resources/pdf.png') }})"></div>
-																			<div class="file-name">
-																				Syarat-ketentuan.pdf
-																			</div>
-																		</a>
-																	</li>
-																	<li>
-																		<a href="#" class="atch-thumb">
-																			<div class="attached-img-container" style="background-image:url({{ asset('images/resources/word.png') }})"></div>
-																			<div class="file-name">
-																				Kontrak.docx
-																			</div>
-																		</a>
-																	</li>
-																</ul>
-															</div>
+															
 														</div>
 
 														<hr class="light-grey-hr mt-20 mb-20"/>

@@ -163,7 +163,7 @@
 																		</a>
 																		<ul class="dropdown-menu">
 																			<li><a href="/inbox?urutan=terbaru"> Terbaru</a></li>
-																			<li><a href="/inbox?urutan=telama"> Terlama</a></li>
+																			<li><a href="/inbox?urutan=terlama"> Terlama</a></li>
 																			
 																		</ul>
 																	</div>
@@ -225,7 +225,7 @@
 																		
 																			<td class="view-message  text-right">
 																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block">9:27 AM</span>
+																				<span  class="time-chat-history inline-block">{{ $mails->created_at }}</span>
 																			</td>
 																			
 																		</tr>

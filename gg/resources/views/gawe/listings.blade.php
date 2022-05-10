@@ -283,7 +283,7 @@
                             </div>
                             <div class="listings_three-page_content">
                                 <div class="title">
-                                    <h3><a href="detail-pekerja/{{ $profile->telepon }}">{{ $profile->name }}<span
+                                    <h3><a href="detail-pekerja/{{ $profile->email }}">{{ $profile->name }}<span
                                                 class="fa fa-check"></span></a></h3>
                                 </div>
                                 <ul class="list-unstyled listings_three-page_contact_info">

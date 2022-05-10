@@ -16,37 +16,58 @@ class CobaController extends Controller
 
         $keyword = $request->keyword;
         $urutan = $request->urutan;
+        
         if($urutan == 'terlama'){
             $urut = 'asc';
         }else{
             $urut = 'desc';
         }
         
-        $email = Rekrut::where('untuk',$user)
-            ->orwhere('dari',$user)
-            ->orderBy('created_at',$urut)
-            // ->where('nama', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('dari', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('untuk', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('provinsi', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('kota', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('no', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('telepon', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('email', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('kata', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('posisi', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('jam', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('gaji', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('informasi', 'LIKE', '%'.$keyword.'%')
-            // ->orwhere('balasan', 'LIKE', '%'.$keyword.'%')
-            ->get();
+        // $email = DB::table('rekrut0')->where('untuk',$user)
+        //     ->orwhere('dari',$user)
+        //     ->where('nama', 'LIKE', '%'.$keyword. '%')
+        //     ->orwhere('dari', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('untuk', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('provinsi', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('kota', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('no', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('telepon', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('email', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('posisi', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('jam', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('gaji', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('informasi', 'LIKE', '%'.$keyword.'%')
+        //     ->orwhere('balasan', 'LIKE', '%'.$keyword.'%')
+        //     ->orderBy('created_at',$urut)
+        //     ->get();
 
-        $email = DB::table('rekrut0')->where('untuk',$user)->orwhere ('dari',$user)->get();
+        $email = DB::table('rekrut0')->where('untuk',$user)
+        ->orwhere('dari',$user)
+        ->where(function($query) use ($keyword){
+            $query->where('nama', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('dari', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('untuk', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('provinsi', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('kota', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('no', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('telepon', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('email', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('posisi', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('jam', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('gaji', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('informasi', 'LIKE', '%'.$keyword.'%')
+            ->orwhere('balasan', 'LIKE', '%'.$keyword.'%');
+        })
+        ->orderBy('created_at',$urut)
+        ->get();
+
+        // $email = DB::table('rekrut0')->where('untuk',$user)->orwhere ('dari',$user)->get();
    
 
         return view('gawe.inbox', ['tes' => $email], compact(
-            'email'));
+            'email','keyword'));
     }
 
     public function detail_index($id){
@@ -67,7 +88,18 @@ class CobaController extends Controller
     public function balasan(Request $request, $id){
         
         if($request->hapus == 'hapus'){
-            DB::table('rekrut0')->where('id', $id)->delete();
+            $user = Auth::user()->email;
+            $rekrut = DB::table('rekrut0');
+
+            if($rekrut->dari == $user){
+                $rekrut->where('dari',$user)->update([
+                    'sampah_dari' => 1
+                ]);
+            }else{
+                $rekrut->where('untuk',$user)->update([
+                    'sampah_untuk' => 1
+                ]);
+            }
             return redirect('inbox');
 
         }else{
