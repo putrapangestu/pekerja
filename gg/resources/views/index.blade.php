@@ -14,9 +14,7 @@
     <link rel="manifest" href="{{ asset('images/favicons/black.png') }}">
 
     <!-- Fonts-->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&amp;display=swap" rel="stylesheet">
 
     <!-- Css-->
@@ -144,7 +142,7 @@
                                     </ul>
                                 @else 
                                     <div class="header_btn_1">
-                                        <a href="{{ url('/login') }}"><span class="icon-add"></span>Login</a>
+                                        <a href="{{ url('/login') }}"><span class="icon-add d-inline"></span>Login</a>
                                     </div>
                                 @endif
                                    
@@ -1149,7 +1147,7 @@
         <div class="site-footer_bottom">
             <div class="container">
                 <div class="site-footer_bottom_copyright">
-                    <p>© Copyright 2020 by <a href="#">Ultramen tim</a></p>
+                    <p>© Copyright 2020 by <a href="#">Ultramen team</a></p>
                 </div>
                 <div class="site-footer__social">
                     <a href="#"><i class="fab fa-twitter"></i></a>

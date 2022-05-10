@@ -222,20 +222,20 @@
 
                             <ul class="navbar-nav right">
                                 <li class="nav-item dropdown shorting">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="input selectpicker">Daftar Pencarian</div>
-                                </a>
-                                
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <form action="/listings">
-                                  <input type="hidden" name="urutan" value="terbaru">
-                                  <button type="submit" class="dropdown-item" >Terbaru</button>
-                                </form>
-                                <form action="/listings">
-                                    <input type="hidden" name="urutan" value="terlama">
-                                  <button type="submit" class="dropdown-item" > Terlama</button>
-                                </form>
-                                </div>
+                                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <div class="input selectpicker dropdown-toggle thm-btn px-4 py-2">Urutkan</div>
+                                    </a>
+                                    
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <form action="/listings">
+                                        <input type="hidden" name="urutan" value="terbaru">
+                                        <button type="submit" class="dropdown-item" >Terbaru</button>
+                                        </form>
+                                        <form action="/listings">
+                                            <input type="hidden" name="urutan" value="terlama">
+                                        <button type="submit" class="dropdown-item" > Terlama</button>
+                                        </form>
+                                    </div>
                               </li>   
                             </ul>
 
@@ -298,6 +298,102 @@
                 </div>
             </div>
         </section>
+
+
+
+
+        <!--Site Footer Start-->
+        <footer class="site-footer">
+            <div class="site_footer_shape-1" style="background-image: url(images/resources/footer-shape-1.png)">
+            </div>
+            <div class="site_footer_map" style="background-image: url(images/resources/footer-map.png)"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="footer-widget__column footer-widget__about wow fadeInUp" data-wow-delay="100ms">
+                            <div class="footer-widget__logo">
+                                <a href="#"><img src="images/resources/Gawe.id.png" height="100" alt=""></a>
+                            </div>
+                            <div class="footer-widget_about_text">
+                                <p>Sepenuh  Hati Membantu Anda Dalam Mencari Pekerja Dengan Menampilkan Berbagai Kriteria Yang Dibutuhkan Pada Sekarang Ini</p>
+                            </div>
+                            <div class="footer_contact_info">
+                                <div class="footer_contact_icon">
+                                    <span class="icon-calling"></span>
+                                </div>
+                                <div class="footer_contact_number">
+                                    <p>Phone</p>
+                                    <h4><a href="tel:+123456789">92 666 888 0000</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6">
+                        <div class="footer-widget__column footer-widget__explore wow fadeInUp" data-wow-delay="200ms">
+                            <div class="footer-widget__title">
+                                <h3>Eksplorasi</h3>
+                            </div>
+                            <ul class="footer-widget__explore-list list-unstyled">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="listings3.html">Pekerja</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="about.html">About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6">
+                        <div class="footer-widget__column footer-widget__categories wow fadeInUp"
+                            data-wow-delay="300ms">
+                            <div class="footer-widget__title">
+                                <h3>Kategori</h3>
+                            </div>
+                            <ul class="footer-widget__categories_list list-unstyled">
+                                <li><a href="#">KOki</a></li>
+                                <li><a href="#">Pelayan</a></li>
+                                <li><a href="#">Akuntansi</a></li>
+                                <li><a href="#">Informatika</a></li>
+                                <li><a href="#">Montir</a></li>
+                                <li><a href="#">Multimedia</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="footer-widget__column footer-widget__newsletter wow fadeInUp"
+                            data-wow-delay="400ms">
+                            <div class="footer-widget__title">
+                                <h3>Newsletter</h3>
+                            </div>
+                            <ul class="footer-widget_newsletter_address list-unstyled">
+                                <li>17 Malang, Di Depan Rumah</li>
+                                <li><a href="mailto:needhelp@ziston.com">needhelp@ziston.com</a></li>
+                            </ul>
+                            <form>
+                                <div class="footer_input-box">
+                                    <input type="Email" placeholder="Enter email address">
+                                    <button type="submit" class="button"><i
+                                            class="fas fa-paper-plane"></i>Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="site-footer_bottom">
+            <div class="container">
+                <div class="site-footer_bottom_copyright">
+                    <p>© Copyright 2020 by <a href="#">Ultramen team</a></p>
+                </div>
+                <div class="site-footer__social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
 
 
 
