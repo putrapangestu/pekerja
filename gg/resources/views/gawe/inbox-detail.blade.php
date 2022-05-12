@@ -25,6 +25,8 @@
 </head>
 
 <body>
+	@foreach($rekrut as $details)
+	@foreach ($profiles as $pp)
 	
 	<!--Preloader-->
 	<div class="preloader-it">
@@ -113,8 +115,8 @@
 													<!-- /.modal -->
 												</div>
 												<ul class="inbox-nav mb-30">
-													<li class="active">
-														<a href="#"><i class="zmdi zmdi-inbox"></i> Inbox <span class="label label-danger ml-10">2</span></a>
+													<li>
+														<a href="{{ url('/inbox') }}"><i class="zmdi zmdi-inbox"></i> Inbox <span class="label label-danger ml-10">2</span></a>
 													</li>
 													<li>
 														<a href="#"><i class="zmdi zmdi-email-open"></i> Mengirimm surat</a>
@@ -126,7 +128,7 @@
 														<a href="#"><i class="zmdi zmdi-folder-outline"></i> Draf <span class="label label-info ml-10">30</span></a>
 													</li>
 													<li>
-														<a href="#"><i class="zmdi zmdi-delete"></i> Sampah</a>
+														<a href="{{ url('/inbox_trash') }}"><i class="zmdi zmdi-delete"></i> Sampah</a>
 													</li>
 												</ul>
 											</aside>
@@ -155,8 +157,7 @@
 														</div>
 														<div class="clearfix"></div>
 													</div>
-													@foreach($rekrut as $details)
-													@foreach ($profiles as $pp)
+													
 													<div class="panel-wrapper collapse in">
 														<div class="panel-body inbox-body pa-0">
 															<div class="heading-inbox">
@@ -166,8 +167,11 @@
 																			<a class="btn btn-sm mr-10" href="{{ url('inbox') }}" data-toggle="modal" title="Compose"><i class="zmdi zmdi-chevron-left"></i></a>
 																		</div>
 																	</div>
-																	<div class="pull-right text-right">																		
+																	<div class="pull-right text-right">
+																		@if (($details->dari == Auth::user()->email && $details->sampah_dari == 0) || (($details->untuk == Auth::user()->email && $details->sampah_untuk == 0)))
+																			
 																		<a href="#ModalDel" data-toggle="modal" title="Compose" class="btn btn-inline rounded"><i class="zmdi zmdi-delete"></i></a>
+																		@endif
 
 
 																		
@@ -355,8 +359,7 @@
 															<!-- /.modal -->
 														</div>
 													</div>
-													@endforeach
-													@endforeach
+													
 												</div>
 											</aside>
 										</div>
@@ -417,8 +420,15 @@
 	
 	<!-- Init JavaScript -->
 	<script src="{{ asset('zapily/js/init.js') }}"></script>
+
+	<script>
+		fetch('/inbox/{{ $details -> id }}/seen')
+		.then(response => response.json())
+		.catch( error => console.log(error))
+	</script>
 	
-	
+	@endforeach
+	@endforeach
 </body>
 
 

@@ -104,8 +104,8 @@
 													<!-- /.modal -->
 												</div>
 												<ul class="inbox-nav mb-30">
-													<li class="active">
-														<a href="#"><i class="zmdi zmdi-inbox"></i> Inbox <span class="label label-danger ml-10">2</span></a>
+													<li>
+														<a href="{{ url('/inbox') }}"><i class="zmdi zmdi-inbox"></i> Inbox <span class="label label-danger ml-10">2</span></a>
 													</li>
 													<li>
 														<a href="#"><i class="zmdi zmdi-email-open"></i> Mengirimm surat</a>
@@ -116,8 +116,8 @@
 													<li>
 														<a href="#"><i class="zmdi zmdi-folder-outline"></i> Draf <span class="label label-info ml-10">30</span></a>
 													</li>
-													<li>
-														<a href="{{ url('/inbox_trash') }}"><i class="zmdi zmdi-delete"></i> Sampah</a>
+													<li class="active">
+														<a href="#"><i class="zmdi zmdi-delete"></i> Sampah</a>
 													</li>
 												</ul>
 											</aside>
@@ -219,13 +219,13 @@
 																			</td>
 																			
 																			
-																			<td class="view-message dont-show {{ ($mails->seen) ? 'fw-light' : '' }}"><a href='{{ url ('inbox/'.$mails->id)}}'>{{ $mails->nama}}</a></td>
+																			<td class="view-message  dont-show"><a href='{{ url ('inbox/'.$mails->id)}}'>{{ $mails->nama}}</a></td>
 																			
-																			<td class="view-message {{ ($mails->seen) ? 'fw-light' : '' }}" ><a href='{{ url ('inbox/'.$mails->id)}}'>{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</a></td>
+																			<td class="view-message " ><a href='{{ url ('inbox/'.$mails->id)}}'>{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</a></td>
 																		
-																			<td class="view-message text-right">
+																			<td class="view-message  text-right">
 																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block {{ ($mails->seen) ? 'fw-light' : '' }}">{{ $mails->created_at }}</span>
+																				<span  class="time-chat-history inline-block">{{ $mails->created_at }}</span>
 																			</td>
 																			
 																		</tr>
@@ -293,10 +293,6 @@
 	
 	<!-- Init JavaScript -->
 	<script src="{{ asset('zapily/js/init.js') }}"></script>
-
-	<script>
-		fetch('inbox/')
-	</script>
 	
 </body>
 
