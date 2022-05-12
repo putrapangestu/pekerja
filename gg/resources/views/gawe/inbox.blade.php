@@ -208,8 +208,20 @@
 																@foreach($email as $mails)
 																<table class="table table-inbox table-hover mb-0">
 																	<tbody>
+																		@if ($mails->dari == Auth::user()->email)
+																			@if ($mails->seen_dari == 0)
+																				<tr class="unread">
+																			@elseif ($mails->seen_dari == 1)
+																				<tr class="read">
+																			@endif
+																		@elseif ($mails->untuk == Auth::user()->email)
+																			@if ($mails->seen_untuk == 0)
+																				<tr class="unread">
+																			@elseif ($mails->seen_untuk == 1)
+																				<tr class="read">
+																			@endif
+																		@endif
 																		
-																		<tr class="unread">
 																			<td class="inbox-small-cells">
 																				<div class="checkbox checkbox-default inline-block">
 																					<input type="checkbox" id="checkbox012"/>
@@ -219,13 +231,13 @@
 																			</td>
 																			
 																			
-																			<td class="view-message dont-show {{ ($mails->seen) ? 'fw-light' : '' }}"><a href='{{ url ('inbox/'.$mails->id)}}'>{{ $mails->nama}}</a></td>
+																			<td class="view-message dont-show"><a href='{{ url ('inbox/'.$mails->id)}}'>{{ $mails->nama}}</a></td>
 																			
-																			<td class="view-message {{ ($mails->seen) ? 'fw-light' : '' }}" ><a href='{{ url ('inbox/'.$mails->id)}}'>{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</a></td>
+																			<td class="view-message " ><a href='{{ url ('inbox/'.$mails->id)}}'>{{ $mails->nama }} tertarik dengan anda silahkan lihat detailnya</a></td>
 																		
 																			<td class="view-message text-right">
 																				<i class="zmdi zmdi-attachment inline-block mr-15 font-16"></i>
-																				<span  class="time-chat-history inline-block {{ ($mails->seen) ? 'fw-light' : '' }}">{{ $mails->created_at }}</span>
+																				<span  class="time-chat-history inline-block">{{ $mails->created_at }}</span>
 																			</td>
 																			
 																		</tr>
