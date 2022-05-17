@@ -62,7 +62,7 @@ class CobaController extends Controller
         }
         
 
-        $email = $table
+        $email = DB::table('rekrut0')->where($role,$user)
         ->where($nama,$nilai)
         ->where($sampah,$sampah_nilai)
         ->where(function($query) use ($search){
@@ -86,7 +86,7 @@ class CobaController extends Controller
             
         $unseen = $table->where('seen_'.$role,0)->count();
 
-            ddd($unseen);
+           
         return view('gawe.inbox', compact(
             'unseen','email','search'));
     }
@@ -125,16 +125,18 @@ class CobaController extends Controller
             $role = 'dari';
         }elseif($db->untuk == $user){
             $role = 'untuk';
+        }else{
+            return redirect('/inbox');
         }
 
-        $unseen = DB::table('rekrut0')->where($role,$user)->where('seen_'.$role,0)->get();
+        $table = DB::table('rekrut0')->where($role,$user);
 
-        ddd($unseen);
+        $unseen = $table->where('seen_'.$role,0)->get();
+
         
         
-            if(!($d->dari==$user) && !($d->untuk==$user) ){
-                return redirect('/inbox');
-            }
+        
+            
             $pp = DB::table('profiles')->where('email',$d->untuk)->get();
 
             
