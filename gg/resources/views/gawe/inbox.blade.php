@@ -55,7 +55,7 @@
 											<aside class="col-lg-3 col-md-4 pr-0">
 												<div class="mt-20 mb-20 ml-15 mr-15">
 													<a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-danger btn-block">
-													Menyusun
+													Inbox
 													</a>
 													<!-- Modal -->
 													<div aria-hidden="true" role="dialog" tabindex="-1" id="myModal" class="modal fade" style="display: none;">
@@ -63,7 +63,7 @@
 															<div class="modal-content">
 																<div class="modal-header">
 																	<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-																	<h4 class="modal-title">Menyusun</h4>
+																	<h4 class="modal-title">Inbox</h4>
 																</div>
 																<div class="modal-body">
 																	<form role="form" class="form-horizontal">
@@ -104,19 +104,22 @@
 													<!-- /.modal -->
 												</div>
 												<ul class="inbox-nav mb-30">
-													<li class="active">
-														<a href="#"><i class="zmdi zmdi-inbox"></i> Inbox <span class="label label-danger ml-10">2</span></a>
+													<li @if(Route::is('inbox')) class="active" @endif>
+														<a href="{{ url('/inbox') }}"><i class="zmdi zmdi-email-open"></i> Pesan <span class="label label-danger ml-10">{{ $unseen }}</span></a>
 													</li>
-													<li>
-														<a href="#"><i class="zmdi zmdi-email-open"></i> Mengirimm surat</a>
+													<li @if(Route::is('inbox-in')) class="active" @endif>
+														<a href="{{ url('/inbox_in') }}"><i class="zmdi zmdi-inbox"></i> Pesan Masuk</a>
 													</li>
-													<li>
-														<a href="#"><i class="zmdi zmdi-bookmark-outline"></i> Penting</a>
+													<li @if(Route::is('inbox-out')) class="active"  @endif>
+														<a href="{{ url('/inbox_out') }}"><i class="zmdi zmdi-mail-send"></i> Pesan Keluar</a>
 													</li>
-													<li>
-														<a href="#"><i class="zmdi zmdi-folder-outline"></i> Draf <span class="label label-info ml-10">30</span></a>
+													<li @if(Route::is('inbox-star')) class="active"  @endif>
+														<a href="{{ url('/inbox_star') }}"><i class="zmdi zmdi-star"></i> Berbintang</a>
 													</li>
-													<li>
+													<li @if(Route::is('inbox-draft')) class="active" @endif>
+														<a href="#"><i class="zmdi zmdi-folder-outline"></i> Draf</a>
+													</li>
+													<li @if(Route::is('inbox-trash')) class="active" @endif>
 														<a href="{{ url('/inbox_trash') }}"><i class="zmdi zmdi-delete"></i> Sampah</a>
 													</li>
 												</ul>
@@ -134,17 +137,16 @@
 														<div class="pull-right">
 															<form action="{{ url('/inbox') }}" method="GET" role="search" class="inbox-search inline-block pull-left mr-15">
 																<div class="input-group mb-4">
-																	<input type="text" class="form-control" placeholder="Search.." name="keyword">
+																	<input type="text" class="form-control" placeholder="Search.." name="search">
 																	<span class="input-group-btn">
 																	  <button class="btn btn-default" type="submit" ><i class="zmdi zmdi-search"></i></button>
 																	</span>
 																  </div>
 															
-															
-															</form>
-															<a href="#" class="pull-left inline-block refresh">
-																<i class="zmdi zmdi-replay"></i>
-															</a>
+																</form>
+																<button type="submit" class="pull-left inline-block refresh border-0 bg-transparent"  onClick="document.location.reload(true)">
+																	<i class="zmdi zmdi-replay"></i>
+																</button>
 														</div>
 														<div class="clearfix"></div>
 													</div>
@@ -195,12 +197,12 @@
 																	</div>
 																</div>
 																<ul class="unstyled inbox-pagination">
-																	<li><span>1-10 of 234</span></li>
+																
+																	
+
+																	<li class="mr-20"><span>{{ $email->firstItem() }}-{{ $email->lastItem() }} of {{ $email->total() }}</span></li>
 																	<li>
-																		<a class="pl-15 pr-15" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
-																	</li>
-																	<li>
-																		<a href="#"><i class="fa fa-angle-right pagination-right"></i></a>
+																		{{ $email->links() }}
 																	</li>
 																</ul>
 															</div>
@@ -227,7 +229,31 @@
 																					<input type="checkbox" id="checkbox012"/>
 																					<label for="checkbox012"></label>
 																				</div>
-																				<i class="zmdi zmdi-star inline-block font-16"></i>
+																				@if (Route::is('inbox-trash'))
+																				@else
+																				<form action="{{ url('inbox/'.$mails->id.'/star') }}" method="POST" class="d-inline-block">
+																					@csrf
+																					@if($mails->dari == Auth::user()->email)
+																						@if($mails->star_dari == 0)
+																							<input type="hidden" name="star" value="1">
+																							<button class="border-0 bg-transparent"><i class="zmdi zmdi-star inline-block font-16"></i></button>
+																						@elseif($mails->star_dari == 1)
+																							<input type="hidden" name="star" value="0">
+																							<button class="border-0 bg-transparent"><i class="zmdi zmdi-star text-danger inline-block font-16"></i></button>
+																						@endif
+																					@elseif($mails->untuk == Auth::user()->email)
+																						@if($mails->star_untuk == 0)
+																							<input type="hidden" name="star" value="1">
+																							<button class="border-0 bg-transparent"><i class="zmdi zmdi-star inline-block font-16"></i></button>
+																						@elseif($mails->star_untuk == 1)
+																							<input type="hidden" name="star" value="0">
+																							<button class="border-0 bg-transparent"><i class="zmdi zmdi-star text-danger inline-block font-16"></i></button>
+																						@endif
+																					@endif
+																					
+																					
+																				</form>
+																				@endif
 																			</td>
 																			
 																			
@@ -254,6 +280,7 @@
 								</div>
 							</div>
 						</div>
+						
 					</div>
 				</div>
 				<!-- /Row -->
@@ -308,6 +335,12 @@
 
 	<script>
 		fetch('inbox/')
+	</script>
+	<script>
+		function reloadpage()
+		{
+		location.reload()
+		}
 	</script>
 	
 </body>

@@ -14,7 +14,7 @@ class CobaController extends Controller
         $user = Auth::user()->email;
         $mail = Rekrut::all();
 
-        $keyword = $request->keyword;
+        $search = $request->search;
         $urutan = $request->urutan;
         
         if($urutan == 'terlama'){
@@ -28,136 +28,119 @@ class CobaController extends Controller
         ->first();
 
         if($db->dari == $user){
-            $email = DB::table('rekrut0')->where('dari',$user)
-            ->where('sampah_dari',0)
-            ->where(function($query) use ($keyword){
-                $query->where('nama', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('dari', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('untuk', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('provinsi', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('kota', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('no', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('telepon', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('email', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('posisi', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('jam', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('gaji', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('informasi', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('balasan', 'LIKE', '%'.$keyword.'%');
+            $role = 'dari';
+        }elseif($db->untuk == $user){
+            $role = 'untuk';
+        }
+
+        $table = DB::table('rekrut0')->where($role,$user);
+
+        if(request()->routeIs('inbox')){
+            $nama = 'sampah_'.$role;
+            $nilai = 0;
+        }elseif(request()->routeIs('inbox-in')){
+            $nama = 'untuk';
+            $nilai = $user;
+        }elseif(request()->routeIs('inbox-out')){
+            $nama = 'dari';
+            $nilai = $user;
+        }elseif(request()->routeIs('inbox-star')){
+            $nama = 'star_'.$role;
+            $nilai = 1;
+        }
+        elseif(request()->routeIs('inbox-trash')){
+            $nama = 'sampah_'.$role;
+            $nilai = 1;
+        }
+
+        if(!(request()->routeIs('inbox-trash'))){
+            $sampah = 'sampah_'.$role;
+            $sampah_nilai = 0;
+        }else{
+            $sampah = 'sampah_'.$role;
+            $sampah_nilai = 1;
+        }
+        
+
+        $email = $table
+        ->where($nama,$nilai)
+        ->where($sampah,$sampah_nilai)
+        ->where(function($query) use ($search){
+            $query->where('nama', 'LIKE', '%'.$search.'%')
+            ->orwhere('dari', 'LIKE', '%'.$search.'%')
+            ->orwhere('untuk', 'LIKE', '%'.$search.'%')
+            ->orwhere('alamat', 'LIKE', '%'.$search.'%')
+            ->orwhere('provinsi', 'LIKE', '%'.$search.'%')
+            ->orwhere('kota', 'LIKE', '%'.$search.'%')
+            ->orwhere('no', 'LIKE', '%'.$search.'%')
+            ->orwhere('telepon', 'LIKE', '%'.$search.'%')
+            ->orwhere('email', 'LIKE', '%'.$search.'%')
+                ->orwhere('posisi', 'LIKE', '%'.$search.'%')
+                ->orwhere('jam', 'LIKE', '%'.$search.'%')
+                ->orwhere('gaji', 'LIKE', '%'.$search.'%')
+                ->orwhere('informasi', 'LIKE', '%'.$search.'%')
+                ->orwhere('balasan', 'LIKE', '%'.$search.'%');
             })
             ->orderBy('created_at',$urut)
-            ->get();
+            ->paginate(10);
+            
+        $unseen = $table->where('seen_'.$role,0)->count();
 
-        }elseif($db->untuk == $user){
-            $email = DB::table('rekrut0')->where('untuk',$user)
-            ->where('sampah_untuk',0)
-            ->where(function($query) use ($keyword){
-                    $query->where('nama', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('dari', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('untuk', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('provinsi', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('kota', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('no', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('telepon', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('email', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('posisi', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('jam', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('gaji', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('informasi', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('balasan', 'LIKE', '%'.$keyword.'%');
-                })
-            ->orderBy('created_at',$urut)
-            ->get();
-        }else{
-            dd($user);
-        }
-        return view('gawe.inbox', ['tes' => $email], compact(
-            'email','keyword'));
+            ddd($unseen);
+        return view('gawe.inbox', compact(
+            'unseen','email','search'));
     }
 
-    Public function trash_index(Request $request){
+    public function star_inbox(Request $request, $id){
         $user = Auth::user()->email;
-        $mail = Rekrut::all();
-
-        $keyword = $request->keyword;
-        $urutan = $request->urutan;
+        $db = DB::table('rekrut0')->where('id',$id)->first();
+        $update = DB::table('rekrut0')->where('id',$id);
         
-        if($urutan == 'terlama'){
-            $urut = 'asc';
-        }else{
-            $urut = 'desc';
-        }
-
-        $db = DB::table('rekrut0')->where('dari',$user)
-        ->orwhere('untuk',$user)
-        ->first();
-
         if($db->dari == $user){
-            $email = DB::table('rekrut0')->where('dari',$user)
-            ->where('sampah_dari',1)
-            ->where(function($query) use ($keyword){
-                $query->where('nama', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('dari', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('untuk', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('provinsi', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('kota', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('no', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('telepon', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('email', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('posisi', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('jam', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('gaji', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('informasi', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('balasan', 'LIKE', '%'.$keyword.'%');
-            })
-            ->orderBy('created_at',$urut)
-            ->get();
-
+            $update->update([
+                'star_dari' => $request->star
+            ]);
         }elseif($db->untuk == $user){
-            $email = DB::table('rekrut0')->where('untuk',$user)
-            ->where('sampah_untuk',1)
-            ->where(function($query) use ($keyword){
-                    $query->where('nama', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('dari', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('untuk', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('provinsi', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('kota', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('no', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('telepon', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('email', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('posisi', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('jam', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('gaji', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('informasi', 'LIKE', '%'.$keyword.'%')
-                    ->orwhere('balasan', 'LIKE', '%'.$keyword.'%');
-                })
-            ->orderBy('created_at',$urut)
-            ->get();
-        }else{
-            dd($user);
+            $update->update([
+                'star_untuk' => $request->star
+            ]);
         }
-        return view('gawe.inbox_trash', ['tes' => $email], compact(
-            'email','keyword'));
+       
+
+
+        return redirect('inbox');
     }
 
     public function detail_index($id){
         $user = Auth::user()->email;
 
         $detail = DB::table('rekrut0')->where('id', $id)->get();
+        $d = DB::table('rekrut0')->where('id', $id)->first();
+
+        $db = DB::table('rekrut0')->where('dari',$user)
+        ->orwhere('untuk',$user)
+        ->first();
+
+        if($db->dari == $user){
+            $role = 'dari';
+        }elseif($db->untuk == $user){
+            $role = 'untuk';
+        }
+
+        $unseen = DB::table('rekrut0')->where($role,$user)->where('seen_'.$role,0)->get();
+
+        ddd($unseen);
         
-        foreach($detail as $d){
-            
+        
             if(!($d->dari==$user) && !($d->untuk==$user) ){
                 return redirect('/inbox');
             }
             $pp = DB::table('profiles')->where('email',$d->untuk)->get();
 
-            return view('gawe.inbox-detail', ['rekrut' => $detail],['profiles' => $pp]);
-        }       
+            
+
+            return view('gawe.inbox-detail', ['rekrut' => $detail],['profiles' => $pp], compact('unseen'));
+               
     }
     
     public function seen($id){

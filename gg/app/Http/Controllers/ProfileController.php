@@ -39,31 +39,60 @@ class ProfileController extends Controller
         $tag->tag = $request->tag;
         $tag->kategori = $request->kategori;
         $tag->save();
+
+        $db = DB::table('profiles')->where('email',$email);
+        $db->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'pekerja' => $request->pekerja,
+            'ultah' => $request->ultah,
+            'telepon' => $request->telepon,
+            'alamat' => $request->alamat,
+            'bidang' => $request->bidang,
+            'keterangan' => $request->keterangan,
+            'twitter' => $request->twitter,
+            'facebook' => $request->facebook,
+            'google' => $request->google,
+            'link' => $request->link,
+            'instagram' => $request->instagram,
+            'lulusansd' => $request->lulusansd,
+            'sd' => $request->sd,
+            'lulusansmp' => $request->lulusansmp,
+            'smp' => $request->smp,
+            'lulusansma' => $request->lulusansma,
+            'sma' => $request->sma,
+            'bio' => $request->bio,
+            'prestasi' => $request->prestasi,
+            'pengalaman' => $request->pengalaman,
+            'kemampuan' => $request->kemampuan
+        ]);
        
         $model =  Profile::where('email',$email)->first();
-        $model->name = $request->name;
-        $model->email = $request->email;
-        $model->pekerja = $request->pekerja;
-        $model->ultah = $request->ultah;
-        $model->telepon = $request->telepon;
-        $model->alamat = $request->alamat;
-        $model->bidang = $request->bidang;
-        $model->keterangan = $request->keterangan;
-        $model->twitter = $request->twitter;
-        $model->facebook = $request->facebook;
-        $model->google = $request->google;
-        $model->link = $request->link;
-        $model->instagram = $request->instagram;
-        $model->lulusansd = $request->lulusansd;
-        $model->sd = $request->sd;
-        $model->lulusansmp = $request->lulusansmp;
-        $model->smp = $request->smp;
-        $model->lulusansma = $request->lulusansma;
-        $model->sma = $request->sma;
-        $model->bio = $request->bio;
-        $model->prestasi = $request->prestasi;
-        $model->pengalaman = $request->pengalaman;
-        $model->kemampuan = $request->kemampuan;
+        // $model->name = $request->name;
+        // $model->email = $request->email;
+        // $model->pekerja = $request->pekerja;
+        // $model->ultah = $request->ultah;
+        // $model->telepon = $request->telepon;
+        // $model->alamat = $request->alamat;
+        // $model->bidang = $request->bidang;
+        // $model->keterangan = $request->keterangan;
+        // $model->twitter = $request->twitter;
+        // $model->facebook = $request->facebook;
+        // $model->google = $request->google;
+        // $model->link = $request->link;
+        // $model->instagram = $request->instagram;
+        // $model->lulusansd = $request->lulusansd;
+        // $model->sd = $request->sd;
+        // $model->lulusansmp = $request->lulusansmp;
+        // $model->smp = $request->smp;
+        // $model->lulusansma = $request->lulusansma;
+        // $model->sma = $request->sma;
+        // $model->bio = $request->bio;
+        // $model->prestasi = $request->prestasi;
+        // $model->pengalaman = $request->pengalaman;
+        // $model->kemampuan = $request->kemampuan;
+        
+        // dd($model->telepon);
         
         if($request->file('foto')){
             $file = $request->file('foto');
@@ -72,6 +101,7 @@ class ProfileController extends Controller
 
             File::delete("gambar", $model->foto);
             $model -> foto = $nama_file;
+            $model->save();
         }
         if($request->file('hasil')){
             $file = $request->file('hasil');
@@ -80,8 +110,9 @@ class ProfileController extends Controller
 
             File::delete("gambar", $model->hasil);
             $model -> hasil = $nama_file;
+            $model->save();
         }
-        $model->save();
+        // $model->save();
 
         $user = User::where('email',$email)->first();
         $user->name = $request->name;

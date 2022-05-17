@@ -56,6 +56,37 @@
         </div>
         @endif
 
+        <div class="site-header__header-one-wrap header_three_wrap clearfix">
+
+            <div class="header_top_one">
+                <div class="header_top_one_container">
+                    <div class="header_top_one_inner clearfix">
+
+                        <div class="header_top_one_inner_left float-left">
+                            <div class="header_social_1">
+                                <ul class="list-unstyled">
+                                    <li><a href="#"><i class="fab fa-twitter"></i>Twitter</a></li>
+                                    <li><a href="#"><i class="fab fa-facebook-square"></i>Facebook</a></li>
+                                    <li><a href="#"><i class="fab fa-pinterest"></i>Pinterest</a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i>Youtube</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="header_top_one_inner_right float-right">
+                            <div class="header_topmenu_1">
+                                <ul class="list-unstyled">
+                                    <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
+                                    
+                                    <li><a href="{{ url('/inbox') }}"><i class="fa fa-inbox"></i>inbox</a></li>
+                                  
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         <header class="main-nav__header-one">
             <nav class="header-navigation three stricky">
                 <div class="container-box clearfix">
@@ -73,7 +104,7 @@
 
                     <div class="main-nav__main-navigation three float-left">
                         <ul class=" main-nav__navigation-box">
-                            <li class="current">
+                            <li>
                                 <a href="{{ url('/gawe') }}">Home</a>
                                <!-- /.sub-menu -->
                             </li>
@@ -85,7 +116,7 @@
                             <li>
                                 <a href="{{ url('/blog') }}">Blog</a>
                             </li>
-                            <li>
+                            <li class="current">
                                 <a href="{{ url('/kontak') }}">Contact</a>
                             </li>
                             <li>

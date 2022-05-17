@@ -115,19 +115,22 @@
 													<!-- /.modal -->
 												</div>
 												<ul class="inbox-nav mb-30">
-													<li>
-														<a href="{{ url('/inbox') }}"><i class="zmdi zmdi-inbox"></i> Inbox <span class="label label-danger ml-10">2</span></a>
+													<li @if(Route::is('inbox')) class="active" @endif>
+														<a href="{{ url('/inbox') }}"><i class="zmdi zmdi-email-open"></i> Pesan <span class="label label-danger ml-10">{{ $unseen }}</span></a>
 													</li>
-													<li>
-														<a href="#"><i class="zmdi zmdi-email-open"></i> Mengirimm surat</a>
+													<li @if(Route::is('inbox-in')) class="active" @endif>
+														<a href="{{ url('/inbox_in') }}"><i class="zmdi zmdi-inbox"></i> Pesan Masuk</a>
 													</li>
-													<li>
-														<a href="#"><i class="zmdi zmdi-bookmark-outline"></i> Penting</a>
+													<li @if(Route::is('inbox-out')) class="active"  @endif>
+														<a href="{{ url('/inbox_out') }}"><i class="zmdi zmdi-mail-send"></i> Pesan Keluar</a>
 													</li>
-													<li>
-														<a href="#"><i class="zmdi zmdi-folder-outline"></i> Draf <span class="label label-info ml-10">30</span></a>
+													<li @if(Route::is('inbox-star')) class="active"  @endif>
+														<a href="{{ url('/inbox_star') }}"><i class="zmdi zmdi-star"></i> Berbintang</a>
 													</li>
-													<li>
+													<li @if(Route::is('inbox-draft')) class="active" @endif>
+														<a href="#"><i class="zmdi zmdi-folder-outline"></i> Draf</a>
+													</li>
+													<li @if(Route::is('inbox-trash')) class="active" @endif>
 														<a href="{{ url('/inbox_trash') }}"><i class="zmdi zmdi-delete"></i> Sampah</a>
 													</li>
 												</ul>
