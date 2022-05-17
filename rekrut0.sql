@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2022 at 04:23 AM
+-- Generation Time: May 17, 2022 at 08:28 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -37,6 +37,8 @@ CREATE TABLE `rekrut0` (
   `seen_untuk` tinyint(1) NOT NULL DEFAULT 0,
   `star_dari` tinyint(1) NOT NULL DEFAULT 0,
   `star_untuk` tinyint(1) NOT NULL DEFAULT 0,
+  `notif_dari` tinyint(1) NOT NULL DEFAULT 0,
+  `notif_untuk` tinyint(1) NOT NULL DEFAULT 0,
   `nama` varchar(255) NOT NULL,
   `alamat` varchar(255) NOT NULL,
   `provinsi` varchar(255) NOT NULL,
@@ -58,11 +60,11 @@ CREATE TABLE `rekrut0` (
 -- Dumping data for table `rekrut0`
 --
 
-INSERT INTO `rekrut0` (`id`, `dari`, `untuk`, `sampah_dari`, `sampah_untuk`, `seen_dari`, `seen_untuk`, `star_dari`, `star_untuk`, `nama`, `alamat`, `provinsi`, `kota`, `no`, `telepon`, `email`, `posisi`, `jam`, `gaji`, `informasi`, `balasan`, `file`, `created_at`, `hari`) VALUES
-(7, 'emailperusahaan@gmail.com', 'apaiya@gmail.com', 0, 0, 0, 1, 0, 0, 'Perusahaan', 'Alamat', 'Provinsi', 'Kota', 122211, NULL, 'emailperusahaan@gmail.com', 'Asisten dari asistennya OB', '5', 2900000, 'tidak ada informasi tambahan', NULL, NULL, '2022-05-03 06:33:08', 'Setiap hari'),
-(8, 'berusaha@gmail.com', 'ayah@gmail.com', 0, 0, 0, 0, 0, 0, 'PT Berusaha', 'Cari sendiri, usaha sana', 'Usaha', 'Usaha', 12313514, NULL, 'berusaha@gmail.com', 'Usaha dulu', '8', 8000000, 'Tidak ada yg perlu saya tambahkan, usaha saja kalian', NULL, NULL, '2022-05-09 19:20:15', 'Senin-Jumat'),
-(9, 'berusaha@gmail.com', 'apaiya@gmail.com', 0, 1, 0, 1, 0, 0, 'PT Berusaha', 'Cari sendiri', 'Cari sendiri', 'Cari Sendiri', 120319283, NULL, 'berusaha@gmail.com', 'usaha', '8', 2000000, 'Tidak ada tambahan, cukup usaha saja', NULL, NULL, '2022-05-09 19:47:29', 'Sabtu-selasa'),
-(10, 'berusaha@gmail.com', 'apaiya@gmail.com', 0, 0, 0, 1, 0, 1, 'PT Berusaha', 'Cari sendiri', 'Cari sendiri', 'Cari Sendiri', 120319283, NULL, 'berusaha@gmail.com', 'usaha', '8', 2000000, 'Tidak ada tambahan, cukup usaha saja', NULL, NULL, '2022-05-09 19:47:29', 'Sabtu-selasa');
+INSERT INTO `rekrut0` (`id`, `dari`, `untuk`, `sampah_dari`, `sampah_untuk`, `seen_dari`, `seen_untuk`, `star_dari`, `star_untuk`, `notif_dari`, `notif_untuk`, `nama`, `alamat`, `provinsi`, `kota`, `no`, `telepon`, `email`, `posisi`, `jam`, `gaji`, `informasi`, `balasan`, `file`, `created_at`, `hari`) VALUES
+(7, 'emailperusahaan@gmail.com', 'apaiya@gmail.com', 0, 0, 0, 1, 0, 0, 0, 0, 'Perusahaan', 'Alamat', 'Provinsi', 'Kota', 122211, NULL, 'emailperusahaan@gmail.com', 'Asisten dari asistennya OB', '5', 2900000, 'tidak ada informasi tambahan', NULL, NULL, '2022-05-03 06:33:08', 'Setiap hari'),
+(8, 'berusaha@gmail.com', 'ayah@gmail.com', 0, 0, 0, 0, 0, 0, 0, 1, 'PT Berusaha', 'Cari sendiri, usaha sana', 'Usaha', 'Usaha', 12313514, NULL, 'berusaha@gmail.com', 'Usaha dulu', '8', 8000000, 'Tidak ada yg perlu saya tambahkan, usaha saja kalian', NULL, NULL, '2022-05-09 19:20:15', 'Senin-Jumat'),
+(9, 'berusaha@gmail.com', 'apaiya@gmail.com', 0, 1, 0, 1, 0, 0, 0, 0, 'PT Berusaha', 'Cari sendiri', 'Cari sendiri', 'Cari Sendiri', 120319283, NULL, 'berusaha@gmail.com', 'usaha', '8', 2000000, 'Tidak ada tambahan, cukup usaha saja', NULL, NULL, '2022-05-09 19:47:29', 'Sabtu-selasa'),
+(10, 'berusaha@gmail.com', 'apaiya@gmail.com', 0, 0, 0, 1, 0, 1, 0, 0, 'PT Berusaha', 'Cari sendiri', 'Cari sendiri', 'Cari Sendiri', 120319283, NULL, 'berusaha@gmail.com', 'usaha', '8', 2000000, 'Tidak ada tambahan, cukup usaha saja', NULL, NULL, '2022-05-09 19:47:29', 'Sabtu-selasa');
 
 --
 -- Indexes for dumped tables
