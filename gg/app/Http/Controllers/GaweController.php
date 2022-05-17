@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\DB;
 class GaweController extends Controller
 {
     public function index(Request $request){
+        $anu = Auth::user();
+        if(isset($anu)){
         $user = Auth::user()->email;
         $data = User::all();
 
@@ -45,6 +47,10 @@ class GaweController extends Controller
         
         
         return view('index', compact('user', 'data', 'keyword', 'datas', 'cek'));
+        }else{
+            return view('index');
+        }
+        
        
     }
 
