@@ -37,6 +37,7 @@ Route::post('register', [RegisterController::class, 'register'])->name('register
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [GaweController::class, 'index'])->name('/');
+Route::post('/', [GaweController::class, 'notif'])->name('/');
 Route::get('/listings', [GabutController::class, 'listings'])->name('listings');
 Route::get('/detail-pekerja/{email}', [GabutController::class, 'listingsdetails'])->name('detail-pekerja');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');

@@ -111,15 +111,91 @@
                                 <li>
                                     <a href="{{ url('/tentang-kami') }}">About</a>
                                 </li>
+                                @if (Auth::user())
+                                <li class="nav-item dropdown">
+                                    <i class="fas fa-solid fa-bell">
+                                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <div class="notification-box-head-wrap">
+                                                <div class="pull-right text-right">
+                                                    <form action="{{ Route('/') }}" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="hapus" value="hapus">  
+                                                        <button type="submit" class="btn btn-success btn-inline rounded">Hapus Semua</button>
+                                                    </form>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <hr class="light-grey-hr ma-0"/>
+                                            </div>
+                                            <hr class="dropdown-divider">
+                                            @if(isset($notifs))
+                                            @if (Auth::user()->user == 'Pekerja')
+                                            
+                                            @foreach($notifs as $notif) 
+                                            <div class="streamline message-nicescroll-bar">
+                                                <div class="sl-item">
+                                                    <a href="javascript:void(0)">
+                                                        <div class="icon bg-green">
+                                                            <i class="zmdi zmdi-flag"></i>
+                                                        </div>
+                                                        <div class="sl-content">
+                                                            <span class="inline-block capitalize-font  pull-left truncate head-notifications">
+                                                            Terdapat Pesan Baru</span>
+                                                            <span class="inline-block font-11  pull-right notifications-time">{{ $notif->created_at }}</span>
+                                                            <div class="clearfix"></div>
+                                                            <p class="truncate">{{ $notif->nama }} ingin merekrut anda</p>
+                                                        </div>
+                                                    </a>	
+                                                </div>
+                                                <hr class="light-grey-hr ma-0"/>
+                                            </div>
+                                            @endforeach
+                                            
+                                            @elseif (Auth::user()->user == 'Perusahaan')
+                                            @foreach ($notifs as $notif)
+                                            <div class="streamline message-nicescroll-bar">
+                                                <div class="sl-item">
+                                                    <a href="javascript:void(0)">
+                                                        <div class="icon bg-green">
+                                                            <i class="zmdi zmdi-flag"></i>
+                                                        </div>
+                                                        <div class="sl-content">
+                                                            <span class="inline-block capitalize-font  pull-left truncate head-notifications">
+                                                            Ada Pesan baru</span>
+                                                            <span class="inline-block font-11  pull-right notifications-time">{{ $notif->created_at }}</span>
+                                                            <div class="clearfix"></div>
+                                                            <p class="truncate">{{ $notif->untuk }} telah memberikan jawaban</p>
+                                                        </div>
+                                                    </a>	
+                                                </div>
+                                                <hr class="light-grey-hr ma-0"/>
+                                            </div>
+                                            @endforeach
+                                            @endif
+                                            @endif
+                                            <hr class="light-grey-hr ma-0"/>
+                                            <div>
+                                                <span>Baca Semua</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </i>
+                                </li>
+                                @else
+
+                                @endif
                             </ul>
+    
                         </div><!-- /.navbar-collapse -->
 
+                        
                         <div class="main-nav__right main-nav__right_one three float-right">
                             
                                 <div class="main-nav__right main-nav__right_one three float-right">
                                  @if(Auth::user())
                                  
                                     <ul class="navbar-nav ">
+                                     
                                         <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                           <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
@@ -129,6 +205,7 @@
                                             
                                           <p class="dropdown-item">{{Auth::user()->name}}<span class="text-success ml-3">{{ auth::user()->user }}</span></p>
                                           <hr class="dropdown-divider">
+                                          <a class="dropdown-item" href="{{ url('/notif') }}">Notifikasi</a>
                                           <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
                                           <a class="dropdown-item" href="{{ url('/inbox') }}"> Pesan</a>
                                             
@@ -1208,6 +1285,31 @@
             </form>
         </div>
     </div>
+
+    	{{-- <!-- Modal -->
+        <div aria-hidden="true" role="dialog" tabindex="-1" id="ModalDel" class="modal fade" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Hapus Pesan</h5>
+                    </div>
+                    <div class="modal-body">
+                        Apakah anda yakin ingin menghapus notif ini?
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{{ url('/'.$notif->id) }}" method="post">
+                            @csrf
+                            <input type="hidden" name="hapus" value="hapus">  
+                            <button type="submit" class="btn btn-success btn-inline rounded">Yakin</button>
+                            <button aria-hidden="true" data-dismiss="modal" class="btn btn-danger btn-inline rounded" type="button">tidak</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal --> --}}
 
 
 
