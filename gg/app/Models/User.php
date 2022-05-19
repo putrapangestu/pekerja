@@ -12,6 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     protected $table = 'users';
+    public $timestamps = true;
 
     public function User(){
         return $this->hasMany(User::class, 'email');
@@ -22,14 +23,50 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    public function Profile(){
+        return $this->belongsTo(Profile::class, 'email');
+    }
+
     protected $fillable = [
         'name',
         'user',
         'email',
         'password',
+        'name',
+        'email',
+        'foto',
+        'hasil',
+        'lulusansd',
+        'lulusansmp',
+        'lulusansma',
+        'password',
     ];
 
-    protected $nullable = ['password'];
+    protected $nullable = [
+    
+    'pekerja',
+    'ultah',
+    'telepon',
+    'alamat',
+    'bidang',
+    'keterangan',
+    'twitter',
+    'facebook',
+    'google',
+    'link',
+    'instagram',
+    'lulusansd',
+    'sd',
+    'lulusansmp',
+    'smp',
+    'lulusansma',
+    'sma',
+    'bio',
+    'prestasi',
+    'pengalaman',
+    'kemampuan'
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
