@@ -35,6 +35,7 @@
 	</head>
 	<body>
 		@foreach($profiles as $pp)
+	
 
 		<div class="wrapper theme-1-active pimary-color-gold">
 			
@@ -55,7 +56,7 @@
                                 </div>
                                 @endif
 
-								<form class="login-form" method="POST" action="{{ url('merekrut/'.$pp->email) }}">
+								<form class="login-form" method="POST" action="{{ url('merekrut/'.$email) }}">
 									@csrf
 									<div class="pull-left">
 										<h6 class="panel-title txt-dark"><h2>Form Perekrutan</h2></h6>
@@ -72,33 +73,19 @@
 																<div class="form-wrap">
 																	<div class="form-group">
 																		<label class="control-label mb-10" for="nama">Nama Perusahaan:</label>
-																		<input id="nama" type="text" name="nama" class="form-control required" value="" required />
+																		<input id="nama" type="text" name="nama" class="form-control required" value="{{ $pp->name }}" required />
 																	</div>
 																	<div class="form-group">
-																		<label class="control-label mb-10" for="alamat">Alamat:</label>
-																		<input id="alamat"  type="text" name="alamat" class="form-control required" value="" required />
-																	</div>
-																	<div class="form-group">
-																		<label class="control-label mb-10" for="provinsi">Provinsi:</label>
-																		<input id="provinsi"  type="text" name="provinsi" class="form-control required" value="" required />
-																	</div>
-																	<div class="form-group">
-																		<label class="control-label mb-10" for="kota">Kota:</label>
-																		<input id="kota"  type="text" name="kota" class="form-control required" value="" required />
-																	</div>
-																	
-																	
-																	<div class="form-group">
-																		<label class="control-label mb-10" for="no">No Perusahaan:</label>
-																		<input id="no" type="text" name="no"  data-mask="" class="form-control required" value="" required />
-																	</div>
+																		<label class="control-label mb-10" for="alamat">Alamat Lengkap:</label>
+																		<input id="alamat"  type="text" name="alamat" class="form-control required" value="{{ $pp->alamat }}" required />
+																	</div>																	
 																	<div class="form-group">
 																		<label class="control-label mb-10" for="telpon">Nomor telepon:</label>
-																		<input type="text" id="telpon"  data-mask="" name="telpon" class="form-control required" value="" required />
+																		<input type="text" id="telpon"  data-mask="" name="telpon" class="form-control required" value="{{ $pp->telepon }}" required />
 																	</div>
 																	<div class="form-group">
 																		<label class="control-label mb-10" for="email">Email Perusahaan:</label>
-																		<input id="email" type="email" name="email" class="form-control required" value="" required />
+																		<input id="email" type="email" name="email" class="form-control required" value="{{ $pp->email }}" required />
 																	</div>
 																</div>
 															</div>
@@ -196,6 +183,7 @@
 			<!-- /Main Content -->
 		</div>
 		@endforeach
+	
 		<!-- /#wrapper -->
 		
 		<!-- JavaScript -->

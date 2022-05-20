@@ -117,7 +117,7 @@
 												</div>
 												<ul class="inbox-nav mb-30">
 													<li @if(Route::is('inbox')) class="active" @endif>
-														<a href="{{ url('/inbox') }}"><i class="zmdi zmdi-email-open"></i> Pesan <span class="label label-danger ml-10"></span></a>
+														<a href="{{ url('/inbox') }}"><i class="zmdi zmdi-email-open"></i> Pesan <span class="label label-danger ml-10">{{ $unseen }}</span></a>
 													</li>
 													<li @if(Route::is('inbox-in')) class="active" @endif>
 														<a href="{{ url('/inbox_in') }}"><i class="zmdi zmdi-inbox"></i> Pesan Masuk</a>
