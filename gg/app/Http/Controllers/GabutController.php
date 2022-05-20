@@ -13,7 +13,7 @@ class GabutController extends Controller
 {
     //listing
     public function listings(Request $request){
-        // $errors = Profile::all();
+        // $errors = User::all();
         $keyword = $request->keyword;
         $urutan = $request->urutan;
         if($urutan == 'terlama'){
@@ -22,12 +22,10 @@ class GabutController extends Controller
             $urut = 'desc';
         }
         // $datas = Proses::all();
-        $error = DB::table('users')->where('user','Pekerja')->get();
-        
-        
-        foreach($error as $r){
-            
-            $errors = DB::table('profiles')->where('email',$r->email)
+   
+    
+
+            $errors = DB::table('users')->where('user','pekerja')
                 ->where('name', 'LIKE', '%'.$keyword.'%')
                 ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')
                 ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
@@ -37,19 +35,19 @@ class GabutController extends Controller
                 
             
             return view('gawe.listings', compact('errors'));
-        }
+        
 
     }
 
     public function listingsdetails($email){
 
-        $data = DB::table('profiles')->where('email',$email)->get();
+        $data = DB::table('users')->where('email',$email)->get();
         return view('gawe.listings-details',['profiles' => $data]);
 
 
 
 
-        // $errors = Profile::all();
+        // $errors = User::all();
 
         // return view('gawe.listings-details', compact(
         //     'errors'
@@ -59,7 +57,7 @@ class GabutController extends Controller
     //     $user = Auth::user();
     //     $data = User::all();
 
-    //     $datas = Profile::where('nama','LIKE','%'.$keyword.'%')
+    //     $datas = User::where('nama','LIKE','%'.$keyword.'%')
     //     ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%')
     //     ->orwhere('')
 

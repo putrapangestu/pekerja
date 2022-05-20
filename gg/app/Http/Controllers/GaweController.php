@@ -19,7 +19,7 @@ class GaweController extends Controller
 
         $cek = DB::table('rekrut0')->where('untuk',$user)->orwhere('dari',$user)->first();
         $keyword = $request->keyword;
-        $datas = Profile::where('name', 'LIKE', '%'.$keyword.'%')
+        $datas = User::where('name', 'LIKE', '%'.$keyword.'%')
             ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%')
             ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
             ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')

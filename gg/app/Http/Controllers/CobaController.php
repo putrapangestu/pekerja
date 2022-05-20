@@ -131,7 +131,7 @@ class CobaController extends Controller
 
         $table = DB::table('rekrut0')->where($role,$user);
         $unseen = $table->where('seen_'.$role,0)->count();            
-        $pp = DB::table('profiles')->where('email',$d->untuk)->get();
+        $pp = DB::table('users')->where('email',$d->untuk)->get();
         return view('gawe.inbox-detail', ['rekrut' => $detail],['profiles' => $pp], compact('unseen'));
                
     }

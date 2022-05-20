@@ -158,17 +158,17 @@
                                 <div class="card-body pb-2">
                                   <div class="form-group">
                                     <label class="form-label">Current password</label>
-                                    <input type="password" nama="current-password" class="form-control">
+                                    <input type="password" nama="current_password" class="form-control">
                                   </div>
                   
                                   <div class="form-group">
                                     <label class="form-label">New password</label>
-                                    <input type="password" name="new-password" class="form-control">
+                                    <input type="password" name="new-_password" class="form-control">
                                   </div>
                   
                                   <div class="form-group">
                                     <label class="form-label">Repeat new password</label>
-                                    <input type="password" name="new-password_confirmation" class="form-control">
+                                    <input type="password" name="new_confirm_password" class="form-control">
                                   </div>
                                 </div>
                               
