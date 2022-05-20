@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en" style="direction: ltr;">
+<html lang="en" style="direction: rtl;">
 
     
-<!-- Mirrored from themesbrand.com/agroxa/layouts/red/index-dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 06:28:33 GMT -->
+<!-- Mirrored from themesbrand.com/agroxa/layouts/red/index-rtl.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 06:28:34 GMT -->
 <head>
 
         <meta charset="utf-8" />
@@ -11,15 +11,15 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{asset('agroxa/images/favicon.ico')}}">
 
 
         <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap-dark.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{asset('agroxa/css/bootstrap-rtl.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{asset('agroxa/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{asset('agroxa/css/app-rtl.min.css')}}" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -38,19 +38,19 @@
             <div class="navbar-brand-box">
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm-dark.png" alt="" height="22">
+                        <img src="{{asset('agroxa/images/logo-sm-dark.png')}}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="24">
+                        <img src="{{asset('agroxa/images/logo-dark.png')}}" alt="" height="24">
                     </span>
                 </a>
 
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm-light.png" alt="" height="22">
+                        <img src="{{asset('agroxa/images/logo-sm-light.png')}}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="24">
+                        <img src="{{asset('agroxa/images/logo-light.png')}}" alt="" height="24">
                     </span>
                 </a>
             </div>
@@ -224,7 +224,7 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-4.jpg"
+                    <img class="rounded-circle header-profile-user" src="{{asset('agroxa/images/users/avatar-4.jpg')}}"
                         alt="Header Avatar">
                 </button>
 
@@ -267,7 +267,7 @@
                     <div class="user-details">
                         <div class="d-flex">
                             <div class="me-2">
-                                <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-md rounded-circle">
+                                <img src="{{asset('agroxa/images/users/avatar-4.jpg')}}" alt="" class="avatar-md rounded-circle">
                             </div>
                             <div class="user-info w-100">
                                 <div class="dropdown">
@@ -742,7 +742,7 @@
                                                     <a href="#" class="text-dark">
                                                         <div class="inbox-item">
                                                             <div class="inbox-item-img float-start me-3"><img
-                                                                    src="assets/images/users/avatar-1.jpg"
+                                                                    src="{{asset('agroxa/images/users/avatar-1.jpg')}}"
                                                                     class="avatar-md rounded-circle" alt=""></div>
                                                             <h6 class="inbox-item-author mb-1 text-dark">Irene</h6>
                                                             <p class="inbox-item-text text-muted mb-0">Hey! there I'm
@@ -753,7 +753,7 @@
                                                     <a href="#" class="text-dark">
                                                         <div class="inbox-item">
                                                             <div class="inbox-item-img float-start me-3"><img
-                                                                    src="assets/images/users/avatar-2.jpg"
+                                                                    src="{{asset('agroxa/images/users/avatar-2.jpg')}}"
                                                                     class="avatar-md rounded-circle" alt=""></div>
                                                             <h6 class="inbox-item-author mb-1 text-dark">Jennifer</h6>
                                                             <p class="inbox-item-text text-muted mb-0">I've finished it! See
@@ -765,7 +765,7 @@
                                                     <a href="#" class="text-dark">
                                                         <div class="inbox-item">
                                                             <div class="inbox-item-img float-start me-3"><img
-                                                                    src="assets/images/users/avatar-3.jpg"
+                                                                    src="{{asset('agroxa/images/users/avatar-3.jpg')}}"
                                                                     class="avatar-md rounded-circle" alt=""></div>
                                                             <h6 class="inbox-item-author mb-1 text-dark">Richard</h6>
                                                             <p class="inbox-item-text text-muted mb-0">This theme is
@@ -777,7 +777,7 @@
                                                     <a href="#" class="text-dark">
                                                         <div class="inbox-item">
                                                             <div class="inbox-item-img float-start me-3"><img
-                                                                    src="assets/images/users/avatar-4.jpg"
+                                                                    src="{{asset('agroxa/images/users/avatar-4.jpg')}}"
                                                                     class="avatar-md rounded-circle" alt=""></div>
                                                             <h6 class="inbox-item-author mb-1 text-dark">Martin</h6>
                                                             <p class="inbox-item-text text-muted mb-0">Nice to meet you</p>
@@ -787,7 +787,7 @@
                                                     <a href="#" class="text-dark">
                                                         <div class="inbox-item">
                                                             <div class="inbox-item-img float-start me-3"><img
-                                                                    src="assets/images/users/avatar-5.jpg"
+                                                                    src="{{asset('agroxa/images/users/avatar-5.jpg')}}"
                                                                     class="avatar-md rounded-circle" alt=""></div>
                                                             <h6 class="inbox-item-author mb-1 text-dark">Sean</h6>
                                                             <p class="inbox-item-text text-muted mb-0">Hey! there I'm
@@ -1007,7 +1007,7 @@
                                                             <th scope="row">#15236</th>
                                                             <td>
                                                                 <div>
-                                                                    <img src="assets/images/users/avatar-2.jpg" alt=""
+                                                                    <img src="{{asset('agroxa/images/users/avatar-2.jpg')}}" alt=""
                                                                         class="avatar-md rounded-circle me-2"> Jeanette
                                                                     James
                                                                 </div>
@@ -1025,7 +1025,7 @@
                                                             <th scope="row">#15237</th>
                                                             <td>
                                                                 <div>
-                                                                    <img src="assets/images/users/avatar-3.jpg" alt=""
+                                                                    <img src="{{asset('agroxa/images/users/avatar-3.jpg')}}" alt=""
                                                                         class="avatar-md rounded-circle me-2"> Christopher
                                                                     Taylor
                                                                 </div>
@@ -1043,7 +1043,7 @@
                                                             <th scope="row">#15238</th>
                                                             <td>
                                                                 <div>
-                                                                    <img src="assets/images/users/avatar-4.jpg" alt=""
+                                                                    <img src="{{asset('agroxa/images/users/avatar-4.jpg')}}" alt=""
                                                                         class="avatar-md rounded-circle me-2"> Edward
                                                                     Vazquez
                                                                 </div>
@@ -1061,7 +1061,7 @@
                                                             <th scope="row">#15239</th>
                                                             <td>
                                                                 <div>
-                                                                    <img src="assets/images/users/avatar-5.jpg" alt=""
+                                                                    <img src="{{asset('agroxa/images/users/avatar-5.jpg')}}" alt=""
                                                                         class="avatar-md rounded-circle me-2"> Michael
                                                                     Flannery
                                                                 </div>
@@ -1079,7 +1079,7 @@
                                                             <th scope="row">#15240</th>
                                                             <td>
                                                                 <div>
-                                                                    <img src="assets/images/users/avatar-6.jpg" alt=""
+                                                                    <img src="{{asset('agroxa/images/users/avatar-6.jpg')}}" alt=""
                                                                         class="avatar-md rounded-circle me-2"> Jamie
                                                                     Fishbourne
                                                                 </div>
@@ -1123,7 +1123,7 @@
                                                             <th scope="row">#14562</th>
                                                             <td>
                                                                 <div>
-                                                                    <img src="assets/images/users/avatar-4.jpg" alt=""
+                                                                    <img src="{{asset('agroxa/images/users/avatar-4.jpg')}}" alt=""
                                                                         class="avatar-md rounded-circle me-2"> Matthew
                                                                     Drapeau
                                                                 </div>
@@ -1145,7 +1145,7 @@
                                                             <th scope="row">#14563</th>
                                                             <td>
                                                                 <div>
-                                                                    <img src="assets/images/users/avatar-5.jpg" alt=""
+                                                                    <img src="{{asset('agroxa/images/users/avatar-5.jpg')}}" alt=""
                                                                         class="avatar-md rounded-circle me-2"> Ralph Shockey
                                                                 </div>
                                                             </td>
@@ -1166,7 +1166,7 @@
                                                             <th scope="row">#14564</th>
                                                             <td>
                                                                 <div>
-                                                                    <img src="assets/images/users/avatar-6.jpg" alt=""
+                                                                    <img src="{{asset('agroxa/images/users/avatar-6.jpg')}}" alt=""
                                                                         class="avatar-md rounded-circle me-2"> Alexander
                                                                     Pierson
                                                                 </div>
@@ -1188,7 +1188,7 @@
                                                             <th scope="row">#14565</th>
                                                             <td>
                                                                 <div>
-                                                                    <img src="assets/images/users/avatar-7.jpg" alt=""
+                                                                    <img src="{{asset('agroxa/images/users/avatar-7.jpg')}}" alt=""
                                                                         class="avatar-md rounded-circle me-2"> Robert Rankin
                                                                 </div>
                                                             </td>
@@ -1209,7 +1209,7 @@
                                                             <th scope="row">#14566</th>
                                                             <td>
                                                                 <div>
-                                                                    <img src="assets/images/users/avatar-8.jpg" alt=""
+                                                                    <img src="{{asset('agroxa/images/users/avatar-8.jpg')}}" alt=""
                                                                         class="avatar-md rounded-circle me-2"> Myrna Shields
                                                                 </div>
                                                             </td>
@@ -1277,7 +1277,7 @@
 
                 <div class="p-4">
                     <div class="mb-2">
-                        <img src="assets/images/layouts/layout-1.png" class="img-fluid img-thumbnail" alt="">
+                        <img src="{{asset('agroxa/images/layouts/layout-1.png')}}" class="img-fluid img-thumbnail" alt="">
                     </div>
 
                     <div class="form-check form-switch mb-3">
@@ -1286,21 +1286,21 @@
                     </div>
 
                     <div class="mb-2">
-                        <img src="assets/images/layouts/layout-2.png" class="img-fluid img-thumbnail" alt="">
+                        <img src="{{asset('agroxa/images/layouts/layout-2.png')}}" class="img-fluid img-thumbnail" alt="">
                     </div>
 
                     <div class="form-check form-switch mb-3">
                         <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch"
-                            data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
+                            data-bsStyle="{{asset('agroxa/css/bootstrap-dark.min.css')}}" data-appStyle="{{asset('agroxa/css/app-dark.min.css')}}" />
                         <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
                     </div>
 
                     <div class="mb-2">
-                        <img src="assets/images/layouts/layout-3.png" class="img-fluid img-thumbnail" alt="">
+                        <img src="{{asset('agroxa/images/layouts/layout-3.png')}}" class="img-fluid img-thumbnail" alt="">
                     </div>
                     <div class="form-check form-switch mb-5">
                         <input type="checkbox" class="form-check-input theme-choice" id="rtl-mode-switch"
-                            data-appStyle="assets/css/app-rtl.min.css" />
+                            data-appStyle="{{asset('agroxa/css/app-rtl.min.css')}}" />
                         <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
                     </div>
 
@@ -1315,28 +1315,28 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
-        <script src="assets/libs/jquery/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-        <script src="assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="assets/libs/node-waves/waves.min.js"></script>
-        <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <script src="{{('agroxa/libs/jquery/jquery.min.js')}}"></script>
+        <script src="{{('agroxa/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{('agroxa/libs/metismenu/metisMenu.min.js')}}"></script>
+        <script src="{{('agroxa/libs/simplebar/simplebar.min.js')}}"></script>
+        <script src="{{('agroxa/libs/node-waves/waves.min.js')}}"></script>
+        <script src="{{('agroxa/libs/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
 
         <!-- Peity JS -->
-        <script src="assets/libs/peity/jquery.peity.min.js"></script>
+        <script src="{{('agroxa/libs/peity/jquery.peity.min.js')}}"></script>
 
-        <script src="assets/libs/morris.js/morris.min.js"></script>
+        <script src="{{('agroxa/libs/morris.js/morris.min.js')}}"></script>
 
-        <script src="assets/libs/raphael/raphael.min.js"></script>
+        <script src="{{('agroxa/libs/raphael/raphael.min.js')}}"></script>
         
         <!-- Dashboard init JS -->
-        <script src="assets/js/pages/dashboard.init.js"></script>
+        <script src="{{('agroxa/js/pages/dashboard.init.js')}}"></script>
 
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
+        <script src="{{('agroxa/js/app.js')}}"></script>
 
     </body>
 
 
-<!-- Mirrored from themesbrand.com/agroxa/layouts/red/index-dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 06:28:34 GMT -->
+<!-- Mirrored from themesbrand.com/agroxa/layouts/red/index-rtl.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 06:28:34 GMT -->
 </html>

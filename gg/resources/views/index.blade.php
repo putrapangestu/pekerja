@@ -121,7 +121,7 @@
                                                     <form action="{{ Route('/') }}" method="post">
                                                         @csrf
                                                         <input type="hidden" name="hapus" value="hapus">  
-                                                        <button type="submit" class="btn btn-success btn-inline rounded">Hapus Semua</button>
+                                                        <button type="submit" class="btn btn-danger btn-inline rounded">Hapus</button>
                                                     </form>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -173,9 +173,9 @@
                                             @endforeach
                                             @endif
                                             @endif
-                                            <hr class="light-grey-hr ma-0"/>
+                                 
                                             <div>
-                                                <span>Baca Semua</span>
+                                                <span class="">Baca Semua</span>
                                             </div>
                                         </div>
                                     </a>
