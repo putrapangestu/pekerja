@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/nouislider.pips.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/ziston-icon.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/ziston-new-icons.css') }}">
+    
     <!-- Template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
@@ -112,81 +113,20 @@
                                     <a href="{{ url('/tentang-kami') }}">About</a>
                                 </li>
                                 @if (Auth::user())
-                                <li class="nav-item dropdown">
-                                    <i class="fas fa-solid fa-bell">
-                                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <div class="notification-box-head-wrap">
-                                                <div class="pull-right text-right">
-                                                    <form action="{{ Route('/') }}" method="post">
-                                                        @csrf
-                                                        <input type="hidden" name="hapus" value="hapus">  
-                                                        <button type="submit" class="btn btn-danger btn-inline rounded">Hapus</button>
-                                                    </form>
-                                                </div>
-                                                <div class="clearfix"></div>
-                                                <hr class="light-grey-hr ma-0"/>
-                                            </div>
-                                            <hr class="dropdown-divider">
-                                            @if(isset($notifs))
-                                            @if (Auth::user()->user == 'Pekerja')
-                                            
-                                            @foreach($notifs as $notif) 
-                                            <div class="streamline message-nicescroll-bar">
-                                                <div class="sl-item">
-                                                    <a href="javascript:void(0)">
-                                                        <div class="icon bg-green">
-                                                            <i class="zmdi zmdi-flag"></i>
-                                                        </div>
-                                                        <div class="sl-content">
-                                                            <span class="inline-block capitalize-font  pull-left truncate head-notifications">
-                                                            Terdapat Pesan Baru</span>
-                                                            <span class="inline-block font-11  pull-right notifications-time">{{ $notif->created_at }}</span>
-                                                            <div class="clearfix"></div>
-                                                            <p class="truncate">{{ $notif->nama }} ingin merekrut anda</p>
-                                                        </div>
-                                                    </a>	
-                                                </div>
-                                                <hr class="light-grey-hr ma-0"/>
-                                            </div>
-                                            @endforeach
-                                            
-                                            @elseif (Auth::user()->user == 'Perusahaan')
-                                            @foreach ($notifs as $notif)
-                                            <div class="streamline message-nicescroll-bar">
-                                                <div class="sl-item">
-                                                    <a href="javascript:void(0)">
-                                                        <div class="icon bg-green">
-                                                            <i class="zmdi zmdi-flag"></i>
-                                                        </div>
-                                                        <div class="sl-content">
-                                                            <span class="inline-block capitalize-font  pull-left truncate head-notifications">
-                                                            Ada Pesan baru</span>
-                                                            <span class="inline-block font-11  pull-right notifications-time">{{ $notif->created_at }}</span>
-                                                            <div class="clearfix"></div>
-                                                            <p class="truncate">{{ $notif->untuk }} telah memberikan jawaban</p>
-                                                        </div>
-                                                    </a>	
-                                                </div>
-                                                <hr class="light-grey-hr ma-0"/>
-                                            </div>
-                                            @endforeach
-                                            @endif
-                                            @endif
-                                 
-                                            <div>
-                                                <span class="">Baca Semua</span>
-                                            </div>
-                                        </div>
+                                <li>
+                                    <!-- Button trigger modal -->
+                                    <a type="autton" data-toggle="modal" href="#exampleModal">
+                                        <i class="fas fa-solid fa-bell"></i>
                                     </a>
-                                    </i>
                                 </li>
-                                @else
-
                                 @endif
+                                
+                                
+                                
                             </ul>
     
                         </div><!-- /.navbar-collapse -->
+                        
 
                         
                         <div class="main-nav__right main-nav__right_one three float-right">
@@ -198,7 +138,7 @@
                                      
                                         <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
+                                          <img src="{{ asset('gambar/'.Auth::user()->foto) }}" width="55" height="55" class="rounded-circle">
                                         </a>
                                         
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -1285,6 +1225,82 @@
             </form>
         </div>
     </div>
+    @if (Auth::user())
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Notifikasi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <div class="modal-body">
+                    @if(isset($notifs))
+                        @if (Auth::user()->user == 'Pekerja')
+                    
+                            @if($notifs->count() == 0)
+                            Tidak ada notifikasi
+                            @endif 
+                            @foreach($notifs as $notif)
+                            <div class="streamline message-nicescroll-bar">
+                                <div class="sl-item">
+                                    <a href="javascript:void(0)">
+                                        <div class="icon bg-green">
+                                            <i class="zmdi zmdi-flag"></i>
+                                        </div>
+                                        <div class="sl-content">
+                                            <span class="inline-block capitalize-font  pull-left truncate head-notifications">Terdapat Pesan Baru</span>
+                                            <span class="inline-block font-11  pull-right notifications-time">{{ $notif->created_at }}</span>
+                                            <div class="clearfix"></div>
+                                            <p class="truncate">{{ $notif->nama }} ingin merekrut anda</p>
+                                        </div>
+                                    </a>	
+                                </div>
+                                <hr class="light-grey-hr ma-0"/>
+                            </div>
+                            @endforeach
+                    
+                        @elseif (Auth::user()->user == 'Perusahaan')
+                            @if($notifs->count() == 0)
+                            Tidak ada notifikasi
+                            @endif
+                            @foreach ($notifs as $notif)
+                            <div class="streamline message-nicescroll-bar">
+                                <div class="sl-item">
+                                    <a href="javascript:void(0)">
+                                        <div class="icon bg-green">
+                                            <i class="zmdi zmdi-flag"></i>
+                                        </div>
+                                        <div class="sl-content">
+                                            <span class="inline-block capitalize-font  pull-left truncate head-notifications"> Ada Pesan baru</span>
+                                            <span class="inline-block font-11  pull-right notifications-time">{{ $notif->created_at }}</span>
+                                            <div class="clearfix"></div>
+                                            <p class="truncate">{{ $notif->untuk }} telah memberikan jawaban</p>
+                                        </div>
+                                    </a>	
+                                </div>
+                                <hr class="light-grey-hr ma-0"/>
+                            </div>
+                            @endforeach
+                        @endif
+                    @endif
+                </div>
+                @if(!$notifs->count() == 0)
+                <div class="modal-footer">
+                    <form action="{{ Route('/') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="hapus" value="hapus">  
+                        <button type="submit" class="btn btn-secondary btn-inline rounded">Hapus</button>
+                    </form>
+                <button type="button" class="btn btn-danger">Baca Semua</button>
+                </div>
+                @endif
+            </div>
+            </div>
+        </div>
+    @endif
 
     	{{-- <!-- Modal -->
         <div aria-hidden="true" role="dialog" tabindex="-1" id="ModalDel" class="modal fade" style="display: none;">
