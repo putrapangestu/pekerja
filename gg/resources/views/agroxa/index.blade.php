@@ -1333,7 +1333,7 @@
         <script src="{{asset('agroxa/js/pages/dashboard.init.js')}}"></script>
 
         <!-- App js -->
-        <script src="{{asset('agroxa/js/app.js')}}"><   /script>
+        <script src="{{asset('agroxa/js/app.js')}}"></script>
 
     </body>
 
