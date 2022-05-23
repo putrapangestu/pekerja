@@ -97,17 +97,14 @@
               
               <div class="card-body">
                     <div class="container light-style flex-grow-1 container-p-y">
-                      <form action="{{ url('edit-profile/'.$profile->email) }}" method="POST" enctype="multipart/form-data">
+                      <form action="{{ url('edit-password/'.$profile->email) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                      <h4 class="font-weight-bold py-3 mb-4">
-                        Account settings
-                      </h4>
                   
                       <div class="card overflow-hidden">
                                 @if(session()->has('gagal_password'))
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                     {{ session('gagal_password') }}
-                                    
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                                 @endif
 
@@ -119,59 +116,18 @@
                                 @endif
                         <div class="row no-gutters row-bordered row-border-light">
                           <div class="col-md-3 pt-0">
-                            <div class="list-group list-group-flush account-settings-links">
-                              <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+                            <div class="list-group list-group-flush account-settings-links"> 
                               <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
-                              <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
-                              <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
-                              <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-portofolio">Portofolio</a>
                             </div>
                           </div>
                           <div class="col-md-9">
                             <div class="tab-content">
-                              <div class="tab-pane fade active show" id="account-general">
-                               
-                                <div class="card-body media align-items-center">
-                                  <img src="{{ $profile->foto }}" alt="" class="d-block ui-w-80">
-                                  <div class="media-body ml-4">
-                                    <label class="btn btn-outline-primary">
-                                      Upload new photo
-                                      <input type="file" class="account-settings-fileinput" name="foto">
-                                    </label> &nbsp;
-                                    <button type="button" class="btn btn-default md-btn-flat">Reset</button>
-                  
-                                    <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
-                                  </div>
-                                </div>
-                                <hr class="border-light m-0">
-                  
-                                <div class="card-body">
-                                  <div class="form-group">
-                                    <label class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $profile->name }}">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">E-mail</label>
-                                    <input type="text" class="form-control mb-1" name="email" value="{{ $profile->email }}">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">Pekerja</label>
-                                    <select class="custom-select" name="pekerja">
-                                      <option value="...">......</option>
-                                      <option value="parttime" @if ($profile->pekerja == 'parttime') selected @endif>Part Time</option>
-                                      <option value="freelance" @if ($profile->pekerja == 'freelance') selected @endif>Freelance</option>
-                                      <option value="fulltime" @if ($profile->pekerja == 'fulltime') selected @endif>Full Time</option>
-                                    </select>
-                                  </div>
-                                </div>
-                              
-                            </div>
                               <div class="tab-pane fade" id="account-change-password">
                               
                                 <div class="card-body pb-2">
                                   <div class="form-group">
                                     <label class="form-label">Current password</label>
-                                    <input type="password" name="oldpassword" class="form-control">
+                                    <input type="password" nama="current_password" id="current_password" class="form-control">
 
                                     {{-- @error('current_password')
                                     <span class="invalid-feedback" role="alert">
@@ -182,7 +138,7 @@
                   
                                   <div class="form-group">
                                     <label class="form-label">New password</label>
-                                    <input type="password" name="password" class="form-control">
+                                    <input type="password" name="new_password" id="new_password" class="form-control">
 
                                     {{-- @error('new_password')
                                     <span class="invalid-feedback" role="alert">
@@ -193,7 +149,7 @@
                   
                                   <div class="form-group">
                                     <label class="form-label">Repeat new password</label>
-                                    <input type="password" name="confirm_password" class="form-control">
+                                    <input type="password" name="new_confirm_password" id="new_confirm_password" class="form-control">
 
                                     {{-- @error('new_confirm_password')
                                     <span class="invalid-feedback" role="alert">
@@ -204,129 +160,7 @@
                                 </div>
                               
                               </div>
-                              <div class="tab-pane fade" id="account-info">
-                              
-                                <div class="card-body pb-2">
-                                  <div class="form-group">
-                                    <label class="form-label">Birthday</label>
-                                    <input type="date" class="form-control" name="ultah" value="{{ $profile->ultah }}">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">Telepon</label>
-                                    <input type="text" class="form-control" name="telepon" value="{{ $profile->telepon }}">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">Alamat</label>
-                                    <input type="text" class="form-control" name="alamat" value="{{ $profile->alamat }}">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">Bidang Pekerjaan</label>
-                                    <input type="text" class="form-control" name="bidang" value="{{ $profile->bidang }}">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">Keterangan</label>
-                                    <select class="custom-select" name="keterangan">
-                                      <option value="Belum Memiliki Pekerjaan" @if ($profile->keterangan == 'Belum Memiliki Pekerjaan') selected @endif>Belum Memiliki Pekerjaan</option>
-                                      <option value="Memiliki Pekerjaan"  @if ($profile->keterangan == 'Memiliki Pekerjaan') selected @endif>Memiliki Pekerjaan</option>
-                                    </select>
-                                  </div>
-                                </div>
-                              
-                             </div>
-                    
-                              <div class="tab-pane fade" id="account-social-links">
-                              
-                                <div class="card-body pb-2">
-                                  <div class="form-group">
-                                    <label class="form-label">Twitter</label>
-                                    <input type="text" class="form-control" name="twitter" value="https://twitter.com/user">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">Facebook</label>
-                                    <input type="text" class="form-control" name="facebook" value="https://www.facebook.com/user">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">Google+</label>
-                                    <input type="text" class="form-control" name="google" value="">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">LinkedIn</label>
-                                    <input type="text" class="form-control" name="link" value="">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">Instagram</label>
-                                    <input type="text" class="form-control" name="instagram" value="https://www.instagram.com/user">
-                                  </div>
-                                </div>
-                              
-                              </div>
-                            
-                              <div class="tab-pane fade" id="account-portofolio">
-                              
-                                <div class="card-body pb-2">
-                                  <div class="form-group">
-                                    <label class="form-label">Riwayat pendidikan</label>
-                                    <div class="col-md-6"> 
-                                      <input type="date" class="form-control" name="lulusansd" value="{{ $profile->lulusansd }}">
-                                    </div>
-                                    <div class="col-md-6">
-                                      <input type="text" class="form-control" name="sd" value="{{ $profile->sd }}">
-                                    </div>  <br>
-                                    <div class="col-md-6">
-                                      <input type="date" class="form-control" name="lulusansmp" value="{{ $profile->lulusansmp }}">
-                                    </div>
-                                    <div class="col-md-6">
-                                      <input type="text" class="form-control" name="smp" value="{{ $profile->smp }}">
-                                    </div> <br>
-                                    <div class="col-md-6">
-                                      <input type="date" class="form-control" name="lulusansma" value="{{ $profile->lulusansma }}">
-                                    </div>
-                                    <div class="col-md-6">
-                                      <input type="text" class="form-control" name="sma" value="{{ $profile->sma }}">
-                                    </div> <br>
-                                  </div>
-                  
-                                  <div class="form-group">
-                                    <label class="form-label">Bio</label>
-                                    <textarea class="form-control" name="bio" rows="5">{{ $profile->bio }}</textarea>
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">prestasi</label>
-                                    <textarea class="form-control" name="prestasi" rows="5">{{ $profile->prestasi }}</textarea>
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">pengalaman</label>
-                                    <textarea class="form-control" name="pengalaman" rows="5">{{ $profile->pengalaman }}</textarea>
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="form-label">kemampuan</label>
-                                    <textarea class="form-control" name="kemampuan" rows="5">{{ $profile->kemampuan }}</textarea>
-                                  </div>
-                                </div>
-                                <div class="card-body media align-items-center">
-                                  <img src="{{ $profile->hasil }}" alt="" class="d-block ui-w-80">
-                                  <div class="media-body ml-4">
-                                    <label class="btn btn-outline-primary">
-                                      Upload file atau photo
-                                      <input type="file" class="account-settings-fileinput" name="hasil">
-                                    </label> &nbsp;
-                                    <button type="button" class="btn btn-default md-btn-flat">Reset</button>
-                  
-                                    <div class="text-light small mt-1">Allowed JPG, PDF, DOCX, PNG. Max size of 800K</div>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label">Tag</label>
-                                  <textarea class="form-control" name="tag" rows="5"></textarea>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label">Kategori</label>
-                                  <textarea class="form-control" name="kategori" rows="5"></textarea>
-                                </div>
-                                <hr class="border-light m-0">
-                              
-                              </div>
-                            </div>
+
                           </div>
                         </div>
                       </div>

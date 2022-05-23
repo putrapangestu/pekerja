@@ -43,6 +43,8 @@ Route::get('/detail-pekerja/{email}', [GabutController::class, 'listingsdetails'
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/edit-profile/{email}', [ProfileController::class, 'edit'])->name('edit-profile');
 Route::post('/edit-profile/{email}', [ProfileController::class, 'update'])->name('edit-profile');
+Route::get('/edit-password/{email}', [ProfileController::class, 'edit_password'])->name('edit-password');
+Route::post('/edit-password/{email}', [ProfileController::class, 'update_password'])->name('edit-password');
 Route::get('/rekrut/{email}', [RekrutController::class, 'index'])->name('rekrut')->middleware('auth');
 Route::post('/merekrut/{email}', [RekrutController::class, 'store'])->name('merekrut');
 Route::get('/inbox', [CobaController::class, 'index'])->name('inbox');
@@ -59,9 +61,10 @@ Route::post('chat-kontak', [ContactController::class, 'contact'])->name('chat-ko
 Route::get('tentang-kami', [GaweController::class, 'about'])->name('tentang-kami');
 Route::get('profile-perusahaan/{email}', [ProfileController::class, 'perusahaan'])->name('profile-perusahaan');
 Route::get('profiles', [ProfileController::class, 'perusahaan'])->name('profiles');
-Route::get('/dashboard', [AdminController::class, 'dashboard']);
-Route::get('/user', [AdminController::class, 'user']);
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/user', [AdminController::class, 'user'])->name('user');
 Route::get('/blog', [AdminController::class, 'blog']);
+Route::get('/admin/user/delete/{id}', [AdminController::class, 'delete']);
 
 // Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function(){
 //     Route::get('/dashboard', [AdminController::class, 'dashboard']);

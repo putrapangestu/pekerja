@@ -43,15 +43,6 @@ class ProfileController extends Controller
         $tag->kategori = $request->kategori;
         $tag->save();
 
-    $request->validate([
-        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        'password' => ['required', 'string', 'min:8', 'confirmed'],
-
-        'current_password'=> ['required', new CurrentPassword],
-        'new_password' => ['required'],
-        'new_confirm_password' =>['same:new_password']
-        ]);
-
         $db = DB::table('users')->where('email',$email);
         $db->update([
             'name' => $request->name,
@@ -76,8 +67,7 @@ class ProfileController extends Controller
             'bio' => $request->bio,
             'prestasi' => $request->prestasi,
             'pengalaman' => $request->pengalaman,
-            'kemampuan' => $request->kemampuan,
-            'password' => Hash::make($request->get('password'))           
+            'kemampuan' => $request->kemampuan,   
         ]);
        
         $model =  User::where('email',$email)->first();
@@ -102,42 +92,41 @@ class ProfileController extends Controller
                 File::delete(public_path()."/gambar/", $model->hasil);
             }
             $db->update(['hasil' => $nama_file]);
-            
-            
+                        
         }
 
-        User::find(auth()->user()->email)->update([   
-            'password' => Hash::make($request['new_password']),
-        ]);
-
-        // $user = User::where('email',$email)->first();
-        // // $user->name = $request->name;
-        // // $user->email = $request->email;
-        // // if (!(Hash::check($request->get('current-password'), $user->password))) {
-        // //     // The passwords matches
-        // //     return redirect()->back()->with("error","Your current password does not matches with the password.");
-        // // }
-
-        // // if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
-        // //     // Current password and new password same
-        // //     return redirect()->back()->with("error","New Password cannot be same as your current password.");
-        // // }
-
-        // // $validatedData = $request->validate([
-        // //     'current-password' => 'required',
-        // //     'new-password' => 'required|string|min:8|confirmed',
-        // // ]);
-
-        // // //Change Password
-        // // $user->password = bcrypt($request->get('new-password'));
-        // $user->save();
-
+        if(Hash::check($request->get('oldpassword'),Auth::user()->password)){
+            $user = User::where('email',$email)->first();
+            $user->password = Hash::make($request->get('password'));
+            $user->save();
+        }else{
+             return back()->with('gagal_password','Password gagal diganti');
+        }
 
         return redirect('profile');
     }
 
-    public function perusahaan(){
-        return view('profile1');
+    public function edit_password($email){
+       return view('gawe.signup');
     }
+
+    public function update_password(Request $request, $email){
+        $validateData = $request->validate([
+            'password' => 'string|min:8|confirmed',
+        ]);
+
+        $current_password = Auth::user()->password;
+        if(Hash::check($request->get('oldpassword'),$current_password)){
+            $user = User::where('email',$email)->first();
+            $user->password = Hash::make($request->get('password'));
+            $user->save();
+
+            return redirect('profile');
+        }else{
+             return back()->with('gagal_password','Password gagal diganti');
+        }
+            
+    }
+    
 
 }
