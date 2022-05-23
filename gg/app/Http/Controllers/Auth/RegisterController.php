@@ -76,6 +76,7 @@ class RegisterController extends Controller
             'user' => $data['user'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'foto' => 'nopic.jpg',
             'created_at' => date("Y-m-d H:i:s", strtotime('now'))
         ]);
     }
