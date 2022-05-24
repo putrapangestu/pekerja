@@ -71,16 +71,13 @@ class RegisterController extends Controller
         TagKategori::create([
             'email' => $data['email']
         ]);
-        Profile::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'created_at' => date("Y-m-d H:i:s", strtotime('now'))
-        ]);
         return User::create([
             'name' => $data['name'],
             'user' => $data['user'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'foto' => 'nopic.jpg',
+            'created_at' => date("Y-m-d H:i:s", strtotime('now'))
         ]);
     }
 }

@@ -104,6 +104,19 @@
                       </h4>
                   
                       <div class="card overflow-hidden">
+                                @if(session()->has('gagal_password'))
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ session('gagal_password') }}
+                                    
+                                </div>
+                                @endif
+
+                                @if(session()->has('password_beda'))
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ session('password_beda') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                @endif
                         <div class="row no-gutters row-bordered row-border-light">
                           <div class="col-md-3 pt-0">
                             <div class="list-group list-group-flush account-settings-links">
@@ -158,17 +171,35 @@
                                 <div class="card-body pb-2">
                                   <div class="form-group">
                                     <label class="form-label">Current password</label>
-                                    <input type="password" nama="current-password" class="form-control">
+                                    <input type="password" name="oldpassword" class="form-control">
+
+                                    {{-- @error('current_password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror --}}
                                   </div>
                   
                                   <div class="form-group">
                                     <label class="form-label">New password</label>
-                                    <input type="password" name="new-password" class="form-control">
+                                    <input type="password" name="password" class="form-control">
+
+                                    {{-- @error('new_password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror --}}
                                   </div>
                   
                                   <div class="form-group">
                                     <label class="form-label">Repeat new password</label>
-                                    <input type="password" name="new-password_confirmation" class="form-control">
+                                    <input type="password" name="confirm_password" class="form-control">
+
+                                    {{-- @error('new_confirm_password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror --}}
                                   </div>
                                 </div>
                               

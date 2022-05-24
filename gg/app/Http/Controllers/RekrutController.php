@@ -13,11 +13,15 @@ use App\Models\Rekrut;
 class RekrutController extends Controller
 {
     public function index($email){
+        $user = Auth::user()->email;
+        
+        $pp = DB::table('users')->where('email', $user)->get();
 
-        $pp = DB::table('profiles')->where('email', $email)->get();
 
         
-        return view('gawe.rekrut1',['profiles' => $pp], ['title'=> 'rekrut']);
+
+        
+        return view('gawe.rekrut1',['profiles' => $pp], ['title'=> 'rekrut'])->with(compact('email'));
     }
 
     public function store(Request $request,$email)

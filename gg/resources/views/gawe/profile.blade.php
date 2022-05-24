@@ -283,6 +283,7 @@
                           <a class="btn btn-info " href="{{ url('/edit-profile/'.Auth::user()->email) }}">Edit</a>
                         </div>
                       </div>
+                      
               </div><!-- /.card-body -->
             </div>
             <!-- /.card -->

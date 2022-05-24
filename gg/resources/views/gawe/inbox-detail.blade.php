@@ -117,13 +117,7 @@
 												</div>
 												<ul class="inbox-nav mb-30">
 													<li @if(Route::is('inbox')) class="active" @endif>
-														<a href="{{ url('/inbox') }}"><i class="zmdi zmdi-email-open"></i> Pesan <span class="label label-danger ml-10"></span></a>
-													</li>
-													<li @if(Route::is('inbox-in')) class="active" @endif>
-														<a href="{{ url('/inbox_in') }}"><i class="zmdi zmdi-inbox"></i> Pesan Masuk</a>
-													</li>
-													<li @if(Route::is('inbox-out')) class="active"  @endif>
-														<a href="{{ url('/inbox_out') }}"><i class="zmdi zmdi-mail-send"></i> Pesan Keluar</a>
+														<a href="{{ url('/inbox') }}"><i class="zmdi zmdi-email-open"></i> Pesan <span class="label label-danger ml-10">{{ $unseen }}</span></a>
 													</li>
 													<li @if(Route::is('inbox-star')) class="active"  @endif>
 														<a href="{{ url('/inbox_star') }}"><i class="zmdi zmdi-star"></i> Berbintang</a>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2022 at 08:44 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 7.4.21
+-- Waktu pembuatan: 19 Bulan Mei 2022 pada 08.42
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Struktur dari tabel `admins`
 --
 
 CREATE TABLE `admins` (
@@ -37,7 +37,7 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `admins`
+-- Dumping data untuk tabel `admins`
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `admins` (`id`, `name`, `email`, `password`, `created_at`, `updated_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Struktur dari tabel `contact`
 --
 
 CREATE TABLE `contact` (
@@ -56,7 +56,7 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `contact`
+-- Dumping data untuk tabel `contact`
 --
 
 INSERT INTO `contact` (`name`, `email`, `pesan`) VALUES
@@ -67,7 +67,7 @@ INSERT INTO `contact` (`name`, `email`, `pesan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Struktur dari tabel `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -83,7 +83,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -93,7 +93,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -105,7 +105,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Struktur dari tabel `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -117,7 +117,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Struktur dari tabel `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -135,57 +135,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profiles`
---
-
-CREATE TABLE `profiles` (
-  `foto` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `pekerja` varchar(100) DEFAULT NULL,
-  `ultah` date DEFAULT NULL,
-  `telepon` int(100) DEFAULT NULL,
-  `alamat` varchar(500) DEFAULT NULL,
-  `bidang` varchar(255) DEFAULT NULL,
-  `keterangan` enum('Memiliki Pekerjaan','Belum Memiliki Pekerjaan') DEFAULT NULL,
-  `twitter` varchar(255) DEFAULT NULL,
-  `facebook` varchar(255) DEFAULT NULL,
-  `google` varchar(255) DEFAULT NULL,
-  `link` varchar(255) DEFAULT NULL,
-  `instagram` varchar(255) DEFAULT NULL,
-  `lulusansd` date DEFAULT NULL,
-  `sd` varchar(255) DEFAULT NULL,
-  `lulusansmp` date DEFAULT NULL,
-  `smp` varchar(255) DEFAULT NULL,
-  `lulusansma` date DEFAULT NULL,
-  `sma` varchar(255) DEFAULT NULL,
-  `bio` varchar(500) DEFAULT NULL,
-  `prestasi` varchar(500) DEFAULT NULL,
-  `pengalaman` varchar(500) DEFAULT NULL,
-  `kemampuan` varchar(500) DEFAULT NULL,
-  `hasil` varchar(255) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `profiles`
---
-
-INSERT INTO `profiles` (`foto`, `name`, `email`, `pekerja`, `ultah`, `telepon`, `alamat`, `bidang`, `keterangan`, `twitter`, `facebook`, `google`, `link`, `instagram`, `lulusansd`, `sd`, `lulusansmp`, `smp`, `lulusansma`, `sma`, `bio`, `prestasi`, `pengalaman`, `kemampuan`, `hasil`, `created_at`, `updated_at`) VALUES
-(NULL, 'ibu', 'ibu@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22 03:19:48', '2022-04-22 03:19:48'),
-('1650597804images.jpg', 'ayah', 'ayah@gmail.com', 'freelance', '2022-04-22', 1231231, 'malang', 'pemancing', 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22 03:22:32', '2022-04-22 03:23:24'),
-(NULL, 'putra', 'apaiya@gmail.com', 'freelance', NULL, 1231231, 'panjen', 'gamer', 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22 03:23:58', '2022-04-22 03:24:26'),
-(NULL, 'perusahaan', 'perusahaan@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-10 01:48:15', '2022-05-10 01:48:15'),
-(NULL, 'pekerja', 'pekerja@gmail.com', 'freelance', '2022-05-05', 2909209, 'malang', 'PEMANCING', 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-10 01:50:13', '2022-05-10 01:51:42'),
-(NULL, 'Admin Gawe.Id', 'admin@gawe.id', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-11 03:52:50', '2022-05-11 03:52:50'),
-(NULL, 'coba', 'cob@gmail.com', 'freelance', NULL, NULL, NULL, NULL, 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-12 03:48:40', '2022-05-12 04:02:22'),
-(NULL, 'perusahaan tata krama', 'perusahaan123@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-17 04:33:34', '2022-05-17 04:33:34');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `rekrut`
+-- Struktur dari tabel `rekrut`
 --
 
 CREATE TABLE `rekrut` (
@@ -205,7 +155,7 @@ CREATE TABLE `rekrut` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `rekrut`
+-- Dumping data untuk tabel `rekrut`
 --
 
 INSERT INTO `rekrut` (`nama`, `alamat`, `provinsi`, `kota`, `no`, `telpon`, `email`, `kata`, `posisi`, `hari`, `jam`, `gaji`, `informasi`) VALUES
@@ -215,7 +165,7 @@ INSERT INTO `rekrut` (`nama`, `alamat`, `provinsi`, `kota`, `no`, `telpon`, `ema
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rekrut0`
+-- Struktur dari tabel `rekrut0`
 --
 
 CREATE TABLE `rekrut0` (
@@ -248,7 +198,7 @@ CREATE TABLE `rekrut0` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `rekrut0`
+-- Dumping data untuk tabel `rekrut0`
 --
 
 INSERT INTO `rekrut0` (`id`, `dari`, `untuk`, `sampah_dari`, `sampah_untuk`, `seen_dari`, `seen_untuk`, `star_dari`, `star_untuk`, `notif_dari`, `notif_untuk`, `nama`, `alamat`, `provinsi`, `kota`, `no`, `telepon`, `email`, `posisi`, `jam`, `gaji`, `informasi`, `balasan`, `file`, `created_at`, `hari`) VALUES
@@ -260,7 +210,7 @@ INSERT INTO `rekrut0` (`id`, `dari`, `untuk`, `sampah_dari`, `sampah_untuk`, `se
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tag_kategoris`
+-- Struktur dari tabel `tag_kategoris`
 --
 
 CREATE TABLE `tag_kategoris` (
@@ -270,7 +220,7 @@ CREATE TABLE `tag_kategoris` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tag_kategoris`
+-- Dumping data untuk tabel `tag_kategoris`
 --
 
 INSERT INTO `tag_kategoris` (`tag`, `kategori`, `email`) VALUES
@@ -326,104 +276,145 @@ INSERT INTO `tag_kategoris` (`tag`, `kategori`, `email`) VALUES
 (NULL, NULL, 'admin@gawe.id'),
 (NULL, NULL, 'cob@gmail.com'),
 (NULL, NULL, NULL),
-(NULL, NULL, 'perusahaan123@gmail.com');
+(NULL, NULL, 'perusahaan123@gmail.com'),
+(NULL, NULL, 'apaiya@gmail.com'),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, 'apaiya@gmail.com'),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, 'ayah@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint(20) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `admin` int(11) DEFAULT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `foto` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `pekerja` varchar(100) DEFAULT NULL,
+  `ultah` date DEFAULT NULL,
+  `telepon` int(100) DEFAULT NULL,
+  `alamat` varchar(500) DEFAULT NULL,
+  `bidang` varchar(255) DEFAULT NULL,
+  `keterangan` enum('Memiliki Pekerjaan','Belum Memiliki Pekerjaan') DEFAULT NULL,
+  `twitter` varchar(255) DEFAULT NULL,
+  `facebook` varchar(255) DEFAULT NULL,
+  `google` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `instagram` varchar(255) DEFAULT NULL,
+  `lulusansd` date DEFAULT NULL,
+  `sd` varchar(255) DEFAULT NULL,
+  `lulusansmp` date DEFAULT NULL,
+  `smp` varchar(255) DEFAULT NULL,
+  `lulusansma` date DEFAULT NULL,
+  `sma` varchar(255) DEFAULT NULL,
+  `bio` varchar(500) DEFAULT NULL,
+  `prestasi` varchar(500) DEFAULT NULL,
+  `pengalaman` varchar(500) DEFAULT NULL,
+  `kemampuan` varchar(500) DEFAULT NULL,
+  `hasil` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `user`, `email`, `email_verified_at`, `password`, `admin`, `remember_token`, `created_at`, `updated_at`) VALUES
-(13, 'ibu', 'Pekerja', 'ibu@gmail.com', NULL, '$2y$10$ViW4oJHmFmyWAbCnuHGJZuNTG3Bm9qHP7Ldww2LWfUgBAK38Qe.gu', NULL, NULL, '2022-04-21 20:19:48', '2022-04-21 20:19:48'),
-(14, 'ayah', 'Pekerja', 'ayah@gmail.com', NULL, '$2y$10$9JlKTVZwwHTXfwzMyAK7yedav4zedjttjvZaDH7Ds4RbzEERKB5iW', NULL, NULL, '2022-04-21 20:22:32', '2022-04-21 20:22:32'),
-(15, 'putra', 'Pekerja', 'apaiya@gmail.com', NULL, '$2y$10$9QzHtbyxcpw.QEZMRyBi6O1A0CB6EGFlcmgszYY4aQ/EgKESwTWGO', NULL, NULL, '2022-04-21 20:23:59', '2022-04-21 20:23:59'),
-(17, 'perusahaan', 'Perusahaan', 'perusahaan@gmail.com', NULL, '$2y$10$mBoP4QHI0.YxAdTNt7Vpd.6.U3u4WUQPKdYnmesbtid.Kt.dfGygq', NULL, NULL, '2022-05-09 18:48:16', '2022-05-09 18:48:16'),
-(18, 'pekerja', 'Pekerja', 'pekerja@gmail.com', NULL, '$2y$10$rifvRD9LLc.t.lTrcoyMiudwbIJajwsVOK7y1lXW2jXqKspIQuoQW', NULL, NULL, '2022-05-09 18:50:13', '2022-05-09 18:50:13'),
-(19, 'Admin Gawe.Id', 'Admin', 'admin123@gawe.id', NULL, '$2y$10$je8gil0FHF1.9o4jXHnAe.shOW/WWdmxEwDLKjOwPw9H8/KVFaJSK', 1, NULL, '2022-05-10 20:52:51', '2022-05-10 20:52:51'),
-(20, 'coba', 'Pekerja', 'cob@gmail.com', NULL, '$2y$10$F.drFzTC3tUIaFmqVwd8Z.xe4aKJr3hnkhz73igX15sgqQtmNzImq', NULL, NULL, '2022-05-11 20:48:41', '2022-05-11 20:48:41'),
-(21, 'perusahaan tata krama', 'Perusahaan', 'perusahaan123@gmail.com', NULL, '$2y$10$MqGolSpcufrwKZEkP0aMEecDqN23MIKdQ9TZX0KptwP0pQG6IySeq', NULL, NULL, '2022-05-16 21:33:35', '2022-05-16 21:33:35');
+INSERT INTO `users` (`id`, `password`, `user`, `email_verified_at`, `remember_token`, `foto`, `name`, `email`, `pekerja`, `ultah`, `telepon`, `alamat`, `bidang`, `keterangan`, `twitter`, `facebook`, `google`, `link`, `instagram`, `lulusansd`, `sd`, `lulusansmp`, `smp`, `lulusansma`, `sma`, `bio`, `prestasi`, `pengalaman`, `kemampuan`, `hasil`, `created_at`, `updated_at`) VALUES
+(23, '$2y$10$FKpF.HaCPnndPGBQlg31l.PRLdmqWUmrHhue.NM6RYWNNtIRLWj1W', 'Pekerja', NULL, NULL, NULL, 'Anak', 'apaiya@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18 18:53:49', '2022-05-18 18:53:49'),
+(24, '$2y$10$HTjcFuEzGxNt1UdneexTk.ihQkQ27KNUJpwfN5BwzMEDRVPhNV44W', 'Pekerja', NULL, NULL, NULL, 'Ayah', 'ayah@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18 23:39:24', '2022-05-18 23:39:24');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admins`
+-- Indeks untuk tabel `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
--- Indexes for table `failed_jobs`
+-- Indeks untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `rekrut0`
+-- Indeks untuk tabel `rekrut0`
 --
 ALTER TABLE `rekrut0`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT untuk tabel `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `rekrut0`
+-- AUTO_INCREMENT untuk tabel `rekrut0`
 --
 ALTER TABLE `rekrut0`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
