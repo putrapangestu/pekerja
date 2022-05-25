@@ -9,7 +9,6 @@ use App\Http\Controllers\RekrutController;
 use App\Http\Controllers\GaweController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -67,8 +66,6 @@ Route::get('/user', [AdminController::class, 'user'])->name('user');
 Route::get('/blog', [AdminController::class, 'blog']);
 Route::get('/admin/user/delete/{id}', [AdminController::class, 'delete']);
 
-
-Route::get('/wishlist',[WishlistController::class, 'index']);
 // Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function(){
 //     Route::get('/dashboard', [AdminController::class, 'dashboard']);
 // });
