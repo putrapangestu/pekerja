@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
+use App\Models\Rekrut;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use app\Models\User;
@@ -17,12 +18,24 @@ class GabutController extends Controller
         $keyword = $request->keyword;
         $urutan = $request->urutan;
         if($urutan == 'terlama'){
+            $diurut = 'created_at';
+            $urut = 'asc';
+        }elseif($urutan == 'populer'){
+            $penggunas = DB::table('users')->where('user','pekerja')->get();
+            foreach ($penggunas as $pengguna ){
+            $populer = Rekrut::where('untuk',$pengguna->email)->count();
+            DB::table('users')->where('email',$pengguna->email)->update([
+                'populer' => $populer
+            ]);
+            }
+            $diurut = 'populer';
             $urut = 'asc';
         }else{
+            $diurut = 'created_at';
             $urut = 'desc';
         }
         // $datas = Proses::all();
-   
+       
     
 
             $errors = DB::table('users')->where('user','pekerja')
@@ -34,7 +47,7 @@ class GabutController extends Controller
                 ->get();
                 
             
-            return view('gawe.listings', compact('errors'));
+            return view('gawe.listings', compact('errors',));
         
 
     }

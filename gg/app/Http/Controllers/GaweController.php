@@ -79,4 +79,28 @@ class GaweController extends Controller
 
         }
     }
+    Public function notipikasi(){
+
+        $user = Auth::user()->email;
+        $data = User::all();
+        
+
+        $cek = DB::table('rekrut0')->where('untuk',$user)->orwhere('dari',$user)->first();
+        
+        if (isset($cek)){
+            if ($cek->dari == $user){
+                $notifs = Rekrut::where('dari', $user)
+                ->where('balasan',!null)
+                ->where('notif_dari',0)
+                ->get();
+            }elseif ($cek->untuk == $user){
+                $notifs = Rekrut::where('untuk', $user)
+                ->where('seen_untuk',0)
+                ->where('notif_untuk',0)
+                ->get();
+            }
+        }
+
+        return view('gawe.notification')->with(compact('notifs'));
+    }
 }

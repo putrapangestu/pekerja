@@ -1285,6 +1285,7 @@
                             </div>
                             @endforeach
                         @endif
+                    @endif
                 </div>
                 @if(!$notifs->count() == 0)
                 <div class="modal-footer">
@@ -1299,7 +1300,6 @@
             </div>
             </div>
         </div>
-    @endif
     @endif
 
     	{{-- <!-- Modal -->
