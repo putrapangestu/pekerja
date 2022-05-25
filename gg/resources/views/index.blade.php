@@ -1285,7 +1285,7 @@
                             </div>
                             @endforeach
                         @endif
-                    @endif
+                    
                 </div>
                 @if(!$notifs->count() == 0)
                 <div class="modal-footer">
@@ -1301,7 +1301,7 @@
             </div>
         </div>
     @endif
-
+    @endif
     	{{-- <!-- Modal -->
         <div aria-hidden="true" role="dialog" tabindex="-1" id="ModalDel" class="modal fade" style="display: none;">
             <div class="modal-dialog">
