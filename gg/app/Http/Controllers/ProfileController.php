@@ -38,14 +38,14 @@ class ProfileController extends Controller
         return view('gawe.edit-profile', compact('errors'), ['profiles'=>$profiles]);
     }
 
-    public function update(Request $request, $email){
+    public function update(Request $request){
 
         $tag = new TagKategori;
         $tag->tag = $request->tag;
         $tag->kategori = $request->kategori;
         $tag->save();
 
-        $db = DB::table('users')->where('email',$email);
+        $db = DB::table('users')->where('email',Auth::user()->email);
         $db->update([
             'name' => $request->name,
             'email' => $request->email,
@@ -74,7 +74,7 @@ class ProfileController extends Controller
             'lng' => $request->lng,   
         ]);
        
-        $model =  User::where('email',$email)->first();
+        $model =  User::where('email',Auth::user()->email)->first();
  
         if($request->file('foto')){
             $file = $request->file('foto');
@@ -101,8 +101,11 @@ class ProfileController extends Controller
         if($request->get('password') == null && $request->get('oldpassword') == null && $request->get('confirm_password') == null){
             return redirect('profile');    
         }else{
+            if($request->get('password') == null && $request->get('confirm_password') == null){
+                return back()->with('gagal_password','Password gagal diganti');
+            }                         
             if(Hash::check($request->get('oldpassword'),Auth::user()->password)){
-                $user = User::where('email',$email)->first();
+                $user = User::where('email',Auth::user()->email)->first();
                 $user->password = Hash::make($request->get('password'));
                 $user->save();
             }else{
