@@ -235,6 +235,10 @@
                                             <input type="hidden" name="urutan" value="terlama">
                                         <button type="submit" class="dropdown-item" > Terlama</button>
                                         </form>
+                                        <form action="/listings">
+                                            <input type="hidden" name="urutan" value="populer">
+                                        <button type="submit" class="dropdown-item" > Terpopuler</button>
+                                        </form>
                                     </div>
                               </li>   
                             </ul>
