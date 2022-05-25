@@ -14,6 +14,26 @@ class LoginController extends Controller
     return view('auth.login');
   }
 
+  public function adminLogin()
+  {
+    return view('admin.admin');
+  }
+
+  public function AdminPostLogin(Request $request){
+     // Validate the form data
+      $credentials = $request->validate([
+        'email' => ['required', 'email'],
+        'password' => ['required','min:8'],
+      ]);
+
+      if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password],$request->get('remember'))) {
+        return redirect()->intended('/dashboard');
+      }else {
+        return back()->with('login_gagal', 'Email atau password salah, silahkan login ulang');
+      }
+
+  }
+
   public function postLogin(Request $request)
   {
 

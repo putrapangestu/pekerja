@@ -9,7 +9,6 @@ use App\http\Controllers\ContactController;
 use App\Http\Controllers\RekrutController;
 use App\Http\Controllers\GaweController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -31,8 +30,14 @@ use Illuminate\Support\Facades\Auth;
 
 
 // Auth::routes();
+Route::get('login', [LoginController::class, 'getLogin'])->name('login');
+Route::post('login', [LoginController::class, 'postLogin'])->name('login');
+Route::get('admin', [LoginController::class, 'adminLogin'])->name('login-admin');
+Route::post('admin', [LoginController::class, 'AdminPostLogin'])->name('login-admin');
+Route::post('logout', [LoginController::class, 'logout']);
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [RegisterController::class, 'register'])->name('register');
 
-Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [GaweController::class, 'index'])->name('/');
 Route::post('/', [GaweController::class, 'notif']);
@@ -61,17 +66,7 @@ Route::get('/wishlist', [WishlistController::class, 'index']);
 Route::get('notifikasi',[GaweController::class, 'notipikasi']);
 Route::get('profile-perusahaan/{email}', [ProfileController::class, 'perusahaan'])->name('profile-perusahaan');
 Route::get('profiles', [ProfileController::class, 'perusahaan'])->name('profiles');
-
-
-Route::get('admin', [LoginAdminController::class, 'adminLogin'])->name('login-admin');
-Route::post('admin', [LoginAdminController::class, 'AdminPostLogin'])->name('login-admin');
-Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('register', [RegisterController::class, 'register'])->name('register');
-Route::get('login', [LoginController::class, 'getLogin'])->name('login');
-Route::post('login', [LoginController::class, 'postLogin'])->name('login');
-
-Route::middleware(['auth:admin'])->group(function () {
-    Route::post('logout-admin', [LoginAdminController::class, 'logout'])->name('logout-admin');
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/user', [AdminController::class, 'user'])->name('user');
     Route::get('/blog', [AdminController::class, 'blog']);
