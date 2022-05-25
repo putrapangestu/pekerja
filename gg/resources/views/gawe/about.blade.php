@@ -317,11 +317,11 @@
                         <!--Team One Single-->
                         <div class="team_one_single">
                             <div class="team_one_image">
-                                <img src="{{ asset('assets/images/team/team-1-img-3.jpg') }}" alt="">
+                                <img src="{{ asset('assets/images/team/team-1-img-3.jpeg') }}" alt="">
                             </div>
                             <div class="team_one_content">
                                 <div class="team_member_info">
-                                    <h3>randi</h3>
+                                    <h3>Adolf Randi</h3>
                                     <p>Consultant</p>
                                 </div>
                                 <div class="team_one_social">

@@ -70,7 +70,7 @@
                         <div class="header_top_one_inner_right float-right">
                             <div class="header_topmenu_1">
                                 <ul class="list-unstyled">
-                                    <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
+                                    <li><a href="{{ url('/wishlist') }}"><i class="fas fa-heart"></i>Wishlist</a></li>
                                     <li><a href="{{ url('/inbox') }}"><i class="fas fa-mail"></i>Inbox</a></li>
                                 </ul>
                             </div>
@@ -263,9 +263,15 @@
                                 <div class="open">
                                     <p>{{ $profile->pekerja }}</p>
                                 </div>
+                                @if(Auth::user()->user == 'Perusahaan')
+                                <form action="{{url ('listings/'.$profile->email) }}" method="POST">
+                                    @csrf
                                 <div class="heart_icon">
-                                    <i class="icon-heart"></i>
+                                    <input type="hidden" name="wishlist" value="wishlist">
+                                <button class=" wishlist icon-heart fill-heart"></button>
                                 </div>
+                                </form>
+                                @endif
                                 <div class="author_img">
                                     <img src="{{ asset('images/resources/latest_listings-3_au-img-1.png') }}" alt="">
                                 </div>
@@ -278,7 +284,7 @@
                                     <div class="rounded-circle" style="width:38px;height:38px;background-color:lime">
                                 </div>
                                 </div>
-
+                                    
                                 @endif
                             </div>
                             <div class="listings_three-page_content">

@@ -126,7 +126,7 @@
                                 <ul class="navbar-nav ">
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="{{ asset('/gambar/'.$profile->foto) }}" width="55" height="55" class="rounded-circle">
+                                        <img src="{{ asset('/gambar'.$profile->foto) }}" width="55" height="55" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                       <a class="dropdown-item" href="{{ url('/profile') }}">Profile</a>                                              
@@ -223,8 +223,12 @@
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="main_bottom_right">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Add to Wishlist<i class="far fa-heart"></i></a></li>
+                            <ul class="list-unstyled"> 
+                                @if (isset($itemwishlist)&& $itemwishlist)   
+                                 Add to Wishlist<i class="far fa-heart"></i>
+                                @else                         
+                                <a href="/wishlist"> Add to Wishlist<i class="far fa-heart"></i></a>
+                                @endif
                                 <a href="/rekrut/{{ $profile->email }}"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a>
                                 
                             </ul>
