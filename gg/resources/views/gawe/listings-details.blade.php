@@ -222,17 +222,21 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
+                        @if (Auth::user()->user == 'Perusahaan')   
                         <div class="main_bottom_right">
-                            <ul class="list-unstyled"> 
-                                @if (isset($itemwishlist)&& $itemwishlist)   
-                                 Add to Wishlist<i class="far fa-heart"></i>
-                                @else                         
-                                <a href="/wishlist"> Add to Wishlist<i class="far fa-heart"></i></a>
-                                @endif
+                            <ul class="list-unstyled">
+                                <form action="{{url ('listings/'.$profile->email) }}" method="POST">
+                                    <input type="hidden" name="wishlist" value="wishlist">
+                                    <input type="submit" class="far fa-heart" value="&#xf043; Input">
+                                    <button class="wishlist bg-transparent border-0">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                </form>
                                 <a href="/rekrut/{{ $profile->email }}"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a>
                                 
                             </ul>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

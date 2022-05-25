@@ -272,7 +272,7 @@
                                     @csrf
                                 <div class="heart_icon">
                                     <input type="hidden" name="wishlist" value="wishlist">
-                                <button class=" wishlist icon-heart fill-heart"></button>
+                                <button class="wishlist bg-transparent border-0"><i class="icon-heart fill-heart"></i></button>
                                 </div>
                                 </form>
                                 @endif
