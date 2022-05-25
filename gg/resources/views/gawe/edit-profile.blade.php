@@ -15,6 +15,57 @@
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Menyisipkan library Google Maps -->
+ <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+ <script>
+   // variabel global marker
+    var marker;
+    
+    function taruhMarker(peta, posisiTitik){
+    // membuat Marker
+    if( marker ){
+      // pindahkan marker
+      marker.setPosition(posisiTitik);
+    } else {
+      // buat marker baru
+      marker = new google.maps.Marker({
+        position: posisiTitik,
+        map: peta
+      });
+    }
+    console.log("Posisi marker: " + posisiTitik);    
+
+    // isi nilai koordinat ke form
+    document.getElementById("lat").value = posisiTitik.lat();
+    document.getElementById("lng").value = posisiTitik.lng();
+    
+}
+
+     // fungsi initialize untuk mempersiapkan peta
+     function initialize() {
+     var propertiPeta = {
+         center:new google.maps.LatLng(-0.9166441895872601,120.75323489843753),
+         zoom:4,
+         mapTypeId:google.maps.MapTypeId.ROADMAP
+     };
+     
+     var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+      google.maps.event.addListener(peta, 'click', function(event) {
+      taruhMarker(this, event.latLng);
+    });
+
+     // membuat Marker
+      // var marker = new google.maps.Marker({
+      //     position: new google.maps.LatLng(-8.5830695,116.3202515),
+      //     map: peta
+      //     animation: google.maps.Animation.BOUNCE
+      // });
+    }
+     // event jendela di-load  
+     google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -97,7 +148,7 @@
               
               <div class="card-body">
                     <div class="container light-style flex-grow-1 container-p-y">
-                      <form action="{{ url('edit-profile/'.$profile->email) }}" method="POST" enctype="multipart/form-data">
+                      <form action="{{ url('edit-profile') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                       <h4 class="font-weight-bold py-3 mb-4">
                         Account settings
@@ -121,10 +172,17 @@
                           <div class="col-md-3 pt-0">
                             <div class="list-group list-group-flush account-settings-links">
                               <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+                              @if(Auth::user()->user == 'Perusahaan')
+                              <a class="list-group-item list-group-item-action" data-toggle="list" href="#alamat">Alamat</a>
+                              @endif
                               <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
+                              @if(Auth::user()->user == 'Pekerja')
                               <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
+                              @endif
                               <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
+                              @if(Auth::user()->user == 'Pekerja')
                               <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-portofolio">Portofolio</a>
+                              @endif
                             </div>
                           </div>
                           <div class="col-md-9">
@@ -154,6 +212,13 @@
                                     <label class="form-label">E-mail</label>
                                     <input type="text" class="form-control mb-1" name="email" value="{{ $profile->email }}">
                                   </div>
+                                  @if(Auth::user()->user == 'Perusahaan')
+                                  <div class="form-group">
+                                    <label class="form-label">No. Telp</label>
+                                    <input type="text" class="form-control mb-1" name="telepon" value="{{ $profile->telepon }}">
+                                  </div>
+                                  @endif
+                                  @if(Auth::user()->user == 'Pekerja')
                                   <div class="form-group">
                                     <label class="form-label">Pekerja</label>
                                     <select class="custom-select" name="pekerja">
@@ -163,9 +228,29 @@
                                       <option value="fulltime" @if ($profile->pekerja == 'fulltime') selected @endif>Full Time</option>
                                     </select>
                                   </div>
+                                  @endif
                                 </div>
                               
                             </div>
+                            @if(Auth::user()->user == 'Perusahaan')
+                            <div class="tab-pane fade" id="alamat">
+                              
+                              <div class="card-body pb-2">
+                                {{-- <form action="{{ url('/edit-profile/'.Auth::user()->email) }}" method="GET" role="search" class="inbox-search inline-block pull-left mr-15"> --}}
+                                  <div class="input-group mb-4">
+                                    <input type="text" class="form-control" placeholder="Search.." name="search">
+                                    <span class="input-group-btn">
+                                      <button class="btn btn-default" type="submit" ><i class="zmdi zmdi-search"></i></button>
+                                    </span>
+                                  </div>
+                                {{-- </form> --}}
+                                <div id="googleMap" style="width:100%;height:380px;"></div>
+                                  <input type="text" id="lat" name="lat" value="{{ $profile->lat }}">
+                                  <input type="text" id="lng" name="lng" value="{{ $profile->lng }}">
+                              </div>
+                            
+                            </div>
+                            @endif
                               <div class="tab-pane fade" id="account-change-password">
                               
                                 <div class="card-body pb-2">
@@ -207,18 +292,22 @@
                               <div class="tab-pane fade" id="account-info">
                               
                                 <div class="card-body pb-2">
+                                  
                                   <div class="form-group">
                                     <label class="form-label">Birthday</label>
                                     <input type="date" class="form-control" name="ultah" value="{{ $profile->ultah }}">
                                   </div>
+                                  
                                   <div class="form-group">
                                     <label class="form-label">Telepon</label>
                                     <input type="text" class="form-control" name="telepon" value="{{ $profile->telepon }}">
                                   </div>
+                                  
                                   <div class="form-group">
                                     <label class="form-label">Alamat</label>
                                     <input type="text" class="form-control" name="alamat" value="{{ $profile->alamat }}">
                                   </div>
+                                  
                                   <div class="form-group">
                                     <label class="form-label">Bidang Pekerjaan</label>
                                     <input type="text" class="form-control" name="bidang" value="{{ $profile->bidang }}">

@@ -41,6 +41,8 @@ class User extends Authenticatable
         'lulusansmp',
         'lulusansma',
         'password',
+        'lat',
+        'lng'
     ];
 
     protected $nullable = [

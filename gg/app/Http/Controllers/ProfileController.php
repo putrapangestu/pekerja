@@ -20,18 +20,20 @@ class ProfileController extends Controller
         $user = Auth::user()->email;
         $errors = User::all();
         $data = User::all();
+        $map = DB::table('users')->where('email',Auth::user()->email)->first();
+
 
 
         $profile = DB::table('users')->where('email',$user)->get();
         
 
-        return view('gawe.profile', compact('errors'), ['data'=>$profile]);
+        return view('gawe.profile', compact('errors', 'map'), ['data'=>$profile]);
     }
 
-    public function edit($email){
+    public function edit(){
         $errors = User::all();
         
-        $profiles = DB::table('users')->where('email',$email)->get();
+        $profiles = DB::table('users')->where('email',Auth::user()->email)->get();
 
         return view('gawe.edit-profile', compact('errors'), ['profiles'=>$profiles]);
     }
@@ -67,7 +69,9 @@ class ProfileController extends Controller
             'bio' => $request->bio,
             'prestasi' => $request->prestasi,
             'pengalaman' => $request->pengalaman,
-            'kemampuan' => $request->kemampuan,   
+            'kemampuan' => $request->kemampuan,
+            'lat' => $request->lat,
+            'lng' => $request->lng,   
         ]);
        
         $model =  User::where('email',$email)->first();
@@ -94,15 +98,17 @@ class ProfileController extends Controller
             $db->update(['hasil' => $nama_file]);
                         
         }
-
-        if(Hash::check($request->get('oldpassword'),Auth::user()->password)){
-            $user = User::where('email',$email)->first();
-            $user->password = Hash::make($request->get('password'));
-            $user->save();
+        if($request->get('password') == null && $request->get('oldpassword') == null && $request->get('confirm_password') == null){
+            return redirect('profile');    
         }else{
-             return back()->with('gagal_password','Password gagal diganti');
+            if(Hash::check($request->get('oldpassword'),Auth::user()->password)){
+                $user = User::where('email',$email)->first();
+                $user->password = Hash::make($request->get('password'));
+                $user->save();
+            }else{
+                return back()->with('gagal_password','Password gagal diganti');
+            }
         }
-
         return redirect('profile');
     }
 

@@ -33,9 +33,40 @@
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 
+ 
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+ <!-- Menyisipkan library Google Maps -->
+ <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+ <script>
+      
+
+     // fungsi initialize untuk mempersiapkan peta
+     function initialize() {
+      var lat = {{ Auth::user()->lat }};
+      var lng = {{ Auth::user()->lng }}; 
+      var propertiPeta = {
+      center:new google.maps.LatLng(lat,lng),
+      zoom:16,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+  
+      var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+  
+  // membuat Marker
+     var marker=new google.maps.Marker({
+      position: new google.maps.LatLng(lat,lng),
+      map: peta
+    });
+
+}
+     // event jendela di-load  
+     google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+
 </head>
 <body class="my-0">
 <div class="wrapper">
@@ -251,6 +282,7 @@
                         </div>
                       </div>
                       <hr>
+                      @if(Auth::user()->user == 'Pekerja')
                       <div class="row">
                         <div class="col-sm-3">
                           <h6 class="mb-0">Alamat</h6>
@@ -260,6 +292,7 @@
                         </div>
                       </div>
                       <hr>
+                      @endif
                       <div class="row">
                         <div class="col-sm-3">
                           <h6 class="mb-0">Bidang</h6>
@@ -278,9 +311,22 @@
                         </div>
                       </div>
                       <hr>
-                      <div class="row">
+                    
+                    @if(Auth::user()->user == 'Perusahaan')
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Alamat</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <div id="googleMap" style="width:100%;height:380px;"></div>
+                     </div>
+                    </div>
+                        <hr>
+                    @endif
+
+                        <div class="row">
                         <div class="col-sm-12">
-                          <a class="btn btn-info " href="{{ url('/edit-profile/'.Auth::user()->email) }}">Edit</a>
+                          <a class="btn btn-info " href="{{ url('/edit-profile/') }}">Edit</a>
                         </div>
                       </div>
                       

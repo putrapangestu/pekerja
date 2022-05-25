@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IsAdmin
 {
@@ -14,12 +15,12 @@ class IsAdmin
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, ...$user)
+    public function handle(Request $request, Closure $next)
     {
-        if(in_array($request->$user()->user,$user)){
+        if (Auth::user() &&  Auth::user()->admin == true) {
             return $next($request);
-        }
-
-        return $next($request);
+       }
+     
+       return back()->with('error','Opps, You\'re not Admin');
     }
 }

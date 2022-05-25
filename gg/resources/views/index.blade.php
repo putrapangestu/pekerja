@@ -95,7 +95,7 @@
                         <div class="main-nav__main-navigation three float-left">
                             <ul class=" main-nav__navigation-box">
                                 <li class="current">
-                                    <a href="{{ url('/gawe') }}">Home</a>
+                                    <a href="{{ url('/') }}">Home</a>
                                    <!-- /.sub-menu -->
                                 </li>
                                
@@ -1285,7 +1285,6 @@
                             </div>
                             @endforeach
                         @endif
-                    @endif
                 </div>
                 @if(!$notifs->count() == 0)
                 <div class="modal-footer">
@@ -1300,6 +1299,7 @@
             </div>
             </div>
         </div>
+    @endif
     @endif
 
     	{{-- <!-- Modal -->
