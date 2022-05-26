@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\GabutController;
-use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CobaController;
 use App\Http\Controllers\WishlistController;
 use App\http\Controllers\ContactController;
@@ -37,6 +39,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [GaweController::class, 'index'])->name('/');
 Route::post('/', [GaweController::class, 'notif']);
 Route::get('/listings', [GabutController::class, 'listings'])->name('listings');
+Route::post('/listings/{email}', [WishlistController::class, 'create'])->name('wishlist');
+Route::post('wishlist', [WishlistController::class, 'store'])->name('hapus-wishlist');
 Route::get('/detail-pekerja/{email}', [GabutController::class, 'listingsdetails'])->name('detail-pekerja');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('edit-profile');
@@ -57,8 +61,9 @@ Route::get('inbox/{id}/seen', [CobaController::class, 'seen']);
 Route::get("kontak", [ContactController::class, 'index'])->name('kontak');
 Route::post('chat-kontak', [ContactController::class, 'contact'])->name('chat-kontak');
 Route::get('tentang-kami', [GaweController::class, 'about'])->name('tentang-kami');
-Route::get('/wishlist', [WishlistController::class, 'index']);
 Route::get('notifikasi',[GaweController::class, 'notipikasi']);
+Route::get('wishlist', [WishlistController::class, 'index']);
+Route::post('wishlist', [WishlistController::class, 'store'])->name('hapus-wishlist');
 Route::get('profile-perusahaan/{email}', [ProfileController::class, 'perusahaan'])->name('profile-perusahaan');
 Route::get('profiles', [ProfileController::class, 'perusahaan'])->name('profiles');
 
@@ -69,6 +74,11 @@ Route::get('register', [RegisterController::class, 'showRegistrationForm'])->nam
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::get('login', [LoginController::class, 'getLogin'])->name('login');
 Route::post('login', [LoginController::class, 'postLogin'])->name('login');
+Route::get('password/reset', [ForgotPasswordController::class,'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class,'sendResetLinkEmail'])->name('password.email');
+Route::get('password/reset/{token}', [ResetPasswordController::class,'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class,'reset'])->name('password.update');
+
 
 Route::middleware(['auth:admin'])->group(function () {
     Route::post('logout-admin', [LoginAdminController::class, 'logout'])->name('logout-admin');

@@ -165,6 +165,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($errors as $profile)
+                @if(isset($profile))
                 <div class="col-3">
                     <!--Latest Listings Single-->
                     <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
@@ -174,11 +175,11 @@
                             <div class="open">
                                 <p>{{ $profile->pekerja }}</p>
                             </div>
-                            <form action="{{url ('listings/'.$profile->email) }}" method="POST">
+                            <form action="{{ Route('hapus-wishlist') }}" method="POST">
                                 @csrf
                             <div class="heart_icon">
-                                <input type="hidden" name="wishlist" value="wishlist">
-                            <button class=" wishlist icon-heart fill-heart"></button>
+                                <input type="hidden" name="hapuswishlist" value="hapus">
+                            <button class="wishlist bg-transparent border-0"><i class="icon-heart fill-heart"></i></button>
                             </div>
                             </form>
                             <div class="author_img">
@@ -209,6 +210,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 @endforeach
             </div>
         </div>

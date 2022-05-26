@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use Illuminate\Http\Request;
 use App\Models\TagKategori;
 use App\Models\Profile;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -25,67 +26,35 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
 
     public function showRegistrationForm()
     {
         return view('auth.register');
     }
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/login';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function register(Request $request)
     {
-        $this->middleware('guest');
-    }
-
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+        $credentials = $request->validate([
+            'name' => ['required','string'],
             'user' => ['required'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
+            'email' => ['required', 'email','unique:users'],
+            'password' => ['required','min:8','string'],
+          ]);
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
-    {
-        TagKategori::create([
-            'email' => $data['email']
-        ]);
-        Profile::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+        DB::table('users')->insert([
+            'name' => $request->name,
+            'user' => $request->user,
+            'email' => $request->user,
+            'password' => Hash::make($request->password),
+            // 'foto' => $request->
             'created_at' => date("Y-m-d H:i:s", strtotime('now'))
         ]);
-        return User::create([
-            'name' => $data['name'],
-            'user' => $data['user'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+
+        if(!($request->name == null && $request->user == null && $request->email == null && $request->password == null )){
+            return redirect('/login')->with('regis','Registrasi Berhasil, Silahkan Masuk ke Akun Anda');
+        }else {
+           return back()->with('gagal_regis','Registrasi Gagal, Silahkan Isi Ulang Formulir'); 
+        }
     }
+
 }

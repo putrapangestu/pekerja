@@ -203,7 +203,7 @@
                         <div class="main_bottom_left">
                             <div class="main_bottom_content">
                                 <div class="author_image">
-                                    <img src="{{ asset('assets/images/resources/listings-2-page-au-img-5.png') }}" height="70" alt="">
+                                    <img src="{{ asset('gambar/'.$profile->foto) }}" height="70" alt="">
                                 </div>
                                 <div class="icon">
                                     <span class=""></span>
@@ -222,6 +222,7 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
+                        @if(Auth::user())
                         @if (Auth::user()->user == 'Perusahaan')   
                         <div class="main_bottom_right">
                             <ul class="list-unstyled">
@@ -236,6 +237,7 @@
                                 
                             </ul>
                         </div>
+                        @endif
                         @endif
                     </div>
                 </div>

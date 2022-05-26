@@ -12,6 +12,11 @@
                         {{ session('login_gagal') }}
                     </div>
                 @endif
+                @if(session()->has('regis'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('regis') }}
+                    </div>
+                @endif
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -65,7 +70,7 @@
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" style="color:rgb(252, 60, 60);" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Lupa Password?') }}
                                     </a>
                                 @endif
                             </div>

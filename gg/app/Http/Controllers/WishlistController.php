@@ -15,34 +15,44 @@ class WishlistController extends Controller
     {
 
         $user = Auth::user()->email;
-        $wish = $request->user();
-        $itemwishlist = Wishlist::where('dari', $wish->id)
-                            ->Paginate(10);
-        $data = array('title' => 'Wishlist',
-                'itemwishlist' => $itemwishlist);
+        // $wish = $request->user();
+        // $itemwishlist = Wishlist::where('dari', $wish->id)
+        //                     ->Paginate(10);
+        // $data = array('title' => 'Wishlist',
+        //         'itemwishlist' => $itemwishlist);
 
-         $sapi = DB::table('wishlists')->where('dari',$user)->first();
+         $sapi = DB::table('wishlists')->where('dari',$user)->where('hapus',1)->first();
          $errors = DB::table('users')->where('email',$sapi->untuk)->get();
 
          
-        return view('gawe.wishlist',$data)->with('no', ($request->input('page',1)-1) * 10)->with(compact('errors'));
+         return view('gawe.wishlist')->with(compact('errors'));
+        //  return view('gawe.wishlist',$data)->with(compact('errors'));
+        //  with('no', ($request->input('page',1)-1) * 10)->
     }
     public function create(Request $request,$email){
-        $wishlist = Wishlist::all();
-
+       
         if($request->wishlist=='wishlist'){
             $user=Auth::user()->email;
             $isi=DB::table('wishlists');
             $isi->insert([
                 'dari'=>$user,
-                'untuk'=>$email
+                'untuk'=>$email,
+                'hapus'=>'1'
             ]);
             return redirect('listings');
         }
     }
 
-    public function store(){
-        
+    public function store(Request $request){
+
+        if($request->hapuswishlist=='hapus'){
+            $user = Auth::user()->email;
+            $isi=DB::table('wishlists')->where('dari',$user);
+            $isi->update([
+                'hapus'=>'0'
+            ]);
+            return redirect('wishlist');
+        }
     }
       
 }
