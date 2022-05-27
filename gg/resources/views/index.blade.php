@@ -1244,45 +1244,36 @@
                             Tidak ada notifikasi
                             @endif 
                             @foreach($notifs as $notif)
-                            <div class="streamline message-nicescroll-bar">
-                                <div class="sl-item">
-                                    <a href="javascript:void(0)">
-                                        <div class="icon bg-green">
-                                            <i class="zmdi zmdi-flag"></i>
+                            
+                                        <div class="row fs-5">
+                                            <div class="col-2 fs-5"><i class="fas fa-envelope"></i></div>
+                                            <div class="col-7 fs-5">{{ $notif->dari }} ingin merekrut anda
+                                                <div class="lead">ketuk untuk melihat detail & menanggapinya</div>
+                                            </div>
+                                            <div class="col-3 fs-5">{{ $notif->created_at }}</div>
                                         </div>
-                                        <div class="sl-content">
-                                            <span class="inline-block capitalize-font  pull-left truncate head-notifications">Terdapat Pesan Baru</span>
-                                            <span class="inline-block font-11  pull-right notifications-time">{{ $notif->created_at }}</span>
-                                            <div class="clearfix"></div>
-                                            <p class="truncate">{{ $notif->nama }} ingin merekrut anda</p>
-                                        </div>
-                                    </a>	
-                                </div>
+                                        
                                 <hr class="light-grey-hr ma-0"/>
-                            </div>
+                        
                             @endforeach
+                            
                     
                         @elseif (Auth::user()->user == 'Perusahaan')
                             @if($notifs->count() == 0)
                             Tidak ada notifikasi
                             @endif
-                            @foreach ($notifs as $notif)
-                            <div class="streamline message-nicescroll-bar">
-                                <div class="sl-item">
-                                    <a href="javascript:void(0)">
-                                        <div class="icon bg-green">
-                                            <i class="zmdi zmdi-flag"></i>
+                            @foreach($notifs as $notif)
+                            
+                                        <div class="row fs-5">
+                                            <div class="col-2 fs-5"><i class="fas fa-envelope"></i></div>
+                                            <div class="col-7 fs-5">{{ $notif->untuk }} telah menjawab tawaran anda
+                                                <div class="lead">ketuk untuk melihat </div>
+                                            </div>
+                                            <div class="col-3 fs-5">{{ $notif->created_at }}</div>
                                         </div>
-                                        <div class="sl-content">
-                                            <span class="inline-block capitalize-font  pull-left truncate head-notifications"> Ada Pesan baru</span>
-                                            <span class="inline-block font-11  pull-right notifications-time">{{ $notif->created_at }}</span>
-                                            <div class="clearfix"></div>
-                                            <p class="truncate">{{ $notif->untuk }} telah memberikan jawaban</p>
-                                        </div>
-                                    </a>	
-                                </div>
+                                        
                                 <hr class="light-grey-hr ma-0"/>
-                            </div>
+                        
                             @endforeach
                         @endif
                     
