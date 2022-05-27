@@ -24,6 +24,6 @@ class ContactController extends Controller
            'email'=> $request->email,
            'pesan'=>$request->pesan,
        ]);
-    return redirect('contact');
+    return redirect('kontak');
     }
 }

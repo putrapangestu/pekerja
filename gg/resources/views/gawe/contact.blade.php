@@ -251,19 +251,20 @@
                             </div>
                         </div>
                     </div>
-                    <form action="{{ url('chat-kontak') }}" method="POST">
-                        @csrf
-                    <div class="col-xl-8">
+                    <div class="col-xl-3"></div>
+                    <div class="col-xl-5">
                         <div class="contact-one__form__wrap">
-                                <div class="row">        
+                            <div class="row">        
+                                    <form action="{{ url('chat-kontak') }}" method="POST">
+                                        @csrf
                                     <div class="col-md-12 my-2">
                                         <div class="input-group">
-                                            <input type="text" name="name" placeholder="nama">
+                                            <input type="text" name="name"  cols="50" placeholder="nama">
                                         </div>
                                     </div>
                                     <div class="col-md-12 my-2">
                                         <div class="input-group">
-                                            <input type="email" name="email" placeholder="alamat email">
+                                            <input type="email" name="email"  cols="50" placeholder="alamat email">
                                         </div>
                                     </div>
                                     <div class="col-md-12 my-2">
@@ -276,10 +277,10 @@
                                             <button type="submit" class="thm-btn contact-one__btn">Comment</button>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </form>
                 </div>
             </div>
         </section>
