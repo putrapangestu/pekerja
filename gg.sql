@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Bulan Mei 2022 pada 08.42
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 8.1.1
+-- Generation Time: May 27, 2022 at 07:39 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admins`
+-- Table structure for table `admins`
 --
 
 CREATE TABLE `admins` (
@@ -32,21 +32,22 @@ CREATE TABLE `admins` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `admin` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `admins`
+-- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Gawe.Id', 'admin@gawe.id', '$2y$10$.SblDhGd66pwk.piDQQ7dey68rrjujzlyV9Iv8R.DV5rHnH4nUOhq', '2022-05-10 03:35:36', NULL);
+INSERT INTO `admins` (`id`, `name`, `email`, `password`, `admin`, `created_at`, `updated_at`) VALUES
+(2, 'Admin Gawe.Id', 'admin@gawe.id', '$2y$10$aEE/wDMAb.WFQp.BiYYize9it594Ri0SxyLBkdvdMd3GYj/fNrxEK', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `contact`
+-- Table structure for table `contact`
 --
 
 CREATE TABLE `contact` (
@@ -56,18 +57,21 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `contact`
+-- Dumping data for table `contact`
 --
 
 INSERT INTO `contact` (`name`, `email`, `pesan`) VALUES
 ('ddd', 'fariscoli@gmail.com', 'asasa'),
 ('dihei', 'fariscoli@gmail.com', 'asdasd'),
-('ddd', 'fariscoli@gmail.com', 'conat');
+('ddd', 'fariscoli@gmail.com', 'conat'),
+('nan', 'passa@gmail.com', 'password\r\nasdkjaskdjasodjpas'),
+('nan', 'passa@gmail.com', 'password\r\nasdkjaskdjasodjpas'),
+('asds', 'apspasd@gmail.com', 'asdjaskjdksjad');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -83,7 +87,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -93,7 +97,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -105,7 +109,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -114,10 +118,17 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('cobasaja@gmail.com', '$2y$10$c2lJSx.jFaUeok4VV55paOyRk5AXd3UfAojvS.3MNIB3pH/1ZU/US', '2022-05-25 05:12:19');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -135,7 +146,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rekrut`
+-- Table structure for table `rekrut`
 --
 
 CREATE TABLE `rekrut` (
@@ -155,7 +166,7 @@ CREATE TABLE `rekrut` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `rekrut`
+-- Dumping data for table `rekrut`
 --
 
 INSERT INTO `rekrut` (`nama`, `alamat`, `provinsi`, `kota`, `no`, `telpon`, `email`, `kata`, `posisi`, `hari`, `jam`, `gaji`, `informasi`) VALUES
@@ -165,7 +176,7 @@ INSERT INTO `rekrut` (`nama`, `alamat`, `provinsi`, `kota`, `no`, `telpon`, `ema
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rekrut0`
+-- Table structure for table `rekrut0`
 --
 
 CREATE TABLE `rekrut0` (
@@ -198,7 +209,7 @@ CREATE TABLE `rekrut0` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `rekrut0`
+-- Dumping data for table `rekrut0`
 --
 
 INSERT INTO `rekrut0` (`id`, `dari`, `untuk`, `sampah_dari`, `sampah_untuk`, `seen_dari`, `seen_untuk`, `star_dari`, `star_untuk`, `notif_dari`, `notif_untuk`, `nama`, `alamat`, `provinsi`, `kota`, `no`, `telepon`, `email`, `posisi`, `jam`, `gaji`, `informasi`, `balasan`, `file`, `created_at`, `hari`) VALUES
@@ -210,7 +221,7 @@ INSERT INTO `rekrut0` (`id`, `dari`, `untuk`, `sampah_dari`, `sampah_untuk`, `se
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tag_kategoris`
+-- Table structure for table `tag_kategoris`
 --
 
 CREATE TABLE `tag_kategoris` (
@@ -220,7 +231,7 @@ CREATE TABLE `tag_kategoris` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tag_kategoris`
+-- Dumping data for table `tag_kategoris`
 --
 
 INSERT INTO `tag_kategoris` (`tag`, `kategori`, `email`) VALUES
@@ -301,12 +312,100 @@ INSERT INTO `tag_kategoris` (`tag`, `kategori`, `email`) VALUES
 (NULL, NULL, NULL),
 (NULL, NULL, NULL),
 (NULL, NULL, NULL),
-(NULL, NULL, 'ayah@gmail.com');
+(NULL, NULL, 'ayah@gmail.com'),
+(NULL, NULL, 'cobasaja@gmail.com'),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, 'lupa123@gmail.com'),
+(NULL, NULL, 'berusaha@gmail.com'),
+(NULL, NULL, 'ptberusaha@gmail.com'),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, 'usahakerja@gmail.com'),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, 'lupapassword@gmail.com'),
+(NULL, NULL, 'lupapassword@gmail.com'),
+(NULL, NULL, 'lupapassword@gmail.com'),
+(NULL, NULL, 'asa@gmail.com'),
+(NULL, NULL, 'asa@gmail.com'),
+(NULL, NULL, 'pas@gmail.com'),
+(NULL, NULL, 'nama@gmail.com'),
+(NULL, NULL, 'asa@gmail.com'),
+(NULL, NULL, 'asa@gmail.com'),
+(NULL, NULL, 'lupapassword@gmail.com'),
+(NULL, NULL, 'lupapassword123@gmail.com'),
+(NULL, NULL, 'lupapasswordya@gmail.com'),
+(NULL, NULL, 'tes123@gmail.com'),
+(NULL, NULL, 'login@gmail.com'),
+(NULL, NULL, 'saja@gmail.com'),
+(NULL, NULL, 'berusaha@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -340,81 +439,129 @@ CREATE TABLE `users` (
   `pengalaman` varchar(500) DEFAULT NULL,
   `kemampuan` varchar(500) DEFAULT NULL,
   `hasil` varchar(255) DEFAULT NULL,
+  `lat` double DEFAULT NULL,
+  `lng` double DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `populer` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `password`, `user`, `email_verified_at`, `remember_token`, `foto`, `name`, `email`, `pekerja`, `ultah`, `telepon`, `alamat`, `bidang`, `keterangan`, `twitter`, `facebook`, `google`, `link`, `instagram`, `lulusansd`, `sd`, `lulusansmp`, `smp`, `lulusansma`, `sma`, `bio`, `prestasi`, `pengalaman`, `kemampuan`, `hasil`, `created_at`, `updated_at`) VALUES
-(23, '$2y$10$FKpF.HaCPnndPGBQlg31l.PRLdmqWUmrHhue.NM6RYWNNtIRLWj1W', 'Pekerja', NULL, NULL, NULL, 'Anak', 'apaiya@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18 18:53:49', '2022-05-18 18:53:49'),
-(24, '$2y$10$HTjcFuEzGxNt1UdneexTk.ihQkQ27KNUJpwfN5BwzMEDRVPhNV44W', 'Pekerja', NULL, NULL, NULL, 'Ayah', 'ayah@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18 23:39:24', '2022-05-18 23:39:24');
+INSERT INTO `users` (`id`, `password`, `user`, `email_verified_at`, `remember_token`, `foto`, `name`, `email`, `pekerja`, `ultah`, `telepon`, `alamat`, `bidang`, `keterangan`, `twitter`, `facebook`, `google`, `link`, `instagram`, `lulusansd`, `sd`, `lulusansmp`, `smp`, `lulusansma`, `sma`, `bio`, `prestasi`, `pengalaman`, `kemampuan`, `hasil`, `lat`, `lng`, `created_at`, `updated_at`, `populer`) VALUES
+(23, '$2y$10$0CRSKB63Oh9vmTDF5VSNs.RFe/NfFKcQAluiRL7MXISejUZjKB9Jy', 'Pekerja', NULL, 'NRj8T4y1gYZX9w24WFqfLTurY2THSP0gpjitnmfqt8dY0NRpk51UhspudpcI', NULL, 'Anak', 'apaiya@gmail.com', '...', NULL, NULL, NULL, NULL, 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18 18:53:49', '2022-05-25 01:42:51', 0),
+(24, '$2y$10$HTjcFuEzGxNt1UdneexTk.ihQkQ27KNUJpwfN5BwzMEDRVPhNV44W', 'Pekerja', NULL, NULL, NULL, 'Ayah', 'ayah@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, '2022-05-18 23:39:24', '2022-05-18 23:39:24', 0),
+(25, '$2y$10$Xww2GY0diUN54A2rne8FEeVu4nq.UbiD3gBBa2zXMjS344V2H3uJi', 'Pekerja', NULL, NULL, '1653277392team-1-img-3.jpg', 'coba', 'cobasaja@gmail.com', '...', NULL, NULL, NULL, NULL, 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-19 01:02:16', '2022-05-25 01:35:59', 0),
+(26, '$2y$10$8ice5WlRVPZQnApThh4ABOQwbY.pKyay7zeQnFX/9t0HuAJvCljJq', 'Pekerja', NULL, NULL, NULL, 'lupa', 'lupa123@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, '2022-05-23 01:01:09', '2022-05-23 01:01:09', 0),
+(28, '$2y$10$dK0BgX4vVD0TG9aWY7dzkO8pf77BGfGTFw4XgEdVIXgxyC10Y9Bd.', 'Perusahaan', NULL, NULL, NULL, 'PT BERUSAHA', 'ptberusaha@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 13.698683472419601, 100.58742041844195, '2022-05-23 01:47:56', '2022-05-23 01:47:56', 0),
+(29, '$2y$10$AbEb70S4s/wNsf40S.McIOGwLv.Z0SAqreS0c7nHn/rAewAbMX.Ku', 'Perusahaan', NULL, NULL, 'nopic.jpg', 'PT USAHA', 'usahakerja@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-24 21:22:01', '2022-05-24 21:22:01', NULL),
+(31, '$2y$10$51A3R.67n4WwiDl1vtsSMekduP9.L.2BGsEblHdAOs.kQd2IOlbhq', 'Pekerja', NULL, NULL, 'nopic.jpg', 'as', 'asa@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 08:12:24', '2022-05-25 08:12:24', NULL),
+(32, '$2y$10$QLVV7WAKxegCsAeoD/Gn7ONQ9VCaJ.LuW3tNev0/OsRgkcLSFToom', 'Pekerja', NULL, NULL, 'nopic.jpg', 'lupapassword', 'lupapassword@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:11:42', '2022-05-25 09:11:42', NULL),
+(33, '$2y$10$.hCOoqZcgnq.UWU1bAmIU.EaqOuAwW7QuRIqthy5LevvlHSRNvfU.', 'Pekerja', NULL, NULL, 'nopic.jpg', 'lupapassword', 'lupapassword123@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:22:29', '2022-05-25 09:22:29', NULL),
+(34, '$2y$10$YuJ4xEOmErxtAfOYs1tGOeUv53ViO/bUTh9botMzmfnlFybJdVOF.', 'Pekerja', NULL, NULL, 'nopic.jpg', 'lupapasswordsaja', 'lupapasswordya@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:24:46', '2022-05-25 09:24:46', NULL),
+(35, '$2y$10$oyVgOiEQ8IsZgAtMKxtccOSIAh.U5InS/OQ4gyRsri52Lase4cbPy', 'Pekerja', NULL, 'cRwf1qvooz77qC88YMV3mxCDthhkIvssycQYaOEdiqIo8fMDNE9uVLjTT3ji', 'nopic.jpg', 'tes', 'tes123@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:34:58', '2022-05-25 18:23:33', NULL),
+(36, '$2y$10$YH2.DTh4rjGmCLIo4GmbdOOzK8zNy9hIET0oM1lt0bQ3/S/jQKxeG', 'Pekerja', NULL, NULL, 'nopic.jpg', 'login', 'login@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:53:11', '2022-05-25 09:53:11', NULL),
+(37, '$2y$10$RTINogFgVJ4N7fzjJ0zIdunA.3h2M6.nD4g.YBB5trZJEkaNzl6Qu', 'Pekerja', NULL, NULL, 'nopic.jpg', 'saja', 'saja@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 18:13:24', '2022-05-25 18:13:24', NULL),
+(38, '$2y$10$F.bKwtMWBKRzalErvABmTOwmGonnmFoNdAKyydBmR.6dAcKr.J1qy', 'Perusahaan', NULL, NULL, 'nopic.jpg', 'berusaha', 'berusaha@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-26 16:35:05', '2022-05-26 16:35:05', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlists`
+--
+
+CREATE TABLE `wishlists` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `dari` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `untuk` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `wishlists`
+--
+
+INSERT INTO `wishlists` (`id`, `dari`, `untuk`, `created_at`, `updated_at`) VALUES
+(17, 'berusaha@gmail.com', 'login@gmail.com', NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admins`
+-- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
--- Indeks untuk tabel `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indeks untuk tabel `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indeks untuk tabel `rekrut0`
+-- Indexes for table `rekrut0`
 --
 ALTER TABLE `rekrut0`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- Indexes for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admins`
+-- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `rekrut0`
+-- AUTO_INCREMENT for table `rekrut0`
 --
 ALTER TABLE `rekrut0`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
