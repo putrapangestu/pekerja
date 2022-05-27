@@ -295,9 +295,17 @@
                                     <i class="mdi mdi-home mr-20"></i>
                                     <span>Dashboard</span>
                                 </a>
-                                <a href={{ url('') }}>
+                                <a href={{ url('blog') }}>
+                                    <i class="mdi mdi-home mr-20"></i>
+                                    <span>Blog</span>
+                                </a>
+                                <a href={{ url('user') }}>
                                     <i class="mdi mdi-home mr-20"></i>
                                     <span>Pengguna</span>
+                                </a>
+                                <a href={{ url('') }}>
+                                    <i class="mdi mdi-home mr-20"></i>
+                                    <span>Fitur</span>
                                 </a>
                             </li>   
                         </ul>

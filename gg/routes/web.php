@@ -85,6 +85,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/user', [AdminController::class, 'user'])->name('user');
     Route::get('/blog', [AdminController::class, 'blog']);
+    Route::get('/blog/create', [AdminController::class, 'create']);
     Route::get('/admin/user/delete/{id}', [AdminController::class, 'delete']);
 });
 

@@ -171,7 +171,7 @@
                                 <div class="col-xl-4 col-lg-6">
                                     <div class="input_box">
                                         <select class="selectpicker" name="kategori" data-width="100%">
-                                            <option selected="selected">Kategories</option>
+                                            <option selected="selected"></option>
                                             <option>Desain Grafis</option>
                                             <option>Content Writer</option>
                                             <option>Fotografer</option>

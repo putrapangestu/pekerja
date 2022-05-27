@@ -719,7 +719,7 @@
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
-									<button class="btn btn-primary btn-icon-anim btn-square"><a href="summernote-wysihtml5.html"><i class="fa fa-plus"></i></a></button>
+									<button class="btn btn-primary btn-icon-anim btn-square"><a href="{{ url('blog/create') }}"><i class="fa fa-plus"></i></a></button>
 									<div class="pull-right">
 										<div class="shorting">
 											<select class="selectpicker" data-width="100%">
