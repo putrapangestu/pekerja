@@ -20,6 +20,7 @@ class GabutController extends Controller
         $wish = DB::table('wishlists')->where('dari',$user)->first();
         $keyword = $request->keyword;
         $urutan = $request->urutan;
+        $kategori = $request->kategori;
         if($urutan == 'terlama'){
             $diurut = 'created_at';
             $urut = 'asc';
@@ -41,14 +42,16 @@ class GabutController extends Controller
        
     
 
-            $errors = DB::table('users')->where('user','pekerja')
-                ->where('name', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
-                ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%')
-                ->orderBy('created_at',$urut)
-                ->get();
-                
+        $errors = DB::table('users')->where('user','pekerja')
+        ->where(function($query) use ($keyword,$kategori){
+            $query->where('name', 'LIKE', '%'.$keyword.'%')
+        ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')
+        ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
+        ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%');
+    })
+    ->where('bidang','Like', '%'.$kategori.'%')
+        ->orderBy('created_at',$urut)
+        ->get();
             
             return view('gawe.listings', compact('errors','wish'));
         

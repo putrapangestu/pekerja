@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="col-xl-4 col-lg-6">
                                     <div class="input_box">
-                                        <select class="selectpicker" data-width="100%">
+                                        <select class="selectpicker" name="kategori" data-width="100%">
                                             <option selected="selected">Kategories</option>
                                             <option>Desain Grafis</option>
                                             <option>Content Writer</option>
@@ -179,20 +179,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-lg-6">
-                                    <div class="input_box">
-                                        <select class="selectpicker" data-width="100%">
-                                            <option selected="selected">Location</option>
-                                            <option>Malang</option>
-                                            <option>Surabaya</option>
-                                            <option>Gresik</option>
-                                            <option>Trenggalek</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                
                                 <div class="">
                                     <div class="col-xl-4 col-lg-5 ">
-                                        <div class="listings_btn">
+                                        <div class="">
                                             <button type="submit" class="thm-btn"><span class="icon-magnifying-glass"></span>Search</button>
                                         </div>
                                     </div>
