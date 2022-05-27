@@ -164,8 +164,8 @@
     <section class="listings_three-page">
         <div class="container">
             <div class="row">
+                @if(isset($errors))
                 @foreach ($errors as $profile)
-                @if(isset($profile))
                 <div class="col-3">
                     <!--Latest Listings Single-->
                     <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
@@ -210,8 +210,8 @@
                         </div>
                     </div>
                 </div>
-                @endif
                 @endforeach
+                @endif
             </div>
         </div>
     </section>
