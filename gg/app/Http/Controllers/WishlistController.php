@@ -29,10 +29,10 @@ class WishlistController extends Controller
          $errors = DB::table('users')->where('email',$sapi->untuk)->get();
         
          
-         return view('gawe.wishlist')->with(compact('errors','sapi'));
+         return view('gawe.wishlist')->with(compact('errors','sapi','ayam'));
         }
     }
-         return view('gawe.wishlist');
+         return view('gawe.wishlist',compact('ayam'));
         //  with('no', ($request->input('page',1)-1) * 10)->
     }
     public function create(Request $request,$email){

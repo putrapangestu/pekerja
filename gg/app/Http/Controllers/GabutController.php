@@ -65,12 +65,18 @@ class GabutController extends Controller
 
     public function listingsdetails($email){
 
+        if(Auth::user()){
+            $user = Auth::user()->email;
+            $wish = DB::table('wishlists')->where('dari',$user)->first();    
+        }else{
+            $wish=0;
+        }
         $data = DB::table('users')->where('email',$email)->where('user','Pekerja')->get();
         $dataes = DB::table('users')->where('email',$email)->where('user','Pekerja')->first();
         if(!($dataes)){
             return redirect('listings');
         }
-        return view('gawe.listings-details',['profiles' => $data]);
+        return view('gawe.listings-details',['profiles' => $data])->with(compact('wish'));
 
 
 

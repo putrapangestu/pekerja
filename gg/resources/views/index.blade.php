@@ -65,7 +65,7 @@
                         <div class="header_top_one_inner_right float-right">
                             <div class="header_topmenu_1">
                                 <ul class="list-unstyled">
-                                    <li><a href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
+                                    <li><a href="{{ url('wishlist') }}"><i class="fas fa-heart"></i>Wishlist</a></li>
                                     
                                     <li><a href="{{ url('/inbox') }}"><i class="fa fa-inbox"></i>inbox</a></li>
                                   
@@ -1248,7 +1248,7 @@
                                         <div class="row fs-5">
                                             <div class="col-2 fs-5"><i class="fas fa-envelope"></i></div>
                                             <div class="col-7 fs-5">{{ $notif->dari }} ingin merekrut anda
-                                                <div class="lead">ketuk untuk melihat detail & menanggapinya</div>
+                                                <div class="lead"><a href="{{ url('inbox') }}">ketuk untuk melihat detail & menanggapinya</a></div>
                                             </div>
                                             <div class="col-3 fs-5">{{ $notif->created_at }}</div>
                                         </div>
@@ -1267,7 +1267,7 @@
                                         <div class="row fs-5">
                                             <div class="col-2 fs-5"><i class="fas fa-envelope"></i></div>
                                             <div class="col-7 fs-5">{{ $notif->untuk }} telah menjawab tawaran anda
-                                                <div class="lead">ketuk untuk melihat </div>
+                                                <div class="lead"><a href="{{ url('inbox') }}"> ketuk untuk melihat </a></div>
                                             </div>
                                             <div class="col-3 fs-5">{{ $notif->created_at }}</div>
                                         </div>

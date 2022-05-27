@@ -227,11 +227,11 @@
                         <div class="main_bottom_right">
                             <ul class="list-unstyled">
                                 <form action="{{url ('listings/'.$profile->email) }}" method="POST">
+                                    @csrf
+                                <div class="heart_icon">
                                     <input type="hidden" name="wishlist" value="wishlist">
-                                    <input type="submit" class="far fa-heart" value="&#xf043; Input">
-                                    <button class="wishlist bg-transparent border-0">
-                                    <i class="far fa-heart"></i>
-                                </button>
+                                <button class="wishlist bg-transparent border-0"><i class="fas fa-heart @if(isset($wish)) @if($wish->untuk == $profile->email) text-danger @endif @endif"></i></button>
+                                </div>
                                 </form>
                                 <a href="/rekrut/{{ $profile->email }}"><button class="btn  btn-success btn-outline btn-rounded">Rekrut</button></a>
                                 

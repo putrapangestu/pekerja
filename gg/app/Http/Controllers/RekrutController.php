@@ -54,7 +54,7 @@ class RekrutController extends Controller
             'informasi'=>'nullable',
 
         ]);;
-
+        
         DB::table('rekrut0')->insert([
             'dari'=>Auth::user()->email,
             'untuk'=>$email,

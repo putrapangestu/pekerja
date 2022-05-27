@@ -166,6 +166,7 @@
             <div class="row">
                 @if(isset($errors))
                 @foreach ($errors as $profile)
+                @foreach ($ayam as $sapi)
                 <div class="col-3">
                     <!--Latest Listings Single-->
                     <div class="listings_three-page_single wow fadeInUp" data-wow-delay="0ms"
@@ -179,7 +180,7 @@
                                 @csrf
                             <div class="heart_icon">
                                 <input type="hidden" name="hapuswishlist" value="hapus">
-                                <input type="hidden" name="untuk" value="{{ $profile->email }}">
+                                <input type="hidden" name="untuk" value="{{ $sapi->untuk }}">
                             <button class="wishlist bg-transparent border-0"><i class="fas fa-heart text-danger"></i></button>
                             </div>
                             </form>
@@ -211,6 +212,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
                 @endforeach
                 @endif
             </div>
