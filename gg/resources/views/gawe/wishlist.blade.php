@@ -180,7 +180,7 @@
                             <div class="heart_icon">
                                 <input type="hidden" name="hapuswishlist" value="hapus">
                                 <input type="hidden" name="untuk" value="{{ $profile->email }}">
-                            <button class="wishlist bg-transparent border-0"><i class="fas fa-heart @if($sapi->untuk == $profile->email) text-danger @endif"></i></button>
+                            <button class="wishlist bg-transparent border-0"><i class="fas fa-heart text-danger"></i></button>
                             </div>
                             </form>
                             <div class="author_img">

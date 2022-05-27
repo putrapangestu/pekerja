@@ -16,8 +16,12 @@ class GabutController extends Controller
     //listing
     public function listings(Request $request){
         // $errors = User::all();
-        $user = Auth::user()->email;
-        $wish = DB::table('wishlists')->where('dari',$user)->first();
+        if(Auth::user()){
+            $user = Auth::user()->email;
+            $wish = DB::table('wishlists')->where('dari',$user)->first();    
+        }else{
+            $wish=0;
+        }
         $keyword = $request->keyword;
         $urutan = $request->urutan;
         $kategori = $request->kategori;
@@ -47,9 +51,10 @@ class GabutController extends Controller
             $query->where('name', 'LIKE', '%'.$keyword.'%')
         ->orwhere('bidang', 'LIKE', '%'.$keyword.'%')
         ->orwhere('alamat', 'LIKE', '%'.$keyword.'%')
-        ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%');
-    })
-    ->where('bidang','Like', '%'.$kategori.'%')
+        ->orwhere('pekerja', 'LIKE', '%'.$keyword.'%')
+        ;
+        })
+        ->where('bidang','Like', '%'.$kategori.'%')
         ->orderBy('created_at',$urut)
         ->get();
             
