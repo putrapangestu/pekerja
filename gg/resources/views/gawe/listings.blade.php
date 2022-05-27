@@ -273,7 +273,7 @@
                                     @csrf
                                 <div class="heart_icon">
                                     <input type="hidden" name="wishlist" value="wishlist">
-                                <button class="wishlist bg-transparent border-0"><i class="icon-heart fill-heart"></i></button>
+                                <button class="wishlist bg-transparent border-0"><i class="fas fa-heart @if($wish->untuk == $profile->email) text-danger @endif"></i></button>
                                 </div>
                                 </form>
                                 @endif

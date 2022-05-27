@@ -8,6 +8,7 @@ use App\Models\Rekrut;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use app\Models\User;
+use App\Models\Wishlist;
 use Illuminate\Support\Facades\DB;
 
 class GabutController extends Controller
@@ -15,6 +16,8 @@ class GabutController extends Controller
     //listing
     public function listings(Request $request){
         // $errors = User::all();
+        $user = Auth::user()->email;
+        $wish = DB::table('wishlists')->where('dari',$user)->first();
         $keyword = $request->keyword;
         $urutan = $request->urutan;
         if($urutan == 'terlama'){
@@ -47,14 +50,18 @@ class GabutController extends Controller
                 ->get();
                 
             
-            return view('gawe.listings', compact('errors',));
+            return view('gawe.listings', compact('errors','wish'));
         
 
     }
 
     public function listingsdetails($email){
 
-        $data = DB::table('users')->where('email',$email)->get();
+        $data = DB::table('users')->where('email',$email)->where('user','Pekerja')->get();
+        $dataes = DB::table('users')->where('email',$email)->where('user','Pekerja')->first();
+        if(!($dataes)){
+            return redirect('listings');
+        }
         return view('gawe.listings-details',['profiles' => $data]);
 
 

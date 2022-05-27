@@ -122,7 +122,7 @@
                            <ul class="navbar-nav ">
                                <li class="nav-item dropdown">
                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
+                                 <img src="{{ asset('gambar/'.Auth::user()->foto) }}" width="55" height="55" class="rounded-circle">
                                </a>
                                
                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -179,11 +179,12 @@
                                 @csrf
                             <div class="heart_icon">
                                 <input type="hidden" name="hapuswishlist" value="hapus">
-                            <button class="wishlist bg-transparent border-0"><i class="icon-heart fill-heart"></i></button>
+                                <input type="hidden" name="untuk" value="{{ $profile->email }}">
+                            <button class="wishlist bg-transparent border-0"><i class="fas fa-heart @if($sapi->untuk == $profile->email) text-danger @endif"></i></button>
                             </div>
                             </form>
                             <div class="author_img">
-                                <img src="{{ asset('images/resources/latest_listings-3_au-img-1.png') }}" alt="">
+                                <img src="{{ asset('gambar/'.$profile->foto) }}" alt="">
                             </div>
                             @if( $profile->keterangan == 'Memiliki Pekerjaan' )
                             <div class="shopping_circle">

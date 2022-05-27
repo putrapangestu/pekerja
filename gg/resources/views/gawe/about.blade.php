@@ -124,7 +124,7 @@
                                 <ul class="navbar-nav ">
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <img src="{{ asset('images/resources/latest_listings_au-img-2.png') }}" width="55" height="55" class="rounded-circle">
+                                      <img src="{{ asset('gambar/'.Auth::user()->profile) }}" width="55" height="55" class="rounded-circle">
                                     </a>
                                     
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
