@@ -24,10 +24,19 @@ class ProfileController extends Controller
 
 
 
-        $profile = DB::table('users')->where('email',$user)->get();
+        $profile = DB::table('users')->where('email',$user)->first();
         
 
-        return view('gawe.profile', compact('errors', 'map'), ['data'=>$profile]);
+        return view('gawe.profile', compact('errors', 'map','profile'));
+    }
+
+    public function perusahaan($email){
+        $user = Auth::user()->email;
+        
+        $profile = DB::table('users')->where('user','Perusahaan')->where('email',$email)->first();
+        
+
+        return view('gawe.profile', compact('profile'));
     }
 
     public function edit(){
@@ -75,6 +84,7 @@ class ProfileController extends Controller
         ]);
        
         $model =  User::where('email',Auth::user()->email)->first();
+        
  
         if($request->file('foto')){
             $file = $request->file('foto');
@@ -99,7 +109,7 @@ class ProfileController extends Controller
                         
         }
         if($request->get('password') == null && $request->get('oldpassword') == null && $request->get('confirm_password') == null){
-            return redirect('profile');    
+            return redirect('profile');  
         }else{
             if($request->get('password') == null && $request->get('confirm_password') == null){
                 return back()->with('gagal_password','Password gagal diganti');
@@ -115,27 +125,27 @@ class ProfileController extends Controller
         return redirect('profile');
     }
 
-    public function edit_password($email){
-       return view('gawe.signup');
-    }
+    
+    // public function edit_password($email){
+    //    return view('gawe.signup');
+    // }
 
-    public function update_password(Request $request, $email){
-        $validateData = $request->validate([
-            'password' => 'string|min:8|confirmed',
-        ]);
+    // public function update_password(Request $request, $email){
+    //     $validateData = $request->validate([
+    //         'password' => 'string|min:8|confirmed',
+    //     ]);
 
-        $current_password = Auth::user()->password;
-        if(Hash::check($request->get('oldpassword'),$current_password)){
-            $user = User::where('email',$email)->first();
-            $user->password = Hash::make($request->get('password'));
-            $user->save();
-
-            return redirect('profile');
-        }else{
-             return back()->with('gagal_password','Password gagal diganti');
-        }
+    //     $current_password = Auth::user()->password;
+    //     if(Hash::check($request->get('oldpassword'),$current_password)){
+    //         $user = User::where('email',$email)->first();
+    //         $user->password = Hash::make($request->get('password'));
+    //         $user->save();
+    //         return redirect('profile');
+    //     }else{
+    //          return back()->with('gagal_password','Password gagal diganti');
+    //     }
             
-    }
+    // }
     
 
 }

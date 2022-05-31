@@ -37,4 +37,9 @@ class LoginAdminController extends Controller
     $request->session()->regenerateToken();
     return redirect('/admin');
   }
+
+  public function __construct()
+  {
+    $this->middleware('guest')->except('logout');
+  }
 }

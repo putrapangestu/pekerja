@@ -199,7 +199,7 @@
 																	</div>
 																	
 																	<div class="sender-details   pull-left">
-																		<span class="capitalize-font pr-5 txt-dark block font-15 weight-500 head-font">{{ $details->nama }}</span>
+																		<span class="capitalize-font pr-5 txt-dark block font-15 weight-500 head-font"><a href="{{ url('profile-perusahaan/'.$details->dari) }}">{{ $details->nama }}</a></span>
 																		<span class="block">
 																			to
 																			<span>me</span>

@@ -214,8 +214,8 @@
                                   </div>
                                   @if(Auth::user()->user == 'Perusahaan')
                                   <div class="form-group">
-                                    <label class="form-label">No. Telp</label>
-                                    <input type="text" class="form-control mb-1" name="telepon" value="{{ $profile->telepon }}">
+                                    <label class="form-label">Telepon</label>
+                                    <input type="text" class="form-control" name="telepon" value="{{ $profile->telepon }}">
                                   </div>
                                   @endif
                                   @if(Auth::user()->user == 'Pekerja')
@@ -236,14 +236,11 @@
                             <div class="tab-pane fade" id="alamat">
                               
                               <div class="card-body pb-2">
-                                {{-- <form action="{{ url('/edit-profile/'.Auth::user()->email) }}" method="GET" role="search" class="inbox-search inline-block pull-left mr-15"> --}}
-                                  <div class="input-group mb-4">
-                                    <input type="text" class="form-control" placeholder="Search.." name="search">
-                                    <span class="input-group-btn">
-                                      <button class="btn btn-default" type="submit" ><i class="zmdi zmdi-search"></i></button>
-                                    </span>
-                                  </div>
-                                {{-- </form> --}}
+                                <div class="form-group">
+                                  <label class="form-label">Alamat</label>
+                                  <input type="text" class="form-control" name="alamat" value="{{ $profile->alamat }}">
+                                </div>
+
                                 <div id="googleMap" style="width:100%;height:380px;"></div>
                                   <input type="text" id="lat" name="lat" value="{{ $profile->lat }}">
                                   <input type="text" id="lng" name="lng" value="{{ $profile->lng }}">
@@ -289,6 +286,7 @@
                                 </div>
                               
                               </div>
+                              @if(Auth::user()->pekerja)
                               <div class="tab-pane fade" id="account-info">
                               
                                 <div class="card-body pb-2">
@@ -322,7 +320,7 @@
                                 </div>
                               
                              </div>
-                    
+                             @endif
                               <div class="tab-pane fade" id="account-social-links">
                               
                                 <div class="card-body pb-2">

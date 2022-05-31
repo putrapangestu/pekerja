@@ -18,7 +18,7 @@ class GabutController extends Controller
         // $errors = User::all();
         if(Auth::user()){
             $user = Auth::user()->email;
-            $wish = DB::table('wishlists')->where('dari',$user)->first();    
+            $wish = DB::table('wishlists')->where('dari',$user)->get();    
         }else{
             $wish=0;
         }
@@ -56,7 +56,7 @@ class GabutController extends Controller
         })
         ->where('bidang','Like', '%'.$kategori.'%')
         ->orderBy('created_at',$urut)
-        ->get();
+        ->paginate(2);
             
             return view('gawe.listings', compact('errors','wish'));
         

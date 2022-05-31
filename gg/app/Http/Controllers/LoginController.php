@@ -46,4 +46,9 @@ class LoginController extends Controller
     $request->session()->regenerateToken();
     return redirect('/');
   }
+
+  public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
 }

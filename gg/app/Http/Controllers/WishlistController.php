@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Wishlist;
+use App\Models\User;
 use Doctrine\Inflector\Rules\Word;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\support\Facades\DB;
@@ -22,17 +23,19 @@ class WishlistController extends Controller
         //         'itemwishlist' => $itemwishlist);
 
         //  $sapi = DB::table('wishlists')->where('dari',$user)->where('hapus',1)->first();
-         $ayam = DB::table('wishlists')->where('dari',$user)->get();
-        if(isset($ayam)){
-         foreach($ayam as $sapi){
+        //  $ayam = DB::table('wishlists')->where('dari',$user)->get();
+        // if(isset($ayam)){
+        //  foreach($ayam as $sapi){
            
-         $errors = DB::table('users')->where('email',$sapi->untuk)->get();
+         $errors = User::join('wishlists','wishlists.untuk','=','users.email')
+         ->select('users.email','users.pekerja','users.name','users.keterangan','users.foto','users.alamat','users.bidang','users.telepon')
+         ->paginate(2);
         
          
-         return view('gawe.wishlist')->with(compact('errors','sapi','ayam'));
-        }
-    }
-         return view('gawe.wishlist',compact('ayam'));
+    //      return view('gawe.wishlist')->with(compact('errors','sapi','ayam'));
+    //     }
+    // }
+         return view('gawe.wishlist',compact('errors'));
         //  with('no', ($request->input('page',1)-1) * 10)->
     }
     public function create(Request $request,$email){
@@ -41,9 +44,17 @@ class WishlistController extends Controller
             
             $user=Auth::user()->email;
             $isi=DB::table('wishlists');
+            $pekerja = DB::table('users')->where('email',$email)->first();
             $isi->insert([
                 'dari'=>$user,
                 'untuk'=>$email,
+                // 'name'=>$pekerja->name,
+                // 'alamat'=>$pekerja->alamat,
+                // 'bidang'=>$pekerja->bidang,
+                // 'telepon'=>$pekerja->telepon, 
+                // 'foto'=>$pekerja->foto, 
+                // 'pekerja'=>$pekerja->pekerja, 
+                // 'keterangan'=>$pekerja->keterangan, 
             ]);
             return redirect('listings');
         }

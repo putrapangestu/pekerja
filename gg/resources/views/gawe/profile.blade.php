@@ -46,8 +46,8 @@
 
      // fungsi initialize untuk mempersiapkan peta
      function initialize() {
-      var lat = {{ Auth::user()->lat }};
-      var lng = {{ Auth::user()->lng }}; 
+        var lat = {{ $profile->lat }};
+        var lng = {{ $profile->lng }};       
       var propertiPeta = {
       center:new google.maps.LatLng(lat,lng),
       zoom:16,
@@ -153,9 +153,9 @@
                               <ul class="navbar-nav ">
                                   <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    @foreach($data as $profile)
+                           
                                     <img src="{{ asset('/gambar/'.$profile->foto) }}" width="55" height="55" class="rounded-circle">
-                                    @endforeach
+                                    
                                   </a>
                                   
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -186,7 +186,7 @@
       </header>
   </div>
  
-    @foreach ($data as $profile)
+ 
     
     <!-- Main content -->
     <section class="content">
@@ -282,17 +282,6 @@
                         </div>
                       </div>
                       <hr>
-                      @if(Auth::user()->user == 'Pekerja')
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Alamat</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                          {{ $profile->alamat }}
-                        </div>
-                      </div>
-                      <hr>
-                      @endif
                       <div class="row">
                         <div class="col-sm-3">
                           <h6 class="mb-0">Bidang</h6>
@@ -311,11 +300,19 @@
                         </div>
                       </div>
                       <hr>
-                    
-                    @if(Auth::user()->user == 'Perusahaan')
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Alamat</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          {{ $profile->alamat }}
+                        </div>
+                      </div>
+                      <hr>
+                    @if(Auth::user()->user == 'Perusahaan' || Route::is('profile-perusahaan'))
                     <div class="row">
                       <div class="col-sm-3">
-                        <h6 class="mb-0">Alamat</h6>
+                        <h6 class="mb-0">Maps</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
                         <div id="googleMap" style="width:100%;height:380px;"></div>
@@ -323,13 +320,13 @@
                     </div>
                         <hr>
                     @endif
-
+                    @if(Route::is('profile'))
                         <div class="row">
                         <div class="col-sm-12">
                           <a class="btn btn-info " href="{{ url('/edit-profile/') }}">Edit</a>
                         </div>
                       </div>
-                      
+                    @endif
               </div><!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -339,7 +336,7 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
-    @endforeach
+    
 
     
     <!-- /.content -->

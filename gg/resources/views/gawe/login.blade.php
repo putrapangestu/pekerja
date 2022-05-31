@@ -78,7 +78,12 @@
                                             <div class="col-lg-12">
                                                 <div class="form-group position-relative">
                                                     <label>Password <span class="text-danger">*</span></label>
-                                                    <input type="password" class="form-control" placeholder="Password" name="password" required="">
+                                                    <input type="password" class="form-control" placeholder="Password" name="password" id="password" required="">
+                                                    <br>
+                                                    <br>
+                                                    <input type="checkbox" class="form-control" id="passwordbox-id">
+                                                    <br>
+                                                    <br>
                                                     @error('password')
                                                     <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>

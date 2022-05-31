@@ -43,6 +43,7 @@ Route::post('/listings/{email}', [WishlistController::class, 'create'])->name('w
 Route::post('wishlist', [WishlistController::class, 'store'])->name('hapus-wishlist');
 Route::get('/detail-pekerja/{email}', [GabutController::class, 'listingsdetails'])->name('detail-pekerja');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/profile-perusahaan/{email}', [ProfileController::class, 'perusahaan'])->name('profile-perusahaan');
 Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('edit-profile');
 Route::post('/edit-profile', [ProfileController::class, 'update'])->name('edit-profile');
 Route::get('/edit-password/{email}', [ProfileController::class, 'edit_password'])->name('edit-password');
@@ -87,6 +88,9 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/blog', [AdminController::class, 'blog']);
     Route::get('/blog/create', [AdminController::class, 'create']);
     Route::get('/admin/user/delete/{id}', [AdminController::class, 'delete']);
+    Route::get('/admin/inbox', [ContactController::class, 'inbox_index']);
+    Route::get('/admin/inbox/{id}', [ContactController::class, 'inbox_detail']);
+    Route::get('/admin/inbox/{id}/seen', [ContactController::class, 'inbox_seen']);
 });
 
 
