@@ -2,7 +2,7 @@
 <html lang="en">
 
     
-<!-- Mirrored from themesbrand.com/agroxa/layouts/red/email-inbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 06:30:50 GMT -->
+<!-- Mirrored from themesbrand.com/agroxa/layouts/red/email-inbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 03:10:57 GMT -->
 <head>
 
         <meta charset="utf-8" />
@@ -11,14 +11,14 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{ asset('agroxa/images/favicon.ico') }}">
 
         <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('agroxa/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('agroxa/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('agroxa/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -37,19 +37,19 @@
             <div class="navbar-brand-box">
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm-dark.png" alt="" height="22">
+                        <img src="{{ asset('agroxa/images/logo-sm-dark.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="24">
+                        <img src="{{ asset('agroxa/images/logo-dark.png') }}" alt="" height="24">
                     </span>
                 </a>
 
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm-light.png" alt="" height="22">
+                        <img src="{{ asset('agroxa/images/logo-sm-light.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="24">
+                        <img src="{{ asset('agroxa/images/logo-light.png') }}" alt="" height="24">
                     </span>
                 </a>
             </div>
@@ -223,7 +223,7 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-4.jpg"
+                    <img class="rounded-circle header-profile-user" src="{{ asset('agroxa/images/users/avatar-4.jpg') }}"
                         alt="Header Avatar">
                 </button>
 
@@ -266,7 +266,7 @@
                     <div class="user-details">
                         <div class="d-flex">
                             <div class="me-2">
-                                <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-md rounded-circle">
+                                <img src="{{ asset('agroxa/images/users/avatar-4.jpg') }}" alt="" class="avatar-md rounded-circle">
                             </div>
                             <div class="user-info w-100">
                                 <div class="dropdown">
@@ -575,7 +575,7 @@
 
                                         <div class="mt-2">
                                             <a href="#" class="d-flex">
-                                                <img class="d-flex me-3 rounded-circle" src="assets/images/users/avatar-2.jpg"
+                                                <img class="d-flex me-3 rounded-circle" src="{{ asset('agroxa/images/users/avatar-2.jpg') }}"
                                                     alt="Generic placeholder image" height="36">
                                                 <div class="flex-1 chat-user-box">
                                                     <p class="user-title m-0">Scott Median</p>
@@ -584,7 +584,7 @@
                                             </a>
 
                                             <a href="#" class="d-flex">
-                                                <img class="d-flex me-3 rounded-circle" src="assets/images/users/avatar-3.jpg"
+                                                <img class="d-flex me-3 rounded-circle" src="{{ asset('agroxa/images/users/avatar-3.jpg') }}"
                                                     alt="Generic placeholder image" height="36">
                                                 <div class="flex-1 chat-user-box">
                                                     <p class="user-title m-0">Julian Rosa</p>
@@ -593,7 +593,7 @@
                                             </a>
 
                                             <a href="#" class="d-flex">
-                                                <img class="d-flex me-3 rounded-circle" src="assets/images/users/avatar-4.jpg"
+                                                <img class="d-flex me-3 rounded-circle" src="{{ asset('agroxa/images/users/avatar-4.jpg') }}"
                                                     alt="Generic placeholder image" height="36">
                                                 <div class="flex-1 chat-user-box">
                                                     <p class="user-title m-0">David Medina</p>
@@ -602,7 +602,7 @@
                                             </a>
 
                                             <a href="#" class="d-flex">
-                                                <img class="d-flex me-3 rounded-circle" src="assets/images/users/avatar-6.jpg"
+                                                <img class="d-flex me-3 rounded-circle" src="{{ asset('agroxa/images/users/avatar-6.jpg') }}"
                                                     alt="Generic placeholder image" height="36">
                                                 <div class="flex-1 chat-user-box">
                                                     <p class="user-title m-0">Jay Baker</p>
@@ -667,24 +667,25 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                             <ul class="message-list">
-                                                <li class="unread">
+                                                @foreach ($mails as $mail)
+                                                <li @if ($mail->seen == 0)class="unread" @endif>
                                                     <div class="col-mail col-mail-1">
                                                         <div class="checkbox-wrapper-mail">
                                                             <input type="checkbox" id="chk19">
                                                             <label for="chk19" class="toggle"></label>
                                                         </div>
-                                                        <a href="#" class="title">Peter, me (3)</a><span
+                                                        <a href="{{ url('admin/inbox/'.$mail->id) }}" class="title">{{ $mail->name }}</a><span
                                                             class="star-toggle far fa-star"></span>
                                                     </div>
                                                     <div class="col-mail col-mail-2">
-                                                        <a href="#" class="subject">Hello – <span class="teaser">Trip home from
-                                                                Colombo has been arranged, then Jenna will come get me from
-                                                                Stockholm. :)</span>
+                                                        <a href="{{ url('admin/inbox/'.$mail->id) }}" class="subject"><span class="teaser">{{$mail->pesan}}</span>
                                                         </a>
-                                                        <div class="date">Mar 6</div>
+                                                        <div class="date">{{ date('Y-m-d', strtotime($mail->created_at)) }}</div>
                                                     </div>
                                                 </li>
+                                                @endforeach
 
                                                 <li>
                                                     <div class="col-mail col-mail-1">
@@ -1062,7 +1063,7 @@
 
                 <div class="p-4">
                     <div class="mb-2">
-                        <img src="assets/images/layouts/layout-1.png" class="img-fluid img-thumbnail" alt="">
+                        <img src="{{ asset('agroxa/images/layouts/layout-1.png') }}" class="img-fluid img-thumbnail" alt="">
                     </div>
 
                     <div class="form-check form-switch mb-3">
@@ -1071,21 +1072,21 @@
                     </div>
 
                     <div class="mb-2">
-                        <img src="assets/images/layouts/layout-2.png" class="img-fluid img-thumbnail" alt="">
+                        <img src="{{ asset('agroxa/images/layouts/layout-2.png') }}" class="img-fluid img-thumbnail" alt="">
                     </div>
 
                     <div class="form-check form-switch mb-3">
                         <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch"
-                            data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
+                            data-bsStyle="{{ asset('agroxa/css/bootstrap-dark.min.css') }}" data-appStyle="{{ asset('agroxa/css/app-dark.min.css') }}" />
                         <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
                     </div>
 
                     <div class="mb-2">
-                        <img src="assets/images/layouts/layout-3.png" class="img-fluid img-thumbnail" alt="">
+                        <img src="{{ asset('agroxa/images/layouts/layout-3.png') }}" class="img-fluid img-thumbnail" alt="">
                     </div>
                     <div class="form-check form-switch mb-5">
                         <input type="checkbox" class="form-check-input theme-choice" id="rtl-mode-switch"
-                            data-appStyle="assets/css/app-rtl.min.css" />
+                            data-appStyle="{{ asset('agroxa/css/app-rtl.min.css') }}" />
                         <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
                     </div>
 
@@ -1100,21 +1101,21 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
-        <script src="assets/libs/jquery/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-        <script src="assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="assets/libs/node-waves/waves.min.js"></script>
-        <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <script src="{{ asset('agroxa/libs/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('agroxa/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('agroxa/libs/metismenu/metisMenu.min.js') }}"></script>
+        <script src="{{ asset('agroxa/libs/simplebar/simplebar.min.js') }}"></script>
+        <script src="{{ asset('agroxa/libs/node-waves/waves.min.js') }}"></script>
+        <script src="{{ asset('agroxa/libs/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 
         <!-- email editor init -->
-        <script src="assets/js/pages/email-editors.init.js"></script>
+        <script src="{{ asset('agroxa/js/pages/email-editors.init.js') }}"></script>
 
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
+        <script src="{{ asset('agroxa/js/app.js') }}"></script>
 
     </body>
 
 
-<!-- Mirrored from themesbrand.com/agroxa/layouts/red/email-inbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 06:30:51 GMT -->
+<!-- Mirrored from themesbrand.com/agroxa/layouts/red/email-inbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Feb 2022 03:10:58 GMT -->
 </html>

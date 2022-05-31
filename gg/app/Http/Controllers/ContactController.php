@@ -26,4 +26,18 @@ class ContactController extends Controller
        ]);
     return redirect('kontak');
     }
+    public function inbox_index(){
+
+        $mails = DB::table('contact')->paginate();
+        return view('admin.email-inbox')->with(compact('mails'));
+    }
+    public function inbox_detail($id){
+        $mail = DB::table('contact')->where('id',$id)->first();
+        return view('admin.email-read')->with(compact('mail'));
+    }
+    public function seen($id){
+        $db = DB::table('contact')->where('id',$id)->update(['seen'=>1]);
+       
+
+    }
 }

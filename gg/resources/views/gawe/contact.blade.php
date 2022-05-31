@@ -257,22 +257,18 @@
                             <div class="row">        
                                     <form action="{{ url('chat-kontak') }}" method="POST">
                                         @csrf
-                                    <div class="col-md-12 my-2">
+                                    <div class="col-12 my-2">
                                         <div class="input-group">
-                                            <input type="text" name="name"  cols="50" placeholder="nama">
+                                            <input type="text" name="name" placeholder="Nama" class="pr-4 mr-1">
+                                            <input type="email" name="email" placeholder="Alamat Email" class="pl-4 ml-1">
                                         </div>
-                                    </div>
-                                    <div class="col-md-12 my-2">
-                                        <div class="input-group">
-                                            <input type="email" name="email"  cols="50" placeholder="alamat email">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 my-2">
+                                    </div>    
+                                    <div class="col-12 my-2">
                                         <div class="input-group">
                                             <textarea name="pesan" placeholder="penulis pesan" cols="50" rows="10"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 my-2">
+                                    <div class="col-12 my-2">
                                         <div class="input-group contact__btn">
                                             <button type="submit" class="thm-btn contact-one__btn">Comment</button>
                                         </div>

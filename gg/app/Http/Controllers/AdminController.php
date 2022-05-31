@@ -53,4 +53,7 @@ class AdminController extends Controller
         }
         return redirect()->route('user')->with('pesan', 'Data Berhasil Di Hapus');
     }
+    public function inbox_index(){
+        return view('admin.email-inbox');
+    }
 }
