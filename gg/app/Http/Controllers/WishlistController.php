@@ -28,8 +28,11 @@ class WishlistController extends Controller
         //  foreach($ayam as $sapi){
            
          $errors = User::join('wishlists','wishlists.untuk','=','users.email')
-         ->select('users.email','users.pekerja','users.name','users.keterangan','users.foto','users.alamat','users.bidang','users.telepon')
+         ->select('users.email','users.pekerja','users.name','users.keterangan','users.foto','users.alamat','users.bidang','users.telepon','wishlists.dari')
+         ->where('dari',$user)
          ->paginate(2);
+
+        //  $wish = DB::table('wishlists')->where('dari',$user)->get();
         
          
     //      return view('gawe.wishlist')->with(compact('errors','sapi','ayam'));
@@ -48,13 +51,6 @@ class WishlistController extends Controller
             $isi->insert([
                 'dari'=>$user,
                 'untuk'=>$email,
-                // 'name'=>$pekerja->name,
-                // 'alamat'=>$pekerja->alamat,
-                // 'bidang'=>$pekerja->bidang,
-                // 'telepon'=>$pekerja->telepon, 
-                // 'foto'=>$pekerja->foto, 
-                // 'pekerja'=>$pekerja->pekerja, 
-                // 'keterangan'=>$pekerja->keterangan, 
             ]);
             return redirect('listings');
         }

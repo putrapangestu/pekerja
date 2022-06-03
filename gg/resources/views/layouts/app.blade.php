@@ -43,6 +43,19 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <script>
+        function toggePassword() {
+            var upass = document.getElementById('upass');
+            var toggleBtn = document.getElementById('toggleBtn');
+            if (upass.type == "password") {
+                upass.type = "text";
+            } else {
+                upass.type = "Password";                
+            }
+        }
+
+    </script>
+
 </head>
 <body>
     <div id="app">
@@ -111,12 +124,5 @@
         </main>
     </div>
 
-    <script>
-        $(document).ready(function(){
-            $('#checkbox').on('change', function(){
-                $('#password').attr('type',$('#checkbox').prop('checked')==true?"text":"password"); 
-            });
-        });
-    </script>
 </body>
 </html>

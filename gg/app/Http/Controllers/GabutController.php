@@ -18,7 +18,10 @@ class GabutController extends Controller
         // $errors = User::all();
         if(Auth::user()){
             $user = Auth::user()->email;
-            $wish = DB::table('wishlists')->where('dari',$user)->get();    
+            $users = DB::table('users')->where('email',$request->email)->get();
+            foreach($users as $akun){
+                $wish = DB::table('wishlists')->where('dari',$user)->where('untuk',$akun->email)->first();        
+            }
         }else{
             $wish=0;
         }
@@ -56,9 +59,9 @@ class GabutController extends Controller
         })
         ->where('bidang','Like', '%'.$kategori.'%')
         ->orderBy('created_at',$urut)
-        ->paginate(2);
+        ->paginate(20);
             
-            return view('gawe.listings', compact('errors','wish'));
+            return view('gawe.listings', compact('errors'));
         
 
     }
@@ -67,7 +70,10 @@ class GabutController extends Controller
 
         if(Auth::user()){
             $user = Auth::user()->email;
-            $wish = DB::table('wishlists')->where('dari',$user)->first();    
+            $users = DB::table('users')->where('email',$email)->get();
+            foreach($users as $akun){
+                $wish = DB::table('wishlists')->where('dari',$user)->where('untuk',$akun->email)->first();    
+            }
         }else{
             $wish=0;
         }

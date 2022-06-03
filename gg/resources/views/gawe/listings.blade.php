@@ -203,7 +203,7 @@
                         <div class="filter_inner_content">
                             <div class="left">
                                 <div class="left_text">
-                                    <h4>Ditemukan 6 pekerja dengan bidang ini</h4>
+                                    <h4>Ditemukan {{ $errors->count() }} pekerja dengan bidang ini</h4> 
                                 </div>
                             </div>
 
@@ -261,14 +261,10 @@
                                 @if(Auth::user()->user == 'Perusahaan')
                                 <form action="{{url ('listings/'.$profile->email) }}" method="POST">
                                     @csrf
-                                @if(isset($wish))
-                                @foreach($wish as $wishlist)
                                 <div class="heart_icon">
                                     <input type="hidden" name="wishlist" value="wishlist">
-                                <button class="wishlist bg-transparent border-0"><i class="fas fa-heart  @if($wishlist->untuk == $profile->email) text-danger  @endif"></i></button>
+                                <button class="wishlist bg-transparent border-0"><i class="fas fa-heart @if(isset($wish)) @if($wish->untuk == $profile->email) text-danger @endif @endif"></i></button>
                                 </div>
-                                @endforeach
-                                @endif
                                 </form>
                                 @endif
                                 @endif
