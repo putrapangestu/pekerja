@@ -6,12 +6,12 @@
 <head>
 
         <meta charset="utf-8" />
-        <title>Dashboard | Agroxa - Responsive Bootstrap 5 Admin Dashboard</title>
+        <title>Admin || Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('agroxa/images/favicon.ico')}}">
+        <link rel="shortcut icon" href="{{asset('images/favicons/black.png')}}">
 
 
         <!-- Bootstrap Css -->
@@ -36,21 +36,21 @@
 
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
+                <a href="" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{asset('agroxa/images/logo-sm-dark.png')}}" alt="" height="22">
+                        <img src="{{asset('images/favicons/black.png')}}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{asset('agroxa/images/logo-dark.png')}}" alt="" height="24">
+                        <img src="{{asset('images/favicons/black.png')}}" alt="" height="75">
                     </span>
                 </a>
 
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{asset('agroxa/images/logo-sm-light.png')}}" alt="" height="22">
+                        <img src="{{asset('images/favicons/black.png')}}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{asset('agroxa/images/logo-light.png')}}" alt="" height="24">
+                        <img src="{{asset('images/favicons/black.png')}}" alt="" height="24">
                     </span>
                 </a>
             </div>
@@ -60,23 +60,6 @@
             <button type="button" class="btn px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
                 <i class="mdi mdi-menu"></i>
             </button>
-
-
-            <div class="dropdown d-none d-lg-inline-block align-self-center">
-                <button class="btn btn-header waves-effect  dropdown-toggle" type="button" id="createNewDropdown"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Create New<i class="mdi mdi-chevron-down"></i>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="createNewDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    <li>
-                        <div class="dropdown-divider"></div>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul>
-            </div>
         </div>
 
         <div class="d-flex">
@@ -305,7 +288,7 @@
 
                             <li>
                                 <a href="{{ url('dashbobard') }}" class="waves-effect">
-                                    <i class="mdi mdi-home"></i><span class="badge bg-primary float-end">3</span>
+                                    <i class="mdi mdi-home"></i>
                                     <span>Dashboard</span>
 
                                 </a>
@@ -356,19 +339,8 @@
                                     <div class="page-title">
                                         <h4 class="mb-0 font-size-18">Dashboard</h4>
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item active">Welcome to Agroxa Dashboard</li>
+                                            <li class="breadcrumb-item active">Selamat Datang Admin Gawe.Id</li>
                                         </ol>
-                                    </div>
-
-                                    <div class="state-information d-none d-sm-block">
-                                        <div class="state-graph">
-                                            <div id="header-chart-1"></div>
-                                            <div class="info">Balance $ 2,317</div>
-                                        </div>
-                                        <div class="state-graph">
-                                            <div id="header-chart-2"></div>
-                                            <div class="info">Item Sold 1230</div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -386,7 +358,7 @@
                                                 </h5>
                                                 <div class="text-white">
                                                     <h5 class="text-uppercase font-size-16 text-white-50">Orders</h5>
-                                                    <h3 class="mb-3 text-white">1,587</h3>
+                                                    <h3 class="mb-3 text-white">{{ $ye->count() }}</h3>
                                                     <div class="">
                                                         <span class="badge bg-light text-info"> +11% </span> <span
                                                             class="ms-2">From previous period</span>

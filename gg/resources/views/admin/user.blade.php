@@ -347,9 +347,6 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            
-                                            
-
                                             <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
@@ -366,13 +363,13 @@
                                                 <tbody>
                                                     <?php $no=1; ?>
                                                     @foreach ($pengguna as $data)
-                                                        <tr>
+                                                        <tr @if($data->blokir==1) class="text-primary" @endif>
                                                             <td>{{ $no++ }}.</td>
                                                             <td>{{ $data->name }}</td>
                                                             <td>{{ $data->user }}</td>
                                                             <td>{{ $data->email }}</td>
                                                             <td>{{ $data->alamat }}</td>
-                                                            <td> <img src="{{ url('gambar/'.$data->foto) }}" width="100px"></td>
+                                                            <td> <img src="{{ url('gambar/'.$data->foto) }}" width="70px"></td>
                                                             <td>
                                                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#example{{ $data->id }}">
                                                                     @if($data->blokir==0)

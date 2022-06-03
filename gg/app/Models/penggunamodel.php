@@ -19,4 +19,5 @@ class penggunamodel extends Model
         ->where('id', $id)
         ->delete();
     }
+
 }

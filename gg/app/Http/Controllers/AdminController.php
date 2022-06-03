@@ -24,7 +24,8 @@ class AdminController extends Controller
         return view('admin.user', $data);
     }
     public function dashboard(){
-        return view('admin.dashboard');
+        $ye = user::all();
+        return view('admin.dashboard', compact('ye'));
     }
     public function blog(){
         return view('admin.blog');
