@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2022 at 07:39 AM
+-- Generation Time: Jun 03, 2022 at 04:58 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -51,22 +51,27 @@ INSERT INTO `admins` (`id`, `name`, `email`, `password`, `admin`, `created_at`, 
 --
 
 CREATE TABLE `contact` (
+  `id` bigint(20) NOT NULL,
+  `subjek` varchar(255) DEFAULT NULL,
+  `label` varchar(255) DEFAULT NULL,
   `name` text NOT NULL,
   `email` text NOT NULL,
-  `pesan` text NOT NULL
+  `pesan` text NOT NULL,
+  `seen` tinyint(1) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `contact`
 --
 
-INSERT INTO `contact` (`name`, `email`, `pesan`) VALUES
-('ddd', 'fariscoli@gmail.com', 'asasa'),
-('dihei', 'fariscoli@gmail.com', 'asdasd'),
-('ddd', 'fariscoli@gmail.com', 'conat'),
-('nan', 'passa@gmail.com', 'password\r\nasdkjaskdjasodjpas'),
-('nan', 'passa@gmail.com', 'password\r\nasdkjaskdjasodjpas'),
-('asds', 'apspasd@gmail.com', 'asdjaskjdksjad');
+INSERT INTO `contact` (`id`, `subjek`, `label`, `name`, `email`, `pesan`, `seen`, `created_at`) VALUES
+(1, NULL, NULL, 'ddd', 'fariscoli@gmail.com', 'asasa', 0, '2022-06-02 04:10:52'),
+(2, NULL, NULL, 'dihei', 'fariscoli@gmail.com', 'asdasd', 0, '2022-06-02 04:10:52'),
+(3, NULL, NULL, 'ddd', 'fariscoli@gmail.com', 'conat', 0, '2022-06-02 04:10:52'),
+(4, NULL, NULL, 'nan', 'passa@gmail.com', 'password\r\nasdkjaskdjasodjpas', 0, '2022-06-02 04:10:52'),
+(5, NULL, NULL, 'nan', 'passa@gmail.com', 'password\r\nasdkjaskdjasodjpas', 0, '2022-06-02 04:10:52'),
+(6, NULL, NULL, 'asds', 'apspasd@gmail.com', 'asdjaskjdksjad', 0, '2022-06-02 04:10:52');
 
 -- --------------------------------------------------------
 
@@ -215,7 +220,7 @@ CREATE TABLE `rekrut0` (
 INSERT INTO `rekrut0` (`id`, `dari`, `untuk`, `sampah_dari`, `sampah_untuk`, `seen_dari`, `seen_untuk`, `star_dari`, `star_untuk`, `notif_dari`, `notif_untuk`, `nama`, `alamat`, `provinsi`, `kota`, `no`, `telepon`, `email`, `posisi`, `jam`, `gaji`, `informasi`, `balasan`, `file`, `created_at`, `hari`) VALUES
 (7, 'emailperusahaan@gmail.com', 'apaiya@gmail.com', 0, 0, 0, 1, 0, 0, 0, 0, 'Perusahaan', 'Alamat', 'Provinsi', 'Kota', 122211, NULL, 'emailperusahaan@gmail.com', 'Asisten dari asistennya OB', '5', 2900000, 'tidak ada informasi tambahan', NULL, NULL, '2022-05-03 06:33:08', 'Setiap hari'),
 (8, 'berusaha@gmail.com', 'ayah@gmail.com', 0, 0, 0, 0, 0, 0, 0, 1, 'PT Berusaha', 'Cari sendiri, usaha sana', 'Usaha', 'Usaha', 12313514, NULL, 'berusaha@gmail.com', 'Usaha dulu', '8', 8000000, 'Tidak ada yg perlu saya tambahkan, usaha saja kalian', NULL, NULL, '2022-05-09 19:20:15', 'Senin-Jumat'),
-(9, 'berusaha@gmail.com', 'apaiya@gmail.com', 0, 1, 0, 1, 0, 0, 0, 0, 'PT Berusaha', 'Cari sendiri', 'Cari sendiri', 'Cari Sendiri', 120319283, NULL, 'berusaha@gmail.com', 'usaha', '8', 2000000, 'Tidak ada tambahan, cukup usaha saja', NULL, NULL, '2022-05-09 19:47:29', 'Sabtu-selasa'),
+(9, 'berusaha@gmail.com', 'apaiya@gmail.com', 0, 1, 1, 1, 0, 0, 0, 0, 'PT Berusaha', 'Cari sendiri', 'Cari sendiri', 'Cari Sendiri', 120319283, NULL, 'berusaha@gmail.com', 'usaha', '8', 2000000, 'Tidak ada tambahan, cukup usaha saja', NULL, NULL, '2022-05-09 19:47:29', 'Sabtu-selasa'),
 (10, 'berusaha@gmail.com', 'apaiya@gmail.com', 0, 0, 0, 1, 0, 1, 0, 0, 'PT Berusaha', 'Cari sendiri', 'Cari sendiri', 'Cari Sendiri', 120319283, NULL, 'berusaha@gmail.com', 'usaha', '8', 2000000, 'Tidak ada tambahan, cukup usaha saja', NULL, NULL, '2022-05-09 19:47:29', 'Sabtu-selasa');
 
 -- --------------------------------------------------------
@@ -400,7 +405,25 @@ INSERT INTO `tag_kategoris` (`tag`, `kategori`, `email`) VALUES
 (NULL, NULL, 'tes123@gmail.com'),
 (NULL, NULL, 'login@gmail.com'),
 (NULL, NULL, 'saja@gmail.com'),
-(NULL, NULL, 'berusaha@gmail.com');
+(NULL, NULL, 'berusaha@gmail.com'),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL),
+(NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -419,7 +442,7 @@ CREATE TABLE `users` (
   `email` varchar(255) DEFAULT NULL,
   `pekerja` varchar(100) DEFAULT NULL,
   `ultah` date DEFAULT NULL,
-  `telepon` int(100) DEFAULT NULL,
+  `telepon` bigint(20) DEFAULT NULL,
   `alamat` varchar(500) DEFAULT NULL,
   `bidang` varchar(255) DEFAULT NULL,
   `keterangan` enum('Memiliki Pekerjaan','Belum Memiliki Pekerjaan') DEFAULT NULL,
@@ -443,28 +466,29 @@ CREATE TABLE `users` (
   `lng` double DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `populer` bigint(20) DEFAULT NULL
+  `populer` bigint(20) DEFAULT NULL,
+  `blokir` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `password`, `user`, `email_verified_at`, `remember_token`, `foto`, `name`, `email`, `pekerja`, `ultah`, `telepon`, `alamat`, `bidang`, `keterangan`, `twitter`, `facebook`, `google`, `link`, `instagram`, `lulusansd`, `sd`, `lulusansmp`, `smp`, `lulusansma`, `sma`, `bio`, `prestasi`, `pengalaman`, `kemampuan`, `hasil`, `lat`, `lng`, `created_at`, `updated_at`, `populer`) VALUES
-(23, '$2y$10$0CRSKB63Oh9vmTDF5VSNs.RFe/NfFKcQAluiRL7MXISejUZjKB9Jy', 'Pekerja', NULL, 'NRj8T4y1gYZX9w24WFqfLTurY2THSP0gpjitnmfqt8dY0NRpk51UhspudpcI', NULL, 'Anak', 'apaiya@gmail.com', '...', NULL, NULL, NULL, NULL, 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18 18:53:49', '2022-05-25 01:42:51', 0),
-(24, '$2y$10$HTjcFuEzGxNt1UdneexTk.ihQkQ27KNUJpwfN5BwzMEDRVPhNV44W', 'Pekerja', NULL, NULL, NULL, 'Ayah', 'ayah@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, '2022-05-18 23:39:24', '2022-05-18 23:39:24', 0),
-(25, '$2y$10$Xww2GY0diUN54A2rne8FEeVu4nq.UbiD3gBBa2zXMjS344V2H3uJi', 'Pekerja', NULL, NULL, '1653277392team-1-img-3.jpg', 'coba', 'cobasaja@gmail.com', '...', NULL, NULL, NULL, NULL, 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-19 01:02:16', '2022-05-25 01:35:59', 0),
-(26, '$2y$10$8ice5WlRVPZQnApThh4ABOQwbY.pKyay7zeQnFX/9t0HuAJvCljJq', 'Pekerja', NULL, NULL, NULL, 'lupa', 'lupa123@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, '2022-05-23 01:01:09', '2022-05-23 01:01:09', 0),
-(28, '$2y$10$dK0BgX4vVD0TG9aWY7dzkO8pf77BGfGTFw4XgEdVIXgxyC10Y9Bd.', 'Perusahaan', NULL, NULL, NULL, 'PT BERUSAHA', 'ptberusaha@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 13.698683472419601, 100.58742041844195, '2022-05-23 01:47:56', '2022-05-23 01:47:56', 0),
-(29, '$2y$10$AbEb70S4s/wNsf40S.McIOGwLv.Z0SAqreS0c7nHn/rAewAbMX.Ku', 'Perusahaan', NULL, NULL, 'nopic.jpg', 'PT USAHA', 'usahakerja@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-24 21:22:01', '2022-05-24 21:22:01', NULL),
-(31, '$2y$10$51A3R.67n4WwiDl1vtsSMekduP9.L.2BGsEblHdAOs.kQd2IOlbhq', 'Pekerja', NULL, NULL, 'nopic.jpg', 'as', 'asa@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 08:12:24', '2022-05-25 08:12:24', NULL),
-(32, '$2y$10$QLVV7WAKxegCsAeoD/Gn7ONQ9VCaJ.LuW3tNev0/OsRgkcLSFToom', 'Pekerja', NULL, NULL, 'nopic.jpg', 'lupapassword', 'lupapassword@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:11:42', '2022-05-25 09:11:42', NULL),
-(33, '$2y$10$.hCOoqZcgnq.UWU1bAmIU.EaqOuAwW7QuRIqthy5LevvlHSRNvfU.', 'Pekerja', NULL, NULL, 'nopic.jpg', 'lupapassword', 'lupapassword123@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:22:29', '2022-05-25 09:22:29', NULL),
-(34, '$2y$10$YuJ4xEOmErxtAfOYs1tGOeUv53ViO/bUTh9botMzmfnlFybJdVOF.', 'Pekerja', NULL, NULL, 'nopic.jpg', 'lupapasswordsaja', 'lupapasswordya@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:24:46', '2022-05-25 09:24:46', NULL),
-(35, '$2y$10$oyVgOiEQ8IsZgAtMKxtccOSIAh.U5InS/OQ4gyRsri52Lase4cbPy', 'Pekerja', NULL, 'cRwf1qvooz77qC88YMV3mxCDthhkIvssycQYaOEdiqIo8fMDNE9uVLjTT3ji', 'nopic.jpg', 'tes', 'tes123@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:34:58', '2022-05-25 18:23:33', NULL),
-(36, '$2y$10$YH2.DTh4rjGmCLIo4GmbdOOzK8zNy9hIET0oM1lt0bQ3/S/jQKxeG', 'Pekerja', NULL, NULL, 'nopic.jpg', 'login', 'login@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:53:11', '2022-05-25 09:53:11', NULL),
-(37, '$2y$10$RTINogFgVJ4N7fzjJ0zIdunA.3h2M6.nD4g.YBB5trZJEkaNzl6Qu', 'Pekerja', NULL, NULL, 'nopic.jpg', 'saja', 'saja@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 18:13:24', '2022-05-25 18:13:24', NULL),
-(38, '$2y$10$F.bKwtMWBKRzalErvABmTOwmGonnmFoNdAKyydBmR.6dAcKr.J1qy', 'Perusahaan', NULL, NULL, 'nopic.jpg', 'berusaha', 'berusaha@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-26 16:35:05', '2022-05-26 16:35:05', NULL);
+INSERT INTO `users` (`id`, `password`, `user`, `email_verified_at`, `remember_token`, `foto`, `name`, `email`, `pekerja`, `ultah`, `telepon`, `alamat`, `bidang`, `keterangan`, `twitter`, `facebook`, `google`, `link`, `instagram`, `lulusansd`, `sd`, `lulusansmp`, `smp`, `lulusansma`, `sma`, `bio`, `prestasi`, `pengalaman`, `kemampuan`, `hasil`, `lat`, `lng`, `created_at`, `updated_at`, `populer`, `blokir`) VALUES
+(23, '$2y$10$0CRSKB63Oh9vmTDF5VSNs.RFe/NfFKcQAluiRL7MXISejUZjKB9Jy', 'Pekerja', NULL, 'xu0XcOjwgGpzxxoS2XLay9RVY396W2PYPkpuI6dc1B4hdLIVpgQL8Rd8T3eU', '1653879719download(3).jpg', 'Anak', 'apaiya@gmail.com', '...', NULL, 8098398, 'aklskajsd', 'IT', 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18 18:53:49', '2022-05-25 01:42:51', 0, 0),
+(24, '$2y$10$HTjcFuEzGxNt1UdneexTk.ihQkQ27KNUJpwfN5BwzMEDRVPhNV44W', 'Pekerja', NULL, NULL, NULL, 'Ayah', 'ayah@gmail.com', 'fulltime', NULL, 9909092, 'Malang', 'BURUH', 'Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-18 23:39:24', '2022-05-18 23:39:24', 0, 0),
+(25, '$2y$10$Xww2GY0diUN54A2rne8FEeVu4nq.UbiD3gBBa2zXMjS344V2H3uJi', 'Pekerja', NULL, NULL, '1653277392team-1-img-3.jpg', 'coba', 'cobasaja@gmail.com', '...', NULL, NULL, NULL, NULL, 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-19 01:02:16', '2022-05-25 01:35:59', 0, 0),
+(26, '$2y$10$8ice5WlRVPZQnApThh4ABOQwbY.pKyay7zeQnFX/9t0HuAJvCljJq', 'Pekerja', NULL, NULL, NULL, 'lupa', 'lupa123@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, '2022-05-23 01:01:09', '2022-05-23 01:01:09', 0, 0),
+(28, '$2y$10$dK0BgX4vVD0TG9aWY7dzkO8pf77BGfGTFw4XgEdVIXgxyC10Y9Bd.', 'Perusahaan', NULL, NULL, NULL, 'PT BERUSAHA', 'ptberusaha@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 13.698683472419601, 100.58742041844195, '2022-05-23 01:47:56', '2022-05-23 01:47:56', 0, 0),
+(29, '$2y$10$AbEb70S4s/wNsf40S.McIOGwLv.Z0SAqreS0c7nHn/rAewAbMX.Ku', 'Perusahaan', NULL, NULL, 'nopic.jpg', 'PT USAHA', 'usahakerja@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-24 21:22:01', '2022-05-24 21:22:01', NULL, 0),
+(31, '$2y$10$51A3R.67n4WwiDl1vtsSMekduP9.L.2BGsEblHdAOs.kQd2IOlbhq', 'Pekerja', NULL, NULL, 'nopic.jpg', 'as', 'asa@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 08:12:24', '2022-05-25 08:12:24', NULL, 0),
+(32, '$2y$10$QLVV7WAKxegCsAeoD/Gn7ONQ9VCaJ.LuW3tNev0/OsRgkcLSFToom', 'Pekerja', NULL, NULL, 'nopic.jpg', 'lupapassword', 'lupapassword@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:11:42', '2022-05-25 09:11:42', NULL, 0),
+(33, '$2y$10$.hCOoqZcgnq.UWU1bAmIU.EaqOuAwW7QuRIqthy5LevvlHSRNvfU.', 'Pekerja', NULL, NULL, 'nopic.jpg', 'lupapassword', 'lupapassword123@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:22:29', '2022-05-25 09:22:29', NULL, 0),
+(34, '$2y$10$YuJ4xEOmErxtAfOYs1tGOeUv53ViO/bUTh9botMzmfnlFybJdVOF.', 'Pekerja', NULL, NULL, 'nopic.jpg', 'lupapasswordsaja', 'lupapasswordya@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:24:46', '2022-05-25 09:24:46', NULL, 0),
+(35, '$2y$10$oyVgOiEQ8IsZgAtMKxtccOSIAh.U5InS/OQ4gyRsri52Lase4cbPy', 'Pekerja', NULL, 'cRwf1qvooz77qC88YMV3mxCDthhkIvssycQYaOEdiqIo8fMDNE9uVLjTT3ji', 'nopic.jpg', 'tes', 'tes123@gmail.com', 'freelance', NULL, 8202000, 'ngijen', 'ormas', 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:34:58', '2022-05-25 18:23:33', NULL, 0),
+(36, '$2y$10$YH2.DTh4rjGmCLIo4GmbdOOzK8zNy9hIET0oM1lt0bQ3/S/jQKxeG', 'Pekerja', NULL, NULL, '1653883885images(2).jpg', 'login', 'login@gmail.com', 'parttime', NULL, 89616709191, 'malang', 'PENARI', 'Belum Memiliki Pekerjaan', 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 09:53:11', '2022-05-25 09:53:11', NULL, 0),
+(37, '$2y$10$RTINogFgVJ4N7fzjJ0zIdunA.3h2M6.nD4g.YBB5trZJEkaNzl6Qu', 'Pekerja', NULL, NULL, 'nopic.jpg', 'saja', 'saja@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-05-25 18:13:24', '2022-05-25 18:13:24', NULL, 0),
+(38, '$2y$10$F.bKwtMWBKRzalErvABmTOwmGonnmFoNdAKyydBmR.6dAcKr.J1qy', 'Perusahaan', NULL, NULL, 'nopic.jpg', 'berusaha', 'berusaha@gmail.com', NULL, NULL, 90939083, 'kjasjdkjk', NULL, NULL, 'https://twitter.com/user', 'https://www.facebook.com/user', NULL, NULL, 'https://www.instagram.com/user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3.995847932063899, 114.95916185318377, '2022-05-26 16:35:05', '2022-05-26 16:35:05', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -474,8 +498,8 @@ INSERT INTO `users` (`id`, `password`, `user`, `email_verified_at`, `remember_to
 
 CREATE TABLE `wishlists` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `dari` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `untuk` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dari` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `untuk` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -485,7 +509,10 @@ CREATE TABLE `wishlists` (
 --
 
 INSERT INTO `wishlists` (`id`, `dari`, `untuk`, `created_at`, `updated_at`) VALUES
-(17, 'berusaha@gmail.com', 'login@gmail.com', NULL, NULL);
+(34, 'berusaha@gmail.com', 'login@gmail.com', NULL, NULL),
+(35, 'berusaha@gmail.com', 'tes123@gmail.com', NULL, NULL),
+(37, 'berusaha@gmail.com', 'apaiya@gmail.com', NULL, NULL),
+(38, 'berusaha@gmail.com', 'login@gmail.com', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -497,6 +524,12 @@ INSERT INTO `wishlists` (`id`, `dari`, `untuk`, `created_at`, `updated_at`) VALU
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_email_unique` (`email`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -546,6 +579,12 @@ ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `rekrut0`
 --
 ALTER TABLE `rekrut0`
@@ -561,7 +600,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
